@@ -1,35 +1,51 @@
 ---
 name: ai-turning-points
-description: Run a buy-side AI industry research pass and produce a single self-contained HTML investment report on AI investment turning points. Use this skill whenever the user asks for an "AI investment report", "AI 调研报告", "AI 投资转折点", "AI 产业链周报", "扫描 AI 板块", "AI capex 跟踪", or any framing that asks Claude to scan the AI value chain for trade ideas (compute / memory / networking / power / robotics / agents / edge / drugs). Always emit ONE complete HTML file — the skill is not done until that file exists on disk.
+description: Run a buy-side AI industry research pass on AI investment turning points across the global AI value chain. Use this skill whenever the user asks for "AI investment research", "AI 调研报告", "AI 投资转折点", "AI 产业链周报", "扫描 AI 板块", "AI capex 跟踪", or any framing that asks to scan compute / memory / networking / power / robotics / agents / edge / drugs for trade ideas. The skill has two output modes — terminal markdown (default, conversational) and HTML publish (only when explicitly requested or driven by the weekly cron).
 ---
 
 # AI Turning Points Research
 
-Buy-side research workflow. One run = one HTML report.
+Buy-side research workflow. Same methodology, two delivery surfaces.
 
 ## What this skill does
 
-Scan the AI value chain for **investment turning points** — points where new AI capability creates rigid demand for a hardware / data / network / power / device / service category that the market has not yet fully priced. Output is a structured HTML report saved to disk.
+Scan the AI value chain for **investment turning points** — points where a new AI capability creates rigid demand for a hardware / data / network / power / device / service category that the market has not yet fully priced.
 
 This is NOT:
 - A general AI news roundup
 - A list of "AI-related stocks"
 - A model release / benchmark tracker
 
-## Trigger and outputs
+## Output modes — choose ONE based on user intent
 
-Trigger when the user asks for: AI investment research, AI value chain weekly, AI turning points, AI capex tracking, scan AI sector for trades, or similar.
+### Mode A: Terminal markdown (DEFAULT)
 
-**Required output: exactly one HTML file** rendered from `skill/assets/template.html`, saved to:
-- If the user gives an explicit path: write there.
-- Otherwise default: `<repo-root>/docs/reports/<YYYY-MM-DD>/index.html` where:
-  - `<repo-root>` is the project root — the directory containing both `docs/` and `skill/`. If invoked from inside the project (cwd is the project root or anywhere inside it), resolve the project root by walking up until such a directory is found. If unresolvable (skill triggered from an unrelated working directory), fall back to `~/ai-investment-weekly/` — that is the deployed copy used by the weekly cron and `git push`. Do NOT write to `~/Documents/CC/ai-investment-weekly/` even if it still exists; that is a stale development snapshot.
-  - `<YYYY-MM-DD>` is **today's actual date** (use the system date, not training data).
-- After writing the report, ALSO update `<repo-root>/docs/index.html` to add the new issue to the archive list. Find the `<!-- ARCHIVE-START -->` / `<!-- ARCHIVE-END -->` markers and insert one new `<li>` at the top of the list (the newest issue is always first).
+When the user asks for the research conversationally — "做一份 AI 投资调研", "扫一下 AI 板块", "看看现在的转折点", "AI 产业链有什么新机会" — print the report **directly to the conversation as markdown**. Do NOT write any files. Do NOT touch `docs/`. Do NOT use the HTML template.
 
-If the output path's parent directory does not exist, create it. Never silently overwrite an existing report for the same date — append a `-v2` suffix to the directory name instead.
+The report still follows the full structure (TL;DR, top picks, radar, deep dives, shorts, pairs, watchlist, data gaps, sources), just rendered as markdown tables and prose.
 
-**Important**: this project is deployed via GitHub Pages from `docs/`. All site files (homepage, reports, shared CSS) must live under `docs/`. The skill itself, methodology references, and the HTML template stay outside `docs/` (they should not be served).
+### Mode B: HTML publish
+
+Only switch to HTML publish mode when ONE of these is true:
+- The user explicitly asks for an HTML file ("生成 HTML", "写到网页", "上线", "更新网站", "publish", "weekly report").
+- The user gives an explicit output path under `docs/`.
+- The user mentions GitHub Pages, the weekly archive, or "publish".
+- The prompt obviously comes from `weekly-update.sh` (it says something like "输出到 docs/reports/<DATE>/index.html").
+
+In HTML publish mode:
+
+1. Render the report into HTML using `skill/assets/template.html` (find `<!-- FILL: ... -->` markers, replace each).
+2. Save to `<repo-root>/docs/reports/<YYYY-MM-DD>/index.html` where:
+   - `<repo-root>` is the directory containing both `docs/` and `skill/`. Walk up from cwd to find it. If unresolvable, fall back to `~/ai-investment-weekly/` — that is the deployed copy used by the weekly cron and `git push`. Do NOT write to `~/Documents/CC/ai-investment-weekly/` even if it exists; that is a stale snapshot.
+   - `<YYYY-MM-DD>` is **today's actual date** (system date, not training data).
+3. Update `<repo-root>/docs/index.html`: find the `<!-- ARCHIVE-START -->` / `<!-- ARCHIVE-END -->` markers and insert a new `<li>` at the top of the list.
+4. Never silently overwrite an existing report for the same date — append a `-v2` suffix to the directory name.
+
+The HTML site lives under `docs/` because GitHub Pages deploys from there. Skill files / references / template stay outside `docs/`.
+
+### When uncertain
+
+If the user's intent could go either way, prefer terminal mode and ask: "要直接终端输出 markdown 还是写到 docs/ 上线网站？"
 
 ## Hard rules
 
@@ -102,11 +118,11 @@ Required checks:
 - **50–64** = thesis exists, evidence thin
 - **<50** = no clear trade
 
-## Output structure (HTML — load `assets/template.html` and fill in)
+## Report structure (same for both modes)
 
-The HTML template is a single self-contained file with all CSS inlined. Find placeholder blocks marked `<!-- FILL: ... -->` and replace each with content. Sections:
+The report — whether terminal markdown or HTML — has these sections in this order:
 
-1. **Header** — date, issue number (count files in `reports/`), researcher framing
+1. **Header** — date, issue number (in HTML mode: count subdirs in `docs/reports/`), researcher framing
 2. **TL;DR** — top 3 turning points, top crowded narrative to avoid, single biggest risk, what needs more data
 3. **Top picks table** — ranked trades with score
 4. **Radar table** — broader scan with all themes
@@ -117,6 +133,10 @@ The HTML template is a single self-contained file with all CSS inlined. Find pla
 9. **Data gaps** — list of what's missing or needs follow-up
 10. **Sources** — categorized, every key fact linked
 
+In **terminal mode**, render with markdown headings and pipe tables; print directly to chat. No files.
+
+In **HTML publish mode**, use `skill/assets/template.html` — find the `<!-- FILL: ... -->` placeholders and replace each. The template has CSS linked via `../../assets/styles.css` (relative to the report's location under `docs/reports/<DATE>/`).
+
 ## Resources in this skill
 
 - `assets/template.html` — the HTML template (open it, find FILL markers, fill in)
@@ -126,6 +146,7 @@ The HTML template is a single self-contained file with all CSS inlined. Find pla
 
 - Writing a "narrative" report instead of a data-driven one. If a section has no hard numbers, the section's score is wrong.
 - Listing >10 ideas. Discipline matters more than coverage. Top 5 deep-dives is the cap.
-- Forgetting to update the homepage archive list after writing the report.
+- Defaulting to HTML when the user just wants a quick conversational read. Default is terminal markdown.
+- In HTML publish mode: forgetting to update the homepage archive list after writing the report.
 - Using last week's numbers because search felt slow. The data must be fresh.
 - Skipping the sources block. Every fact, every link.
