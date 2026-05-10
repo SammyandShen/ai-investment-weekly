@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-05-10 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">第 1 期</span>
+    <span>2026 年 5 月 10 日</span>
+  </div>
+
+  <h1 class="report-title">内存售罄 + 燃机 5 年级 backlog：一阶之外的两条硬数据</h1>
+  <p class="report-subtitle">市场把「AI 算力 = 英伟达」的一阶叙事讲完了，但 SK Hynix 远期 PE 5 倍、卡特彼勒往复机排到 2028 年——预期差正在二阶环节里，不在 NVDA 身上。</p>
+
+  <!-- ====== 1. TL;DR ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本期总览 <span class="deck">/ TL;DR</span></h2>
+
+    <div class="tldr">
+      <h4>本周三大转折点</h4>
+      <ol>
+        <li><strong>存储超级周期延伸至全品类（HBM4 → DRAM → NAND）</strong>—— HBM 已全年售罄、1Q26 DRAM 合约价 QoQ +90~95%、Kioxia 全年 NAND 售罄；而 SK Hynix / Samsung 远期 PE 仅 5–7 倍。结构性需求 + 已售罄供给 + 未定价估值，三者罕见共振。</li>
+        <li><strong>现场天然气发电进入"5 年级 backlog"</strong>—— GE Vernova 1Q26 单季签 21GW 燃机，total 100GW 排到 2030；卡特彼勒往复机已售罄至 2027 / Q1 26 订单 2028 才能交付。比电网/输配电更稀缺、比"二级电力概念"更扎实。</li>
+        <li><strong>中国人形机器人零部件链出现真实订单</strong>—— Tesla 已下 6.85 亿美元执行器订单给三花，Optimus V3 计划 2026 夏天投产。仍是左侧赔率仓，需要 8 月中报披露关联收入二次确认。</li>
+      </ol>
+    </div>
+
+    <h4>最不值得追的拥挤叙事</h4>
+    <ul>
+      <li>AMD 作为「NVDA 替代」的二阶交易——已被多家机构标为"全市场最拥挤的次级 AI 交易"，远期 PE 51 倍，业绩兑现窗口窄。</li>
+      <li>美国电力 ETF（AIPO）YTD +30%，估值溢价已透支 6–12 个月利好；要切换到二阶（CAT、CMI）。</li>
+    </ul>
+
+    <h4>最大单点风险</h4>
+    <p>5 月 28 日 NVIDIA Q1 FY27 业绩。市场对 $52B 营收 + 88% 数据中心占比已 priced；任何指引偏弱都会引发整个一阶 AI 链估值重定价。在此之前不应加重 NVDA / AVGO / GEV / VRT 等已涨标的仓位。</p>
+
+    <h4>需要继续等数据的方向</h4>
+    <ul>
+      <li>CPO 替代可插拔光模块的真实节奏：NVIDIA Quantum-X 1H26 商用是公开数据，规模占比未披露。1.6T 全年量从 2.3M → 2.0M 已下修，需要 2H26 出货数据二次确认 LITE 期权押注的有效期。</li>
+      <li>2Q26 DRAM 合约价定盘（5 月底）：决定存储交易能否升仓到「确认仓」级别。</li>
+      <li>A 股人形机器人关联交易披露（8 月中报）：决定订单 vs 报表错位是否兑现。</li>
+    </ul>
+  </section>
+
+  <!-- ====== 2. Top Picks ====== -->
+  <section>
+    <h2><span class="section-num">02</span> Top Picks <span class="deck">/ 一页结论</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>主题</th>
+            <th>核心结论</th>
+            <th>标的</th>
+            <th>方向</th>
+            <th>未定价?</th>
+            <th>催化剂</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>HBM/DRAM 超级周期延伸</strong></td>
+            <td>三类同时售罄 + 远期 PE 5x，分歧在"周期顶"担忧而非数据</td>
+            <td>SK Hynix（000660.KS）、Micron（MU）</td>
+            <td><span class="dir long">Long</span></td>
+            <td>是</td>
+            <td>5 月 2Q26 合约价定盘；6 月季报；HBM4 良率</td>
+            <td class="num"><span class="score high">84</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>现场燃机 5 年级 backlog</strong></td>
+            <td>GE Vernova 100GW under contract，CAT 排到 2028</td>
+            <td>GEV（拉回买）、CAT、CMI</td>
+            <td><span class="dir long">Long</span></td>
+            <td>CAT/CMI 数据中心收入占比未识别</td>
+            <td>1H26 hyperscaler capex 微调；CAT 投资者日</td>
+            <td class="num"><span class="score high">80</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>企业级 QLC SSD / 长记忆存储</strong></td>
+            <td>推理需 PB 级 SSD，wafer 4Q25 +95~100% QoQ，交期 12+ 月</td>
+            <td>Sandisk（SNDK）、Kioxia（285A.T）</td>
+            <td><span class="dir long">Long</span></td>
+            <td>多被埋在 DRAM 叙事里，独立性未识别</td>
+            <td>6 月 SNDK 季报；月度 SSD ASP</td>
+            <td class="num"><span class="score high">78</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>CPO + 1.6T 光通信</strong></td>
+            <td>NVDA Quantum-X 1H26 商用；EML 200G 唯一量产 LITE</td>
+            <td>Lumentum（LITE）、Coherent（COHR）、联钧（3450.TW）</td>
+            <td><span class="dir option">期权</span></td>
+            <td>1.6T 量已下修但 EML 缺口未缓解</td>
+            <td>6 月 LITE 季报；2H26 NVDA Quantum-X 大批量</td>
+            <td class="num"><span class="score mid">70</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>中国人形机器人零部件链</strong></td>
+            <td>Tesla $685M 订单 + 绿的 1Q25 已 30% 占比</td>
+            <td>三花（002050.SZ）、拓普（601689.SH）、绿的（688017.SH）</td>
+            <td><span class="dir watch">观察 / 试错</span></td>
+            <td>订单先行、报表滞后</td>
+            <td>8 月 V3 揭幕；中报关联收入</td>
+            <td class="num"><span class="score low">62</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. Radar ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 雷达表 <span class="deck">/ 全主题扫描</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>新能力 / 新瓶颈</th>
+            <th>谁付钱</th>
+            <th>直接受益</th>
+            <th>受损方</th>
+            <th>最新硬证据</th>
+            <th>未定价证据</th>
+            <th>可交易资产</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>HBM4 / DRAM</strong></td>
+            <td>长上下文+推理→12-Hi/16-Hi HBM；DRAM 产能被服务器抢光</td>
+            <td>NVIDIA → Hyperscaler → 终端企业</td>
+            <td>SK Hynix、Samsung、Micron</td>
+            <td>DDR4 用量大的手机 / PC ODM</td>
+            <td>1Q26 +90~95% QoQ；Hynix 全 2026 售罄</td>
+            <td>韩股 fwd PE 5–7x</td>
+            <td>000660.KS, MU, 005930.KS</td>
+            <td class="num"><span class="score high">90</span></td>
+          </tr>
+          <tr>
+            <td><strong>企业 SSD / NAND</strong></td>
+            <td>推理需 PB 级 SSD；KV cache 卸载</td>
+            <td>Hyperscaler、neoclouds</td>
+            <td>SK Hynix(Solidigm)、Sandisk、Kioxia</td>
+            <td>HDD 部分（Seagate 老 nearline）</td>
+            <td>Kioxia 2026 售罄；wafer +95~100% QoQ</td>
+            <td>SNDK 仍按周期股估值</td>
+            <td>SNDK, MU, 285A.T</td>
+            <td class="num"><span class="score high">78</span></td>
+          </tr>
+          <tr>
+            <td><strong>现场发电（燃机/往复机）</strong></td>
+            <td>电网并网 7 年→ 自建 prime power</td>
+            <td>Hyperscaler、Crusoe、neoclouds</td>
+            <td>GEV、CAT、CMI、三菱重工（7011.T）</td>
+            <td>慢速 IPP、新太阳能</td>
+            <td>GEV +21GW 单季；CAT 排到 2028</td>
+            <td>CAT 数据中心收入占比未拆</td>
+            <td>GEV, CAT, CMI, 7011.T</td>
+            <td class="num"><span class="score high">80</span></td>
+          </tr>
+          <tr>
+            <td><strong>大型电力变压器</strong></td>
+            <td>数据中心+电网更新</td>
+            <td>电网公司、IPP、Hyperscaler</td>
+            <td>Hitachi Energy（6501.T）、Siemens Energy（ENR.DE）、ETN</td>
+            <td>老旧变压器供应商</td>
+            <td>LPT lead time 128 周、GSU 144 周</td>
+            <td>ENR.DE 估值仍低于美股同业</td>
+            <td>ENR.DE, 6501.T, ETN</td>
+            <td class="num"><span class="score high">76</span></td>
+          </tr>
+          <tr>
+            <td><strong>CPO 光互联</strong></td>
+            <td>800G→1.6T→3.2T；功率墙逼 CPO</td>
+            <td>NVIDIA、Broadcom、AWS/META 自研</td>
+            <td>LITE、COHR；台积电 COUPE</td>
+            <td>部分中速可插拔光模块</td>
+            <td>NVDA Quantum-X 1H26 商用</td>
+            <td>1.6T 量被下修但 2027 隐含放量</td>
+            <td>LITE, COHR, ANET, 3450.TW</td>
+            <td class="num"><span class="score mid">70</span></td>
+          </tr>
+          <tr>
+            <td><strong>液冷</strong></td>
+            <td>GB200/Rubin 单柜 &gt; 100kW</td>
+            <td>同 capex</td>
+            <td>VRT、SMCI（DLC）、Asetek</td>
+            <td>传统空调（PUE 旧设计）</td>
+            <td>VRT backlog $12.45B、销售 +30%</td>
+            <td>Nidec（6594.T）未充分定价</td>
+            <td>VRT, 6594.T, SMCI</td>
+            <td class="num"><span class="score mid">65</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI agent / 企业软件</strong></td>
+            <td>Agent 5–30x token / task；可执行工作流</td>
+            <td>企业 IT + AI 预算合并</td>
+            <td>PLTR、NOW、CRM、SNOW</td>
+            <td>纯 seat-based SaaS、单点 RPA</td>
+            <td>PLTR Q1 +85%；NOW Assist $600M ACV</td>
+            <td>NOW 相对 PLTR 估值更未爆发</td>
+            <td>NOW, PLTR, CRM</td>
+            <td class="num"><span class="score low">60</span></td>
+          </tr>
+          <tr>
+            <td><strong>中国人形机器人零部件</strong></td>
+            <td>Tesla V3 2H26 试产</td>
+            <td>特斯拉 / 国内整机厂</td>
+            <td>三花、拓普、绿的、汇川</td>
+            <td>无 AI 化的中速工业机器人</td>
+            <td>三花 $685M 订单；绿的 30% 占比</td>
+            <td>整车厂订单未在报表反映</td>
+            <td>002050.SZ, 601689.SH, 688017.SH</td>
+            <td class="num"><span class="score low">62</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI 眼镜</strong></td>
+            <td>全显示眼镜 7M→20M（3x）</td>
+            <td>消费者 + Meta 补贴</td>
+            <td>EssilorLuxottica（EL.PA）、META</td>
+            <td>传统眼镜店、纯 AR 创业</td>
+            <td>Meta 1H26 出货 7M，2026 全年 20M</td>
+            <td>EssilorLuxottica AI 眼镜业务被埋</td>
+            <td>EL.PA, META, 002241.SZ</td>
+            <td class="num"><span class="score low">64</span></td>
+          </tr>
+          <tr>
+            <td><strong>核电 / SMR</strong></td>
+            <td>7 年并网替代</td>
+            <td>Hyperscaler corporate PPA</td>
+            <td>CEG、VST、TLN、CCJ</td>
+            <td>高碳排 IPP</td>
+            <td>Meta 6.6GW、MSFT 837MW、AWS 1.92GW</td>
+            <td>铀已涨，SMR 估值已透支</td>
+            <td>CCJ, CEG, VST, TLN, LEU</td>
+            <td class="num"><span class="score low">58</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI 推理 ASIC</strong></td>
+            <td>推理 vs 训练比例 5:1</td>
+            <td>Hyperscaler 自研</td>
+            <td>AVGO、MRVL、ALAB、CRDO</td>
+            <td>中端独立 GPU 厂商</td>
+            <td>MRVL 客制 ASIC FY27 +20% guidance</td>
+            <td>MRVL/CRDO 估值压力释放中</td>
+            <td>AVGO, MRVL, ALAB, CRDO</td>
+            <td class="num"><span class="score mid">70</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI 制药</strong></td>
+            <td>AI 设计候选药 → 临床落地</td>
+            <td>药企研发 + AI 预算</td>
+            <td>SDGR、RXRX、TEM</td>
+            <td>传统计算化学 CRO</td>
+            <td>Schrödinger TAK-279 进 III 期</td>
+            <td>多数标的仍亏损，早期</td>
+            <td>RXRX, TEM, SDGR</td>
+            <td class="num"><span class="score low">50</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 4. Deep Dives ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 重点机会深挖 <span class="deck">/ Top 5</span></h2>
+
+    <article class="deepdive">
+      <h3>
+        机会 #1 · SK Hynix — HBM/DRAM/NAND 三杀全售罄
+        <span class="ticker">000660.KS</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>① HBM 全 2026 售罄并已与 NVIDIA 锁定 $8B 年度收入运行率；② DRAM 1Q26 合约价 QoQ +90–95%（TrendForce）；③ NAND wafer 4Q25 QoQ +95–100%；④ 远期 PE 5 倍，处于历史最低区间——需求结构性 + 供给已售罄 + 估值未定价，三者罕见同时存在。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>HBM 全球 62% 份额；通过 Solidigm 同时占据企业 QLC SSD 高端市场；DRAM Top 2。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>长上下文 + 推理 KV cache 把 DRAM/NAND 需求从可选转为刚需。Microsoft 在业绩会公开把 $25B/$190B 资本开支增量归因于"内存涨价"——终端 capex 直接进入存储行业利润表的硬证据。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>Hynix CFO 1Q26 业绩会："2026 HBM 全部售罄"；1Q26 DRAM 合约价 +90–95% QoQ（TrendForce）；Kioxia 2026 全售罄；SSD 交期 &gt; 12 个月；NAND wafer +95–100% QoQ。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>SK Hynix fwd PE 5x，Samsung 7x，处于历史最低区间。Samsung+SK Hynix 占 KOSPI 42%，分析师叙事仍是"周期顶"而非"结构性"。<em>推测：</em>买方按 2018/2022 周期记忆给倍数；这一轮供给侧（70% 晶圆给 HBM）+ 需求侧多年 LTA，结构上不同。</p>
+        </div>
+        <div>
+          <h4>催化剂</h4>
+          <p><strong>1M：</strong>5 月 2Q26 合约价定盘。<strong>3M：</strong>7 月 2Q26 季报；HBM4 良率公告。<strong>6M：</strong>CXMT 国产 DRAM 产能爬坡进度。<strong>12M：</strong>Hynix 2027 HBM 配置确定。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p><em>情景分析：</em>若 fwd PE 从 5x 修复至 8x（历史 30 分位）+ EPS 上修 20%，股价 +60–80%。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① 存储价格自身创造下游需求毁灭；② 韩国资本利得税扩围；③ NVDA 5/28 业绩弱触发科技重定价；④ 中国 CXMT、长江存储产能放量。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>DRAM 现货价连续两周下跌 + Hynix 改口"2Q 部分客户开始去库存"。</p>
+        </div>
+        <div>
+          <h4>仓位 &amp; 对冲</h4>
+          <p>确认仓（数据已转向、估值仍便宜，少见组合）。对冲：做空 AMD 或 SOXX；EWY put 对冲韩股政治风险。右侧已确认。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>
+        机会 #2 · GE Vernova / Caterpillar — 燃机 5 年级 backlog
+        <span class="ticker">GEV / CAT / CMI</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>电网并网 7 年→ hyperscaler 选择自建发电；GEV 1Q26 一个季度签 21GW 燃机，全年 100GW under contract，订单簿排到 2030；CAT 现下单 2028 才能交货。十年级周期。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>GEV = 大燃机三巨头（与西门子能源、三菱重工分庭）。CAT/CMI = 数据中心备用 + 主电源（prime power）大型往复式发动机。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>电网"无解"成 hyperscaler 共识；从备用电源升级为主电源使单台发电机服役时间从 50 小时/年 → 8000 小时/年。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>GEV 1Q26 +21GW 新签，total 100GW；CAT backlog 24+ 月，1Q26 订单延至 2028；GEV 1Q26 总 backlog $163B、Electrification 数据中心订单 $2.4B。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>AIPO ETF YTD +30%，已透支大部分一阶利好。CAT 仍主要被视为基建/采矿股，"AI 数据中心收入占比"市场未明确披露——预期差所在。</p>
+        </div>
+        <div>
+          <h4>催化剂</h4>
+          <p><strong>1M：</strong>GEV/CAT 投资者日。<strong>3M：</strong>1H26 hyperscaler capex 微调。<strong>6M：</strong>PJM 电网新建项目审批。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p><em>情景分析：</em>GEV 拉回 -10% 后 3 个月有望反弹至前高；CAT 数据中心收入若被市场重新拆分识别，倍数 17x→22x。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>宏观衰退、消费者电力下滑、数据中心被迫减载；hyperscaler 资本开支收口；电池储能突破改变发电时长结构。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>连续两个季度燃机 backlog 出现取消；1H26 hyperscaler capex 指引明显下调。</p>
+        </div>
+        <div>
+          <h4>仓位 &amp; 对冲</h4>
+          <p>GEV：试错仓（等回调）。CAT：确认仓（更未定价）。对冲：做空 XLU 或 NEE 以对冲整体公用估值。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>
+        机会 #3 · Sandisk — 推理 SSD 的纯标的
+        <span class="ticker">SNDK</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>推理负载需要 PB 级 SSD；2025–2026 NAND wafer 涨价 ~95% QoQ；Solidigm/Hynix/Kioxia 全产能售罄。SNDK 是少数仍按"周期股"估值的独立 NAND 纯标的。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>消费 + 企业 SSD；与 Kioxia 合资晶圆厂享受同等周期红利。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>长记忆推理 + Vector DB + KV cache 卸载使企业 QLC SSD 从 nice-to-have 变成训练 / 推理标配。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>NAND 4Q25 wafer +95–100% QoQ（TrendForce）；SSD 交期 12+ 月；Kioxia 已售罄。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>分拆后历史交易短，机构覆盖少；多数仍按消费 NAND 周期股建模，未识别 enterprise/AI 营收占比上升。</p>
+        </div>
+        <div>
+          <h4>催化剂</h4>
+          <p><strong>1M：</strong>6 月业绩。<strong>3M：</strong>2H26 PB 级 SSD 出货数据。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p><em>情景分析：</em>EPS 翻倍 + 倍数 8x→14x，股价 +60–100%。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>消费端去库存反向；Hynix/Kioxia 加速产能扩张（2027 后）。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>NAND 现货价见顶下跌 + 出现产能扩张资本开支大跳跃。</p>
+        </div>
+        <div>
+          <h4>仓位 &amp; 对冲</h4>
+          <p>试错仓 → 数据二次确认升至确认仓。对冲：做空 STX 或 WDC（HDD 业务被替代）。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>
+        机会 #4 · Lumentum — 200G EML 唯一量产
+        <span class="ticker">LITE</span>
+        <span class="dir option">期权多头</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>200G EML 是 1.6T 光模块关键瓶颈；LITE 拥有 50–60% 高端 EML 份额，年扩 40% 产能仍跟不上需求。CPO 是长期替代风险，但 1.6T 模块在 2H26–2027 仍要靠 EML 支撑。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>EML（Externally Modulated Laser）芯片 → 可插拔光模块 → 交换机 → GPU 集群。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>800G 全球 2026 出货 49M，1.6T 22M，EML 用量随速率上升而几何放大。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>800G 2026 +85% YoY（Citi via Jukan）；LITE EML 50–60% 份额。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>1.6T 全年量从 2.3M→2.0M 下调，市场对 LITE 信心动摇；但 EML 短缺并未缓解，估值压制存预期差。</p>
+        </div>
+        <div>
+          <h4>催化剂</h4>
+          <p><strong>1M：</strong>6 月业绩。<strong>3M：</strong>NVDA 2H26 财报指引。<strong>6M：</strong>OFC 2027 demo。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p><em>情景分析：</em>若 1.6T 真正起量+EML 紧缺定价，多季度业绩超预期。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>CPO 提前商用稀释外置 EML 需求；硅光替代加速。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>NVIDIA 2H26 财报指引"CPO 全面替代可插拔时间表提前"。</p>
+        </div>
+        <div>
+          <h4>仓位 &amp; 对冲</h4>
+          <p>观察仓 + 期权多头（控制 CPO 替代下行）。对冲：做空 ANET（如认为 CPO 加速）。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>
+        机会 #5 · 中国人形机器人零部件链 — 高赔率左侧观察
+        <span class="ticker">002050.SZ / 601689.SH / 688017.SH</span>
+        <span class="dir watch">观察 / 试错</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>Tesla 已下 $685M 三花订单，2026 起从墨西哥工厂交付；绿的谐波 1Q25 机器人收入占比已升至 30%；V3 2026 夏量产、目标 1M 台/年。这是赔率高、确定性低的左侧主题，必须等中报关联收入披露才能升级仓位。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>执行器（三花）、关节模组（拓普）、谐波减速器（绿的）；绿的为 Tesla 墨西哥工厂独家。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>从概念→Tesla 真实订单；中国供应链在传感器、减速器、伺服三件套环节具结构成本优势。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>$685M 三花 Tesla 订单（2024-10）；拓普计划 50 亿元投资机器人电驱系统；绿的谐波 1Q25 机器人收入占比 30%。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>A 股相关公司股价已涨，但收入端尚未在中报兑现，存在"预期-报表"错位。</p>
+        </div>
+        <div>
+          <h4>催化剂</h4>
+          <p><strong>3M：</strong>8 月 V3 揭幕；8–9 月中报披露关联交易。<strong>6M：</strong>4Q26 Fremont 1M 产线投产。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p><em>情景分析：</em>若 V3 量产 + 订单兑现，相关股票有 50–100% 空间。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>Tesla 量产再次推迟（musk 历史多次 slip）；订单被国产整机厂分流；A 股流动性政策风险。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>Optimus V3 揭幕推迟到 2027；Tesla 改口"不依赖中国供应链"。</p>
+        </div>
+        <div>
+          <h4>仓位 &amp; 对冲</h4>
+          <p>观察仓 + 小仓试错；中报数据确认后升级。对冲：做多 TSLA 作为反向；或做空国内传统工业机器人。</p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 5. Shorts / Impaired ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 做空 / 受损资产</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>受损资产</th>
+            <th>受损原因</th>
+            <th>替代路径</th>
+            <th>开始反映</th>
+            <th>做空可行性</th>
+            <th>风险</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Western Digital HDD（WDC）</td>
+            <td>QLC SSD ASP 加速下跌使 18TB+ HDD 性价比劣化；Solidigm/SNDK PB 级 SSD 出货</td>
+            <td>高密度 QLC SSD</td>
+            <td>1H26–2H26</td>
+            <td>高（独立股、期权充分）</td>
+            <td>HDD nearline 存量需求仍在</td>
+          </tr>
+          <tr>
+            <td>消费 SaaS（pure seat-based）</td>
+            <td>推理 token 价 12 个月跌 67%，agent 替代 seat license</td>
+            <td>Per-action / per-outcome 计价</td>
+            <td>持续</td>
+            <td>中（多元化标的，难精准）</td>
+            <td>大公司转型快</td>
+          </tr>
+          <tr>
+            <td>老旧风冷数据中心 REIT</td>
+            <td>高密度 GPU 不能用风冷；旧 PUE 设计无升级路径</td>
+            <td>新建液冷 / 现场发电 colo</td>
+            <td>2026–2028</td>
+            <td>中（标的少）</td>
+            <td>利率下行时整体 REIT 反弹</td>
+          </tr>
+          <tr>
+            <td>中端独立 GPU 公司</td>
+            <td>Hyperscaler 自研 ASIC 替代；NVDA + 自研双轨制压缩中端</td>
+            <td>自研 ASIC 由 AVGO/MRVL 服务</td>
+            <td>持续</td>
+            <td>低（多为非美上市）</td>
+            <td>国产替代政策保护</td>
+          </tr>
+          <tr>
+            <td>部分中游工业机器人</td>
+            <td>人形吸走资本与人才；估值中枢上移到人形</td>
+            <td>转型不及</td>
+            <td>持续</td>
+            <td>中</td>
+            <td>估值已不高</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 6. Pairs / Cross-market ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 配对交易 / 跨市场传导</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>结构</th>
+            <th>多</th>
+            <th>空</th>
+            <th>核心逻辑</th>
+            <th>催化剂</th>
+            <th>失效条件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>韩股内存 vs 美股一阶</td>
+            <td>SK Hynix（000660.KS）</td>
+            <td>NVDA（轻仓对冲）</td>
+            <td>NVDA fwd PE ~24 已隐含完美执行；Hynix fwd PE 5x 隐含周期顶</td>
+            <td>5/28 NVDA 财报</td>
+            <td>NVDA 暴击+大幅指引上调使两者 reflate</td>
+          </tr>
+          <tr>
+            <td>二阶电力未定价 vs 一阶拥挤</td>
+            <td>CAT、CMI</td>
+            <td>AIPO ETF</td>
+            <td>AIPO 30% YTD 已 priced；CAT/CMI 数据中心收入占比未识别</td>
+            <td>CAT 投资者日；电网新建公告</td>
+            <td>燃机订单大规模取消</td>
+          </tr>
+          <tr>
+            <td>QLC NAND 纯标 vs HDD 衰退</td>
+            <td>SNDK</td>
+            <td>STX</td>
+            <td>QLC PB 级 SSD 替代 nearline HDD 提速；ASP 差距收敛</td>
+            <td>6 月双方季报</td>
+            <td>HDD 反弹（nearline 库存补建）</td>
+          </tr>
+          <tr>
+            <td>美股 capex → 台股传导</td>
+            <td>联钧（3450.TW）、台积电（2330.TW）</td>
+            <td>NVDA（小）</td>
+            <td>美股一阶资金移仓至台股二阶受益方</td>
+            <td>6 月台股月度营收</td>
+            <td>台币波动、政治风险</td>
+          </tr>
+          <tr>
+            <td>真实订单 vs 概念股</td>
+            <td>三花、拓普</td>
+            <td>国内纯概念人形 ETF（KOID 中权重高的非 Tesla 链标的）</td>
+            <td>订单驱动 vs 叙事驱动</td>
+            <td>8 月中报；V3 揭幕</td>
+            <td>整体板块情绪崩塌</td>
+          </tr>
+          <tr>
+            <td>全显示眼镜爆发</td>
+            <td>EssilorLuxottica（EL.PA）、META</td>
+            <td>纯小型 AR 创业（多为私募）</td>
+            <td>Meta+Essilor 双寡头化</td>
+            <td>Meta Connect 2026 9 月</td>
+            <td>Apple 提前推大屏眼镜</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. Watchlist ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 观察名单</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>当前缺什么证据</th>
+            <th>触发买入信号</th>
+            <th>需要跟踪的数据</th>
+            <th>可能标的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI 端侧手机 / PC</td>
+            <td>出货量证据弱，AI PC 单季出货同比仅个位数</td>
+            <td>Apple 推 LLM-on-device、终端用户付费证明</td>
+            <td>IDC PC/手机月度；Apple Intelligence 渗透率</td>
+            <td>AAPL、QCOM、MTK（2454.TW）</td>
+          </tr>
+          <tr>
+            <td>AI 制药 III 期数据</td>
+            <td>临床终点数据尚未读出</td>
+            <td>Schrödinger TAK-279 III 期一线读出</td>
+            <td>clinicaltrials.gov 节点</td>
+            <td>SDGR、RXRX、TEM</td>
+          </tr>
+          <tr>
+            <td>Robotaxi 商业化</td>
+            <td>单位经济性未公开</td>
+            <td>Waymo 公布单车毛利转正</td>
+            <td>Cruise/Waymo 月度英里数</td>
+            <td>TSLA、GOOG（Waymo）</td>
+          </tr>
+          <tr>
+            <td>HBM4E / DDR6 节点</td>
+            <td>量产时间未确定</td>
+            <td>Hynix/Samsung 给出 2027 2H 量产指引</td>
+            <td>业绩会路演</td>
+            <td>MU、Hynix、Samsung</td>
+          </tr>
+          <tr>
+            <td>AI 安全</td>
+            <td>真实付费需求散点状</td>
+            <td>监管驱动强制审计</td>
+            <td>NIST AI RMF 落地</td>
+            <td>CRWD、PANW、ZS</td>
+          </tr>
+          <tr>
+            <td>印度数据中心</td>
+            <td>电力配套不充分</td>
+            <td>印度电网升级 + Adani/Reliance 大型项目落地</td>
+            <td>Adani 公告</td>
+            <td>INDA、Adani Enterprises</td>
+          </tr>
+          <tr>
+            <td>AI agent 计算市场</td>
+            <td>缺乏标准化基准</td>
+            <td>OpenAI/Anthropic 推 agent runtime 计费</td>
+            <td>各家 token 报告</td>
+            <td>NOW、PLTR、AVGO</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 8. Data Gaps ====== -->
+  <section>
+    <h2><span class="section-num">08</span> 数据缺口与必须人工核实</h2>
+    <ol>
+      <li><strong>5/28 NVIDIA Q1 FY27 业绩</strong>是本周报告的最大单点风险。所有一阶估值在数据出来之前不应加重仓位。</li>
+      <li><strong>CAT 数据中心收入占比</strong>仅有 backlog 月数披露，未拆 prime power 占比，需 1H26 投资者日确认；本报告把它当作"未定价"前提之一。</li>
+      <li><strong>2Q26 DRAM 合约价</strong>5 月底定盘。如涨幅明显回落，存储交易需立刻减仓。</li>
+      <li><strong>CPO 替代 1.6T 时间表</strong>NVIDIA 2H26 商用是公开数据，但规模数据未披露；推测 1.6T 与 CPO 在 2026–2028 平行存在。</li>
+      <li><strong>A 股人形机器人关联交易披露</strong>要等 8 月中报才能区分真实订单与产业链炒作。</li>
+      <li><strong>Microsoft "$25B 来自存储涨价"</strong>来自 Tom's Hardware 转述，未在 10-Q 直接出现；需 5 月 MSFT 报告 / 6 月 10-K 二次确认。</li>
+      <li><strong>GE Vernova 80GW 排到 2030</strong>来自 2025 年底投资者日表述，1Q26 已更新到 100GW under contract；具体交付节点最早 2027（aeroderivative），主流 H 级 2029–2030。</li>
+      <li><strong>没有找到可靠证据</strong>：Robotaxi 单车经济性；AI 制药真实"立项→IND→III 期"压缩比例；印度/中东/东南亚数据中心实际并网时间表。</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>算力 / Capex</h4>
+      <ul>
+        <li><a href="https://www.tomshardware.com/tech-industry/big-tech/big-techs-ai-spending-plans-reach-725-billion">Tom's Hardware: $725B big tech capex 2026</a></li>
+        <li><a href="https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html">CNBC: Tech AI spending $700B 2026</a></li>
+        <li><a href="https://www.lksbrothers.com/post/nvidia-q1-2026-earnings-preview-why-wall-street-is-bracing-for-another-blowout-quarter">LKS Brothers: NVIDIA Q1 FY27 preview</a></li>
+        <li><a href="https://investor.tsmc.com/english/quarterly-results/2026/q1">TSMC Q1 2026 Investor Page</a></li>
+        <li><a href="https://en.macromicro.me/blog/tsmc-q1-earnings-call-rare-capacity-expansion-as-the-ai-megatrend-takes-shape">MacroMicro: TSMC CoWoS expansion</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>存储</h4>
+      <ul>
+        <li><a href="https://www.trendforce.com/presscenter/news/20260202-12911.html">TrendForce: 1Q26 DRAM +90–95%</a></li>
+        <li><a href="https://www.trendforce.com/presscenter/news/20260331-12995.html">TrendForce: 2Q26 LTA</a></li>
+        <li><a href="https://www.techspot.com/news/110058-sk-hynix-completely-sells-out-semiconductor-supply-ai.html">TechSpot: Hynix sold out 2026</a></li>
+        <li><a href="https://www.notebookcheck.net/SK-hynix-sells-out-its-DRAM-NAND-and-HBM-chip-supply-to-Nvidia-through-2026-as-AI-demand-outpaces-Samsung-and-Micron-s-capacity.1151402.0.html">Notebookcheck: Hynix sells DRAM/NAND/HBM through 2026</a></li>
+        <li><a href="https://www.trendforce.com/presscenter/news/20260303-12943.html">TrendForce: NAND 4Q25 +23.8% QoQ</a></li>
+        <li><a href="https://www.pcgamer.com/hardware/ssds/memory-manufacturer-kioxia-reveals-its-entire-nand-flash-production-volume-for-2026-is-already-sold-out/">PCGamer: Kioxia 2026 sold out</a></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/semiconductors/hbm-roadmaps-for-micron-samsung-and-sk-hynix-to-hbm4-and-beyond">Tom's Hardware: HBM roadmap</a></li>
+        <li><a href="https://finance.biggo.com/news/InYtB54BpwxG186NCBR_">BigGo Finance: SK Hynix Samsung fwd PE record low</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>网络 / 光模块</h4>
+      <ul>
+        <li><a href="https://iamfabian.substack.com/p/pluggables-power-and-geopolitics">iamfabian: 800G/1.6T optical battle</a></li>
+        <li><a href="https://cignal.ai/2025/05/800gbe-optics-shipments-to-grow-60-in-2025/">Cignal AI: 800G shipments</a></li>
+        <li><a href="https://www.digitimes.com/news/a20251229PD203/siph-cpo-optical-communications-broadcom-nvidia-2026.html">Digitimes: SiPh CPO 2026 breakthrough</a></li>
+        <li><a href="https://www.genaitech.net/p/nvidias-4b-cpo-bet-scaleout-first">Genaitech: NVIDIA $4B CPO</a></li>
+        <li><a href="https://io-fund.com/ai-stocks/nvidia-4b-optical-strategy-cpo-ai-data-centers">IO Fund: NVIDIA optical strategy</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>电力 / 数据中心</h4>
+      <ul>
+        <li><a href="https://www.tipranks.com/news/inside-the-aipo-etf-what-ge-vernova-and-vertivs-q1-earnings-just-revealed-about-the-ai-power-trade">Tipranks: VRT/GEV Q1 2026</a></li>
+        <li><a href="https://www.power-eng.com/gas/turbines/data-centers-drive-record-surge-in-ge-vernova-power-equipment-orders-as-turbine-slots-tighten-through-2030/">Power Engineering: GEV gas turbine surge</a></li>
+        <li><a href="https://www.utilitydive.com/news/ge-vernova-gas-turbine-investor/807662/">Utility Dive: GEV 80GW backlog</a></li>
+        <li><a href="https://avanzaenergy.substack.com/p/how-ai-data-centers-are-driving-a">Avanza: $42B onsite generation</a></li>
+        <li><a href="https://www.powermag.com/transformers-in-2026-shortage-scramble-or-self-inflicted-crisis/">Power Magazine: Transformers 2026</a></li>
+        <li><a href="https://www.industrialsage.com/power-transformer-lead-times-us-grid-shortage/">Industrialsage: Transformer lead times</a></li>
+        <li><a href="https://techcrunch.com/2026/01/09/meta-signs-deals-with-three-nuclear-companies-for-6-plus-gw-of-power/">TechCrunch: Meta 6+ GW nuclear</a></li>
+        <li><a href="https://www.defianceetfs.com/aipo/">Defiance ETF AIPO</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>软件 / Agent / 应用</h4>
+      <ul>
+        <li><a href="https://www.saastr.com/palantir-q1-2026-has-broken-the-enterprise-software-mold-again-revenue-accelerates-to-85-at-6b-arr/">SaaStr: Palantir Q1 2026</a></li>
+        <li><a href="https://www.cxtoday.com/crm/servicenow-q1-2026-ai-platform-results/">CXToday: ServiceNow Q1 2026</a></li>
+        <li><a href="https://www.mykxlg.com/online_features/press_releases/aicc-report-enterprise-token-costs-drop-67-year-over-year-as-multi-model-ai-adoption/article_794d655c-f59b-5921-bbd0-33edb058b05e.html">AICC: Token cost down 67% YoY</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>机器人 / 端侧 / 其他</h4>
+      <ul>
+        <li><a href="https://eu.36kr.com/en/p/3510288514980998">36Kr: Sanhua $685M Tesla order</a></li>
+        <li><a href="https://eu.36kr.com/en/p/3585160415411329">36Kr: Humanoid 2026 mass production</a></li>
+        <li><a href="https://www.tesery.com/blogs/news/elon-musk-reveals-aggressive-production-timeline-for-tesla-optimus-3">Tesla Optimus V3 timeline</a></li>
+        <li><a href="https://www.humanoidsdaily.com/news/goldman-sachs-chinese-suppliers-aggressively-building-humanoid-robot-capacity-ahead-of-orders">Humanoids Daily: Goldman on Chinese suppliers</a></li>
+        <li><a href="https://ir.recursion.com/news-releases/news-release-details/recursion-reports-fourth-quarter-and-full-year-2025-financial">Recursion 4Q25 results</a></li>
+        <li><a href="https://tech-insider.org/apple-n50-smart-glasses-meta-ray-ban-2026/">Tech-Insider: Apple N50 vs Meta 7M units</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>估值 / 市场结构</h4>
+      <ul>
+        <li><a href="https://www.gurufocus.com/term/forward-pe-ratio/NVDA">Gurufocus: NVDA fwd PE</a></li>
+        <li><a href="https://tickeron.com/trading-investing-101/hedge-funds-turn-bearish-on-software-how-short-sellers-are-profitingand-how-ai-traders-respond/">Tickeron: Hedge funds short software</a></li>
+        <li><a href="https://en.sedaily.com/finance/2026/05/07/memory-chip-stocks-still-undervalued-sk-securities-says">SeoulEconomicDaily: Memory chips undervalued</a></li>
+        <li><a href="https://futurumgroup.com/insights/dell-q1-fy-2026-robust-ai-server-sales-guidance-lift-despite-eps-miss/">Futurum: Dell Q1 FY26</a></li>
+        <li><a href="https://futurumgroup.com/insights/hpe-q1-fy-2026-results-show-networking-strength-ai-backlog-and-higher-outlook/">Futurum: HPE Q1 FY26</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"上行空间"为情景分析，不构成对未来回报的精确预测。仓位建议在执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 第 1 期 · 2026-05-10
+</footer>
+
+</body>
+</html>

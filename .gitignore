@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Logs (跑出来的日志不进 git)
+logs/
+*.log
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 环境
+.env
+
+# Python（如果以后加分析脚本）
+__pycache__/
+*.pyc
+.venv/

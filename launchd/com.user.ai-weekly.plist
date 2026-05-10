@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 任务唯一标识符 -->
+    <key>Label</key>
+    <string>com.user.ai-weekly</string>
+
+    <!-- 要跑的脚本（USERNAME 由 install-launchd.sh 替换） -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/USERNAME/ai-investment-weekly/weekly-update.sh</string>
+    </array>
+
+    <!-- 每周一 09:00 运行
+         Weekday: 0 或 7 = 周日, 1 = 周一, ..., 6 = 周六 -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>1</integer>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- 加载时不立即跑（等到下个周一 9:00） -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- 工作目录 -->
+    <key>WorkingDirectory</key>
+    <string>/Users/USERNAME/ai-investment-weekly</string>
+
+    <!-- 标准输出和错误日志 -->
+    <key>StandardOutPath</key>
+    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-stderr.log</string>
+
+    <!-- 让脚本能找到 Homebrew、npm、claude CLI -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/USERNAME/.npm-global/bin</string>
+        <key>HOME</key>
+        <string>/Users/USERNAME</string>
+    </dict>
+</dict>
+</plist>

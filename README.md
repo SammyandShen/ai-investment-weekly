@@ -1,0 +1,262 @@
+# 📊 AI Investment Weekly · macOS 版
+
+每周自动产出一份 AI 产业链投资调研报告（HTML 网页形式），覆盖美 / A / 港 / 台 / 日 / 韩 / 欧 AI 产业链，从第一性原理识别投资转折点和未定价资产。
+
+**完全免费** —— 用你已有的 Claude Code Pro 订阅在本机生成内容，不需要 API key，不需要服务器，前端通过 GitHub Pages 永久托管。
+
+---
+
+## 🎯 整体工作原理
+
+```
+你的 Mac（每周一 9:00 自动唤醒并执行）
+    │
+    ├─ ① 调用 claude --print（你的 Pro 订阅）按 skill/SKILL.md 联网调研
+    │     ↓
+    │     skill 联网搜 capex / 内存合约价 / 燃机 backlog / 订单 /
+    │     估值 / 持仓等硬数据，按方法论评分，写入 docs/reports/<日期>/index.html
+    │     并更新 docs/index.html 的归档列表
+    │
+    └─ ② git push → GitHub Pages 自动更新
+                     │
+                     ▼
+              访问固定网址查看
+              https://你的GitHub用户名.github.io/ai-investment-weekly/
+```
+
+**为什么用 macOS launchd 而不是 GitHub Actions：** 因为 Claude Code Pro 订阅认证在你本地 Mac 上，云端 Actions 没法用你的订阅。launchd 是 macOS 原生的"cron 替代品"，比 cron 更可靠：电脑睡眠时跳过的任务，唤醒后会自动补跑。
+
+---
+
+## 📦 部署步骤（约 15 分钟）
+
+### 第 0 步：前提检查
+
+打开**终端**（Spotlight 搜 Terminal），逐条运行：
+
+```bash
+which claude     # 应输出 claude 路径
+claude --version # 应输出版本号
+git --version    # 应输出 git 版本
+```
+
+如果 `claude` 找不到：
+
+```bash
+npm install -g @anthropic-ai/claude-code
+claude login   # 用你的 Pro 账号登录（一次性）
+```
+
+### 第 1 步：放置项目
+
+把整个 `ai-investment-weekly` 文件夹放到家目录下：
+
+```bash
+# 假设当前在 ~/Documents/CC/
+cp -r ~/Documents/CC/ai-investment-weekly ~/ai-investment-weekly
+cd ~/ai-investment-weekly
+```
+
+> 必须放在 `~/ai-investment-weekly`（即 `/Users/<你的用户名>/ai-investment-weekly`）。launchd plist 和脚本默认从这里找。如果想换位置，需要同步改 `weekly-update.sh` 顶部的 `PROJECT_DIR` 与 `launchd/com.user.ai-weekly.plist`。
+
+### 第 2 步：在 GitHub 上创建仓库
+
+1. 登录 [github.com](https://github.com) → New repository
+2. 仓库名：`ai-investment-weekly`（**用这个名**，否则后面网址会乱）
+3. 选 **Public**
+4. **不要**勾选 "Initialize with README"
+5. Create
+
+### 第 3 步：把项目推到 GitHub
+
+```bash
+cd ~/ai-investment-weekly
+git init
+git add .
+git commit -m "Initial commit: AI investment weekly skeleton + issue 1"
+
+# 把 YOUR_USERNAME 换成你的 GitHub 用户名
+git remote add origin https://github.com/YOUR_USERNAME/ai-investment-weekly.git
+git branch -M main
+git push -u origin main
+```
+
+第一次推送可能需要登录授权（Mac 弹窗会引导你完成）。
+
+### 第 4 步：启用 GitHub Pages
+
+1. GitHub 仓库页 → **Settings** → 左侧 **Pages**
+2. **Source** 选 `Deploy from a branch`
+3. **Branch** 选 `main`，文件夹选 `/docs`
+4. **Save**
+5. 等 1–2 分钟，刷新页面，会显示一个网址：
+   `https://YOUR_USERNAME.github.io/ai-investment-weekly/`
+
+**这就是你的应用永久访问地址。** Mac/iPhone 浏览器都能开，加到主屏幕即可像 App 一样用。
+
+### 第 5 步：手动跑一次测试
+
+```bash
+cd ~/ai-investment-weekly
+bash weekly-update.sh
+```
+
+第一次跑预计 3–8 分钟（联网搜索+生成 HTML+git push）。看到 "🎉 完成" 就成了。
+
+常见错误：
+- **claude 命令找不到** → 看第 0 步
+- **git push 失败** → 检查 GitHub 仓库地址和登录状态
+- **skill 没找到 docs/** → 确认你在 `~/ai-investment-weekly` 目录里跑的脚本
+
+### 第 6 步：安装定时任务
+
+```bash
+bash install-launchd.sh
+```
+
+输出 "✅ 定时任务已加载" 即成功。从此每周一上午 9:00 自动跑。
+
+---
+
+## 🛠 日常运维
+
+```bash
+cd ~/ai-investment-weekly
+
+# 立即手动跑一次（不等下周一）
+bash install-launchd.sh test
+
+# 查看任务状态 + 最近日志
+bash install-launchd.sh status
+
+# 看最新日志
+tail -f logs/$(date +%Y-%m-%d).log
+
+# 卸载定时任务
+bash install-launchd.sh remove
+```
+
+---
+
+## ⚙️ 自定义
+
+### 改运行时间 / 频率
+
+编辑 `launchd/com.user.ai-weekly.plist`：
+
+```xml
+<key>StartCalendarInterval</key>
+<dict>
+    <key>Weekday</key>
+    <integer>1</integer>      <!-- 1=周一, 0/7=周日, 2=周二, ... -->
+    <key>Hour</key>
+    <integer>9</integer>      <!-- 24 小时制 -->
+    <key>Minute</key>
+    <integer>0</integer>
+</dict>
+```
+
+改完重装：
+
+```bash
+bash install-launchd.sh remove
+bash install-launchd.sh install
+```
+
+### 改研究方向 / 主题
+
+编辑 `skill/SKILL.md` 的 "Step 2 — Scan for new capability" 表格，加减主题。
+深度参数（评分细则、来源优先级）在 `skill/references/methodology.md`。
+
+### 改报告样式
+
+编辑 `docs/assets/styles.css`。所有当期与历史报告共享同一份样式，改一次全站统一。
+
+### 改 HTML 模板结构
+
+编辑 `skill/assets/template.html`。模板里 `<!-- FILL: ... -->` 是占位符，skill 在生成时会替换。
+
+---
+
+## 🐛 常见问题
+
+**Q: 周一 9:00 时电脑在睡眠，会漏跑吗？**
+A: 不会。`launchd` 在唤醒后会自动补跑（这是它比 cron 强的地方）。
+
+**Q: 周一全天都在关机怎么办？**
+A: 那确实会漏。次日开机后手动 `bash install-launchd.sh test` 即可。或在系统设置 → 节能里开"插电时不睡眠"。
+
+**Q: Pro 订阅每周用一次会不会触发限流？**
+A: 一次调研约 30–80 个 web 搜索 + 一次大文档生成。Pro 套餐每 5 小时窗口对此完全够用。
+
+**Q: 我手机上想看怎么办？**
+A: Safari 打开 `https://YOUR_USERNAME.github.io/ai-investment-weekly/` → 分享 → "添加到主屏幕"。
+
+**Q: 上一期报告内容不满意，怎么重跑？**
+A: 删掉 `docs/reports/<日期>/` 目录，再 `bash install-launchd.sh test`。注意首页 `docs/index.html` 的归档列表里那条也要手动删一下，否则会重复。
+
+**Q: skill 偶尔没生成报告就 push 了空 commit？**
+A: 不会。`weekly-update.sh` 会检查 `docs/` 是否真的有改动，没改动会跳过 commit。如果 skill 跑挂了（网络/限流），看 `logs/<日期>.log` 排查。
+
+**Q: 我笔记本带去外地用，会有问题吗？**
+A: 不会，只要联网+开机，定时任务正常跑。
+
+**Q: 我想要回测/检索过去某期的数据怎么办？**
+A: 报告本身就是 HTML，从 git 历史能完整恢复。如果以后想要 JSON 形式的结构化数据，可以在 skill 里加输出 `report.json` 的步骤（README 末尾"下一步"里有提）。
+
+---
+
+## 📂 文件结构
+
+```
+ai-investment-weekly/
+├── README.md                       # 本文件
+├── .gitignore
+├── weekly-update.sh                # 主脚本（每周跑一次）
+├── install-launchd.sh              # 定时任务安装/卸载
+├── launchd/
+│   └── com.user.ai-weekly.plist    # macOS 定时任务模板
+├── logs/                           # 运行日志（自动生成，不进 git）
+├── skill/                          # 调研 skill（本地工具，不部署到 Pages）
+│   ├── SKILL.md                    # skill 触发规则、工作流、硬性约束
+│   ├── references/
+│   │   └── methodology.md          # 完整方法论 + 评分细则
+│   └── assets/
+│       └── template.html           # HTML 报告模板
+└── docs/                           # → GitHub Pages 部署目录
+    ├── index.html                  # 网站首页（研究框架 + 归档列表）
+    ├── assets/
+    │   └── styles.css              # 共享样式
+    └── reports/
+        └── 2026-05-10/
+            └── index.html          # 第 1 期
+```
+
+---
+
+## 🧠 设计选择
+
+- **静态 HTML，不用框架。** 这是研究简报不是 Web app；少依赖 = 少维护，10 年后还能打开。
+- **样式集中在 `docs/assets/styles.css`。** 改一次设计全站统一。
+- **首页归档用 `<!-- ARCHIVE-START / END -->` 注释做锚点。** 让 skill 能精确插入新期，不会覆盖首页其他内容。
+- **报告之间不互相依赖。** 删掉某一期不会影响其他期。
+- **本地跑而非 cloud Actions。** 因为 Claude Pro 订阅在本地，cloud 跑不了；而且本地跑更省（不消耗 API 额度）。
+- **每周而非每天。** 投资研究的边际信息量周更比日更高得多；日更会被噪声淹没。
+
+---
+
+## 🚀 下一步可以加什么（按优先级）
+
+1. **跨期 diff 视图**：让首页除了归档列表外，再展示"这周 vs 上周"评分变动榜。
+2. **简单 RSS 输出**：方便订阅器接入。
+3. **图表化**：评分分布、主题热度时间序列（需引入 d3 或 echarts，权衡复杂度）。
+4. **JSON 数据层**：每期同时输出 `report.json`，便于回测 / 检索。
+5. **多研究员视角**：同一周分别用「保守」「激进」「宏观」三种视角各跑一份。
+
+但只在你真的想要这些之前再做。MVP 已经够用。
+
+---
+
+## 📝 License
+
+MIT
