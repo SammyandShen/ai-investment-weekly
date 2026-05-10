@@ -23,7 +23,7 @@ Trigger when the user asks for: AI investment research, AI value chain weekly, A
 **Required output: exactly one HTML file** rendered from `skill/assets/template.html`, saved to:
 - If the user gives an explicit path: write there.
 - Otherwise default: `<repo-root>/docs/reports/<YYYY-MM-DD>/index.html` where:
-  - `<repo-root>` is the project root — the directory containing `docs/` and `skill/`. If invoked from inside the project (cwd is the project root or anywhere inside it), resolve the project root by walking up until a directory containing both `docs/` and `skill/` is found. If unresolvable, fall back to `~/Documents/CC/ai-investment-weekly/`.
+  - `<repo-root>` is the project root — the directory containing both `docs/` and `skill/`. If invoked from inside the project (cwd is the project root or anywhere inside it), resolve the project root by walking up until such a directory is found. If unresolvable (skill triggered from an unrelated working directory), fall back to `~/ai-investment-weekly/` — that is the deployed copy used by the weekly cron and `git push`. Do NOT write to `~/Documents/CC/ai-investment-weekly/` even if it still exists; that is a stale development snapshot.
   - `<YYYY-MM-DD>` is **today's actual date** (use the system date, not training data).
 - After writing the report, ALSO update `<repo-root>/docs/index.html` to add the new issue to the archive list. Find the `<!-- ARCHIVE-START -->` / `<!-- ARCHIVE-END -->` markers and insert one new `<li>` at the top of the list (the newest issue is always first).
 
