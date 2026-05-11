@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Investment Weekly · 买方科技产业链周报</title>
+<title>AI Investment Weekly · 买方科技产业链周报 + 周度复盘</title>
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -13,30 +13,51 @@
     <h1><a href="index.html">AI Investment Weekly</a></h1>
     <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
   </div>
+  <nav class="nav">
+    <a href="index.html" class="active">首页</a>
+    <a href="index.html#reports">产业链周报</a>
+    <a href="index.html#reviews">市场周度复盘</a>
+    <a href="portfolio.html">持仓与观察</a>
+  </nav>
 </header>
 
 <main class="page">
 
-  <h1 class="report-title">扫描 AI 产业转折点，找到尚未被定价的硬数据。</h1>
-  <p class="report-subtitle">每周一期。从第一性原理出发，覆盖美 / A / 港 / 台 / 日 / 韩 / 欧 AI 产业链，识别新能力、新瓶颈、新付费方与未定价资产。</p>
+  <h1 class="report-title">扫描 AI 转折点，复盘宏观周期。</h1>
+  <p class="report-subtitle">每周两期：周一出"AI 产业链转折点周报"，周六出"市场周度复盘"。覆盖美 / A / 港 / 台 / 日 / 韩 / 欧。所有关键事实必须标源、不允许编造、没有明确机会就说没有。</p>
 
   <section>
-    <h2><span class="section-num">∞</span> 这是什么</h2>
-    <p>每周一份独立、自洽、可阅读的研究简报。每期围绕同一套框架展开：</p>
-    <ul>
-      <li><strong>找新能力</strong> — 最近 30 / 90 / 180 天 AI 模型、产品、芯片、机器人、医药、端侧设备的新进展。</li>
-      <li><strong>找新瓶颈</strong> — 这些新能力会消耗什么（算力、内存、存储、网络、电力、散热、传感器、机械部件、数据、实验室能力、制造能力、认证能力）。</li>
-      <li><strong>找付费方</strong> — 谁必须付钱，区分真实买家、概念受益者、间接受益者。</li>
-      <li><strong>找供需变化</strong> — 订单、价格、交期、库存、产能、资本开支、管理层指引的硬数据。</li>
-      <li><strong>找利润池</strong> — 哪个环节有定价权、稀缺产能、客户认证、技术壁垒。</li>
-      <li><strong>找市场预期差</strong> — 股价、估值、EPS 预测、机构持仓、新闻热度。</li>
-      <li><strong>找交易表达</strong> — 多 / 空 / 配对 / 期权 / ETF / 跨市场传导 / 观察。</li>
-    </ul>
-    <p>每个机会按 100 分制评分。≥80 重点交易候选；65–79 观察 / 试错；&lt;65 暂时无明确交易价值。</p>
+    <h2><span class="section-num">∞</span> 两种产出</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>产出</th>
+            <th>触发</th>
+            <th>焦点</th>
+            <th>主要回答的问题</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>产业链周报</strong></td>
+            <td>每周一 09:00</td>
+            <td>AI 产业转折点（中长期 1–24 月）</td>
+            <td>新能力 / 新瓶颈 / 谁付钱 / 供需变化 / 利润池 / 预期差 / 交易表达</td>
+          </tr>
+          <tr>
+            <td><strong>市场周度复盘</strong></td>
+            <td>每周六 10:00</td>
+            <td>宏观周期 + 我的持仓 + 下周计划（即将 1 周）</td>
+            <td>本周发生什么 / 当前像互联网泡沫哪一年 / 下周三种情景 / 持仓怎么处理 / 8 条行动 / 10 个转折点</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
-  <section>
-    <h2><span class="section-num">▦</span> 历史归档</h2>
+  <section id="reports">
+    <h2><span class="section-num">▦</span> 产业链周报 <span class="deck">/ Weekly Reports</span></h2>
     <ul class="archive">
       <!-- ARCHIVE-START -->
       <li>
@@ -54,9 +75,21 @@
     </ul>
   </section>
 
+  <section id="reviews">
+    <h2><span class="section-num">◔</span> 市场周度复盘 <span class="deck">/ Weekend Reviews</span></h2>
+    <ul class="archive">
+      <!-- REVIEW-ARCHIVE-START -->
+      <li style="grid-template-columns: 1fr; color: var(--ink-muted); font-family: var(--sans); font-size: 14px;">
+        还没有复盘 — 第一期会在下个周六（10:00 CST）由 launchd 自动产出。也可以手动 <code>bash install-launchd.sh test weekend</code> 提前跑一次。
+      </li>
+      <!-- REVIEW-ARCHIVE-END -->
+    </ul>
+  </section>
+
   <section>
     <h2><span class="section-num">⬢</span> 研究框架</h2>
-    <h3>转折点的定义</h3>
+
+    <h3>产业链周报 · 转折点的定义</h3>
     <p>本周报中的"转折点"必须满足以下条件中的多数：</p>
     <ol>
       <li>新 AI 能力出现，使新硬件 / 软件 / 数据 / 能源 / 网络 / 存储 / 设备 / 服务需求从可选变成刚性。</li>
@@ -67,24 +100,33 @@
       <li>存在可交易资产，且流动性足够。</li>
     </ol>
 
-    <h3>硬性要求</h3>
+    <h3>市场周度复盘 · 七段固定结构</h3>
+    <ol>
+      <li>本周总判断（市场状态 + AI 泡沫阶段概率分布 + 一句话结论）</li>
+      <li>本周真正重要的 5 件事</li>
+      <li>泡沫评分模型（11 维度 × 5 分 = 55 分；vs 上周变化；最像哪一年；反证条件）</li>
+      <li>我的持仓周度处理（读 <code>data/portfolio.json</code>）</li>
+      <li>下周三种情景计划（继续上涨 / 顶部震荡 / 下跌或破裂）</li>
+      <li>下周交易行动清单（最多 8 条，每条含触发/失效/时间周期）</li>
+      <li>下周必须盯的转折点（最多 10 条）</li>
+    </ol>
+
+    <h3>硬性要求（两类产出都适用）</h3>
     <ul>
-      <li>不允许编造数据。</li>
-      <li>不允许只给概念股清单。</li>
-      <li>不允许只讲宏大叙事。</li>
-      <li>不允许把"AI 相关"等同于"值得买"。</li>
-      <li>所有关键事实必须标注来源。</li>
-      <li>推测必须标注"推测"或"情景分析"。</li>
-      <li>没有明确交易机会时直接说没有，并说明缺什么数据。</li>
+      <li>不允许编造数据。所有关键事实必须标注来源 + 发布日期。</li>
+      <li>不允许只给概念股清单 / 只讲宏大叙事 / 把"AI 相关"等同于"值得买"。</li>
+      <li>每个交易建议必须有触发条件、失效条件、时间周期。</li>
+      <li>没有明确机会时直接说"没有明确交易机会"，并说明缺什么数据。</li>
+      <li>事实 / 推论 / 概率情景 / 行动建议必须分开标注。</li>
     </ul>
   </section>
 
-  <p class="disclaimer">本网站非投资建议，仅为研究框架与公开数据汇总。所有报告中的"上行空间"为情景分析，不构成对未来回报的精确预测。</p>
+  <p class="disclaimer">本网站非投资建议，仅为研究框架与公开数据汇总。所有报告中的"上行空间"和"概率情景"均为情景分析，不构成对未来回报的精确预测。</p>
 
 </main>
 
 <footer class="site-footer">
-  AI Investment Weekly · 由 Claude Code skill「ai-turning-points」每周生成
+  AI Investment Weekly · 由 Claude Code skills「ai-turning-points」「weekly-market-review」每周生成
 </footer>
 
 </body>

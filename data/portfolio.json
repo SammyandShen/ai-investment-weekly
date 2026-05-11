@@ -1,0 +1,48 @@
+{
+  "$schema": "持仓与观察清单的真源（source of truth）。skill weekly-market-review 读这份。",
+  "$how_to_edit": "两种方式：(1) 直接编辑这个 JSON 文件 (2) 在 docs/portfolio.html 网页里改完点导出，把下载的 JSON 覆盖本文件。改完别忘 git commit。",
+  "$last_updated": "2026-05-10",
+
+  "portfolio": [
+    {
+      "ticker": "NVDA",
+      "direction": "long",
+      "weight_pct": 0,
+      "cost_basis": null,
+      "stop_loss": null,
+      "target": null,
+      "notes": "示例条目，请改成真实持仓或删除"
+    }
+  ],
+
+  "watchlist": {
+    "indices": ["SPX", "NDX", "QQQ", "IXIC", "SOX", "SMH", "IWM"],
+    "ai_majors": ["NVDA", "AMD", "AVGO", "TSM", "ASML", "ANET", "DELL", "SMCI", "ORCL", "MSFT", "GOOGL", "AMZN", "META", "PLTR", "SNOW", "DDOG", "MDB", "NOW", "CRM", "TSLA"],
+    "broad_etfs": ["QQQ", "SPY", "IWM", "SOXX", "SMH"],
+    "private_and_themes": [
+      "OpenAI",
+      "Anthropic",
+      "SpaceX",
+      "CoreWeave",
+      "Nebius",
+      "xAI",
+      "AI 私募融资",
+      "AI IPO 进度",
+      "AI 数据中心融资",
+      "AI 算力租赁价格",
+      "AI 供应链订单",
+      "AI 信用风险"
+    ]
+  },
+
+  "always_check": {
+    "vol_credit": ["VIX", "VVIX", "put/call ratio", "10Y", "2Y", "real rates", "DXY", "HY OAS", "IG OAS", "CDX HY"],
+    "breadth": ["advance/decline", "52-week highs/lows", "Mag 7 contribution", "AI stock contribution"],
+    "ai_capex_names": ["MSFT", "GOOGL", "AMZN", "META", "ORCL", "TSLA", "xAI", "OpenAI", "Anthropic", "CoreWeave", "Nebius"],
+    "ai_supply_names": ["NVDA", "AMD", "AVGO", "TSM", "ASML", "Hynix", "MU", "ANET", "DELL", "SMCI"],
+    "ai_demand_signals": ["cloud AI revenue", "enterprise AI ARR", "model API revenue", "ChatGPT/Claude/Gemini usage"],
+    "ai_unit_economics": ["inference cost", "GPU rental price", "cloud GM", "AI service GM", "depreciation"],
+    "funding_ipo_signals": ["SpaceX IPO filings", "OpenAI IPO/raise", "Anthropic IPO/raise", "secondary market price", "lockup", "private valuation cuts"],
+    "regulatory_geo": ["chip export controls", "antitrust", "data regulation", "power approval", "geo conflict"]
+  }
+}

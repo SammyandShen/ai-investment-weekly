@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>持仓与观察清单 · AI Investment Weekly</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* portfolio editor specific */
+  .editor input, .editor select, .editor textarea {
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 6px 8px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: var(--paper);
+    color: var(--ink);
+    width: 100%;
+  }
+  .editor input:focus, .editor select:focus, .editor textarea:focus {
+    outline: none;
+    border-color: var(--accent-2);
+    box-shadow: 0 0 0 2px rgba(30,58,138,0.15);
+  }
+  .editor table { font-size: 13px; }
+  .editor table td { padding: 6px 4px; }
+  .editor table th { font-size: 11px; }
+  .editor .num-input { text-align: right; font-variant-numeric: tabular-nums; }
+  .editor .row-del {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-muted);
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 11px;
+  }
+  .editor .row-del:hover { color: var(--accent); border-color: var(--accent); }
+
+  .btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 18px 0 8px;
+  }
+  .btn {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 2px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.12s, color 0.12s;
+  }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+  .btn.primary { background: var(--accent-2); color: white; border-color: var(--accent-2); }
+  .btn.primary:hover { background: #1e2c69; border-color: #1e2c69; }
+  .btn.danger { color: var(--accent); border-color: var(--accent); }
+  .btn.danger:hover { background: var(--accent); color: white; }
+
+  .add-row {
+    background: transparent;
+    border: 1px dashed var(--rule);
+    color: var(--ink-muted);
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 13px;
+    margin-top: 8px;
+    border-radius: 2px;
+  }
+  .add-row:hover { border-color: var(--accent-2); color: var(--accent-2); }
+
+  .watch-group {
+    margin: 16px 0;
+  }
+  .watch-group label {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .watch-group textarea {
+    min-height: 60px;
+    resize: vertical;
+    font-family: var(--mono);
+    line-height: 1.55;
+  }
+
+  .status-bar {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-2);
+    margin: 14px 0;
+    padding: 12px 14px;
+    background: #fafafa;
+    border-left: 3px solid var(--accent-2);
+    border-radius: 2px;
+  }
+  .status-bar.dirty { border-left-color: var(--amber); }
+  .status-bar.dirty::before { content: "● "; color: var(--amber); font-size: 18px; vertical-align: -2px; }
+
+  details.help {
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin: 16px 0;
+    font-family: var(--sans);
+    font-size: 13px;
+  }
+  details.help summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--amber);
+  }
+  details.help[open] summary { margin-bottom: 8px; }
+  details.help code {
+    background: #fef3c7;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+
+  .json-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .json-modal.show { display: flex; }
+  .json-modal .modal-box {
+    background: var(--paper);
+    padding: 24px;
+    border-radius: 4px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .json-modal h3 { margin-top: 0; font-family: var(--serif); }
+  .json-modal textarea {
+    flex: 1;
+    width: 100%;
+    min-height: 300px;
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 10px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+  .json-modal .modal-actions { display: flex; gap: 8px; margin-top: 12px; justify-content: flex-end; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html">首页</a>
+    <a href="index.html#reports">产业链周报</a>
+    <a href="index.html#reviews">市场周度复盘</a>
+    <a href="portfolio.html" class="active">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page editor">
+
+  <h1 class="report-title">持仓与观察清单</h1>
+  <p class="report-subtitle">每周六的复盘任务会读取这份数据。修改后必须导出 JSON 并覆盖 <code>data/portfolio.json</code>，否则定时任务读到的是旧版本。</p>
+
+  <div id="statusBar" class="status-bar">数据加载中...</div>
+
+  <details class="help">
+    <summary>怎么把网页修改同步到文件 / 跨设备使用</summary>
+    <p>这个网页只在你的浏览器本地保存（localStorage），<strong>不会自动写到磁盘</strong>。同步流程：</p>
+    <ol>
+      <li>在网页上编辑持仓与观察清单</li>
+      <li>点 <strong>导出 JSON</strong>，浏览器会下载 <code>portfolio.json</code></li>
+      <li>把下载的文件覆盖项目里的 <code>data/portfolio.json</code></li>
+      <li><code>cd ~/ai-investment-weekly && git add data/portfolio.json && git commit -m "Update portfolio" && git push</code></li>
+    </ol>
+    <p>第一次使用、或换浏览器/设备时，可以点 <strong>导入 JSON</strong> 把当前 <code>data/portfolio.json</code> 的内容粘贴进来。</p>
+    <p><strong>隐私：</strong>持仓数据保存在你的本地浏览器和本地仓库，不会被 GitHub Pages 公开（<code>data/</code> 目录不在 <code>docs/</code> 下，不被网站服务）。</p>
+  </details>
+
+  <!-- ====== 持仓 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 持仓 <span class="deck">/ Positions</span></h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:90px;">代码</th>
+            <th style="width:80px;">方向</th>
+            <th style="width:90px;" class="num">仓位 %</th>
+            <th style="width:110px;" class="num">成本价</th>
+            <th style="width:110px;" class="num">止损价</th>
+            <th style="width:110px;" class="num">目标价</th>
+            <th>备注</th>
+            <th style="width:50px;"></th>
+          </tr>
+        </thead>
+        <tbody id="portfolioBody">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+    </div>
+    <button class="add-row" id="addRowBtn">+ 添加持仓</button>
+  </section>
+
+  <!-- ====== 观察清单 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 观察清单 <span class="deck">/ Watchlist</span></h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">每组以逗号或换行分隔。Skill 会按这些清单跑数据。</p>
+
+    <div class="watch-group">
+      <label>指数 (Indices)</label>
+      <textarea id="watchIndices" placeholder="SPX, NDX, QQQ, IXIC, SOX, SMH, IWM"></textarea>
+    </div>
+
+    <div class="watch-group">
+      <label>AI 龙头</label>
+      <textarea id="watchAiMajors" placeholder="NVDA, AMD, AVGO, ..."></textarea>
+    </div>
+
+    <div class="watch-group">
+      <label>宽基 ETF</label>
+      <textarea id="watchBroadEtfs" placeholder="QQQ, SPY, IWM, ..."></textarea>
+    </div>
+
+    <div class="watch-group">
+      <label>私募 / 主题（每行一个或逗号分隔）</label>
+      <textarea id="watchPrivate" placeholder="OpenAI, Anthropic, SpaceX, AI 数据中心融资, ..."></textarea>
+    </div>
+  </section>
+
+  <!-- ====== 操作 ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 同步</h2>
+    <div class="btn-row">
+      <button class="btn primary" id="exportBtn">导出 JSON （下载文件）</button>
+      <button class="btn" id="copyBtn">复制 JSON 到剪贴板</button>
+      <button class="btn" id="importBtn">导入 JSON</button>
+      <button class="btn danger" id="resetBtn">重置为示例</button>
+    </div>
+    <p style="font-family:var(--sans);font-size:12px;color:var(--ink-muted);margin-top:6px;">
+      所有改动都自动保存在浏览器 localStorage。导出后请覆盖 <code>data/portfolio.json</code> 并 <code>git commit</code>。
+    </p>
+  </section>
+
+  <p class="disclaimer">本工具仅在你的本地浏览器运行。持仓数据不会上传到任何服务器。</p>
+
+</main>
+
+<!-- Import modal -->
+<div class="json-modal" id="importModal">
+  <div class="modal-box">
+    <h3>导入 JSON</h3>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-2);margin:0 0 10px;">
+      把 <code>data/portfolio.json</code> 的内容粘贴到下面，点确认。会覆盖当前编辑器内容。
+    </p>
+    <textarea id="importTextarea" placeholder='{"portfolio": [...], "watchlist": {...}}'></textarea>
+    <div class="modal-actions">
+      <button class="btn" id="importCancelBtn">取消</button>
+      <button class="btn primary" id="importConfirmBtn">确认导入</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  AI Investment Weekly · 持仓编辑器
+</footer>
+
+<script>
+'use strict';
+
+// ============= 默认 / 示例数据 =============
+const DEFAULT_DATA = {
+  portfolio: [
+    {
+      ticker: "NVDA",
+      direction: "long",
+      weight_pct: 0,
+      cost_basis: null,
+      stop_loss: null,
+      target: null,
+      notes: "示例条目，请改成真实持仓或删除"
+    }
+  ],
+  watchlist: {
+    indices: ["SPX", "NDX", "QQQ", "IXIC", "SOX", "SMH", "IWM"],
+    ai_majors: ["NVDA","AMD","AVGO","TSM","ASML","ANET","DELL","SMCI","ORCL","MSFT","GOOGL","AMZN","META","PLTR","SNOW","DDOG","MDB","NOW","CRM","TSLA"],
+    broad_etfs: ["QQQ","SPY","IWM","SOXX","SMH"],
+    private_and_themes: [
+      "OpenAI","Anthropic","SpaceX","CoreWeave","Nebius","xAI",
+      "AI 私募融资","AI IPO 进度","AI 数据中心融资","AI 算力租赁价格","AI 供应链订单","AI 信用风险"
+    ]
+  }
+};
+
+const STORAGE_KEY = 'aiweekly.portfolio.v1';
+
+// ============= 状态 =============
+let state = loadState();
+let dirty = false;  // localStorage vs file 同步状态由用户判断；这里只跟踪 "本次会话有改动"
+
+// ============= 加载 / 保存 =============
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) { console.warn('localStorage parse failed, using default', e); }
+  return JSON.parse(JSON.stringify(DEFAULT_DATA));
+}
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  dirty = true;
+  renderStatus();
+}
+
+// ============= 渲染 =============
+function renderStatus() {
+  const bar = document.getElementById('statusBar');
+  const lastEdit = new Date().toLocaleString('zh-CN');
+  if (dirty) {
+    bar.className = 'status-bar dirty';
+    bar.innerHTML = `<strong>有未导出改动。</strong> 自动保存在浏览器（最近编辑：${lastEdit}）。修改完别忘 <strong>导出 JSON</strong> 并覆盖 <code>data/portfolio.json</code>。`;
+  } else {
+    bar.className = 'status-bar';
+    const n = state.portfolio.length;
+    bar.innerHTML = `当前 ${n} 个持仓 · 编辑器从浏览器 localStorage 加载。如需同步文件版本，点 <strong>导入 JSON</strong>。`;
+  }
+}
+
+function renderPortfolio() {
+  const tbody = document.getElementById('portfolioBody');
+  tbody.innerHTML = '';
+  state.portfolio.forEach((row, idx) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><input type="text" data-field="ticker" value="${escapeAttr(row.ticker || '')}" placeholder="NVDA"></td>
+      <td>
+        <select data-field="direction">
+          <option value="long" ${row.direction==='long'?'selected':''}>多 long</option>
+          <option value="short" ${row.direction==='short'?'selected':''}>空 short</option>
+        </select>
+      </td>
+      <td><input type="number" class="num-input" data-field="weight_pct" value="${row.weight_pct ?? ''}" step="0.1" min="0" max="100" placeholder="0"></td>
+      <td><input type="number" class="num-input" data-field="cost_basis" value="${row.cost_basis ?? ''}" step="0.01" placeholder="—"></td>
+      <td><input type="number" class="num-input" data-field="stop_loss" value="${row.stop_loss ?? ''}" step="0.01" placeholder="—"></td>
+      <td><input type="number" class="num-input" data-field="target" value="${row.target ?? ''}" step="0.01" placeholder="—"></td>
+      <td><input type="text" data-field="notes" value="${escapeAttr(row.notes || '')}" placeholder="备注"></td>
+      <td><button class="row-del" data-idx="${idx}">删</button></td>
+    `;
+    tbody.appendChild(tr);
+
+    tr.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', (e) => {
+        const field = e.target.dataset.field;
+        let val = e.target.value;
+        if (['weight_pct','cost_basis','stop_loss','target'].includes(field)) {
+          val = val === '' ? null : parseFloat(val);
+        }
+        state.portfolio[idx][field] = val;
+        saveState();
+      });
+    });
+    tr.querySelector('.row-del').addEventListener('click', () => {
+      if (confirm(`确定删除 ${row.ticker || '这一行'}？`)) {
+        state.portfolio.splice(idx, 1);
+        saveState();
+        renderPortfolio();
+      }
+    });
+  });
+}
+
+function renderWatchlists() {
+  document.getElementById('watchIndices').value = (state.watchlist.indices || []).join(', ');
+  document.getElementById('watchAiMajors').value = (state.watchlist.ai_majors || []).join(', ');
+  document.getElementById('watchBroadEtfs').value = (state.watchlist.broad_etfs || []).join(', ');
+  document.getElementById('watchPrivate').value = (state.watchlist.private_and_themes || []).join('\n');
+}
+
+function bindWatchlists() {
+  const map = [
+    ['watchIndices', 'indices', /[\n,]+/],
+    ['watchAiMajors', 'ai_majors', /[\n,]+/],
+    ['watchBroadEtfs', 'broad_etfs', /[\n,]+/],
+    ['watchPrivate', 'private_and_themes', /\n+/],  // 主题/私募只用换行分隔
+  ];
+  map.forEach(([id, key, sep]) => {
+    document.getElementById(id).addEventListener('input', (e) => {
+      // 处理：换行或逗号分隔，trim，去掉空字符串
+      let parts;
+      if (id === 'watchPrivate') {
+        // 私募/主题：逗号 + 换行都支持，但保留中文逗号场景
+        parts = e.target.value.split(/[\n]+/).flatMap(s => s.split(/[,，]/));
+      } else {
+        parts = e.target.value.split(/[\n,，]+/);
+      }
+      state.watchlist[key] = parts.map(s => s.trim()).filter(s => s.length > 0);
+      saveState();
+    });
+  });
+}
+
+function escapeAttr(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+
+// ============= 操作 =============
+document.getElementById('addRowBtn').addEventListener('click', () => {
+  state.portfolio.push({
+    ticker: '',
+    direction: 'long',
+    weight_pct: 0,
+    cost_basis: null,
+    stop_loss: null,
+    target: null,
+    notes: ''
+  });
+  saveState();
+  renderPortfolio();
+  // focus on the new row's first input
+  setTimeout(() => {
+    const inputs = document.querySelectorAll('#portfolioBody input[data-field="ticker"]');
+    if (inputs.length) inputs[inputs.length - 1].focus();
+  }, 0);
+});
+
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const out = {
+    "$schema": "持仓与观察清单的真源（source of truth）。skill weekly-market-review 读这份。",
+    "$how_to_edit": "两种方式：(1) 直接编辑这个 JSON 文件 (2) 在 docs/portfolio.html 网页里改完点导出，把下载的 JSON 覆盖本文件。改完别忘 git commit。",
+    "$last_updated": new Date().toISOString().slice(0,10),
+    portfolio: state.portfolio,
+    watchlist: state.watchlist,
+    always_check: state.always_check || DEFAULT_ALWAYS_CHECK
+  };
+  const blob = new Blob([JSON.stringify(out, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'portfolio.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  dirty = false;
+  renderStatus();
+});
+
+document.getElementById('copyBtn').addEventListener('click', async () => {
+  const out = {
+    "$schema": "持仓与观察清单的真源（source of truth）。skill weekly-market-review 读这份。",
+    "$last_updated": new Date().toISOString().slice(0,10),
+    portfolio: state.portfolio,
+    watchlist: state.watchlist,
+    always_check: state.always_check || DEFAULT_ALWAYS_CHECK
+  };
+  try {
+    await navigator.clipboard.writeText(JSON.stringify(out, null, 2));
+    const btn = document.getElementById('copyBtn');
+    const old = btn.textContent;
+    btn.textContent = '✓ 已复制';
+    setTimeout(() => btn.textContent = old, 1500);
+  } catch (e) {
+    alert('复制失败，请用导出 JSON 按钮');
+  }
+});
+
+document.getElementById('importBtn').addEventListener('click', () => {
+  document.getElementById('importTextarea').value = '';
+  document.getElementById('importModal').classList.add('show');
+});
+document.getElementById('importCancelBtn').addEventListener('click', () => {
+  document.getElementById('importModal').classList.remove('show');
+});
+document.getElementById('importConfirmBtn').addEventListener('click', () => {
+  const txt = document.getElementById('importTextarea').value.trim();
+  if (!txt) { alert('请先粘贴 JSON'); return; }
+  try {
+    const parsed = JSON.parse(txt);
+    if (!parsed.portfolio || !parsed.watchlist) {
+      alert('JSON 缺少 portfolio 或 watchlist 字段');
+      return;
+    }
+    state = {
+      portfolio: parsed.portfolio || [],
+      watchlist: {
+        indices: parsed.watchlist.indices || [],
+        ai_majors: parsed.watchlist.ai_majors || [],
+        broad_etfs: parsed.watchlist.broad_etfs || [],
+        private_and_themes: parsed.watchlist.private_and_themes || []
+      },
+      always_check: parsed.always_check
+    };
+    saveState();
+    renderPortfolio();
+    renderWatchlists();
+    document.getElementById('importModal').classList.remove('show');
+  } catch (e) {
+    alert('JSON 格式有误：' + e.message);
+  }
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (!confirm('确定重置为示例？localStorage 当前内容会被清空。')) return;
+  state = JSON.parse(JSON.stringify(DEFAULT_DATA));
+  saveState();
+  renderPortfolio();
+  renderWatchlists();
+});
+
+const DEFAULT_ALWAYS_CHECK = {
+  vol_credit: ["VIX","VVIX","put/call ratio","10Y","2Y","real rates","DXY","HY OAS","IG OAS","CDX HY"],
+  breadth: ["advance/decline","52-week highs/lows","Mag 7 contribution","AI stock contribution"],
+  ai_capex_names: ["MSFT","GOOGL","AMZN","META","ORCL","TSLA","xAI","OpenAI","Anthropic","CoreWeave","Nebius"],
+  ai_supply_names: ["NVDA","AMD","AVGO","TSM","ASML","Hynix","MU","ANET","DELL","SMCI"],
+  ai_demand_signals: ["cloud AI revenue","enterprise AI ARR","model API revenue","ChatGPT/Claude/Gemini usage"],
+  ai_unit_economics: ["inference cost","GPU rental price","cloud GM","AI service GM","depreciation"],
+  funding_ipo_signals: ["SpaceX IPO filings","OpenAI IPO/raise","Anthropic IPO/raise","secondary market price","lockup","private valuation cuts"],
+  regulatory_geo: ["chip export controls","antitrust","data regulation","power approval","geo conflict"]
+};
+
+// ============= 初始化 =============
+renderPortfolio();
+renderWatchlists();
+bindWatchlists();
+dirty = false;
+renderStatus();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.ai-weekend-review</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/USERNAME/ai-investment-weekly/weekend-review.sh</string>
+    </array>
+
+    <!-- 每周六 10:00（中国时间，Mac 本地时区）运行
+         Weekday: 6 = 周六 -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>6</integer>
+        <key>Hour</key>
+        <integer>10</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/USERNAME/ai-investment-weekly</string>
+
+    <key>StandardOutPath</key>
+    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-weekend-stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-weekend-stderr.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/USERNAME/.npm-global/bin</string>
+        <key>HOME</key>
+        <string>/Users/USERNAME</string>
+    </dict>
+</dict>
+</plist>

@@ -1,23 +1,28 @@
 # 📊 AI Investment Weekly · macOS 版
 
-每周自动产出一份 AI 产业链投资调研报告（HTML 网页形式），覆盖美 / A / 港 / 台 / 日 / 韩 / 欧 AI 产业链，从第一性原理识别投资转折点和未定价资产。
+每周两期自动产出投资研究网页：
 
-**完全免费** —— 用你已有的 Claude Code Pro 订阅在本机生成内容，不需要 API key，不需要服务器，前端通过 GitHub Pages 永久托管。
+| 产出 | 触发 | 焦点 |
+|---|---|---|
+| **AI 产业链转折点周报** | 每周一 09:00 | 中长期 1–24 月，新能力 / 新瓶颈 / 谁付钱 / 未定价资产 |
+| **市场周度复盘** | 每周六 10:00 | 即将一周，AI 泡沫阶段评分 / 持仓处理 / 三种情景计划 / 8 条行动 / 10 个转折点 |
+
+**完全免费** —— 用你已有的 Claude Code Pro 订阅在本机生成内容，不需要 API key、不需要服务器，前端通过 GitHub Pages 永久托管。
 
 ---
 
 ## 🎯 整体工作原理
 
 ```
-你的 Mac（每周一 9:00 自动唤醒并执行）
+你的 Mac（每周一 9:00 + 每周六 10:00 自动唤醒）
     │
-    ├─ ① 调用 claude --print（你的 Pro 订阅）按 skill/SKILL.md 联网调研
-    │     ↓
-    │     skill 联网搜 capex / 内存合约价 / 燃机 backlog / 订单 /
-    │     估值 / 持仓等硬数据，按方法论评分，写入 docs/reports/<日期>/index.html
-    │     并更新 docs/index.html 的归档列表
-    │
-    └─ ② git push → GitHub Pages 自动更新
+    ├─ 周一：调 claude --print → skill ai-turning-points  → 产业链周报
+    ├─ 周六：调 claude --print → skill weekly-market-review → 市场复盘
+    │           ↓
+    │   skill 联网搜数据，按方法论生成 HTML，写入 docs/{reports|reviews}/<日期>/
+    │   并更新 docs/index.html 的归档列表
+    │           ↓
+    └─ git push → GitHub Pages 自动更新
                      │
                      ▼
               访问固定网址查看
@@ -108,13 +113,37 @@ bash weekly-update.sh
 - **git push 失败** → 检查 GitHub 仓库地址和登录状态
 - **skill 没找到 docs/** → 确认你在 `~/ai-investment-weekly` 目录里跑的脚本
 
-### 第 6 步：安装定时任务
+### 第 6 步：填持仓（周末复盘需要）
+
+打开 `https://YOUR_USERNAME.github.io/ai-investment-weekly/portfolio.html`，把持仓填进去 → 点 **导出 JSON**。把下载的文件覆盖 `~/ai-investment-weekly/data/portfolio.json`，然后：
 
 ```bash
-bash install-launchd.sh
+cd ~/ai-investment-weekly
+git add data/portfolio.json
+git commit -m "Update portfolio"
+git push
 ```
 
-输出 "✅ 定时任务已加载" 即成功。从此每周一上午 9:00 自动跑。
+> 持仓数据**不会**上 GitHub Pages（`data/` 在 `docs/` 之外），只在 git 仓库里。如果你的 GitHub 仓库是 public，仍然能被人看到——如果担心，把仓库设为 private（GitHub Pages public 模式仍可用）或者改成不含真实持仓的占位。
+
+### 第 7 步：安装定时任务（两个）
+
+```bash
+bash install-launchd.sh                  # 一次性装两个任务
+# 等价于：
+#   bash install-launchd.sh install all
+```
+
+输出两个 "✅ 已加载" 即成功。从此：
+- 每周一 09:00 自动出**产业链周报**
+- 每周六 10:00 自动出**市场周度复盘**
+
+只想要其中一个的话：
+
+```bash
+bash install-launchd.sh install weekly    # 只装周一
+bash install-launchd.sh install weekend   # 只装周六
+```
 
 ---
 
@@ -123,18 +152,38 @@ bash install-launchd.sh
 ```bash
 cd ~/ai-investment-weekly
 
-# 立即手动跑一次（不等下周一）
-bash install-launchd.sh test
+# 立即手动跑一次（必须指定哪个任务）
+bash install-launchd.sh test weekly       # 跑产业链周报
+bash install-launchd.sh test weekend      # 跑市场复盘
 
-# 查看任务状态 + 最近日志
+# 查看两个任务状态 + 最近日志
 bash install-launchd.sh status
 
 # 看最新日志
-tail -f logs/$(date +%Y-%m-%d).log
+tail -f logs/$(date +%Y-%m-%d).log         # 周一任务
+tail -f logs/$(date +%Y-%m-%d)-review.log  # 周六任务
 
 # 卸载定时任务
-bash install-launchd.sh remove
+bash install-launchd.sh remove            # 全部
+bash install-launchd.sh remove weekend    # 只删周六
 ```
+
+---
+
+## 🧠 让 skill 在任何会话里全局可用
+
+部署完后，可以让 Claude Code 在任何会话里识别这两个 skill：
+
+```bash
+mkdir -p ~/.claude/skills
+ln -s ~/ai-investment-weekly/skill                ~/.claude/skills/ai-turning-points
+ln -s ~/ai-investment-weekly/skill-market-review  ~/.claude/skills/weekly-market-review
+```
+
+这样在任意目录开 Claude Code 会话，说：
+
+- "出一份 AI 产业链调研" → 触发 ai-turning-points（默认终端 markdown，要 HTML 就说"写到 docs/"）
+- "做一下本周复盘" → 触发 weekly-market-review（默认终端 markdown）
 
 ---
 
@@ -142,13 +191,14 @@ bash install-launchd.sh remove
 
 ### 改运行时间 / 频率
 
-编辑 `launchd/com.user.ai-weekly.plist`：
+- 周一周报：编辑 `launchd/com.user.ai-weekly.plist`
+- 周六复盘：编辑 `launchd/com.user.ai-weekend-review.plist`
 
 ```xml
 <key>StartCalendarInterval</key>
 <dict>
     <key>Weekday</key>
-    <integer>1</integer>      <!-- 1=周一, 0/7=周日, 2=周二, ... -->
+    <integer>1</integer>      <!-- 0/7=周日, 1=周一, ..., 6=周六 -->
     <key>Hour</key>
     <integer>9</integer>      <!-- 24 小时制 -->
     <key>Minute</key>
@@ -159,22 +209,26 @@ bash install-launchd.sh remove
 改完重装：
 
 ```bash
-bash install-launchd.sh remove
-bash install-launchd.sh install
+bash install-launchd.sh remove all
+bash install-launchd.sh install all
 ```
 
 ### 改研究方向 / 主题
 
-编辑 `skill/SKILL.md` 的 "Step 2 — Scan for new capability" 表格，加减主题。
-深度参数（评分细则、来源优先级）在 `skill/references/methodology.md`。
+- **产业链周报**：编辑 `skill/SKILL.md` 的 "Step 2 — Scan for new capability" 表格；深度参数在 `skill/references/methodology.md`。
+- **市场复盘**：编辑 `skill-market-review/SKILL.md` 的 "Weekly checklist"；评分细则在 `skill-market-review/references/methodology.md`。
+- **持仓和观察清单**：在 `docs/portfolio.html` 网页编辑（推荐），或直接 vim `data/portfolio.json`。
 
 ### 改报告样式
 
-编辑 `docs/assets/styles.css`。所有当期与历史报告共享同一份样式，改一次全站统一。
+编辑 `docs/assets/styles.css`。所有当期与历史报告 + 首页 + 持仓页共享同一份样式。
 
 ### 改 HTML 模板结构
 
-编辑 `skill/assets/template.html`。模板里 `<!-- FILL: ... -->` 是占位符，skill 在生成时会替换。
+- 产业链周报模板：`skill/assets/template.html`
+- 市场复盘模板：`skill-market-review/assets/template.html`
+
+模板里 `<!-- FILL: ... -->` 是占位符，skill 在生成时会替换。
 
 ---
 
@@ -210,26 +264,33 @@ A: 报告本身就是 HTML，从 git 历史能完整恢复。如果以后想要 
 
 ```
 ai-investment-weekly/
-├── README.md                       # 本文件
+├── README.md                                   # 本文件
 ├── .gitignore
-├── weekly-update.sh                # 主脚本（每周跑一次）
-├── install-launchd.sh              # 定时任务安装/卸载
+├── weekly-update.sh                            # 主脚本 · 周一 09:00 跑（产业链周报）
+├── weekend-review.sh                           # 主脚本 · 周六 10:00 跑（市场复盘）
+├── install-launchd.sh                          # 双任务定时安装/卸载/测试
 ├── launchd/
-│   └── com.user.ai-weekly.plist    # macOS 定时任务模板
-├── logs/                           # 运行日志（自动生成，不进 git）
-├── skill/                          # 调研 skill（本地工具，不部署到 Pages）
-│   ├── SKILL.md                    # skill 触发规则、工作流、硬性约束
-│   ├── references/
-│   │   └── methodology.md          # 完整方法论 + 评分细则
-│   └── assets/
-│       └── template.html           # HTML 报告模板
-└── docs/                           # → GitHub Pages 部署目录
-    ├── index.html                  # 网站首页（研究框架 + 归档列表）
+│   ├── com.user.ai-weekly.plist                # 周一任务模板
+│   └── com.user.ai-weekend-review.plist        # 周六任务模板
+├── logs/                                       # 运行日志（不进 git）
+├── data/
+│   └── portfolio.json                          # 持仓 + 观察清单（真源；docs/ 之外）
+├── skill/                                      # skill: ai-turning-points
+│   ├── SKILL.md
+│   ├── references/methodology.md
+│   └── assets/template.html
+├── skill-market-review/                        # skill: weekly-market-review
+│   ├── SKILL.md
+│   ├── references/methodology.md
+│   └── assets/template.html
+└── docs/                                       # → GitHub Pages 部署目录
+    ├── index.html                              # 网站首页（导航 + 两个归档）
+    ├── portfolio.html                          # 持仓编辑器（client-side）
     ├── assets/
-    │   └── styles.css              # 共享样式
-    └── reports/
-        └── 2026-05-10/
-            └── index.html          # 第 1 期
+    │   └── styles.css                          # 共享样式
+    ├── reports/                                # 产业链周报历史
+    │   └── 2026-05-10/index.html
+    └── reviews/                                # 市场复盘历史（首期由 cron 产出）
 ```
 
 ---
@@ -238,10 +299,12 @@ ai-investment-weekly/
 
 - **静态 HTML，不用框架。** 这是研究简报不是 Web app；少依赖 = 少维护，10 年后还能打开。
 - **样式集中在 `docs/assets/styles.css`。** 改一次设计全站统一。
-- **首页归档用 `<!-- ARCHIVE-START / END -->` 注释做锚点。** 让 skill 能精确插入新期，不会覆盖首页其他内容。
+- **首页归档用 `<!-- ARCHIVE-START / END -->` 和 `<!-- REVIEW-ARCHIVE-START / END -->` 注释做锚点。** 让 skill 能精确插入新期，不会覆盖首页其他内容。
+- **持仓数据放 `data/`，不放 `docs/`。** GitHub Pages 只服务 `docs/`，所以持仓不会被网站公开（但 git 仓库本身仍可被看到，介意就用 private repo）。
+- **持仓编辑器纯 client-side。** 改完导出 JSON，手动覆盖文件——简单、可靠、不需要后端。
 - **报告之间不互相依赖。** 删掉某一期不会影响其他期。
 - **本地跑而非 cloud Actions。** 因为 Claude Pro 订阅在本地，cloud 跑不了；而且本地跑更省（不消耗 API 额度）。
-- **每周而非每天。** 投资研究的边际信息量周更比日更高得多；日更会被噪声淹没。
+- **周报 + 复盘双轨制。** 周一周报看产业链中长期；周六复盘看自己持仓和下周计划。两份独立，焦点不同。
 
 ---
 
