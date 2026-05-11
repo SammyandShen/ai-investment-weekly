@@ -185,21 +185,27 @@
 <main class="page editor">
 
   <h1 class="report-title">持仓与观察清单</h1>
-  <p class="report-subtitle">每周六的复盘任务会读取这份数据。修改后必须导出 JSON 并覆盖 <code>data/portfolio.json</code>，否则定时任务读到的是旧版本。</p>
+  <p class="report-subtitle">每周六复盘任务读取本地文件 <code>~/ai-investment-weekly/data/portfolio.json</code>。授权一次本地目录后，网页改完点保存就直接写到文件，不需要走 git。</p>
 
   <div id="statusBar" class="status-bar">数据加载中...</div>
 
   <details class="help">
-    <summary>怎么把网页修改同步到文件 / 跨设备使用</summary>
-    <p>这个网页只在你的浏览器本地保存（localStorage），<strong>不会自动写到磁盘</strong>。同步流程：</p>
+    <summary>怎么用 / 隐私保证</summary>
+    <p><strong>首次使用：</strong></p>
     <ol>
-      <li>在网页上编辑持仓与观察清单</li>
-      <li>点 <strong>导出 JSON</strong>，浏览器会下载 <code>portfolio.json</code></li>
-      <li>把下载的文件覆盖项目里的 <code>data/portfolio.json</code></li>
-      <li><code>cd ~/ai-investment-weekly && git add data/portfolio.json && git commit -m "Update portfolio" && git push</code></li>
+      <li>点页面底部 <strong>选择 data 目录</strong>，浏览器弹窗里定位到 <code>~/ai-investment-weekly/data/</code> 并选中。</li>
+      <li>授权后，网页会读取该目录下的 <code>portfolio.json</code>（不存在就用空模板）。</li>
+      <li>编辑表格 → 点 <strong>保存到文件</strong>，浏览器直接写到本地 <code>portfolio.json</code>。</li>
+      <li>完。skill 在周六 10:00 自动读这个文件。</li>
     </ol>
-    <p>第一次使用、或换浏览器/设备时，可以点 <strong>导入 JSON</strong> 把当前 <code>data/portfolio.json</code> 的内容粘贴进来。</p>
-    <p><strong>隐私：</strong>持仓数据保存在你的本地浏览器和本地仓库，不会被 GitHub Pages 公开（<code>data/</code> 目录不在 <code>docs/</code> 下，不被网站服务）。</p>
+    <p><strong>之后每次：</strong>浏览器记住了目录授权，但每次新会话需要点一次"验证权限"（浏览器安全要求）。</p>
+    <p><strong>隐私保证：</strong></p>
+    <ul>
+      <li><code>data/portfolio.json</code> 已加入 <code>.gitignore</code>，<strong>永远不会进 git，永远不会上 GitHub</strong>。</li>
+      <li>浏览器写文件用的是 File System Access API，数据从浏览器直达本地磁盘，<strong>不经过任何服务器</strong>。</li>
+      <li>仓库本身可以放心保持 public — 真实持仓只存在你本地。</li>
+    </ul>
+    <p><strong>不支持 FS Access API 的浏览器</strong>（Safari、Firefox）：降级到下方"导出 JSON"，需要手动覆盖文件。Chrome / Edge / Arc / Brave 都支持。</p>
   </details>
 
   <!-- ====== 持仓 ====== -->
@@ -254,18 +260,33 @@
     </div>
   </section>
 
-  <!-- ====== 操作 ====== -->
+  <!-- ====== 同步 ====== -->
   <section>
-    <h2><span class="section-num">03</span> 同步</h2>
+    <h2><span class="section-num">03</span> 同步到本地文件</h2>
+
+    <div id="fsStatus" style="font-family:var(--sans);font-size:13px;color:var(--ink-2);margin-bottom:10px;"></div>
+
     <div class="btn-row">
-      <button class="btn primary" id="exportBtn">导出 JSON （下载文件）</button>
-      <button class="btn" id="copyBtn">复制 JSON 到剪贴板</button>
-      <button class="btn" id="importBtn">导入 JSON</button>
-      <button class="btn danger" id="resetBtn">重置为示例</button>
+      <button class="btn primary" id="pickDirBtn">选择 data 目录</button>
+      <button class="btn primary" id="saveFileBtn" disabled>保存到文件</button>
+      <button class="btn" id="reloadFileBtn" disabled>从文件重新加载</button>
+      <button class="btn danger" id="forgetDirBtn" style="display:none;">忘记目录</button>
     </div>
-    <p style="font-family:var(--sans);font-size:12px;color:var(--ink-muted);margin-top:6px;">
-      所有改动都自动保存在浏览器 localStorage。导出后请覆盖 <code>data/portfolio.json</code> 并 <code>git commit</code>。
+
+    <p style="font-family:var(--sans);font-size:12px;color:var(--ink-muted);margin-top:10px;">
+      正常工作流：在表格里改 → 点 <strong>保存到文件</strong> → 直接写到 <code>~/ai-investment-weekly/data/portfolio.json</code>。
+      所有改动会同时自动保存在浏览器 localStorage（作为缓存）。
     </p>
+
+    <details style="margin-top:18px;">
+      <summary style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);cursor:pointer;">降级方式（Safari / Firefox 或本地文件访问不可用时用）</summary>
+      <div class="btn-row" style="margin-top:10px;">
+        <button class="btn" id="exportBtn">导出 JSON （下载文件）</button>
+        <button class="btn" id="copyBtn">复制 JSON 到剪贴板</button>
+        <button class="btn" id="importBtn">导入 JSON</button>
+        <button class="btn danger" id="resetBtn">重置为示例</button>
+      </div>
+    </details>
   </section>
 
   <p class="disclaimer">本工具仅在你的本地浏览器运行。持仓数据不会上传到任何服务器。</p>
@@ -294,61 +315,226 @@
 <script>
 'use strict';
 
-// ============= 默认 / 示例数据 =============
+// ============= 默认数据 =============
+const DEFAULT_ALWAYS_CHECK = {
+  vol_credit: ["VIX","VVIX","put/call ratio","10Y","2Y","real rates","DXY","HY OAS","IG OAS","CDX HY"],
+  breadth: ["advance/decline","52-week highs/lows","Mag 7 contribution","AI stock contribution"],
+  ai_capex_names: ["MSFT","GOOGL","AMZN","META","ORCL","TSLA","xAI","OpenAI","Anthropic","CoreWeave","Nebius"],
+  ai_supply_names: ["NVDA","AMD","AVGO","TSM","ASML","Hynix","MU","ANET","DELL","SMCI"],
+  ai_demand_signals: ["cloud AI revenue","enterprise AI ARR","model API revenue","ChatGPT/Claude/Gemini usage"],
+  ai_unit_economics: ["inference cost","GPU rental price","cloud GM","AI service GM","depreciation"],
+  funding_ipo_signals: ["SpaceX IPO filings","OpenAI IPO/raise","Anthropic IPO/raise","secondary market price","lockup","private valuation cuts"],
+  regulatory_geo: ["chip export controls","antitrust","data regulation","power approval","geo conflict"]
+};
+
 const DEFAULT_DATA = {
   portfolio: [
-    {
-      ticker: "NVDA",
-      direction: "long",
-      weight_pct: 0,
-      cost_basis: null,
-      stop_loss: null,
-      target: null,
-      notes: "示例条目，请改成真实持仓或删除"
-    }
+    { ticker: "NVDA", direction: "long", weight_pct: 0, cost_basis: null, stop_loss: null, target: null, notes: "示例条目，请改成真实持仓或删除" }
   ],
   watchlist: {
-    indices: ["SPX", "NDX", "QQQ", "IXIC", "SOX", "SMH", "IWM"],
+    indices: ["SPX","NDX","QQQ","IXIC","SOX","SMH","IWM"],
     ai_majors: ["NVDA","AMD","AVGO","TSM","ASML","ANET","DELL","SMCI","ORCL","MSFT","GOOGL","AMZN","META","PLTR","SNOW","DDOG","MDB","NOW","CRM","TSLA"],
     broad_etfs: ["QQQ","SPY","IWM","SOXX","SMH"],
-    private_and_themes: [
-      "OpenAI","Anthropic","SpaceX","CoreWeave","Nebius","xAI",
-      "AI 私募融资","AI IPO 进度","AI 数据中心融资","AI 算力租赁价格","AI 供应链订单","AI 信用风险"
-    ]
+    private_and_themes: ["OpenAI","Anthropic","SpaceX","CoreWeave","Nebius","xAI","AI 私募融资","AI IPO 进度","AI 数据中心融资","AI 算力租赁价格","AI 供应链订单","AI 信用风险"]
   }
 };
 
 const STORAGE_KEY = 'aiweekly.portfolio.v1';
+const IDB_NAME = 'aiweekly';
+const IDB_STORE = 'handles';
+
+// ============= IndexedDB（存目录 handle，跨会话持久化）=============
+function openIDB() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(IDB_NAME, 1);
+    req.onupgradeneeded = () => req.result.createObjectStore(IDB_STORE);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+async function idbGet(key) {
+  const db = await openIDB();
+  return new Promise((res, rej) => {
+    const tx = db.transaction(IDB_STORE, 'readonly');
+    const r = tx.objectStore(IDB_STORE).get(key);
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  });
+}
+async function idbSet(key, value) {
+  const db = await openIDB();
+  return new Promise((res, rej) => {
+    const tx = db.transaction(IDB_STORE, 'readwrite');
+    tx.objectStore(IDB_STORE).put(value, key);
+    tx.oncomplete = () => res();
+    tx.onerror = () => rej(tx.error);
+  });
+}
+async function idbDel(key) {
+  const db = await openIDB();
+  return new Promise((res, rej) => {
+    const tx = db.transaction(IDB_STORE, 'readwrite');
+    tx.objectStore(IDB_STORE).delete(key);
+    tx.oncomplete = () => res();
+    tx.onerror = () => rej(tx.error);
+  });
+}
 
 // ============= 状态 =============
 let state = loadState();
-let dirty = false;  // localStorage vs file 同步状态由用户判断；这里只跟踪 "本次会话有改动"
+let dirHandle = null;
+let dirty = false;
+let lastSavedAt = null;
+const fsSupported = ('showDirectoryPicker' in window) && window.isSecureContext;
 
-// ============= 加载 / 保存 =============
 function loadState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) return JSON.parse(raw);
-  } catch (e) { console.warn('localStorage parse failed, using default', e); }
+  } catch (e) { console.warn('localStorage parse failed', e); }
   return JSON.parse(JSON.stringify(DEFAULT_DATA));
 }
-function saveState() {
+function saveStateLocal() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   dirty = true;
   renderStatus();
 }
 
+function buildOutput() {
+  return {
+    "$schema": "持仓与观察清单的真源（source of truth）。skill weekly-market-review 读这份。",
+    "$last_updated": new Date().toISOString().slice(0,10),
+    portfolio: state.portfolio,
+    watchlist: state.watchlist,
+    always_check: state.always_check || DEFAULT_ALWAYS_CHECK
+  };
+}
+
+// ============= File System Access API =============
+async function verifyPermission(handle, readWrite = true) {
+  const opts = { mode: readWrite ? 'readwrite' : 'read' };
+  if ((await handle.queryPermission(opts)) === 'granted') return true;
+  if ((await handle.requestPermission(opts)) === 'granted') return true;
+  return false;
+}
+
+async function pickDir() {
+  if (!fsSupported) {
+    alert('当前浏览器不支持 File System Access API。请用 Chrome / Edge / Arc / Brave。');
+    return;
+  }
+  try {
+    const handle = await window.showDirectoryPicker({ mode: 'readwrite' });
+    if (handle.name !== 'data') {
+      if (!confirm(`你选了目录 "${handle.name}"（不是 "data"）。继续吗？`)) return;
+    }
+    dirHandle = handle;
+    await idbSet('dataDir', handle);
+    setFsStatus(`✅ 已授权目录 "${handle.name}"`);
+    enableFsButtons(true);
+    await loadFromFile(false);
+  } catch (e) {
+    if (e.name !== 'AbortError') { console.error(e); alert('授权失败: ' + e.message); }
+  }
+}
+
+async function ensureDirHandle(needGesture = false) {
+  if (!fsSupported) return null;
+  if (!dirHandle) dirHandle = await idbGet('dataDir');
+  if (!dirHandle) return null;
+  // verifyPermission 的 requestPermission 需要 user gesture；
+  // 调用方都是按钮点击触发，所以可以请求
+  const ok = await verifyPermission(dirHandle, true);
+  return ok ? dirHandle : null;
+}
+
+async function loadFromFile(silent) {
+  const handle = await ensureDirHandle(true);
+  if (!handle) { setFsStatus('权限被拒绝或未授权。'); return false; }
+  try {
+    const fh = await handle.getFileHandle('portfolio.json');
+    const file = await fh.getFile();
+    const text = await file.text();
+    const parsed = JSON.parse(text);
+    if (!parsed.portfolio || !parsed.watchlist) throw new Error('JSON 缺少 portfolio 或 watchlist');
+    state = {
+      portfolio: parsed.portfolio,
+      watchlist: {
+        indices: parsed.watchlist.indices || [],
+        ai_majors: parsed.watchlist.ai_majors || [],
+        broad_etfs: parsed.watchlist.broad_etfs || [],
+        private_and_themes: parsed.watchlist.private_and_themes || []
+      },
+      always_check: parsed.always_check
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    dirty = false;
+    lastSavedAt = new Date(file.lastModified);
+    renderPortfolio();
+    renderWatchlists();
+    renderStatus();
+    if (!silent) setFsStatus(`✅ 已从文件加载 · ${state.portfolio.length} 个持仓 · 文件修改于 ${lastSavedAt.toLocaleString('zh-CN')}`);
+    return true;
+  } catch (e) {
+    if (e.name === 'NotFoundError') {
+      setFsStatus(`ℹ️ 目录里还没有 portfolio.json — 编辑完点"保存到文件"会自动创建`);
+      return false;
+    }
+    console.error(e);
+    setFsStatus(`❌ 加载文件失败: ${e.message}`);
+    return false;
+  }
+}
+
+async function saveToFile() {
+  const handle = await ensureDirHandle(true);
+  if (!handle) { alert('请先点"选择 data 目录"授权'); return; }
+  try {
+    const fh = await handle.getFileHandle('portfolio.json', { create: true });
+    const w = await fh.createWritable();
+    await w.write(JSON.stringify(buildOutput(), null, 2));
+    await w.close();
+    dirty = false;
+    lastSavedAt = new Date();
+    renderStatus();
+    setFsStatus(`✅ 已写入 portfolio.json · ${lastSavedAt.toLocaleString('zh-CN')}`);
+  } catch (e) {
+    console.error(e);
+    alert('保存失败: ' + e.message);
+  }
+}
+
+async function forgetDir() {
+  if (!confirm('忘记授权目录？localStorage 内容保留，下次需要重新选目录。')) return;
+  await idbDel('dataDir');
+  dirHandle = null;
+  setFsStatus('已忘记授权目录。');
+  enableFsButtons(false);
+}
+
+// ============= UI 辅助 =============
+function setFsStatus(msg) {
+  const el = document.getElementById('fsStatus');
+  if (el) el.innerHTML = msg;
+}
+function enableFsButtons(enabled) {
+  document.getElementById('saveFileBtn').disabled = !enabled;
+  document.getElementById('reloadFileBtn').disabled = !enabled;
+  document.getElementById('forgetDirBtn').style.display = enabled ? 'inline-block' : 'none';
+}
+
 // ============= 渲染 =============
 function renderStatus() {
   const bar = document.getElementById('statusBar');
-  const lastEdit = new Date().toLocaleString('zh-CN');
+  if (!bar) return;
+  const n = state.portfolio.length;
+  const fileLine = lastSavedAt ? `文件最后保存：${lastSavedAt.toLocaleString('zh-CN')}` : '尚未保存到文件';
   if (dirty) {
     bar.className = 'status-bar dirty';
-    bar.innerHTML = `<strong>有未导出改动。</strong> 自动保存在浏览器（最近编辑：${lastEdit}）。修改完别忘 <strong>导出 JSON</strong> 并覆盖 <code>data/portfolio.json</code>。`;
+    bar.innerHTML = `<strong>有未保存改动。</strong> ${n} 个持仓 · ${fileLine} · 点 <strong>保存到文件</strong> 写入本地。`;
   } else {
     bar.className = 'status-bar';
-    const n = state.portfolio.length;
-    bar.innerHTML = `当前 ${n} 个持仓 · 编辑器从浏览器 localStorage 加载。如需同步文件版本，点 <strong>导入 JSON</strong>。`;
+    bar.innerHTML = `${n} 个持仓 · ${fileLine}`;
   }
 }
 
@@ -382,13 +568,13 @@ function renderPortfolio() {
           val = val === '' ? null : parseFloat(val);
         }
         state.portfolio[idx][field] = val;
-        saveState();
+        saveStateLocal();
       });
     });
     tr.querySelector('.row-del').addEventListener('click', () => {
       if (confirm(`确定删除 ${row.ticker || '这一行'}？`)) {
         state.portfolio.splice(idx, 1);
-        saveState();
+        saveStateLocal();
         renderPortfolio();
       }
     });
@@ -404,23 +590,21 @@ function renderWatchlists() {
 
 function bindWatchlists() {
   const map = [
-    ['watchIndices', 'indices', /[\n,]+/],
-    ['watchAiMajors', 'ai_majors', /[\n,]+/],
-    ['watchBroadEtfs', 'broad_etfs', /[\n,]+/],
-    ['watchPrivate', 'private_and_themes', /\n+/],  // 主题/私募只用换行分隔
+    ['watchIndices', 'indices'],
+    ['watchAiMajors', 'ai_majors'],
+    ['watchBroadEtfs', 'broad_etfs'],
+    ['watchPrivate', 'private_and_themes'],
   ];
-  map.forEach(([id, key, sep]) => {
+  map.forEach(([id, key]) => {
     document.getElementById(id).addEventListener('input', (e) => {
-      // 处理：换行或逗号分隔，trim，去掉空字符串
       let parts;
       if (id === 'watchPrivate') {
-        // 私募/主题：逗号 + 换行都支持，但保留中文逗号场景
         parts = e.target.value.split(/[\n]+/).flatMap(s => s.split(/[,，]/));
       } else {
         parts = e.target.value.split(/[\n,，]+/);
       }
       state.watchlist[key] = parts.map(s => s.trim()).filter(s => s.length > 0);
-      saveState();
+      saveStateLocal();
     });
   });
 }
@@ -429,20 +613,16 @@ function escapeAttr(s) {
   return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
 }
 
-// ============= 操作 =============
+// ============= 按钮绑定 =============
+document.getElementById('pickDirBtn').addEventListener('click', pickDir);
+document.getElementById('saveFileBtn').addEventListener('click', saveToFile);
+document.getElementById('reloadFileBtn').addEventListener('click', () => loadFromFile(false));
+document.getElementById('forgetDirBtn').addEventListener('click', forgetDir);
+
 document.getElementById('addRowBtn').addEventListener('click', () => {
-  state.portfolio.push({
-    ticker: '',
-    direction: 'long',
-    weight_pct: 0,
-    cost_basis: null,
-    stop_loss: null,
-    target: null,
-    notes: ''
-  });
-  saveState();
+  state.portfolio.push({ ticker: '', direction: 'long', weight_pct: 0, cost_basis: null, stop_loss: null, target: null, notes: '' });
+  saveStateLocal();
   renderPortfolio();
-  // focus on the new row's first input
   setTimeout(() => {
     const inputs = document.querySelectorAll('#portfolioBody input[data-field="ticker"]');
     if (inputs.length) inputs[inputs.length - 1].focus();
@@ -450,44 +630,22 @@ document.getElementById('addRowBtn').addEventListener('click', () => {
 });
 
 document.getElementById('exportBtn').addEventListener('click', () => {
-  const out = {
-    "$schema": "持仓与观察清单的真源（source of truth）。skill weekly-market-review 读这份。",
-    "$how_to_edit": "两种方式：(1) 直接编辑这个 JSON 文件 (2) 在 docs/portfolio.html 网页里改完点导出，把下载的 JSON 覆盖本文件。改完别忘 git commit。",
-    "$last_updated": new Date().toISOString().slice(0,10),
-    portfolio: state.portfolio,
-    watchlist: state.watchlist,
-    always_check: state.always_check || DEFAULT_ALWAYS_CHECK
-  };
-  const blob = new Blob([JSON.stringify(out, null, 2)], {type: 'application/json'});
+  const blob = new Blob([JSON.stringify(buildOutput(), null, 2)], {type: 'application/json'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url;
-  a.download = 'portfolio.json';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  a.href = url; a.download = 'portfolio.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
-  dirty = false;
-  renderStatus();
 });
 
 document.getElementById('copyBtn').addEventListener('click', async () => {
-  const out = {
-    "$schema": "持仓与观察清单的真源（source of truth）。skill weekly-market-review 读这份。",
-    "$last_updated": new Date().toISOString().slice(0,10),
-    portfolio: state.portfolio,
-    watchlist: state.watchlist,
-    always_check: state.always_check || DEFAULT_ALWAYS_CHECK
-  };
   try {
-    await navigator.clipboard.writeText(JSON.stringify(out, null, 2));
+    await navigator.clipboard.writeText(JSON.stringify(buildOutput(), null, 2));
     const btn = document.getElementById('copyBtn');
     const old = btn.textContent;
     btn.textContent = '✓ 已复制';
     setTimeout(() => btn.textContent = old, 1500);
-  } catch (e) {
-    alert('复制失败，请用导出 JSON 按钮');
-  }
+  } catch (e) { alert('复制失败'); }
 });
 
 document.getElementById('importBtn').addEventListener('click', () => {
@@ -502,10 +660,7 @@ document.getElementById('importConfirmBtn').addEventListener('click', () => {
   if (!txt) { alert('请先粘贴 JSON'); return; }
   try {
     const parsed = JSON.parse(txt);
-    if (!parsed.portfolio || !parsed.watchlist) {
-      alert('JSON 缺少 portfolio 或 watchlist 字段');
-      return;
-    }
+    if (!parsed.portfolio || !parsed.watchlist) { alert('JSON 缺少 portfolio 或 watchlist 字段'); return; }
     state = {
       portfolio: parsed.portfolio || [],
       watchlist: {
@@ -516,40 +671,51 @@ document.getElementById('importConfirmBtn').addEventListener('click', () => {
       },
       always_check: parsed.always_check
     };
-    saveState();
+    saveStateLocal();
     renderPortfolio();
     renderWatchlists();
     document.getElementById('importModal').classList.remove('show');
-  } catch (e) {
-    alert('JSON 格式有误：' + e.message);
-  }
+  } catch (e) { alert('JSON 格式有误：' + e.message); }
 });
 
 document.getElementById('resetBtn').addEventListener('click', () => {
-  if (!confirm('确定重置为示例？localStorage 当前内容会被清空。')) return;
+  if (!confirm('确定重置为示例？localStorage 内容会被清空（本地文件不受影响）。')) return;
   state = JSON.parse(JSON.stringify(DEFAULT_DATA));
-  saveState();
+  saveStateLocal();
   renderPortfolio();
   renderWatchlists();
 });
 
-const DEFAULT_ALWAYS_CHECK = {
-  vol_credit: ["VIX","VVIX","put/call ratio","10Y","2Y","real rates","DXY","HY OAS","IG OAS","CDX HY"],
-  breadth: ["advance/decline","52-week highs/lows","Mag 7 contribution","AI stock contribution"],
-  ai_capex_names: ["MSFT","GOOGL","AMZN","META","ORCL","TSLA","xAI","OpenAI","Anthropic","CoreWeave","Nebius"],
-  ai_supply_names: ["NVDA","AMD","AVGO","TSM","ASML","Hynix","MU","ANET","DELL","SMCI"],
-  ai_demand_signals: ["cloud AI revenue","enterprise AI ARR","model API revenue","ChatGPT/Claude/Gemini usage"],
-  ai_unit_economics: ["inference cost","GPU rental price","cloud GM","AI service GM","depreciation"],
-  funding_ipo_signals: ["SpaceX IPO filings","OpenAI IPO/raise","Anthropic IPO/raise","secondary market price","lockup","private valuation cuts"],
-  regulatory_geo: ["chip export controls","antitrust","data regulation","power approval","geo conflict"]
-};
-
 // ============= 初始化 =============
-renderPortfolio();
-renderWatchlists();
-bindWatchlists();
-dirty = false;
-renderStatus();
+async function init() {
+  renderPortfolio();
+  renderWatchlists();
+  bindWatchlists();
+  dirty = false;
+  renderStatus();
+
+  if (!fsSupported) {
+    setFsStatus('⚠️ 当前浏览器不支持 File System Access API（Chrome / Edge / Arc / Brave 都支持）。请用下方降级方式（导出 / 导入 JSON）手动同步。');
+    document.getElementById('pickDirBtn').disabled = true;
+    return;
+  }
+
+  // 看 IndexedDB 里有没有上次授权过的目录
+  try {
+    const saved = await idbGet('dataDir');
+    if (saved) {
+      dirHandle = saved;
+      setFsStatus(`已记住目录 "<strong>${saved.name}</strong>"。点 <strong>从文件重新加载</strong> 或 <strong>保存到文件</strong> 重新验证权限。`);
+      enableFsButtons(true);
+    } else {
+      setFsStatus('未授权目录。点 <strong>选择 data 目录</strong> 首次授权 · 之后改完点 <strong>保存到文件</strong> 直接写本地。');
+    }
+  } catch (e) {
+    console.error('IndexedDB 不可用：', e);
+    setFsStatus('⚠️ IndexedDB 不可用，每次会话都要重新授权目录。');
+  }
+}
+init();
 </script>
 
 </body>

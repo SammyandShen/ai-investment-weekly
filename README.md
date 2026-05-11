@@ -115,16 +115,22 @@ bash weekly-update.sh
 
 ### 第 6 步：填持仓（周末复盘需要）
 
-打开 `https://YOUR_USERNAME.github.io/ai-investment-weekly/portfolio.html`，把持仓填进去 → 点 **导出 JSON**。把下载的文件覆盖 `~/ai-investment-weekly/data/portfolio.json`，然后：
+打开 `https://YOUR_USERNAME.github.io/ai-investment-weekly/portfolio.html`：
 
-```bash
-cd ~/ai-investment-weekly
-git add data/portfolio.json
-git commit -m "Update portfolio"
-git push
-```
+1. 第一次：点 **选择 data 目录** → 弹窗里定位到 `~/ai-investment-weekly/data/` → 选中授权。
+2. 编辑表格（增/删持仓行、改观察清单）。
+3. 点 **保存到文件** → 浏览器直接写到本地 `data/portfolio.json`。
+4. 完。下次进网页浏览器会记住授权，再次保存时点一下系统弹窗确认即可。
 
-> 持仓数据**不会**上 GitHub Pages（`data/` 在 `docs/` 之外），只在 git 仓库里。如果你的 GitHub 仓库是 public，仍然能被人看到——如果担心，把仓库设为 private（GitHub Pages public 模式仍可用）或者改成不含真实持仓的占位。
+**隐私 — 真实持仓永远不进 git：**
+- `data/portfolio.json` 已加入 `.gitignore`，本地文件不会被 push 到 GitHub。
+- 浏览器用 File System Access API 直接写本地磁盘，不经过任何服务器。
+- 仓库可以放心保持 public。
+- 提交到 git 的只有 `data/portfolio.example.json`（占位模板，无真实数据）。
+
+**支持的浏览器：** Chrome / Edge / Arc / Brave。Safari/Firefox 暂不支持 FS Access API，会自动降级到"导出 JSON → 手动覆盖文件"的旧流程。
+
+> 换 Mac / 重装的话：因为持仓不在 git，需要手动重填一次（或从老 Mac 拷贝 `data/portfolio.json`）。
 
 ### 第 7 步：安装定时任务（两个）
 

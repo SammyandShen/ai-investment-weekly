@@ -13,6 +13,9 @@ logs/
 # 环境
 .env
 
+# 持仓数据（隐私 — 永不进 git；只在本地，由 portfolio.html 写入）
+data/portfolio.json
+
 # Python（如果以后加分析脚本）
 __pycache__/
 *.pyc
