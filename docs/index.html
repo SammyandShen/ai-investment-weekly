@@ -17,17 +17,18 @@
     <a href="index.html" class="active">首页</a>
     <a href="index.html#reports">产业链周报</a>
     <a href="index.html#reviews">市场周度复盘</a>
+    <a href="index.html#briefings">盘前简报</a>
     <a href="portfolio.html">持仓与观察</a>
   </nav>
 </header>
 
 <main class="page">
 
-  <h1 class="report-title">扫描 AI 转折点，复盘宏观周期。</h1>
-  <p class="report-subtitle">每周两期：周一出"AI 产业链转折点周报"，周六出"市场周度复盘"。覆盖美 / A / 港 / 台 / 日 / 韩 / 欧。所有关键事实必须标源、不允许编造、没有明确机会就说没有。</p>
+  <h1 class="report-title">扫描 AI 转折点，复盘宏观周期，每日盯盘。</h1>
+  <p class="report-subtitle">三种产出叠加：工作日盘前简报、周一产业链周报、周六市场复盘。覆盖美 / A / 港 / 台 / 日 / 韩 / 欧。所有关键事实必须标源、不允许编造、没有明确机会就说没有。</p>
 
   <section>
-    <h2><span class="section-num">∞</span> 两种产出</h2>
+    <h2><span class="section-num">∞</span> 三种产出</h2>
     <div class="table-wrap">
       <table>
         <thead>
@@ -39,6 +40,12 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td><strong>盘前简报</strong></td>
+            <td>每工作日 07:00</td>
+            <td>昨夜美股 + 今日盯盘（即将一天）</td>
+            <td>昨夜收盘 / 持仓 gap / 今日 catalysts / 单条最重要看点 / 异动信号 / 周度立场不变量</td>
+          </tr>
           <tr>
             <td><strong>产业链周报</strong></td>
             <td>每周一 09:00</td>
@@ -83,6 +90,18 @@
         还没有复盘 — 第一期会在下个周六（10:00 CST）由 launchd 自动产出。也可以手动 <code>bash install-launchd.sh test weekend</code> 提前跑一次。
       </li>
       <!-- REVIEW-ARCHIVE-END -->
+    </ul>
+  </section>
+
+  <section id="briefings">
+    <h2><span class="section-num">○</span> 盘前简报 <span class="deck">/ Daily Briefings</span></h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);margin-top:-4px;">工作日早 07:00 自动产出。仅事实摘要，不开新交易建议。</p>
+    <ul class="archive">
+      <!-- BRIEFING-ARCHIVE-START -->
+      <li style="grid-template-columns: 1fr; color: var(--ink-muted); font-family: var(--sans); font-size: 14px;">
+        还没有简报 — 第一份会在下个工作日早 07:00 CST 由 launchd 自动产出。也可以手动 <code>bash install-launchd.sh test daily</code> 提前跑一次。
+      </li>
+      <!-- BRIEFING-ARCHIVE-END -->
     </ul>
   </section>
 

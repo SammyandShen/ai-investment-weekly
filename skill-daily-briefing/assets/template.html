@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><!-- FILL: briefing-date --> · 盘前简报 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+<!--
+  HOW TO USE
+  ----------
+  1. Copy to docs/briefings/<YYYY-MM-DD>/index.html
+  2. Replace every <!-- FILL: ... --> placeholder
+  3. Update docs/index.html briefing archive (BRIEFING-ARCHIVE markers)
+  4. Read data/portfolio.json before section 2
+-->
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings" class="active">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">盘前简报</span>
+    <span><!-- FILL: briefing-date-cn (e.g. 2026 年 5 月 14 日 周四) --></span>
+  </div>
+
+  <h1 class="report-title"><!-- FILL: one-line headline (e.g. NDX 跌 1.4% 失守 50DMA · 今日重点：CPI) --></h1>
+
+  <!-- ====== 1. 昨夜收盘 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 昨夜收盘</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th>vs 50DMA</th>
+            <th>vs 200DMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SPX</td><td class="num"><!-- FILL --></td><td class="num"><!-- FILL --></td><td><!-- FILL --></td><td><!-- FILL --></td></tr>
+          <tr><td>NDX</td><td class="num"><!-- FILL --></td><td class="num"><!-- FILL --></td><td><!-- FILL --></td><td><!-- FILL --></td></tr>
+          <tr><td>SOX</td><td class="num"><!-- FILL --></td><td class="num"><!-- FILL --></td><td><!-- FILL --></td><td><!-- FILL --></td></tr>
+          <tr><td>IWM</td><td class="num"><!-- FILL --></td><td class="num"><!-- FILL --></td><td><!-- FILL --></td><td><!-- FILL --></td></tr>
+          <tr><td>VIX</td><td class="num"><!-- FILL --></td><td class="num"><!-- FILL --></td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><!-- FILL: one short sentence — headline mover in Mag 7 / AI majors --></p>
+  </section>
+
+  <!-- ====== 2. 我的持仓 gap 状态 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 持仓 gap 状态</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th class="num">距止损</th>
+            <th class="num">距目标</th>
+            <th>盘前/备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- FILL: one row per position from data/portfolio.json
+               If portfolio is empty: <tr><td colspan="6">持仓表为空。</td></tr>
+          -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. 今日 catalysts ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 今日 catalysts</h2>
+    <ul>
+      <!-- FILL: max 8 items, time-stamped ET
+           e.g. <li><strong>NVDA 财报</strong>（after close） — consensus EPS $3.42, rev $52B</li>
+           If nothing: <li>今日无重大日程。</li>
+      -->
+    </ul>
+  </section>
+
+  <!-- ====== 4. 今日单条最重要看点 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 今日单条最重要看点</h2>
+    <div class="tldr">
+      <p style="margin:0;font-size:16px;line-height:1.6;"><!-- FILL: 3-4 sentences. What to track, why, what level/data point would change the picture. --></p>
+    </div>
+  </section>
+
+  <!-- ====== 5. 异动 / 风险信号 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 异动 / 风险信号</h2>
+    <ul>
+      <!-- FILL: only if real signals; otherwise <li>无明显异动。</li>
+           Examples: VIX +2pts, HY OAS widened 25bps, single name -5% pre-market
+      -->
+    </ul>
+  </section>
+
+  <!-- ====== 6. 周度立场不变量 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 周度立场不变量</h2>
+    <p><!-- FILL: 1 line referencing latest weekend review's stance
+         e.g. [周度复盘 2026-05-09 的立场：顶部震荡] — 今日不偏离。
+         If no review yet: 首期简报，无周度立场可参照。 -->
+    </p>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源</h3>
+    <ul>
+      <!-- FILL: links to where the prices / events came from
+           e.g. <li><a href="...">Reuters market wrap, 2026-05-13</a></li>
+      -->
+    </ul>
+  </section>
+
+  <p class="disclaimer">盘前简报仅为事实摘要，不构成新的交易建议。新交易建议见每周六的<a href="../../index.html#reviews">市场周度复盘</a>。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 盘前简报 · <!-- FILL: briefing-date -->
+</footer>
+
+</body>
+</html>

@@ -1,18 +1,19 @@
 #!/bin/bash
 # install-launchd.sh
-# 安装/卸载/测试 macOS 定时任务。支持两个任务：
+# 安装/卸载/测试 macOS 定时任务。支持三个任务：
+#   daily    = 工作日 07:00 出盘前简报（skill: daily-briefing）
 #   weekly   = 周一 09:00 出 AI 产业链转折点周报（skill: ai-turning-points）
 #   weekend  = 周六 10:00 出市场周度复盘（skill: weekly-market-review）
-#   all      = 同时操作两个（默认）
+#   all      = 同时操作三个（默认）
 #
 # 用法：
-#   bash install-launchd.sh [install|test|status|remove] [weekly|weekend|all]
+#   bash install-launchd.sh [install|test|status|remove] [daily|weekly|weekend|all]
 #
 # 示例：
 #   bash install-launchd.sh                    # = install all
-#   bash install-launchd.sh install weekend    # 只装周末复盘
+#   bash install-launchd.sh install daily      # 只装盘前简报
 #   bash install-launchd.sh test weekend       # 立即跑一次周末复盘
-#   bash install-launchd.sh status             # 查看两个任务状态
+#   bash install-launchd.sh status             # 查看三个任务状态
 #   bash install-launchd.sh remove weekly      # 只卸载周一任务
 
 set -e
@@ -23,6 +24,11 @@ PROJECT_DIR="$HOME/ai-investment-weekly"
 # task -> (plist name, script name, desc)
 declare_task() {
     case "$1" in
+        daily)
+            PLIST_NAME="com.user.ai-daily-briefing"
+            SCRIPT="daily-briefing.sh"
+            DESC="工作日 07:00 · 盘前简报"
+            ;;
         weekly)
             PLIST_NAME="com.user.ai-weekly"
             SCRIPT="weekly-update.sh"
@@ -34,7 +40,7 @@ declare_task() {
             DESC="周六 10:00 · 市场周度复盘"
             ;;
         *)
-            echo "❌ 未知任务名: $1（应为 weekly / weekend）" >&2
+            echo "❌ 未知任务名: $1（应为 daily / weekly / weekend）" >&2
             exit 1
             ;;
     esac
@@ -105,14 +111,14 @@ esac
 
 # 校验 target
 case "$TARGET" in
-    weekly|weekend) TASKS="$TARGET" ;;
-    all) TASKS="weekly weekend" ;;
-    *) echo "❌ 未知任务: $TARGET（应为 weekly / weekend / all）" >&2; exit 1 ;;
+    daily|weekly|weekend) TASKS="$TARGET" ;;
+    all) TASKS="daily weekly weekend" ;;
+    *) echo "❌ 未知任务: $TARGET（应为 daily / weekly / weekend / all）" >&2; exit 1 ;;
 esac
 
 # test 不允许 all
 if [ "$ACTION" = "test" ] && [ "$TARGET" = "all" ]; then
-    echo "⚠️ test 模式只能跑一个任务，请指定 weekly 或 weekend"
+    echo "⚠️ test 模式只能跑一个任务，请指定 daily / weekly / weekend"
     exit 1
 fi
 
@@ -121,10 +127,12 @@ case "$ACTION" in
         for t in $TASKS; do install_one "$t"; done
         echo ""
         echo "📋 下一步："
-        echo "  · 立即跑一次：  bash install-launchd.sh test weekly"
+        echo "  · 立即跑一次：  bash install-launchd.sh test daily"
+        echo "                  bash install-launchd.sh test weekly"
         echo "                  bash install-launchd.sh test weekend"
         echo "  · 查看状态：    bash install-launchd.sh status"
-        echo "  · 看日志：      tail -f $PROJECT_DIR/logs/\$(date +%Y-%m-%d).log"
+        echo "  · 看日志：      tail -f $PROJECT_DIR/logs/\$(date +%Y-%m-%d)-briefing.log"
+        echo "                  tail -f $PROJECT_DIR/logs/\$(date +%Y-%m-%d).log"
         echo "                  tail -f $PROJECT_DIR/logs/\$(date +%Y-%m-%d)-review.log"
         ;;
     remove)

@@ -178,6 +178,7 @@
     <a href="index.html">首页</a>
     <a href="index.html#reports">产业链周报</a>
     <a href="index.html#reviews">市场周度复盘</a>
+    <a href="index.html#briefings">盘前简报</a>
     <a href="portfolio.html" class="active">持仓与观察</a>
   </nav>
 </header>
@@ -212,16 +213,27 @@
   <section>
     <h2><span class="section-num">01</span> 持仓 <span class="deck">/ Positions</span></h2>
 
+    <div id="quoteBar" style="font-family:var(--sans);font-size:13px;color:var(--ink-2);margin:0 0 10px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+      <button class="btn" id="refreshQuotesBtn" style="font-size:12px;padding:6px 12px;">刷新行情</button>
+      <span id="quoteStatus" style="color:var(--ink-muted);">尚未拉取行情</span>
+      <label style="font-size:12px;color:var(--ink-muted);cursor:pointer;">
+        <input type="checkbox" id="autoRefreshChk"> 自动每 60 秒刷新
+      </label>
+    </div>
+
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
             <th style="width:90px;">代码</th>
             <th style="width:80px;">方向</th>
-            <th style="width:90px;" class="num">仓位 %</th>
-            <th style="width:110px;" class="num">成本价</th>
-            <th style="width:110px;" class="num">止损价</th>
-            <th style="width:110px;" class="num">目标价</th>
+            <th style="width:80px;" class="num">仓位%</th>
+            <th style="width:100px;" class="num">成本</th>
+            <th style="width:100px;" class="num">止损</th>
+            <th style="width:100px;" class="num">目标</th>
+            <th style="width:110px;" class="num">现价</th>
+            <th style="width:100px;" class="num">P&amp;L</th>
+            <th style="width:160px;" class="num">距止损 / 距目标</th>
             <th>备注</th>
             <th style="width:50px;"></th>
           </tr>
@@ -543,6 +555,7 @@ function renderPortfolio() {
   tbody.innerHTML = '';
   state.portfolio.forEach((row, idx) => {
     const tr = document.createElement('tr');
+    tr.dataset.idx = idx;
     tr.innerHTML = `
       <td><input type="text" data-field="ticker" value="${escapeAttr(row.ticker || '')}" placeholder="NVDA"></td>
       <td>
@@ -555,6 +568,9 @@ function renderPortfolio() {
       <td><input type="number" class="num-input" data-field="cost_basis" value="${row.cost_basis ?? ''}" step="0.01" placeholder="—"></td>
       <td><input type="number" class="num-input" data-field="stop_loss" value="${row.stop_loss ?? ''}" step="0.01" placeholder="—"></td>
       <td><input type="number" class="num-input" data-field="target" value="${row.target ?? ''}" step="0.01" placeholder="—"></td>
+      <td class="num cell-price"><span style="color:var(--ink-muted);">—</span></td>
+      <td class="num cell-pnl"><span style="color:var(--ink-muted);">—</span></td>
+      <td class="num cell-dist"><span style="color:var(--ink-muted);">—</span></td>
       <td><input type="text" data-field="notes" value="${escapeAttr(row.notes || '')}" placeholder="备注"></td>
       <td><button class="row-del" data-idx="${idx}">删</button></td>
     `;
@@ -569,6 +585,9 @@ function renderPortfolio() {
         }
         state.portfolio[idx][field] = val;
         saveStateLocal();
+        if (field === 'ticker' || field === 'cost_basis' || field === 'stop_loss' || field === 'target' || field === 'direction') {
+          renderQuoteCells();  // 更新这一行的 P&L
+        }
       });
     });
     tr.querySelector('.row-del').addEventListener('click', () => {
@@ -579,6 +598,139 @@ function renderPortfolio() {
       }
     });
   });
+  renderQuoteCells();  // 渲染当前已知 quotes
+}
+
+// ============= 行情拉取 + P&L 渲染 =============
+const quotes = new Map();   // ticker -> { price, prevClose, currency, fetchedAt }
+let lastFetchAt = null;
+let autoRefreshTimer = null;
+
+async function fetchOne(ticker) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const j = await res.json();
+  const r = j?.chart?.result?.[0];
+  if (!r || !r.meta) throw new Error('no chart data');
+  return {
+    price: r.meta.regularMarketPrice,
+    prevClose: r.meta.chartPreviousClose ?? r.meta.previousClose,
+    currency: r.meta.currency || '',
+    fetchedAt: new Date()
+  };
+}
+
+async function fetchQuotes() {
+  const tickers = [...new Set(state.portfolio.map(r => (r.ticker || '').trim().toUpperCase()).filter(Boolean))];
+  if (tickers.length === 0) {
+    setQuoteStatus('持仓为空，无需拉取行情');
+    return;
+  }
+  setQuoteStatus(`拉取 ${tickers.length} 个标的行情中...`);
+  const results = await Promise.allSettled(tickers.map(t => fetchOne(t)));
+  let ok = 0, fail = 0;
+  const failedTickers = [];
+  results.forEach((r, i) => {
+    if (r.status === 'fulfilled') {
+      quotes.set(tickers[i], r.value);
+      ok++;
+    } else {
+      fail++;
+      failedTickers.push(tickers[i]);
+      console.warn('quote fetch failed', tickers[i], r.reason);
+    }
+  });
+  lastFetchAt = new Date();
+  renderQuoteCells();
+  const statusParts = [`${ok}/${tickers.length} 成功 · ${lastFetchAt.toLocaleTimeString('zh-CN')}`];
+  if (fail > 0) statusParts.push(`失败：${failedTickers.join(', ')}`);
+  setQuoteStatus(statusParts.join(' · '));
+}
+
+function setQuoteStatus(msg) {
+  const el = document.getElementById('quoteStatus');
+  if (el) el.textContent = msg;
+}
+
+function fmtPct(v, sign = true) {
+  if (v == null || !isFinite(v)) return '—';
+  const s = (v * 100).toFixed(2) + '%';
+  return (sign && v > 0) ? '+' + s : s;
+}
+function colorFor(v, longDir = true) {
+  if (v == null || !isFinite(v)) return 'var(--ink-muted)';
+  const positive = longDir ? v > 0 : v < 0;
+  if (Math.abs(v) < 0.0001) return 'var(--ink-muted)';
+  return positive ? 'var(--green)' : 'var(--accent)';
+}
+
+function renderQuoteCells() {
+  document.querySelectorAll('#portfolioBody tr').forEach(tr => {
+    const idx = parseInt(tr.dataset.idx, 10);
+    const row = state.portfolio[idx];
+    if (!row) return;
+    const ticker = (row.ticker || '').trim().toUpperCase();
+    const q = quotes.get(ticker);
+
+    const priceTd = tr.querySelector('.cell-price');
+    const pnlTd = tr.querySelector('.cell-pnl');
+    const distTd = tr.querySelector('.cell-dist');
+
+    if (!q) {
+      priceTd.innerHTML = '<span style="color:var(--ink-muted);">—</span>';
+      pnlTd.innerHTML = '<span style="color:var(--ink-muted);">—</span>';
+      distTd.innerHTML = '<span style="color:var(--ink-muted);">—</span>';
+      return;
+    }
+
+    // 现价 + 当日%
+    const dayPct = q.prevClose ? (q.price - q.prevClose) / q.prevClose : null;
+    const dayColor = colorFor(dayPct, true);
+    priceTd.innerHTML = `
+      <div style="font-weight:600;">${q.price.toFixed(2)}</div>
+      <div style="font-size:11px;color:${dayColor};">${fmtPct(dayPct)}</div>
+    `;
+
+    // P&L vs 成本
+    const isLong = row.direction !== 'short';
+    let pnlPct = null;
+    if (row.cost_basis && row.cost_basis > 0) {
+      pnlPct = isLong
+        ? (q.price - row.cost_basis) / row.cost_basis
+        : (row.cost_basis - q.price) / row.cost_basis;
+    }
+    pnlTd.innerHTML = pnlPct == null
+      ? '<span style="color:var(--ink-muted);">无成本价</span>'
+      : `<span style="font-weight:600;color:${colorFor(pnlPct, true)};">${fmtPct(pnlPct)}</span>`;
+
+    // 距止损 / 距目标
+    let distStop = null, distTarget = null;
+    if (row.stop_loss != null && row.stop_loss > 0) {
+      distStop = isLong
+        ? (q.price - row.stop_loss) / q.price   // 多头：现价高于止损 = +
+        : (row.stop_loss - q.price) / q.price;  // 空头：现价低于止损 = +
+    }
+    if (row.target != null && row.target > 0) {
+      distTarget = isLong
+        ? (row.target - q.price) / q.price      // 多头：目标高于现价 = +
+        : (q.price - row.target) / q.price;     // 空头：目标低于现价 = +
+    }
+    const stopStr = distStop == null
+      ? '<span style="color:var(--ink-muted);">—</span>'
+      : `<span style="color:${distStop < 0.05 ? 'var(--accent)' : 'var(--ink-2)'};">止 ${fmtPct(distStop, false)}</span>`;
+    const targetStr = distTarget == null
+      ? '<span style="color:var(--ink-muted);">—</span>'
+      : `<span style="color:${distTarget < 0.05 ? 'var(--green)' : 'var(--ink-2)'};">目 ${fmtPct(distTarget, false)}</span>`;
+    distTd.innerHTML = `<div style="display:flex;flex-direction:column;font-size:12px;line-height:1.4;">${stopStr}${targetStr}</div>`;
+  });
+}
+
+function toggleAutoRefresh(on) {
+  if (autoRefreshTimer) { clearInterval(autoRefreshTimer); autoRefreshTimer = null; }
+  if (on) {
+    autoRefreshTimer = setInterval(() => fetchQuotes().catch(e => setQuoteStatus('刷新失败: ' + e.message)), 60000);
+  }
 }
 
 function renderWatchlists() {
@@ -618,6 +770,15 @@ document.getElementById('pickDirBtn').addEventListener('click', pickDir);
 document.getElementById('saveFileBtn').addEventListener('click', saveToFile);
 document.getElementById('reloadFileBtn').addEventListener('click', () => loadFromFile(false));
 document.getElementById('forgetDirBtn').addEventListener('click', forgetDir);
+
+document.getElementById('refreshQuotesBtn').addEventListener('click', () => {
+  fetchQuotes().catch(e => setQuoteStatus('刷新失败: ' + e.message));
+});
+document.getElementById('autoRefreshChk').addEventListener('change', (e) => {
+  toggleAutoRefresh(e.target.checked);
+  localStorage.setItem('aiweekly.autoRefresh', e.target.checked ? '1' : '0');
+  if (e.target.checked) fetchQuotes().catch(err => setQuoteStatus('刷新失败: ' + err.message));
+});
 
 document.getElementById('addRowBtn').addEventListener('click', () => {
   state.portfolio.push({ ticker: '', direction: 'long', weight_pct: 0, cost_basis: null, stop_loss: null, target: null, notes: '' });
@@ -713,6 +874,14 @@ async function init() {
   } catch (e) {
     console.error('IndexedDB 不可用：', e);
     setFsStatus('⚠️ IndexedDB 不可用，每次会话都要重新授权目录。');
+  }
+
+  // 自动拉一次行情 + 恢复自动刷新偏好
+  fetchQuotes().catch(err => setQuoteStatus('首次拉取失败: ' + err.message + '（点"刷新行情"重试，或检查浏览器控制台）'));
+  const autoOn = localStorage.getItem('aiweekly.autoRefresh') === '1';
+  if (autoOn) {
+    document.getElementById('autoRefreshChk').checked = true;
+    toggleAutoRefresh(true);
   }
 }
 init();
