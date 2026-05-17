@@ -8,7 +8,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/USERNAME/ai-investment-weekly/weekend-review.sh</string>
+        <string>__PROJECT_DIR__/weekend-review.sh</string>
     </array>
 
     <!-- 每周六 10:00（中国时间，Mac 本地时区）运行
@@ -27,19 +27,19 @@
     <false/>
 
     <key>WorkingDirectory</key>
-    <string>/Users/USERNAME/ai-investment-weekly</string>
+    <string>__PROJECT_DIR__</string>
 
     <key>StandardOutPath</key>
-    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-weekend-stdout.log</string>
+    <string>__PROJECT_DIR__/logs/launchd-weekend-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-weekend-stderr.log</string>
+    <string>__PROJECT_DIR__/logs/launchd-weekend-stderr.log</string>
 
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/USERNAME/.npm-global/bin</string>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:__HOME__/.npm-global/bin</string>
         <key>HOME</key>
-        <string>/Users/USERNAME</string>
+        <string>__HOME__</string>
     </dict>
 </dict>
 </plist>

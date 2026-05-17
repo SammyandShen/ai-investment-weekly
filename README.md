@@ -54,15 +54,13 @@ claude login   # 用你的 Pro 账号登录（一次性）
 
 ### 第 1 步：放置项目
 
-把整个 `ai-investment-weekly` 文件夹放到家目录下：
+把项目文件夹放到你想要的位置（推荐 `~/Documents/CC/ai-investment-weekly` 或 `~/ai-investment-weekly`）：
 
 ```bash
-# 假设当前在 ~/Documents/CC/
-cp -r ~/Documents/CC/ai-investment-weekly ~/ai-investment-weekly
-cd ~/ai-investment-weekly
+cd ~/Documents/CC/ai-investment-weekly   # 切到项目根目录
 ```
 
-> 必须放在 `~/ai-investment-weekly`（即 `/Users/<你的用户名>/ai-investment-weekly`）。launchd plist 和脚本默认从这里找。如果想换位置，需要同步改 `weekly-update.sh` 顶部的 `PROJECT_DIR` 与 `launchd/com.user.ai-weekly.plist`。
+> **路径无关**：脚本和 launchd plist 都用占位符（`__PROJECT_DIR__`），install 时自动按当前位置填充。把整个文件夹移到任何路径都行，只要重新跑 `bash install-launchd.sh install` 即可。
 
 ### 第 2 步：在 GitHub 上创建仓库
 
@@ -75,7 +73,7 @@ cd ~/ai-investment-weekly
 ### 第 3 步：把项目推到 GitHub
 
 ```bash
-cd ~/ai-investment-weekly
+cd ~/Documents/CC/ai-investment-weekly
 git init
 git add .
 git commit -m "Initial commit: AI investment weekly skeleton + issue 1"
@@ -102,7 +100,7 @@ git push -u origin main
 ### 第 5 步：手动跑一次测试
 
 ```bash
-cd ~/ai-investment-weekly
+cd ~/Documents/CC/ai-investment-weekly
 bash weekly-update.sh
 ```
 
@@ -111,13 +109,13 @@ bash weekly-update.sh
 常见错误：
 - **claude 命令找不到** → 看第 0 步
 - **git push 失败** → 检查 GitHub 仓库地址和登录状态
-- **skill 没找到 docs/** → 确认你在 `~/ai-investment-weekly` 目录里跑的脚本
+- **skill 没找到 docs/** → 确认你在 `~/Documents/CC/ai-investment-weekly` 目录里跑的脚本
 
 ### 第 6 步：填持仓（周末复盘需要）
 
 打开 `https://YOUR_USERNAME.github.io/ai-investment-weekly/portfolio.html`：
 
-1. 第一次：点 **选择 data 目录** → 弹窗里定位到 `~/ai-investment-weekly/data/` → 选中授权。
+1. 第一次：点 **选择 data 目录** → 弹窗里定位到 `~/Documents/CC/ai-investment-weekly/data/` → 选中授权。
 2. 编辑表格（增/删持仓行、改观察清单）。
 3. 点 **保存到文件** → 浏览器直接写到本地 `data/portfolio.json`。
 4. 完。下次进网页浏览器会记住授权，再次保存时点一下系统弹窗确认即可。
@@ -156,7 +154,7 @@ bash install-launchd.sh install weekend   # 只装周六
 ## 🛠 日常运维
 
 ```bash
-cd ~/ai-investment-weekly
+cd ~/Documents/CC/ai-investment-weekly
 
 # 立即手动跑一次（必须指定哪个任务）
 bash install-launchd.sh test weekly       # 跑产业链周报
@@ -182,8 +180,8 @@ bash install-launchd.sh remove weekend    # 只删周六
 
 ```bash
 mkdir -p ~/.claude/skills
-ln -s ~/ai-investment-weekly/skill                ~/.claude/skills/ai-turning-points
-ln -s ~/ai-investment-weekly/skill-market-review  ~/.claude/skills/weekly-market-review
+ln -s ~/Documents/CC/ai-investment-weekly/skill                ~/.claude/skills/ai-turning-points
+ln -s ~/Documents/CC/ai-investment-weekly/skill-market-review  ~/.claude/skills/weekly-market-review
 ```
 
 这样在任意目录开 Claude Code 会话，说：

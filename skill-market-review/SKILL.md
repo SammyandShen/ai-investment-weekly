@@ -43,7 +43,7 @@ Switch to HTML publish mode when ONE is true:
 In HTML publish mode:
 
 1. Render to HTML using `skill-market-review/assets/template.html` — find `<!-- FILL: ... -->` markers, replace each.
-2. Save to `<repo-root>/docs/reviews/<YYYY-MM-DD>/index.html` where `<YYYY-MM-DD>` is **today's actual date** (the Saturday). `<repo-root>` is the directory containing both `docs/` and `skill-market-review/`. Walk up from cwd to find it; fallback `~/ai-investment-weekly/`.
+2. Save to `<repo-root>/docs/reviews/<YYYY-MM-DD>/index.html` where `<YYYY-MM-DD>` is **today's actual date** (the Saturday). `<repo-root>` is the directory containing both `docs/` and `skill-market-review/`. Walk up from cwd to find it; fallback `~/Documents/CC/ai-investment-weekly/`.
 3. Update `<repo-root>/docs/index.html`: find `<!-- REVIEW-ARCHIVE-START -->` / `<!-- REVIEW-ARCHIVE-END -->` markers, insert new `<li>` at the top. Newest first.
 4. Never silently overwrite an existing review for the same date — append a `-v2` suffix.
 

@@ -9,7 +9,8 @@ set -e
 # ============================================
 # 配置区（按需改）
 # ============================================
-PROJECT_DIR="$HOME/ai-investment-weekly"   # 项目放在哪
+# PROJECT_DIR 自动从脚本位置推断 — 项目无论放哪都能跑
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CLAUDE_CMD="claude"                         # Claude Code 命令名
 GIT_BRANCH="main"                           # push 到哪个分支
 

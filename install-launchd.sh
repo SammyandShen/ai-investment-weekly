@@ -19,7 +19,8 @@
 set -e
 
 USERNAME=$(whoami)
-PROJECT_DIR="$HOME/ai-investment-weekly"
+# PROJECT_DIR 自动从脚本位置推断 — 项目无论放哪都能跑
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # task -> (plist name, script name, desc)
 declare_task() {
@@ -58,7 +59,9 @@ install_one() {
     if [ ! -f "$SCRIPT_PATH" ]; then echo "❌ 找不到脚本 $SCRIPT_PATH"; exit 1; fi
 
     mkdir -p "$HOME/Library/LaunchAgents"
-    sed "s|USERNAME|$USERNAME|g" "$PLIST_SOURCE" > "$PLIST_DEST"
+    sed -e "s|__PROJECT_DIR__|$PROJECT_DIR|g" \
+        -e "s|__HOME__|$HOME|g" \
+        "$PLIST_SOURCE" > "$PLIST_DEST"
     chmod +x "$SCRIPT_PATH"
 
     launchctl unload "$PLIST_DEST" 2>/dev/null || true

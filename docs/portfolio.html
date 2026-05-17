@@ -186,7 +186,7 @@
 <main class="page editor">
 
   <h1 class="report-title">持仓与观察清单</h1>
-  <p class="report-subtitle">每周六复盘任务读取本地文件 <code>~/ai-investment-weekly/data/portfolio.json</code>。授权一次本地目录后，网页改完点保存就直接写到文件，不需要走 git。</p>
+  <p class="report-subtitle">每周六复盘任务读取本地文件 <code>~/Documents/CC/ai-investment-weekly/data/portfolio.json</code>。授权一次本地目录后，网页改完点保存就直接写到文件，不需要走 git。</p>
 
   <div id="statusBar" class="status-bar">数据加载中...</div>
 
@@ -194,7 +194,7 @@
     <summary>怎么用 / 隐私保证</summary>
     <p><strong>首次使用：</strong></p>
     <ol>
-      <li>点页面底部 <strong>选择 data 目录</strong>，浏览器弹窗里定位到 <code>~/ai-investment-weekly/data/</code> 并选中。</li>
+      <li>点页面底部 <strong>选择 data 目录</strong>，浏览器弹窗里定位到 <code>~/Documents/CC/ai-investment-weekly/data/</code> 并选中。</li>
       <li>授权后，网页会读取该目录下的 <code>portfolio.json</code>（不存在就用空模板）。</li>
       <li>编辑表格 → 点 <strong>保存到文件</strong>，浏览器直接写到本地 <code>portfolio.json</code>。</li>
       <li>完。skill 在周六 10:00 自动读这个文件。</li>
@@ -286,7 +286,7 @@
     </div>
 
     <p style="font-family:var(--sans);font-size:12px;color:var(--ink-muted);margin-top:10px;">
-      正常工作流：在表格里改 → 点 <strong>保存到文件</strong> → 直接写到 <code>~/ai-investment-weekly/data/portfolio.json</code>。
+      正常工作流：在表格里改 → 点 <strong>保存到文件</strong> → 直接写到 <code>~/Documents/CC/ai-investment-weekly/data/portfolio.json</code>。
       所有改动会同时自动保存在浏览器 localStorage（作为缓存）。
     </p>
 

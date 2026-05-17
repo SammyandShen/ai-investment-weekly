@@ -8,7 +8,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/USERNAME/ai-investment-weekly/daily-briefing.sh</string>
+        <string>__PROJECT_DIR__/daily-briefing.sh</string>
     </array>
 
     <!-- 工作日 07:00（中国时间，Mac 本地时区）触发
@@ -47,19 +47,19 @@
     <false/>
 
     <key>WorkingDirectory</key>
-    <string>/Users/USERNAME/ai-investment-weekly</string>
+    <string>__PROJECT_DIR__</string>
 
     <key>StandardOutPath</key>
-    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-daily-stdout.log</string>
+    <string>__PROJECT_DIR__/logs/launchd-daily-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-daily-stderr.log</string>
+    <string>__PROJECT_DIR__/logs/launchd-daily-stderr.log</string>
 
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/USERNAME/.npm-global/bin</string>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:__HOME__/.npm-global/bin</string>
         <key>HOME</key>
-        <string>/Users/USERNAME</string>
+        <string>__HOME__</string>
     </dict>
 </dict>
 </plist>

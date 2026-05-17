@@ -8,7 +8,8 @@ set -e
 # ============================================
 # 配置区
 # ============================================
-PROJECT_DIR="$HOME/ai-investment-weekly"
+# PROJECT_DIR 自动从脚本位置推断 — 项目无论放哪都能跑
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CLAUDE_CMD="claude"
 GIT_BRANCH="main"
 

@@ -6,11 +6,11 @@
     <key>Label</key>
     <string>com.user.ai-weekly</string>
 
-    <!-- 要跑的脚本（USERNAME 由 install-launchd.sh 替换） -->
+    <!-- 要跑的脚本（__PROJECT_DIR__ 由 install-launchd.sh 替换） -->
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/USERNAME/ai-investment-weekly/weekly-update.sh</string>
+        <string>__PROJECT_DIR__/weekly-update.sh</string>
     </array>
 
     <!-- 每周一 09:00 运行
@@ -31,21 +31,21 @@
 
     <!-- 工作目录 -->
     <key>WorkingDirectory</key>
-    <string>/Users/USERNAME/ai-investment-weekly</string>
+    <string>__PROJECT_DIR__</string>
 
     <!-- 标准输出和错误日志 -->
     <key>StandardOutPath</key>
-    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-stdout.log</string>
+    <string>__PROJECT_DIR__/logs/launchd-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/USERNAME/ai-investment-weekly/logs/launchd-stderr.log</string>
+    <string>__PROJECT_DIR__/logs/launchd-stderr.log</string>
 
     <!-- 让脚本能找到 Homebrew、npm、claude CLI -->
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/USERNAME/.npm-global/bin</string>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:__HOME__/.npm-global/bin</string>
         <key>HOME</key>
-        <string>/Users/USERNAME</string>
+        <string>__HOME__</string>
     </dict>
 </dict>
 </plist>

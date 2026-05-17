@@ -36,7 +36,7 @@ In HTML publish mode:
 
 1. Render the report into HTML using `skill/assets/template.html` (find `<!-- FILL: ... -->` markers, replace each).
 2. Save to `<repo-root>/docs/reports/<YYYY-MM-DD>/index.html` where:
-   - `<repo-root>` is the directory containing both `docs/` and `skill/`. Walk up from cwd to find it. If unresolvable, fall back to `~/ai-investment-weekly/` — that is the deployed copy used by the weekly cron and `git push`. Do NOT write to `~/Documents/CC/ai-investment-weekly/` even if it exists; that is a stale snapshot.
+   - `<repo-root>` is the directory containing both `docs/` and `skill/`. Walk up from cwd to find it. If unresolvable, fall back to `~/Documents/CC/ai-investment-weekly/` — that is the current deployed location used by the cron and `git push`. Walk-up resolution is preferred and works even if the project has moved.
    - `<YYYY-MM-DD>` is **today's actual date** (system date, not training data).
 3. Update `<repo-root>/docs/index.html`: find the `<!-- ARCHIVE-START -->` / `<!-- ARCHIVE-END -->` markers and insert a new `<li>` at the top of the list.
 4. Never silently overwrite an existing report for the same date — append a `-v2` suffix to the directory name.
