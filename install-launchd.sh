@@ -22,21 +22,28 @@ USERNAME=$(whoami)
 # PROJECT_DIR 自动从脚本位置推断 — 项目无论放哪都能跑
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# task -> (plist name, script name, desc)
+# task -> (plist file basename, label inside plist, script name, desc)
+# 注意：PLIST_NAME 是文件名（用于 plist 文件路径）
+# LABEL 是 plist 内部的 Label key（launchctl bootstrap/bootout 用）
+# 两者可能不同 — 当 launchd 把某个 label 缓存为 fail state 时，
+# 我们换 label（如 com.user.ai-weekly-v2）绕过缓存，但 plist 文件名可以保留
 declare_task() {
     case "$1" in
         daily)
             PLIST_NAME="com.user.ai-daily-briefing"
+            LABEL="com.user.ai-daily-briefing-v2"
             SCRIPT="daily-briefing.sh"
             DESC="工作日 07:00 · 盘前简报"
             ;;
         weekly)
             PLIST_NAME="com.user.ai-weekly"
+            LABEL="com.user.ai-weekly-v2"
             SCRIPT="weekly-update.sh"
             DESC="周一 09:00 · AI 产业链转折点周报"
             ;;
         weekend)
             PLIST_NAME="com.user.ai-weekend-review"
+            LABEL="com.user.ai-weekend-review"
             SCRIPT="weekend-review.sh"
             DESC="周六 10:00 · 市场周度复盘"
             ;;
@@ -64,8 +71,10 @@ install_one() {
         "$PLIST_SOURCE" > "$PLIST_DEST"
     chmod +x "$SCRIPT_PATH"
 
-    launchctl unload "$PLIST_DEST" 2>/dev/null || true
-    launchctl load "$PLIST_DEST"
+    # 用 bootout/bootstrap（不用旧的 unload/load）— 在 macOS 13+ 上前者会进入 daemon context
+    # 导致 TCC 检查 daemon entitlement，给 user binary 加 FDA 也不生效
+    launchctl bootout "gui/$(id -u)/$LABEL" 2>/dev/null || true
+    launchctl bootstrap "gui/$(id -u)" "$PLIST_DEST"
     echo "✅ 已加载：$PLIST_DEST"
 }
 
@@ -74,7 +83,7 @@ remove_one() {
     echo ""
     echo "🗑 卸载：$DESC"
     if [ -f "$PLIST_DEST" ]; then
-        launchctl unload "$PLIST_DEST" 2>/dev/null && echo "✅ 已卸载" || echo "ℹ️ 任务未在运行"
+        launchctl bootout "gui/$(id -u)/$LABEL" 2>/dev/null && echo "✅ 已卸载" || echo "ℹ️ 任务未在运行"
         rm -f "$PLIST_DEST"
     else
         echo "ℹ️ 没有这个任务的 plist"
@@ -93,8 +102,8 @@ status_one() {
     declare_task "$1"
     echo ""
     echo "── $DESC ──"
-    if launchctl list | grep -q "$PLIST_NAME"; then
-        launchctl list | grep "$PLIST_NAME"
+    if launchctl list | grep -q "$LABEL"; then
+        launchctl list | grep "$LABEL"
         echo "✅ 已加载"
     else
         echo "❌ 未加载（运行 'bash install-launchd.sh install $1' 安装）"

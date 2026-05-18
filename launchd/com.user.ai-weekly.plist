@@ -4,12 +4,12 @@
 <dict>
     <!-- 任务唯一标识符 -->
     <key>Label</key>
-    <string>com.user.ai-weekly</string>
+    <string>com.user.ai-weekly-v2</string>
 
     <!-- 要跑的脚本（__PROJECT_DIR__ 由 install-launchd.sh 替换） -->
     <key>ProgramArguments</key>
     <array>
-        <string>/bin/bash</string>
+        <string>/opt/homebrew/bin/bash</string>
         <string>__PROJECT_DIR__/weekly-update.sh</string>
     </array>
 
@@ -35,9 +35,9 @@
 
     <!-- 标准输出和错误日志 -->
     <key>StandardOutPath</key>
-    <string>__PROJECT_DIR__/logs/launchd-stdout.log</string>
+    <string>__PROJECT_DIR__/logs/weekly-v2-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>__PROJECT_DIR__/logs/launchd-stderr.log</string>
+    <string>__PROJECT_DIR__/logs/weekly-v2-stderr.log</string>
 
     <!-- 让脚本能找到 Homebrew、npm、claude CLI -->
     <key>EnvironmentVariables</key>
