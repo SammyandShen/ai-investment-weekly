@@ -59,7 +59,7 @@ echo "（用你的 Claude Pro 订阅，不消耗 API 额度）"
 
 # --print 模式：非交互、单次执行、stdout 输出最终消息
 # skill 会读 skill/SKILL.md，按方法论联网搜索，写到 docs/reports/<TODAY>/index.html
-"$CLAUDE_CMD" --print --permission-mode acceptEdits "请按当前项目根目录下 skill/SKILL.md 的指引，出本周（$TODAY）的 AI 投资调研报告。要求：
+"$CLAUDE_CMD" --print --permission-mode bypassPermissions "请按当前项目根目录下 skill/SKILL.md 的指引，出本周（$TODAY）的 AI 投资调研报告。要求：
 1. 联网搜索最新数据（capex、内存合约价、燃机 backlog、订单、估值、机构持仓等），不允许只用训练数据。
 2. 输出到 docs/reports/$TODAY/index.html，使用 skill/assets/template.html 作为模板。
 3. 同时更新 docs/index.html 的归档列表（在 <!-- ARCHIVE-START --> 和 <!-- ARCHIVE-END --> 之间，最新一期插在最上面）。

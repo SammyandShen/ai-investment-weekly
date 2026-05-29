@@ -57,7 +57,7 @@ echo ""
 echo "🤖 Step 1/2: 调用 skill weekly-market-review 出本周复盘..."
 echo "（用 Claude Pro 订阅，不消耗 API 额度，预计 5–15 分钟）"
 
-"$CLAUDE_CMD" --print --permission-mode acceptEdits "请按当前项目根目录下 skill-market-review/SKILL.md 的指引，执行本周（$TODAY）的市场周度复盘任务。要求：
+"$CLAUDE_CMD" --print --permission-mode bypassPermissions "请按当前项目根目录下 skill-market-review/SKILL.md 的指引，执行本周（$TODAY）的市场周度复盘任务。要求：
 
 1. 这是 HTML publish 模式 — 输出到 docs/reviews/$TODAY/index.html，使用 skill-market-review/assets/template.html 作为模板。
 2. 必须先读 data/portfolio.json — 用 portfolio[] 填【4. 我的持仓周度处理】，用 watchlist.* 决定扫描范围。
