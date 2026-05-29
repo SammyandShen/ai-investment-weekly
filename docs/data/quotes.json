@@ -1,0 +1,46 @@
+{
+  "fetchedAt": "2026-05-29T03:25:53.126248+00:00",
+  "source": "yahoo-finance-chart",
+  "quotes": {
+    "NVDA": {
+      "price": 214.25,
+      "prevClose": 223.47,
+      "currency": "USD",
+      "exchange": "NMS",
+      "marketState": "",
+      "marketTime": "2026-05-28T20:00:00+00:00"
+    },
+    "AMD": {
+      "price": 518.09,
+      "prevClose": 447.58,
+      "currency": "USD",
+      "exchange": "NMS",
+      "marketState": "",
+      "marketTime": "2026-05-28T20:00:01+00:00"
+    },
+    "INTC": {
+      "price": 120.89,
+      "prevClose": 118.96,
+      "currency": "USD",
+      "exchange": "NMS",
+      "marketState": "",
+      "marketTime": "2026-05-28T20:00:01+00:00"
+    },
+    "ORCL": {
+      "price": 203.7,
+      "prevClose": 188.16,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "marketState": "",
+      "marketTime": "2026-05-28T20:02:08+00:00"
+    },
+    "MRVL": {
+      "price": 204.83,
+      "prevClose": 186.8,
+      "currency": "USD",
+      "exchange": "NMS",
+      "marketState": "",
+      "marketTime": "2026-05-28T20:00:01+00:00"
+    }
+  }
+}

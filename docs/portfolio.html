@@ -214,11 +214,9 @@
     <h2><span class="section-num">01</span> 持仓 <span class="deck">/ Positions</span></h2>
 
     <div id="quoteBar" style="font-family:var(--sans);font-size:13px;color:var(--ink-2);margin:0 0 10px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
-      <button class="btn" id="refreshQuotesBtn" style="font-size:12px;padding:6px 12px;">刷新行情</button>
-      <span id="quoteStatus" style="color:var(--ink-muted);">尚未拉取行情</span>
-      <label style="font-size:12px;color:var(--ink-muted);cursor:pointer;">
-        <input type="checkbox" id="autoRefreshChk"> 自动每 60 秒刷新
-      </label>
+      <button class="btn" id="refreshQuotesBtn" style="font-size:12px;padding:6px 12px;">重新加载收盘价</button>
+      <span id="quoteStatus" style="color:var(--ink-muted);">尚未加载收盘价</span>
+      <span style="font-size:11px;color:var(--ink-muted);">显示最近一次同步的收盘价（每个工作日早 07:00 中国时间由 daily-briefing.sh 自动更新）</span>
     </div>
 
     <div class="table-wrap">
@@ -601,51 +599,40 @@ function renderPortfolio() {
   renderQuoteCells();  // 渲染当前已知 quotes
 }
 
-// ============= 行情拉取 + P&L 渲染 =============
-const quotes = new Map();   // ticker -> { price, prevClose, currency, fetchedAt }
-let lastFetchAt = null;
-let autoRefreshTimer = null;
-
-async function fetchOne(ticker) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const j = await res.json();
-  const r = j?.chart?.result?.[0];
-  if (!r || !r.meta) throw new Error('no chart data');
-  return {
-    price: r.meta.regularMarketPrice,
-    prevClose: r.meta.chartPreviousClose ?? r.meta.previousClose,
-    currency: r.meta.currency || '',
-    fetchedAt: new Date()
-  };
-}
+// ============= 收盘价加载 + P&L 渲染 =============
+// 数据源：docs/data/quotes.json，由 scripts/sync-quotes.py 在每个工作日早
+// 07:00（中国时间）通过 daily-briefing.sh 服务端同步（避开浏览器 CORS）。
+const quotes = new Map();   // ticker -> { price, prevClose, currency, marketTime }
+let quotesFetchedAt = null; // 来自文件 fetchedAt 字段
 
 async function fetchQuotes() {
-  const tickers = [...new Set(state.portfolio.map(r => (r.ticker || '').trim().toUpperCase()).filter(Boolean))];
-  if (tickers.length === 0) {
-    setQuoteStatus('持仓为空，无需拉取行情');
+  setQuoteStatus('加载 data/quotes.json 中...');
+  // cache-bust：保证刷新按钮能拿到最新一次同步
+  const url = `data/quotes.json?t=${Date.now()}`;
+  let payload;
+  try {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    payload = await res.json();
+  } catch (e) {
+    setQuoteStatus(`加载失败：${e.message}（请确认 docs/data/quotes.json 已生成；本地手动跑 scripts/sync-quotes.py）`);
     return;
   }
-  setQuoteStatus(`拉取 ${tickers.length} 个标的行情中...`);
-  const results = await Promise.allSettled(tickers.map(t => fetchOne(t)));
-  let ok = 0, fail = 0;
-  const failedTickers = [];
-  results.forEach((r, i) => {
-    if (r.status === 'fulfilled') {
-      quotes.set(tickers[i], r.value);
-      ok++;
-    } else {
-      fail++;
-      failedTickers.push(tickers[i]);
-      console.warn('quote fetch failed', tickers[i], r.reason);
-    }
-  });
-  lastFetchAt = new Date();
+
+  quotes.clear();
+  const q = payload?.quotes || {};
+  Object.keys(q).forEach(t => quotes.set(t.toUpperCase(), q[t]));
+  quotesFetchedAt = payload?.fetchedAt ? new Date(payload.fetchedAt) : null;
+
+  const tickers = [...new Set(state.portfolio.map(r => (r.ticker || '').trim().toUpperCase()).filter(Boolean))];
+  const missing = tickers.filter(t => !quotes.has(t));
+
   renderQuoteCells();
-  const statusParts = [`${ok}/${tickers.length} 成功 · ${lastFetchAt.toLocaleTimeString('zh-CN')}`];
-  if (fail > 0) statusParts.push(`失败：${failedTickers.join(', ')}`);
-  setQuoteStatus(statusParts.join(' · '));
+
+  const ts = quotesFetchedAt ? quotesFetchedAt.toLocaleString('zh-CN', { hour12: false }) : '未知时间';
+  const parts = [`收盘价快照：${ts}`];
+  if (missing.length > 0) parts.push(`缺失：${missing.join(', ')}（下次 07:00 同步会补上，或手动跑 scripts/sync-quotes.py）`);
+  setQuoteStatus(parts.join(' · '));
 }
 
 function setQuoteStatus(msg) {
@@ -726,13 +713,6 @@ function renderQuoteCells() {
   });
 }
 
-function toggleAutoRefresh(on) {
-  if (autoRefreshTimer) { clearInterval(autoRefreshTimer); autoRefreshTimer = null; }
-  if (on) {
-    autoRefreshTimer = setInterval(() => fetchQuotes().catch(e => setQuoteStatus('刷新失败: ' + e.message)), 60000);
-  }
-}
-
 function renderWatchlists() {
   document.getElementById('watchIndices').value = (state.watchlist.indices || []).join(', ');
   document.getElementById('watchAiMajors').value = (state.watchlist.ai_majors || []).join(', ');
@@ -773,11 +753,6 @@ document.getElementById('forgetDirBtn').addEventListener('click', forgetDir);
 
 document.getElementById('refreshQuotesBtn').addEventListener('click', () => {
   fetchQuotes().catch(e => setQuoteStatus('刷新失败: ' + e.message));
-});
-document.getElementById('autoRefreshChk').addEventListener('change', (e) => {
-  toggleAutoRefresh(e.target.checked);
-  localStorage.setItem('aiweekly.autoRefresh', e.target.checked ? '1' : '0');
-  if (e.target.checked) fetchQuotes().catch(err => setQuoteStatus('刷新失败: ' + err.message));
 });
 
 document.getElementById('addRowBtn').addEventListener('click', () => {
@@ -876,13 +851,8 @@ async function init() {
     setFsStatus('⚠️ IndexedDB 不可用，每次会话都要重新授权目录。');
   }
 
-  // 自动拉一次行情 + 恢复自动刷新偏好
-  fetchQuotes().catch(err => setQuoteStatus('首次拉取失败: ' + err.message + '（点"刷新行情"重试，或检查浏览器控制台）'));
-  const autoOn = localStorage.getItem('aiweekly.autoRefresh') === '1';
-  if (autoOn) {
-    document.getElementById('autoRefreshChk').checked = true;
-    toggleAutoRefresh(true);
-  }
+  // 加载一次最新收盘价快照
+  fetchQuotes().catch(err => setQuoteStatus('首次加载失败: ' + err.message + '（点"重新加载收盘价"重试，或检查浏览器控制台）'));
 }
 init();
 </script>

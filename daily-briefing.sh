@@ -42,8 +42,16 @@ fi
 echo "✅ claude / git OK"
 
 echo ""
+echo "💹 同步持仓收盘价 → docs/data/quotes.json..."
+if command -v python3 &> /dev/null; then
+    python3 "$PROJECT_DIR/scripts/sync-quotes.py" || echo "⚠️ 收盘价同步失败（继续执行 skill，前端会显示上一次快照）"
+else
+    echo "⚠️ 找不到 python3，跳过收盘价同步"
+fi
+
+echo ""
 echo "🤖 调用 skill daily-briefing..."
-"$CLAUDE_CMD" --print --permission-mode acceptEdits "请按当前项目根目录下 skill-daily-briefing/SKILL.md 的指引，出今天（$TODAY）的盘前简报。要求：
+"$CLAUDE_CMD" --print --permission-mode bypassPermissions "请按当前项目根目录下 skill-daily-briefing/SKILL.md 的指引，出今天（$TODAY）的盘前简报。要求：
 
 1. 这是 HTML publish 模式 — 输出到 docs/briefings/$TODAY/index.html，使用 skill-daily-briefing/assets/template.html 作为模板。
 2. 必须先读 data/portfolio.json 的 portfolio[] — 用来填【2. 持仓 gap 状态】。如果持仓为空，按模板里的说明渲染。
