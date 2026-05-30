@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-05-30 · 周度复盘 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews" class="active">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">周度复盘 · 第 3 期</span>
+    <span>2026 年 5 月 30 日 周六</span>
+  </div>
+
+  <h1 class="report-title">AI 需求三重确认（DELL +88% YoY / MRVL Q2 +35% / Anthropic $47B ARR），但 SpaceX $1.75T IPO 路演倒计时 9 天</h1>
+  <p class="report-subtitle">本周（5/26–5/29）SOX +16.5%、SPX 连涨第 9 周创历史新高（收 ~7,590）；DELL AI 服务器营收 +757% YoY、MRVL Q2 指引 $2.7B 大幅超预期 $2.0B、Anthropic $965B 估值$47B ARR。但市场宽度仅 5.6% 个股创 52 周新高、等权重 S&P500 停滞，SpaceX $1.75T IPO 路演 6/8 启动将构成最大近期流动性压力。AMD 已穿越 $500 目标，MRVL 财报后 V 型反弹，ORCL 受 DELL 传导涨 11%。泡沫评分 31/55（↑3 vs 上期），当前最像 1999H2。</p>
+
+  <!-- ====== 1. 本周总判断 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本周总判断</h2>
+
+    <div class="tldr">
+      <h4>一句话结论</h4>
+      <p style="font-size:18px;font-weight:600;margin:0;">震荡交易 — 顺势持仓但不追高；AMD 止盈 50%、INTC 止盈 30%，同时买入 QQQ put 对冲 6/8 SpaceX 路演流动性压力。</p>
+    </div>
+
+    <h4>市场状态</h4>
+    <p><strong>强趋势</strong> — SPX 连涨 9 周创历史新高（~7,590），VIX 15.74（5/29 收盘），SOX 单周 +16.5%；但宽度严重分化（仅 5.6% 个股创 52 周新高，等权重 S&P500 停滞于前高），SpaceX $1.75T IPO 路演 9 天后启动，构成顶部压力信号。<br><small>事实：SPX 9-week winning streak, TheStreet 2026-05-29；SOX +16.5% week, Nasdaq OMX 2026-05；VIX 15.74, CBOE 2026-05-29；breadth: StockCharts 2026-05-28</small></p>
+
+    <h4>AI 泡沫阶段概率分布</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>阶段</th><th>当前判断</th><th class="num">概率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1996–1998 早期扩散</td><td>AI 基础设施订单、实际营收已大规模兑现，不再是早期</td><td class="num">0%</td></tr>
+          <tr><td>1999 叙事和估值同步加速</td><td><strong>主场景</strong>：DELL +757% YoY AI 营收、MRVL Q2 $2.7B 指引、Anthropic $47B ARR、超大规模 Capex $725B 同步加速；私募估值接近 $1T；市场宽度分化初现</td><td class="num">60%</td></tr>
+          <tr><td>2000Q1 顶部附近</td><td>次场景：宽度仅 5.6%、等权重停滞、SpaceX 史上最大 IPO 即将抽水、Fed 12月加息概率 46%</td><td class="num">25%</td></tr>
+          <tr><td>2000H2 订单和资本开支恶化</td><td>目前没有订单恶化信号；GPU 租赁价格下跌但需求仍强</td><td class="num">10%</td></tr>
+          <tr><td>2001–2002 信用风险暴露</td><td>HY OAS 274bp，历史低位；信用市场无压力</td><td class="num">4%</td></tr>
+          <tr><td>2003 后幸存者阶段</td><td>不适用</td><td class="num">1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 2. 本周真正重要的 5 件事 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 本周真正重要的 5 件事</h2>
+
+    <article class="deepdive">
+      <h3>事件 #1 · DELL Q1 FY27：AI 服务器营收 $16.1B (+757% YoY)，FY27 全年目标上调至 $60B</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>DELL Q1 FY27（5/28 盘后）：总营收 $43.8B（+88% YoY），AI 优化服务器营收 $16.1B（+757% YoY），AI 订单额 $24.4B，非 GAAP EPS $4.86（预期 $2.93，超 66%）。FY27 AI 服务器营收指引上调至 $60B，总收入指引中位 $167B（+50% YoY）。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://247wallst.com/investing/2026/05/28/live-can-dell-technologies-extend-its-158-ytd-run-with-q1-earnings-tonight/">24/7 Wall St.</a> / <a href="https://www.fool.com/investing/2026/05/29/dell-just-blew-out-earnings-as-it-joins-the-ai-party-should-investors-buy-the-stock-after-its-221-run-this-year/">Motley Fool</a>, 2026-05-28/29</p></div>
+        <div><h4>为什么重要</h4><p>DELL 是 AI 基础设施需求的最直接验证者（采购全链路：GPU + 内存 + 网络 + 机架）。FY27 $60B AI 服务器目标意味着 Hyperscaler Capex $725B 已实质性落地采购，非停留在指引层面。这是本周最大的需求确认信号。</p></div>
+        <div><h4>影响方向</h4><p><strong>利多</strong>（AI 供应链：NVDA、MRVL、MU、ANET、SMCI）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 — ORCL、MRVL 因 DELL 带动大涨，使此前计划中的减仓价位更容易执行（ORCL 已到 $225，MRVL 回到 $196）。止盈计划不变，但执行窗口更优。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #2 · MRVL Q1 FY27 Beat + Q2 指引 $2.7B（vs 预期 $2.0B，+35% YoY）</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>MRVL Q1 FY27（5/27 盘后）：营收 $2.42B（+28% YoY，超指引中位 $1,800 万），非 GAAP EPS $0.80（预期 $0.75，超 6.7%）。Q2 FY27 指引：营收 $2.70B ±5%（预期 $2.0B）。数据中心营收 $1.83B（占比 76%，+27% YoY）。经营现金流 $638.8M（季度历史新高）。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://stocktitan.net/sec-filings/MRVL/8-k-marvell-technology-inc-reports-material-event-c6f040475efc.html">StockTitan / MRVL 8-K</a>, 2026-05-27；<a href="https://www.gurufocus.com/news/8886246/marvell-mrvl-reports-strong-q1-earnings-and-raises-revenue-forecast">GuruFocus</a>, 2026-05-27</p></div>
+        <div><h4>为什么重要</h4><p>MRVL 的自定义 AI ASIC 业务（Google TPU / Amazon Trainium 等）Q2 指引 $2.7B 比市场预期高 35%。这证明：① 推理端 AI 需求从 GPU 分流向定制芯片加速；② Hyperscaler 的 AI Capex 不仅买通用 GPU，还在大量投入定制芯片。MRVL 5/23 复盘止损逻辑（$166 穿透）被财报完全推翻，股价 V 型回到 $196。</p></div>
+        <div><h4>影响方向</h4><p><strong>利多</strong>（MRVL 自身；AI 自定义 ASIC 概念；间接利多 TSMC 先进封装）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 — 5/23 建议减仓 50% 的 MRVL 止损逻辑已失效（财报超预期），止损位上调至 $185 并持有仓位。若之前已减仓 50%，本次不追高补回。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #3 · Anthropic 以 $965B 估值完成 $65B 融资，超越 OpenAI 成全球最高估值 AI 公司</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>Anthropic 完成由 Altimeter Capital、Greenoaks、Dragoneer、Sequoia 领投的 $65B 私募轮（含 Amazon $50 亿既有承诺），估值 $965B（≈ $1T）。Anthropic 本月初宣布 Run-rate 营收突破 $47B。此前 OpenAI 最新一轮估值 $730-852B（3月）。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html">CNBC</a> / <a href="https://www.axios.com/2026/05/28/anthropic-ai-fundraising-openai">Axios</a> / <a href="https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai">Bloomberg</a>, 2026-05-28</p></div>
+        <div><h4>为什么重要</h4><p>私募市场对 AI 叙事的定价首次触及 $1T（接近微软市值）。但 $47B ARR 对应 $965B 估值 = 约 20x ARR，与 SaaS 2021 年高峰水平相当。Anthropic 单季融资 $65B 消耗大量私人资本，同时 SpaceX $1.75T IPO 和 OpenAI IPO 都在排队——叠加压力极大。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性偏利空</strong>（短期：提振 AI 叙事情绪；长期：私募市场估值泡沫化加速，抽水压力上升）</p></div>
+        <div><h4>是否改变交易计划</h4><p>否 — 强化 SpaceX IPO 对冲必要性，但不改变个股操作计划。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #4 · 美伊停火 MOU：油价 5 月单月 -19%，10Y 从 4.7% 回落至 4.44%</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>美伊双方"基本同意"60 天停火谅解备忘录，待特朗普签字确认。WTI 原油 5 月月跌 -16.5%，Brent $92.56（5/29 收盘）；10Y 国债收益率从 5/20 高位 4.7% 回落至 4.44%（5/29）。PCE 4 月核心同比 +3.3%（符合预期），月环比 +0.2%；标题 PCE +3.8%（受能源驱动）。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.cnbc.com/2026/05/29/oil-prices-iran-ceasefire-us-trump-strait-hormuz-energy-costs.html">CNBC 油价</a>, 2026-05-29；<a href="https://www.cnbc.com/2026/05/28/core-inflation-hit-an-annual-rate-of-3point3percent-in-april-as-expected-feds-preferred-gauge-shows-.html">CNBC PCE</a>, 2026-05-28；<a href="https://tradingeconomics.com/united-states/government-bond-yield">Trading Economics</a></p></div>
+        <div><h4>为什么重要</h4><p>美伊停火是本轮 9 周连涨的最大宏观推手。油价下跌直接压低通胀预期，使 10Y 收益率回落，减轻了高估值成长股的折现压力。风险：① 停火仍待特朗普最终签字；② 协议为 60 天临时性，不保证长期和平；③ 如果谈判破裂，油价可能快速反弹至 $100+。</p></div>
+        <div><h4>影响方向</h4><p><strong>利多</strong>（宏观：利率压力暂减，成长股估值回升）但<strong>尾部利空风险</strong>（停火破裂）</p></div>
+        <div><h4>是否改变交易计划</h4><p>否 — 不追多；对冲计划（QQQ put）包含此类地缘政治尾部风险。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #5 · SpaceX S-1 提交（5/20），路演 6/8 启动，目标估值 $1.75T（史上最大 IPO）</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>SpaceX 于 5/20 向 SEC 提交 S-1，路演预计 6/8 启动，目标上市日期约 6/12，拟融资规模 $750 亿（史上最大 IPO），目标估值 $1.75T（部分预测超 $2T）。关键财务：2025 营收 $18.7B（Starlink $11.4B，占 61%），Q1 2026 净亏损 $4.28B。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.fool.com/investing/2026/05/25/the-spacex-ipo-is-coming-these-are-the-3-most-impo/">Motley Fool</a> / <a href="https://kraneshares.com/spacex-ipo-5-key-takeaways-from-the-s-1-filing-and-how-to-get-exposure-today-with-agix/">KraneShares</a>, 2026-05-25；<a href="https://cryptobriefing.com/spacex-s-1-filing-boosts-ipo-prospects-16t-valuation-by-june-2026/">CryptoBriefing</a></p></div>
+        <div><h4>为什么重要</h4><p>$750 亿 IPO 融资将从公开市场抽走大量流动性（对比：2000 年 AT&T Wireless $10.6B 创当时记录）。路演期（6/8 起）历史规律：大型 IPO 路演期间，市场流动性从二级市场转移至 IPO 配售，科技股常见 3-8% 阶段回调。Q1 $4.28B 亏损 vs $1.75T 估值 = 叙事/估值脱节（和 1999 年互联网 IPO 模式高度相似）。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong>（流动性虹吸；IPO 供给压力；1999 年模式类比）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 — 触发 QQQ put 对冲操作（6/8 前完成建仓）。不添加新多头。</p></div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 3. 泡沫评分模型 ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 泡沫评分模型</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th class="num">分（0–5）</th>
+            <th>支撑数据 / 来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>估值泡沫</td><td class="num">4</td><td>DELL YTD +221%；SOX YTD +164%；Anthropic $965B ≈ 20x ARR；SpaceX $1.75T vs Q1 亏损 $4.28B。NDX P/E ~38x。<br><small>Tom's Hardware 2026-05；Motley Fool 2026-05-29</small></td></tr>
+          <tr><td>资本开支过热</td><td class="num">5</td><td>Big 4 Hyperscaler 2026 合计 Capex $725B（+77% YoY）；MSFT $190B、GOOGL $190B、AMZN $200B、META $145B；DELL FY27 AI 服务器目标 $60B；电力/制冷 Capex 占超大规模总 Capex >60%。<br><small>Tom's Hardware 2026-05；NextwavesInsight 2026</small></td></tr>
+          <tr><td>融资脆弱性</td><td class="num">3</td><td>HY OAS 274bp（历史低位，30.5% 低于长期均值）；Anthropic $65B 融资 + SpaceX $75B IPO + OpenAI IPO 三箭齐发；私募 AI 估值连续创历史新高。<br><small>GuruFocus / FRED, 2026-05-25</small></td></tr>
+          <tr><td>真实需求兑现</td><td class="num">2</td><td>DELL AI 服务器营收 $16.1B (+757% YoY)；MRVL Q2 指引 $2.7B (+35% QoQ)；Anthropic ARR $47B；SNOW +37%（AWS $6B 协议 + 业绩）。需求兑现强劲，非虚假叙事阶段。<br><small>DELL 8-K; MRVL 8-K; Axios 2026-05-28</small></td></tr>
+          <tr><td>供给过剩风险</td><td class="num">3</td><td>H100 spot 价格已降至 $1.03/hr（较 2023 高点 -64%至-75%）；B200 spot $2.12/hr。但需求仍超供：DELL 订单 $24.4B 说明当前仍供不应求。风险在 2027 年 CoWoS 扩产落地后更大。<br><small>Spheron/ThunderCompute 分析, 2026-05</small></td></tr>
+          <tr><td>龙头盈利质量</td><td class="num">2</td><td>NVDA 毛利率约 60%+；MRVL 非 GAAP 毛利率 58.9%；DELL 非 GAAP EPS $4.86（+214% YoY）。龙头盈利质量健康，尚无劣化迹象。<br><small>MRVL 8-K; DELL 8-K, 2026-05-27/28</small></td></tr>
+          <tr><td>二三线公司脆弱性</td><td class="num">2</td><td>SMCI 审计问题持续但无新进展；INTU -15%（裁员 17%，CEO 称与 AI 无关）；WMT -6.4%（消费指引走软）；AI 应用层公司 SNOW、DDOG、MDB 本周因 SNOW 业绩而整体反弹。<br><small>各公司财报; CNBC 2026-05-22/28</small></td></tr>
+          <tr><td>信用市场压力</td><td class="num">1</td><td>HY OAS 274bp（2026-05-25）；历史低位，无信用压力信号。IG OAS 也处于收窄区间。警惕：若 SpaceX IPO 定价低于预期，可能触发信用利差走阔。<br><small>GuruFocus / BofA, 2026-05-25</small></td></tr>
+          <tr><td>市场宽度恶化</td><td class="num">3</td><td>标普 500 创历史新高，但仅 5.6% 成分股处于 52 周高位；等权重 S&P500（RSP）停滞于前高并连续 4 日收低；A/D 线创历史新高（确认性信号）——宽度分化但尚未决定性恶化。<br><small>StockCharts, 2026-05-28；Clearview WS, 2026-05</small></td></tr>
+          <tr><td>监管和地缘风险</td><td class="num">2</td><td>特朗普 1 月已对非美供应链的先进 AI 芯片征收 25% 关税；BIS 对华出口管制调整为 case-by-case（宽松方向）；美伊停火暂时降低地缘风险。但停火为 60 天临时协议，破裂风险真实存在。<br><small>Mayer Brown 2026-01；Morgan Lewis 2026-01；CNBC 2026-05-29</small></td></tr>
+          <tr><td>Mega IPO 和私募抽水压力</td><td class="num">4</td><td>SpaceX $75B IPO 路演 6/8 启动（史上最大）；Anthropic $65B 私募；OpenAI IPO 排队中。三大压力叠加，6–7 月流动性虹吸风险为本轮最大结构性风险。<br><small>Motley Fool / KraneShares 2026-05-25；CNBC 2026-05-28</small></td></tr>
+          <tr style="background:#fafafa;font-weight:700;">
+            <td>总分（满分 55）</td>
+            <td class="num">31</td>
+            <td>vs 上周 28（↑3）· 首期评分参考：第 1 期 33，第 2 期 28</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>当前最像互联网泡沫哪一年</h4>
+    <p><strong>1999H2</strong> — 理由：① 真实 AI 需求强劲兑现（类比 1999 年互联网真实用户增长）；② Capex 加速到极端水平（$725B，类比 1999–2000 年电信/光纤大规模建设）；③ 私募估值接近 $1T（Anthropic）、IPO 管道满溢（SpaceX + OpenAI）——类比 1999 年 Akamai、WebMD 等 IPO 高峰；④ 市场宽度分化（5.6% 个股创新高）但指数还在创历史新高——这是 1999H2 典型特征，1999 年 12 月宽度已明显恶化但 Nasdaq 还在涨。</p>
+
+    <h4>最关键反证条件</h4>
+    <p>如果出现以下之一，应将评分下调 3–5 分并切换至"顶部震荡"立场：<br>
+    ① MRVL / NVDA Q2 FY27 指引环比下修（AI 自定义 ASIC 或 GPU 需求放缓）；<br>
+    ② H100/B200 GPU 租赁价格突然大幅下跌超过 30%（供给过剩提前到来）；<br>
+    ③ 任何 Hyperscaler 在 Q2 财报中首次下调 2026 Capex 指引。</p>
+  </section>
+
+  <!-- ====== 4. 持仓周度处理 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 我的持仓周度处理</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">
+      读取自 <code>data/portfolio.json</code>（最后更新 2026-05-14）。价格为 5/29 收盘参考值（事实）。
+      <a href="../../portfolio.html">→ 编辑持仓</a>
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th>当前状态</th>
+            <th>本周风险变化</th>
+            <th>建议动作</th>
+            <th>触发条件</th>
+            <th>失效条件</th>
+            <th>下周重点观察</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NVDA</strong><br><small>成本 $184 / 止损 $190→$200* / 目标 $250 / 仓位 3%</small></td>
+            <td>$214（参考）。vs 成本 +16.3%。止损 $200（5/23 已上调）以上 +7%。目标 $250 还差 -14.4%。</td>
+            <td>本周几乎持平（0–1%），卖事实模式延续；DELL +88% YoY 对 NVDA GPU 需求为强确认，但 NVDA 本身股价滞涨——宽度分化信号之一。</td>
+            <td>持有</td>
+            <td>NVDA ≥ $225 可小加仓（动量确认）</td>
+            <td>收盘 &lt; $200（止损离场）</td>
+            <td>是否从 $210 支撑反弹；NVDA 是否受 DELL AI 需求正向催化补涨</td>
+          </tr>
+          <tr>
+            <td><strong>AMD</strong><br><small>成本 $372 / 止损 $400 / 目标 $500 / 仓位 2%</small></td>
+            <td>$521（参考）。vs 成本 +40%。目标 $500 已于 5/27 突破（峰值 $512.30），当前 +4.2% 超目标。⚠️ 目标触发未处理。</td>
+            <td>目标触及且已超越，原有止盈计划应当触发。5/29 盘前简报已标注须人工处理。持续持有无止盈计划意味着暴露于回调风险。</td>
+            <td><strong>止盈 50%</strong></td>
+            <td>已触发（市价 $521 &gt; 目标 $500）。本周一开市按市价或限价 $510+ 执行</td>
+            <td>剩余 50% 止损上调至 $480（超成本充裕）</td>
+            <td>止盈后 AMD 是否在 $480–500 建立支撑；MI300X 市场份额 vs NVDA Blackwell 竞争格局</td>
+          </tr>
+          <tr>
+            <td><strong>INTC</strong><br><small>成本 $29 / 止损 $100 / 目标 $200 / 仓位 9%</small></td>
+            <td>~$115–122（参考，5/11 高点 $129.44 回落）。vs 成本 +296–321%。止损 $100 安全。目标 $200 还差 -39–43%。</td>
+            <td>INTC 本周相对弱势（5/27 -3.15%），未受 DELL AI 波动正向传导。可能反映 INTC 在 AI 服务器链条中地位有限。5/23 建议 5/20 后止盈 30% 若尚未执行须本周落地。</td>
+            <td><strong>止盈 30%</strong>（按 5/23 计划）</td>
+            <td>开市执行（若未执行，本周一优先处理）</td>
+            <td>INTC 收盘 &lt; $100（全清止损）</td>
+            <td>是否守住 $110 支撑；Arrow Lake 出货进度 / 代工新订单是否有公告</td>
+          </tr>
+          <tr>
+            <td><strong>ORCL</strong><br><small>成本 $189 / 止损 $180 / 目标 $300 / 仓位 4%</small></td>
+            <td>$225.78（参考）。vs 成本 +19.5%。止损 $180 安全（+25.4%）。目标 $300 还差 -24.7%。</td>
+            <td>本周 ORCL +11%（受 DELL AI 服务器波段传导）。ORCL OCI（Oracle Cloud Infrastructure）AI 基础设施需求实际上受益于超大规模 Capex 泛扩散。但 5/23 已建议减仓 50%，若未执行，本周更优价位执行。</td>
+            <td><strong>减仓 50%</strong>（5/23 计划延续）</td>
+            <td>$220+ 开市限价执行</td>
+            <td>剩余仓位止损 $180（不变）</td>
+            <td>ORCL 是否再创新高 $230+；6月 ORCL 财报前是否有 OCI AI 基础设施订单公告</td>
+          </tr>
+          <tr>
+            <td><strong>MRVL</strong><br><small>成本 $162 / 止损 $180 / 目标 $300 / 仓位 5%</small></td>
+            <td>$196.70（参考）。vs 成本 +21.4%。止损 $180 安全（+9.3%）。目标 $300 还差 -34.4%。</td>
+            <td>本周 MRVL 最大亮点：Q1 FY27 beat（EPS $0.80 vs $0.75）+ Q2 指引 $2.7B（远超预期 $2.0B）。股价从 $166（5/20 低点）V 型反弹至 $196.70（+18.5%）。5/23 止损穿透逻辑已被财报推翻。</td>
+            <td>上调止损至 $185；持有（财报逻辑已确认）</td>
+            <td>止损 $185 即时生效。若之前已减仓 50%，本次不追高补回全仓</td>
+            <td>剩余仓位收盘 &lt; $185（止损离场）</td>
+            <td>自定义 ASIC（Google/Amazon）订单是否继续加速；Q2 数据中心营收能否按 $2.7B 指引兑现</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-family:var(--sans);font-size:12px;color:var(--ink-muted);">* NVDA 止损 5/23 已建议上调至 $200，portfolio.json 中仍显示 $190，请人工更新。AMD 止损 $400 已过时（当前 $521），止盈后剩余仓位止损请更新至 $480。</p>
+  </section>
+
+  <!-- ====== 5. 下周三种情景计划 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 下周三种情景计划</h2>
+
+    <article class="deepdive">
+      <h3>情景一 · 继续上涨（概率 30%）</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>① SPX 守住 7,500 支撑；② SpaceX 路演前市场对 IPO 热情高于恐惧（6/8 前科技股跟涨 IPO 预期）；③ 油价维持 $90 以下，10Y 守住 4.5% 以下；④ 美伊停火协议特朗普正式签字。</p></div>
+        <div><h4>应该做什么</h4><p>持有 NVDA（止损 $200）；持有 MRVL 止损上调至 $185；在已完成 AMD 止盈 50% 和 INTC 止盈 30% 后，观察 ORCL 减仓是否执行完毕。</p></div>
+        <div><h4>不能做什么</h4><p>不能在 SPX 历史新高、VIX 15 的背景下新开重仓；不能因市场强势而取消 QQQ put 对冲计划（SpaceX 路演风险不变）。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景二 · 顶部震荡（概率 45%）</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>① SPX 在 7,450–7,600 区间反复；② SpaceX 路演开始（6/8）市场出现流动性分流；③ 10Y 重上 4.6%（Fed 6/17 FOMC 前数据走热）；④ 宽度继续恶化（52 周新高个股比例 &lt; 4%）。</p></div>
+        <div><h4>应该做什么</h4><p>执行所有计划止盈（AMD 50%、INTC 30%、ORCL 50%）；持有并上调各仓位止损；完成 QQQ put 建仓；不加任何新仓位。</p></div>
+        <div><h4>不能做什么</h4><p>不能因震荡而做空指数（仍在强趋势中）；不能因个股震荡而主动扩大仓位；不能忽视 SpaceX 路演带来的流动性压力。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景三 · 下跌或泡沫破裂（概率 25%）</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>① SpaceX IPO 路演期间出现认购不足信号（&lt;2x 超额认购）或定价低于 $1.5T；② 美伊停火协议破裂（油价重上 $100）；③ 美联储 6/17 FOMC 提前释放加息信号；④ HY OAS 单周突破 320bp；⑤ 任何 Hyperscaler 下调 Capex。</p></div>
+        <div><h4>应该做什么</h4><p>QQQ put 对冲自动获益；同步执行所有剩余止损（NVDA $200、MRVL $185、ORCL $180）；AMD 和 INTC 若未止盈则立即市价减仓；减少总体仓位至 50% 以下。</p></div>
+        <div><h4>不能做什么</h4><p>不能"等反弹再减"（泡沫破裂初期没有反弹窗口）；不能忽视止损而继续持有；不能短期内抄底（等 HY OAS &gt; 400bp 再评估）。</p></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ====== 6. 下周交易行动清单 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 下周交易行动清单 <span class="deck">/ 最多 8 条</span></h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>动作</th>
+            <th>标的</th>
+            <th>原因</th>
+            <th>触发条件</th>
+            <th>止损 / 失效</th>
+            <th>时间周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>止盈 50%</strong></td>
+            <td>AMD</td>
+            <td>$500 目标 5/27 已触发（峰值 $512.30）；不止盈相当于持有超目标仓位，风险回报已倒挂。</td>
+            <td>已触发。本周一开市市价或限价 $510+ 执行</td>
+            <td>剩余 50% 止损上调至 $480</td>
+            <td>本周一执行（6/1）</td>
+          </tr>
+          <tr>
+            <td><strong>止盈 30%</strong></td>
+            <td>INTC</td>
+            <td>5/23 复盘计划延续；INTC 本周相对弱势，$115-122 已较高点 $129 回落 10%，趁强减仓锁利。</td>
+            <td>开市执行（若尚未执行）</td>
+            <td>全仓止损 $100（不变）</td>
+            <td>本周执行（6/1–6/5）</td>
+          </tr>
+          <tr>
+            <td><strong>减仓 50%</strong></td>
+            <td>ORCL</td>
+            <td>5/23 计划延续；本周 ORCL 受 DELL 波段带动至 $225，是更优减仓价位（$225 vs 5/23 时约 $190）。</td>
+            <td>$220 以上开市限价</td>
+            <td>剩余仓位止损 $180（不变）</td>
+            <td>本周执行（6/1–6/5）</td>
+          </tr>
+          <tr>
+            <td><strong>上调止损</strong></td>
+            <td>MRVL</td>
+            <td>Q1 beat + Q2 $2.7B 指引确认 ASIC 需求加速，原止损 $180 已不合理（股价已到 $196），上调至 $185 锁定浮盈。</td>
+            <td>即时生效</td>
+            <td>收盘 &lt; $185 触发止损离场</td>
+            <td>即时（6/1 起有效）</td>
+          </tr>
+          <tr>
+            <td><strong>买入 put（对冲）</strong></td>
+            <td>QQQ</td>
+            <td>SpaceX 路演 6/8 启动，史上最大 IPO 流动性压力；5/23 计划已建议；6 月到期 OTM put 成本低、时效匹配。</td>
+            <td>6/8 路演启动前完成建仓；QQQ 当前 ~$545，建议行使价 $520（约 -4.6%）</td>
+            <td>SPX 单周跌幅 &gt;4%（对冲已奏效，可了结）；或 SpaceX IPO 延期超过 7 月</td>
+            <td>6 月到期（6/20 or 6/27），建仓于 6/5 前</td>
+          </tr>
+          <tr>
+            <td><strong>持有 / 维持止损</strong></td>
+            <td>NVDA</td>
+            <td>卖事实模式但 DELL 确认 AI 需求实质，NVDA $200 止损充裕；无加仓理由（宽度分化）。</td>
+            <td>≥$225 可考虑小加仓（动量确认需此价位突破）</td>
+            <td>收盘 &lt; $200（止损离场）</td>
+            <td>持续有效</td>
+          </tr>
+          <tr>
+            <td><strong>观察 / 等待回调</strong></td>
+            <td>MU（美光）</td>
+            <td>MU 5/26 单日 +18%（HBM4 全年售罄 + UBS $1,625 目标 + 破 $1T 市值），已大幅追高；等回调再入。</td>
+            <td>MU 回落至 $130–140 区间再建仓</td>
+            <td>MU 跌破 $120（供给或需求担忧出现）</td>
+            <td>1–2 个月内观察窗口</td>
+          </tr>
+          <tr>
+            <td><strong>观察 / DELL 传导链</strong></td>
+            <td>ANET / SMCI</td>
+            <td>DELL AI 服务器 $60B 目标直接利好网络（ANET）和服务器（SMCI）。SMCI 若解决审计问题可能大幅补涨。</td>
+            <td>SMCI 收复 $60 且审计无新负面；ANET 创新高</td>
+            <td>SMCI 跌破 $50；ANET 宏观利率上行</td>
+            <td>2–4 周</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. 下周必须盯的转折点 ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 下周必须盯的转折点 <span class="deck">/ 最多 10 条</span></h2>
+
+    <ol>
+      <li><strong>SpaceX IPO 路演（6/8 启动）</strong> — 看：认购倍数是否 &gt;3x；定价区间是否 ≥$1.75T；路演期间 QQQ/SOXX 是否出现 3–5% 回调（流动性分流信号）。</li>
+      <li><strong>美联储 FOMC 6/17</strong> — 看：措辞是否新增"加息仍是选项"；当前 Fed Fund Futures 显示 12 月加息概率 46%——若声明偏鹰，10Y 重上 4.7% 触发成长股估值压缩。</li>
+      <li><strong>美伊停火协议正式签字 vs 破裂</strong> — 油价当前已定价"基本达成协议（Brent $92.56）"。若谈判破裂或特朗普拒绝签字，油价回 $105+ 即触发通胀恐慌。</li>
+      <li><strong>NVDA 止损 $200 守住与否</strong> — NVDA 卖事实模式延续，若跌破 $200 触发止损；若 $210 企稳并向 $225 突破，可考虑小加仓（动量确认）。</li>
+      <li><strong>MRVL 自定义 ASIC Q2 营收兑现</strong> — Q2 指引 $2.7B（8月报）前，观察管理层是否在任何会议/路演中更新 ASIC 订单数据；Google/Amazon ASIC 合同续签或扩大是关键催化。</li>
+      <li><strong>AMD 止盈后回调深度</strong> — AMD 止盈 50% 后，观察 $480–500 是否形成新支撑；若 AMD 在 $510+ 维持，剩余仓位可上调止损；若跌破 $480，全清剩余。</li>
+      <li><strong>HY OAS 单周变化</strong> — 目前 274bp（历史低位）。突破 320bp = 信用微压；突破 350bp = 减仓信号；突破 400bp = 泡沫破裂预警。本周是否随 SpaceX 路演出现信用利差走阔。</li>
+      <li><strong>GPU 租赁现货价格趋势</strong> — H100 spot 已至 $1.03/hr（较 2023 高点 -64%）。若继续下行至 &lt;$0.80/hr，算力基础设施超级供给过剩将对整个 AI 基础设施叙事构成压力；反之若 B200 spot 价格回升，确认需求持续强劲。</li>
+      <li><strong>SOX 50DMA / 200DMA 守住与否</strong> — SOX 本月已大幅飙升；50DMA 约在 10,800–11,000 区间。若 SpaceX 路演触发科技股回调，SOX 首个支撑位在 11,500；若跌破 50DMA 则市场状态从"强趋势"切换至"顶部震荡"。</li>
+      <li><strong>Anthropic / OpenAI 营收数据更新</strong> — Anthropic 宣布 ARR $47B，OpenAI 最新数据（$852B 估值对应多少 ARR？）。下周若有任何 AI 大模型公司公布月度用户/营收数据，核实估值是否过高（$47B ARR = 约 20x ARR 对应 $965B，是否可持续）。</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>指数 / 波动率 / 利率信用</h4>
+      <ul>
+        <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-may-29-2026">TheStreet — SPX 连涨第 9 周（2026-05-29）</a></li>
+        <li>CBOE — VIX 15.74 收盘（2026-05-29）；来源：Macrotrends VIX 历史数据</li>
+        <li><a href="https://tradingeconomics.com/united-states/government-bond-yield">Trading Economics — 10Y 收益率 4.44%（2026-05-29）</a></li>
+        <li><a href="https://www.gurufocus.com/economic_indicators/5735/bofa-us-high-yield-index-optionadjusted-spread">GuruFocus — BofA HY OAS 274bp（2026-05-25）</a></li>
+        <li><a href="https://www.cnbc.com/2026/05/28/core-inflation-hit-an-annual-rate-of-3point3percent-in-april-as-expected-feds-preferred-gauge-shows-.html">CNBC — PCE 4 月 Core +3.3% YoY（2026-05-28）</a></li>
+        <li><a href="https://articles.stockcharts.com/article/market-breadth-fears-are-everywhere-but-data-tells-a-more-nuanced-story/">StockCharts — 宽度：仅 5.6% 个股创 52 周新高（2026-05-28）</a></li>
+        <li>Nasdaq OMX — SOX +16.49% 单周（2026-05）</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>AI 资本开支 / 供应链 / 需求</h4>
+      <ul>
+        <li><a href="https://www.tomshardware.com/tech-industry/big-tech/big-techs-ai-spending-plans-reach-725-billion">Tom's Hardware — Big 4 Capex $725B 2026（+77% YoY）</a></li>
+        <li><a href="https://nextwavesinsight.com/hyperscaler-ai-capex-microsoft-google-amazon-meta-2026/">NextWavesInsight — Hyperscaler Capex 明细（2026）</a></li>
+        <li><a href="https://247wallst.com/investing/2026/05/28/live-can-dell-technologies-extend-its-158-ytd-run-with-q1-earnings-tonight/">24/7 Wall St. — DELL Q1 FY27 实时直播（2026-05-28）</a></li>
+        <li><a href="https://www.fool.com/investing/2026/05/29/dell-just-blew-out-earnings-as-it-joins-the-ai-party-should-investors-buy-the-stock-after-its-221-run-this-year/">Motley Fool — DELL AI 服务器 +757% YoY（2026-05-29）</a></li>
+        <li><a href="https://stocktitan.net/sec-filings/MRVL/8-k-marvell-technology-inc-reports-material-event-c6f040475efc.html">StockTitan — MRVL 8-K（Q1 FY27 Results, 2026-05-27）</a></li>
+        <li><a href="https://www.gurufocus.com/news/8886246/marvell-mrvl-reports-strong-q1-earnings-and-raises-revenue-forecast">GuruFocus — MRVL Q2 指引 $2.7B（2026-05-27）</a></li>
+        <li><a href="https://www.spheron.network/blog/gpu-cloud-pricing-comparison-2026/">Spheron — GPU 云定价（H100 spot $1.03/hr，2026）</a></li>
+        <li><a href="https://www.thundercompute.com/blog/ai-gpu-rental-market-trends">ThunderCompute — AI GPU 租赁市场趋势（2026-05）</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>融资 / IPO / 估值</h4>
+      <ul>
+        <li><a href="https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html">CNBC — Anthropic $965B 估值 + $47B ARR（2026-05-28）</a></li>
+        <li><a href="https://www.axios.com/2026/05/28/anthropic-ai-fundraising-openai">Axios — Anthropic 超越 OpenAI（2026-05-28）</a></li>
+        <li><a href="https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai">Bloomberg — Anthropic $65B 融资（2026-05-28）</a></li>
+        <li><a href="https://www.fool.com/investing/2026/05/25/the-spacex-ipo-is-coming-these-are-the-3-most-impo/">Motley Fool — SpaceX S-1 关键数字（2026-05-25）</a></li>
+        <li><a href="https://kraneshares.com/spacex-ipo-5-key-takeaways-from-the-s-1-filing-and-how-to-get-exposure-today-with-agix/">KraneShares — SpaceX S-1 五大要点（2026-05-25）</a></li>
+        <li><a href="https://cryptobriefing.com/spacex-s-1-filing-boosts-ipo-prospects-16t-valuation-by-june-2026/">CryptoBriefing — SpaceX $1.75T 估值路线图（2026）</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>监管 / 地缘</h4>
+      <ul>
+        <li><a href="https://www.cnbc.com/2026/05/29/oil-prices-iran-ceasefire-us-trump-strait-hormuz-energy-costs.html">CNBC — 美伊停火 + 油价 5 月 -19%（2026-05-29）</a></li>
+        <li><a href="https://www.mayerbrown.com/en/insights/publications/2026/01/administration-policies-on-advanced-ai-chips-codified">Mayer Brown — 特朗普 AI 芯片关税政策（2026-01-14）</a></li>
+        <li><a href="https://www.morganlewis.com/pubs/2026/01/bis-revises-export-review-policy-for-advanced-ai-chips-destined-for-china-and-macau">Morgan Lewis — BIS 对华芯片出口 case-by-case 审查（2026-01-13）</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"概率情景"为情景分析。每个交易建议仅在标注的触发条件下成立；执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 周度复盘 · 2026-05-30
+</footer>
+
+</body>
+</html>
