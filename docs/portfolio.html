@@ -109,6 +109,8 @@
   }
   .status-bar.dirty { border-left-color: var(--amber); }
   .status-bar.dirty::before { content: "● "; color: var(--amber); font-size: 18px; vertical-align: -2px; }
+  .status-bar.synced { border-left-color: var(--green); background: #f0fdf4; }
+  .status-bar.cached { border-left-color: var(--amber); background: #fffbeb; }
 
   details.help {
     background: #fffbeb;
@@ -391,10 +393,12 @@ async function idbDel(key) {
 }
 
 // ============= 状态 =============
+// 启动时先用 localStorage 占位（避免白屏），init() 异步用文件数据覆盖（如果已授权）
 let state = loadState();
 let dirHandle = null;
 let dirty = false;
 let lastSavedAt = null;
+let syncStatus = 'cache';  // 'cache' = 显示浏览器缓存 | 'file-synced' = 已从文件读 | 'no-handle' = 没授权
 const fsSupported = ('showDirectoryPicker' in window) && window.isSecureContext;
 
 function loadState() {
@@ -442,25 +446,32 @@ async function pickDir() {
     await idbSet('dataDir', handle);
     setFsStatus(`✅ 已授权目录 "${handle.name}"`);
     enableFsButtons(true);
-    await loadFromFile(false);
+    await loadFromFile({ silent: false });
   } catch (e) {
     if (e.name !== 'AbortError') { console.error(e); alert('授权失败: ' + e.message); }
   }
 }
 
-async function ensureDirHandle(needGesture = false) {
+async function ensureDirHandle({ requestIfPrompt = true } = {}) {
   if (!fsSupported) return null;
   if (!dirHandle) dirHandle = await idbGet('dataDir');
   if (!dirHandle) return null;
-  // verifyPermission 的 requestPermission 需要 user gesture；
-  // 调用方都是按钮点击触发，所以可以请求
-  const ok = await verifyPermission(dirHandle, true);
-  return ok ? dirHandle : null;
+  const opts = { mode: 'readwrite' };
+  const perm = await dirHandle.queryPermission(opts);
+  if (perm === 'granted') return dirHandle;
+  if (perm === 'denied') return null;
+  // perm === 'prompt' — 只有在用户点击触发时才能请求，否则浏览器会拒绝
+  if (!requestIfPrompt) return null;
+  if ((await dirHandle.requestPermission(opts)) === 'granted') return dirHandle;
+  return null;
 }
 
-async function loadFromFile(silent) {
-  const handle = await ensureDirHandle(true);
-  if (!handle) { setFsStatus('权限被拒绝或未授权。'); return false; }
+async function loadFromFile({ silent = false, requestIfPrompt = true } = {}) {
+  const handle = await ensureDirHandle({ requestIfPrompt });
+  if (!handle) {
+    if (!silent) setFsStatus('权限被拒绝或未授权。');
+    return false;
+  }
   try {
     const fh = await handle.getFileHandle('portfolio.json');
     const file = await fh.getFile();
@@ -480,6 +491,7 @@ async function loadFromFile(silent) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     dirty = false;
     lastSavedAt = new Date(file.lastModified);
+    syncStatus = 'file-synced';
     renderPortfolio();
     renderWatchlists();
     renderStatus();
@@ -487,17 +499,17 @@ async function loadFromFile(silent) {
     return true;
   } catch (e) {
     if (e.name === 'NotFoundError') {
-      setFsStatus(`ℹ️ 目录里还没有 portfolio.json — 编辑完点"保存到文件"会自动创建`);
+      if (!silent) setFsStatus(`ℹ️ 目录里还没有 portfolio.json — 编辑完点"保存到文件"会自动创建`);
       return false;
     }
     console.error(e);
-    setFsStatus(`❌ 加载文件失败: ${e.message}`);
+    if (!silent) setFsStatus(`❌ 加载文件失败: ${e.message}`);
     return false;
   }
 }
 
 async function saveToFile() {
-  const handle = await ensureDirHandle(true);
+  const handle = await ensureDirHandle({ requestIfPrompt: true });
   if (!handle) { alert('请先点"选择 data 目录"授权'); return; }
   try {
     const fh = await handle.getFileHandle('portfolio.json', { create: true });
@@ -506,6 +518,7 @@ async function saveToFile() {
     await w.close();
     dirty = false;
     lastSavedAt = new Date();
+    syncStatus = 'file-synced';
     renderStatus();
     setFsStatus(`✅ 已写入 portfolio.json · ${lastSavedAt.toLocaleString('zh-CN')}`);
   } catch (e) {
@@ -518,8 +531,10 @@ async function forgetDir() {
   if (!confirm('忘记授权目录？localStorage 内容保留，下次需要重新选目录。')) return;
   await idbDel('dataDir');
   dirHandle = null;
+  syncStatus = 'no-handle';
   setFsStatus('已忘记授权目录。');
   enableFsButtons(false);
+  renderStatus();
 }
 
 // ============= UI 辅助 =============
@@ -538,13 +553,19 @@ function renderStatus() {
   const bar = document.getElementById('statusBar');
   if (!bar) return;
   const n = state.portfolio.length;
-  const fileLine = lastSavedAt ? `文件最后保存：${lastSavedAt.toLocaleString('zh-CN')}` : '尚未保存到文件';
+  const fileLine = lastSavedAt ? `文件时间 ${lastSavedAt.toLocaleString('zh-CN')}` : '';
   if (dirty) {
     bar.className = 'status-bar dirty';
-    bar.innerHTML = `<strong>有未保存改动。</strong> ${n} 个持仓 · ${fileLine} · 点 <strong>保存到文件</strong> 写入本地。`;
+    bar.innerHTML = `<strong>有未保存改动</strong>（${n} 持仓）· 点 <strong>保存到文件</strong> 写入本地${fileLine ? ' · ' + fileLine : ''}`;
+  } else if (syncStatus === 'file-synced') {
+    bar.className = 'status-bar synced';
+    bar.innerHTML = `<strong style="color:var(--green);">✅ 已与本地文件同步</strong> · ${n} 持仓 · ${fileLine || '尚未读取文件'}`;
+  } else if (syncStatus === 'cache') {
+    bar.className = 'status-bar cached';
+    bar.innerHTML = `<strong style="color:var(--amber);">⚠️ 当前显示的是浏览器缓存（可能落后于文件）</strong> · ${n} 持仓 · 点下方 <strong>从文件重新加载</strong> 同步`;
   } else {
     bar.className = 'status-bar';
-    bar.innerHTML = `${n} 个持仓 · ${fileLine}`;
+    bar.innerHTML = `${n} 持仓 · 尚未授权本地目录 · 点下方 <strong>选择 data 目录</strong> 首次授权`;
   }
 }
 
@@ -748,7 +769,7 @@ function escapeAttr(s) {
 // ============= 按钮绑定 =============
 document.getElementById('pickDirBtn').addEventListener('click', pickDir);
 document.getElementById('saveFileBtn').addEventListener('click', saveToFile);
-document.getElementById('reloadFileBtn').addEventListener('click', () => loadFromFile(false));
+document.getElementById('reloadFileBtn').addEventListener('click', () => loadFromFile({ silent: false }));
 document.getElementById('forgetDirBtn').addEventListener('click', forgetDir);
 
 document.getElementById('refreshQuotesBtn').addEventListener('click', () => {
@@ -828,9 +849,12 @@ async function init() {
   renderWatchlists();
   bindWatchlists();
   dirty = false;
-  renderStatus();
+  // 不在这里调 renderStatus()，等异步流程定下 syncStatus 后再渲染
+  // statusBar 保持初始 "数据加载中..." 直到下方逻辑确定状态
 
   if (!fsSupported) {
+    syncStatus = 'no-handle';
+    renderStatus();
     setFsStatus('⚠️ 当前浏览器不支持 File System Access API（Chrome / Edge / Arc / Brave 都支持）。请用下方降级方式（导出 / 导入 JSON）手动同步。');
     document.getElementById('pickDirBtn').disabled = true;
     return;
@@ -841,14 +865,27 @@ async function init() {
     const saved = await idbGet('dataDir');
     if (saved) {
       dirHandle = saved;
-      setFsStatus(`已记住目录 "<strong>${saved.name}</strong>"。点 <strong>从文件重新加载</strong> 或 <strong>保存到文件</strong> 重新验证权限。`);
       enableFsButtons(true);
+      // 尝试无声自动加载：仅当浏览器已永久授予权限（"每次访问都允许"）时生效
+      // 否则保持 cache 态，提示用户手动点按钮
+      const autoLoaded = await loadFromFile({ silent: true, requestIfPrompt: false });
+      if (autoLoaded) {
+        setFsStatus(`✅ 已自动从文件同步 · 目录 "<strong>${saved.name}</strong>" · 文件修改于 ${lastSavedAt.toLocaleString('zh-CN')}`);
+      } else {
+        syncStatus = 'cache';
+        setFsStatus(`已记住目录 "<strong>${saved.name}</strong>"，但权限需要重新确认。<strong>当前显示的是浏览器缓存（可能落后于文件）</strong>。点 <strong>从文件重新加载</strong> 同步最新文件。`);
+        renderStatus();
+      }
     } else {
+      syncStatus = 'no-handle';
       setFsStatus('未授权目录。点 <strong>选择 data 目录</strong> 首次授权 · 之后改完点 <strong>保存到文件</strong> 直接写本地。');
+      renderStatus();
     }
   } catch (e) {
     console.error('IndexedDB 不可用：', e);
+    syncStatus = 'cache';
     setFsStatus('⚠️ IndexedDB 不可用，每次会话都要重新授权目录。');
+    renderStatus();
   }
 
   // 加载一次最新收盘价快照
