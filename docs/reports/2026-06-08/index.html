@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-06-08 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports" class="active">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">第 5 期</span>
+    <span>2026 年 6 月 8 日</span>
+  </div>
+
+  <h1 class="report-title">MU Q3 EPS 指引 $19.15 vs 共识 $10 · SpaceX $75B IPO 6/12 流动性窗口 · ORCL 周三催化剂：三条叙事碰撞</h1>
+  <p class="report-subtitle">内存超级周期第二波加速确认（HBM4 量产 + Q3 GM 81%）；GEV 100GW 燃机 backlog + 电气化单季 $2.4B；MRVL 因 AVGO 误杀 16.74% 制造错位入场点。但 6/12 SpaceX $75B 流动性抽水 + 联储加息概率重启是本周最大尾部风险。</p>
+
+  <!-- ====== 1. TL;DR ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本期总览 <span class="deck">/ TL;DR</span></h2>
+
+    <div class="tldr">
+      <h4>本周三大转折点</h4>
+      <ol>
+        <li><strong>HBM4 量产 + MU Q3 GM 81%</strong> — Micron Q3 FY26 指引营收 $33.5B / 毛利率 81% / EPS $19.15，较共识约 $10 高出近一倍；HBM4 12H 已开始量产并已发货给 NVIDIA Rubin 平台，内存超级周期进入第二加速段。</li>
+        <li><strong>电力基础设施瓶颈刚性化</strong> — GE Vernova Q1 燃机 backlog 100GW（+17GW QoQ），电气化数据中心设备订单 $2.4B（超过 2025 全年），总 backlog $163B；核电方面 Meta 已签 6.6GW 核电 PPA，Constellation Energy（CEG）成为唯一有运营规模核电资产的可交易标的。</li>
+        <li><strong>MRVL 错位 + 光模块超级周期确认</strong> — MRVL 因 AVGO Q3 AI 指引 miss 被误杀 16.74%（至 $263），但 MRVL 自身 Q2 FY27 指引 $2.7B（+35% YoY）+ NVIDIA $2B 战略投资（NVLink Fusion 定制 XPU）是独立于 AVGO 的增长故事；COHR 同获 NVIDIA $2B 战略投资，1.6T 光模块量产提前到位。</li>
+      </ol>
+    </div>
+
+    <h4>最不值得追的拥挤叙事</h4>
+    <ul>
+      <li>AVGO"AI 指引 miss = AI 周期结束"：AVGO Q3 AI 指引 $16B 低于共识 $17.2B，但 AVGO 本身是"存量定制 ASIC + 网络" 混合体，其波动不等于超大规模 AI 投入的减速——Hyperscaler 2026 合计 capex $725B 并未下修任何一家。将 AVGO 单期 guide 外推为整体 AI capex 拐点是错误的类比。</li>
+      <li>NVDA 已"太贵"的叙事：NVDA 当前前向 PE 24.5x vs 20 年均值 55x，绝对估值反而处于历史底部四分位，而 FY27 共识 EPS 已上调至 $9.34，供应承诺 $119B 锁定可见度。此时的"太贵"是基于峰值 PE 而非正常化盈利。</li>
+    </ul>
+
+    <h4>最大单点风险</h4>
+    <p>SpaceX SPCX IPO 6/12 Nasdaq 上市（$135/股，$75B 融资，估值 $1.77 万亿）。Fortune 估算散户可能出售 $50B 其他股票筹资买入 SPCX，AI 板块是最主要的流动性来源。6/10 ORCL Q4 FY26 财报 + CPI May 数据当日同发，若 CPI 超预期而 ORCL 指引未超预期，将构成双杀。当前 10Y 利率已升至 4.54%，联储 12 月加息概率约 70%。</p>
+
+    <h4>需要继续等数据的方向</h4>
+    <ul>
+      <li>Tesla Optimus 实际量产节奏：Gen 3 Q1 2026 已发布，Fremont 工厂转产，但"2026 年前 1 万台"的目标尚无供应链硬订单核实，BOM 脱中国问题（$46K→$131K）尚未解决。</li>
+      <li>SK Hynix 2026H2 HBM4 合同价是否继续上涨：目前 HBM3E 已涨 20%，HBM4 定价约 $500/stack，但下半年长约谈判价格尚不透明，是否存在 HBM4 产能超前导致的价格平台期值得追踪。</li>
+    </ul>
+  </section>
+
+  <!-- ====== 2. Top Picks ====== -->
+  <section>
+    <h2><span class="section-num">02</span> Top Picks <span class="deck">/ 一页结论</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>主题</th>
+            <th>核心结论</th>
+            <th>标的</th>
+            <th>方向</th>
+            <th>未定价?</th>
+            <th>催化剂</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>HBM4 内存超级周期</strong></td>
+            <td>MU Q3 指引 EPS $19.15 vs 共识 $10；HBM4 量产；6/5 跌 11.5% 制造入场点</td>
+            <td>MU</td>
+            <td><span class="dir long">Long</span></td>
+            <td>共识仍未追上指引，6/5 卖压来自 AVGO 噪音</td>
+            <td>MU Q3 FY26 财报（6 月末）</td>
+            <td class="num"><span class="score high">87</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>数据中心电力瓶颈</strong></td>
+            <td>GEV 燃机 backlog 100GW；Q1 数据中心电气化订单 $2.4B 超 2025 全年；slots 排到 2030</td>
+            <td>GEV / ETN</td>
+            <td><span class="dir long">Long</span></td>
+            <td>电力基础设施未被视为 AI 纯粹受益，EPS 修正滞后</td>
+            <td>GEV Q2 2026 财报（7 月）；ETN 数据中心订单更新</td>
+            <td class="num"><span class="score high">85</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>液冷 / 热管理</strong></td>
+            <td>VRT FY26 backlog $15B（+109% YoY）；Blackwell 强制液冷；FY26 指引上调至 $13.5–14B 营收</td>
+            <td>VRT</td>
+            <td><span class="dir long">Long</span></td>
+            <td>12–18 个月前向收入已锁定；市场低估 GM 扩张</td>
+            <td>VRT Q2 2026 财报（7 月）；NVIDIA Blackwell 服务器出货加速</td>
+            <td class="num"><span class="score high">80</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>定制 ASIC + 光模块错位</strong></td>
+            <td>MRVL 因 AVGO miss 被误杀 16.74%；自身 Q2 FY27 指引 $2.7B（+35%）+ NVIDIA NVLink Fusion 合作独立于 AVGO</td>
+            <td>MRVL</td>
+            <td><span class="dir long">Long</span></td>
+            <td>6/5 情绪性卖出 vs 基本面加速，错位窗口通常 1–2 周</td>
+            <td>MRVL Q2 FY27 财报（8 月）；Rubin 平台 XPU 首批量产</td>
+            <td class="num"><span class="score mid">78</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>核电 + 长期电力合约</strong></td>
+            <td>CEG 已与 Meta 签 1.1GW 20 年 PPA；21 座核反应堆最大 US 运营商；OpenAI/Anthropic IPO 带来新客户管道</td>
+            <td>CEG</td>
+            <td><span class="dir long">Long</span></td>
+            <td>核电 PPA 溢价定价权未充分反映；长期合约锁定现金流被 DCF 低估</td>
+            <td>TMI 重启并网（预计 2027）；更多超大规模核电 PPA 签署</td>
+            <td class="num"><span class="score mid">74</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. Radar ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 雷达表 <span class="deck">/ 全主题扫描</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>新能力 / 新瓶颈</th>
+            <th>谁付钱</th>
+            <th>直接受益</th>
+            <th>受损方</th>
+            <th>最新硬证据</th>
+            <th>未定价证据</th>
+            <th>可交易资产</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>训练算力</strong></td>
+            <td>Blackwell GB300 NVL72 量产加速；Rubin H2 FY27</td>
+            <td>MSFT、AMZN、Alphabet、Meta（合计 capex $725B）</td>
+            <td>NVDA、台积电（CoWoS）</td>
+            <td>AMD（市占被蚕食）</td>
+            <td>NVDA 供应承诺 $119B；backlog 360 万台；<a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm">NVDA 10-Q Apr 2026</a></td>
+            <td>NVDA 前向 PE 24.5x vs 历史均 55x；分析师目标价 $298 vs 当前 ~$205</td>
+            <td>NVDA Long</td>
+            <td class="num"><span class="score mid">76</span></td>
+          </tr>
+          <tr>
+            <td><strong>推理算力</strong></td>
+            <td>Agent token 消耗爆发；边缘 NPU 渗透率提升</td>
+            <td>企业 / 云服务商 / 消费端</td>
+            <td>MRVL（定制推理 ASIC）、NVDA Jetson</td>
+            <td>纯训练 GPU 厂商</td>
+            <td>Salesforce Agentforce $800M ARR（+169% YoY）；MS Copilot $5.4B ARR 15M seats</td>
+            <td>推理 token 消耗量尚无标准化追踪指标</td>
+            <td>MRVL、CRM、NOW</td>
+            <td class="num"><span class="score mid">72</span></td>
+          </tr>
+          <tr>
+            <td><strong>HBM / DRAM</strong></td>
+            <td>HBM4 12H 量产（48GB/16H 将至）；DRAM Q2 合同价 +58–63% QoQ</td>
+            <td>NVIDIA、超大规模云（ASIC 旁路）</td>
+            <td>MU、000660.KS（SK Hynix）</td>
+            <td>遗留 DDR4 产线</td>
+            <td>MU Q3 指引 $33.5B / 81% GM / EPS $19.15；<a href="https://www.trendforce.com/news/2026/01/06/news-samsung-sk-reportedly-hike-server-dram-prices-60-70-google-microsoft-in-the-queue/">TrendForce Jan 2026</a></td>
+            <td>共识 EPS ~$10 vs 指引 $19.15；6/5 卖压来自 AVGO，非内存需求</td>
+            <td>MU Long</td>
+            <td class="num"><span class="score high">87</span></td>
+          </tr>
+          <tr>
+            <td><strong>网络 / 光模块</strong></td>
+            <td>1.6T 进入量产前装；CPO 2027 年扩大</td>
+            <td>超大规模云建设 $725B capex</td>
+            <td>COHR（NVIDIA $2B 战略投资）、LITE、VIAVI</td>
+            <td>100G/400G 传统设备</td>
+            <td>COHR InP 产能年内翻倍；1.6T 比预期早至少半年量产；<a href="https://www.sec.gov/Archives/edgar/data/0000820318/000119312526208972/d57080dex992.htm">COHR 8-K 2026</a></td>
+            <td>COHR YTD 涨幅可能已超前，需核查估值</td>
+            <td>COHR、LITE（估值须核查）</td>
+            <td class="num"><span class="score mid">71</span></td>
+          </tr>
+          <tr>
+            <td><strong>电力 / 数据中心电气化</strong></td>
+            <td>燃机 slots 排到 2030；4 年变压器等待期</td>
+            <td>数据中心运营商 / 超大规模云 / IPP</td>
+            <td>GEV（燃机）、ETN（变压器）、CEG（核电）</td>
+            <td>可再生能源（间歇性不满足 AI 基荷需求）</td>
+            <td>GEV Q1 backlog $163B；数据中心电气化 $2.4B 单季；<a href="https://mgrid.org/2026/04/22/ge-vernovas-gas-turbine-backlog-hits-100-gw-as-data-centers-drive-4-billion-in-q1-orders/">mgrid.org Apr 2026</a></td>
+            <td>能源/电力类股估值框架未调整为"AI 基础设施"乘数</td>
+            <td>GEV、ETN、CEG Long</td>
+            <td class="num"><span class="score high">85</span></td>
+          </tr>
+          <tr>
+            <td><strong>液冷 / 热管理</strong></td>
+            <td>Blackwell 强制液冷；新建数据中心默认液冷</td>
+            <td>超大规模云 / 数据中心开发商</td>
+            <td>VRT（主导）、Airedale、Schneider</td>
+            <td>风冷传统设备</td>
+            <td>VRT backlog $15B（+109% YoY）；Q1 FY26 营收 $2.649B；FY26 指引上调；<a href="https://seekingalpha.com/article/4890719-vertiv-holdings-the-15-billion-backlog-liquid-cooling-dominance-and-the-ai-infrastructure-trade-wall-street-is-still-underpricing">Seeking Alpha 2026</a></td>
+            <td>GM 扩张被低估；12–18 个月 backlog 覆盖锁定</td>
+            <td>VRT Long</td>
+            <td class="num"><span class="score high">80</span></td>
+          </tr>
+          <tr>
+            <td><strong>定制 ASIC</strong></td>
+            <td>超大规模云自研芯片（Google TPUv5、AWS Trainium2、Meta MTIA）规模化</td>
+            <td>Google、Amazon、Meta、Microsoft</td>
+            <td>MRVL（ASIC 设计 IP + 封装）、台积电 N3/N2</td>
+            <td>NVDA 市占（长期结构性压力）</td>
+            <td>MRVL Q2 FY27 指引 $2.7B（+35% YoY）；NVIDIA NVLink Fusion XPU 合作；FY26 全年 $8.195B（+42%）；<a href="https://www.sec.gov/Archives/edgar/data/0001835632/000183563226000014/q127_8kx522026ex-991.htm">MRVL 8-K May 2026</a></td>
+            <td>6/5 误杀 16.74%（AVGO 噪音），基本面无变化</td>
+            <td>MRVL Long（错位窗口）</td>
+            <td class="num"><span class="score mid">78</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI 软件 / Agent</strong></td>
+            <td>Agentic AI 企业落地从 POC 转向生产</td>
+            <td>企业 IT 预算 / SaaS 扩展</td>
+            <td>CRM（Agentforce $800M ARR）、NOW、MSFT（Copilot $5.4B ARR）</td>
+            <td>传统 RPA 工具（UiPath 等）</td>
+            <td>Salesforce Agentforce $800M ARR（+169%）；MS Copilot 15M paid seats；<a href="https://completeaitraining.com/news/salesforce-agentforce-hits-800-million-arr-as-enterprise/">Complete AI Training 2026</a></td>
+            <td>NOW 仍 YTD -40%（较高点），ACV>$6 亿已确认但估值修复滞后</td>
+            <td>CRM、NOW 小额探针</td>
+            <td class="num"><span class="score mid">68</span></td>
+          </tr>
+          <tr>
+            <td><strong>OCI / AI 云基础设施</strong></td>
+            <td>ORCL RPO $553B（+325% YoY）含 OpenAI $300B 合同</td>
+            <td>OpenAI、Meta、NVIDIA、US政府</td>
+            <td>ORCL（OCI 84% YoY 增长）</td>
+            <td>AWS、Azure（失去部分 OpenAI 工作负载）</td>
+            <td>Q3 FY26 OCI 营收 $4.9B（+84%）；RPO $553B；<a href="https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Fiscal-Year-2026-Third-Quarter-Financial-Results/default.aspx">Oracle 官方 2026</a>；Q4 6/10 催化</td>
+            <td>Q4 指引含云收入 +46–50%；若达成则继续向上修正</td>
+            <td>ORCL（Q4 前后）</td>
+            <td class="num"><span class="score mid">72</span></td>
+          </tr>
+          <tr>
+            <td><strong>机器人 / 具身智能</strong></td>
+            <td>Tesla Optimus Gen3 + Fremont 工厂转产；Figure 03 BMW 量产线</td>
+            <td>制造业 OEM / Tesla 内部</td>
+            <td>谐波减速器、六维力矩传感器供应商（主要在 A 股）</td>
+            <td>传统工业机械臂（发那科等）</td>
+            <td>Figure 03 BMW 30,000 台车辆贡献；BotQ 12,000 台/年；<a href="https://www.vaasblock.com/news/humanoid-robotics-figure-tesla-optimus-commercial-reality-2026/">VaaSBlock 2026</a></td>
+            <td>Optimus 1M 台/年目标需 BOM 脱中国验证，$46K→$131K 制约</td>
+            <td>观察名单；A 股零部件（流动性差）</td>
+            <td class="num"><span class="score low">52</span></td>
+          </tr>
+          <tr>
+            <td><strong>核电</strong></td>
+            <td>超大规模云签署 20 年 PPA；9.8GW+ 核电管道</td>
+            <td>Meta、MSFT、Amazon、Google</td>
+            <td>CEG（21 座反应堆）、Oklo（SMR）</td>
+            <td>天然气调峰电厂（部分）</td>
+            <td>Meta 6.6GW 核电协议；CEG-Meta 1.1GW 20 年 PPA；<a href="https://smrintel.com/nuclear-data-center-deals/">SMRintel 2026</a></td>
+            <td>核电 PPA 溢价未反映在 CEG 估值；TMI 重启 2027 年带来增量现金流</td>
+            <td>CEG Long</td>
+            <td class="num"><span class="score mid">74</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 4. Deep Dives ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 重点机会深挖 <span class="deck">/ Top 5</span></h2>
+
+    <!-- Deep Dive 1: MU -->
+    <article class="deepdive">
+      <h3>
+        机会 #1 · HBM4 量产 + Q3 毛利率 81%：内存超级周期第二波
+        <span class="ticker">MU</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>Micron Q3 FY26 指引营收 $33.5B（±$750M）/ 毛利率 81% / EPS $19.15（±$0.40），较市场共识约 $10 高出近一倍。HBM4 12H（36GB）已于 2026 年 Q1 开始量产并发货，专供 NVIDIA Vera Rubin 平台（Rubin 预计 H2 FY2027 出货）。DRAM 合同价 Q2 +58–63% QoQ，NAND +70–75% QoQ，行业定价权已回到卖方。6/5 AVGO AI 指引 miss 引发的情绪性卖出使 MU 单日跌 11.5%，制造错位入场点。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>DRAM/HBM 制造商；GPU 旁边的"燃料罐"。每块 GB300 NVL72 配 288GB HBM3e（8 栈），Rubin 将使用 HBM4。Micron 市占约 10–15%，SK Hynix 约 50%。MU 是 HBM 三大厂中唯一在美国上市且无 ADR 折扣的。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>① 超大规模云 capex $725B → 每美元 capex 配套约 $0.05–0.08 的 HBM 采购；② AI 训练模型权重量级持续上升（Llama 4 / Gemini Ultra 等），HBM 带宽需求量化为刚性；③ HBM4 每栈 $500 vs HBM3E $300，单价 +67%，即使市占不变收入也大幅增长。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>• MU Q3 FY26 指引 EPS $19.15 vs 共识 ~$10（<a href="https://futurumgroup.com/insights/micron-q2-fy-2026-earnings-driven-by-ai-led-memory-demand/">Futurum Mar 2026</a>）<br>
+          • DRAM 合同价 Q2 +58–63% QoQ（<a href="https://www.trendforce.com/news/2026/01/06/news-samsung-sk-reportedly-hike-server-dram-prices-60-70-google-microsoft-in-the-queue/">TrendForce Jan 2026</a>）<br>
+          • HBM4 12H 量产已启动，16H（48GB）已 sample（<a href="https://investors.micron.com/static-files/e089f8c0-065d-47b8-9d02-bfa863cdb357">Micron FQ2 2026 prepared remarks</a>）<br>
+          • SK Hynix 运营利润率 40–50%（<a href="https://www.tomshardware.com/tech-industry/samsung-and-sk-hynix-shorten-memory-contracts-as-pricing-power-shifts-back-to-suppliers">Tom's Hardware 2026</a>）<br>
+          • MU 6/5 跌幅 −11.5%，同日 AVGO miss 带动半导体板块集体下跌</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>共识 EPS ~$10 vs 指引 $19.15，差距约 92%。即便按指引 EPS 打七折（$13.4）、给 15x PE，目标市值仍隐含约 $155B+ 上行。分析师对 MU Q3 的 EPS 修正明显滞后（历史上 Micron EPS 共识修正总在财报后）。6/5 抛压来自 AVGO 情绪传导，与 MU 自身基本面无关。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p><strong>1M：</strong>MU Q3 FY26 财报（6 月下旬），若 EPS 验证 $19+ 将触发分析师大规模上修。<br>
+          <strong>3M：</strong>HBM4 量产节奏确认（NVIDIA Rubin 平台采用公告）。<br>
+          <strong>6M：</strong>Q4 FY26 指引（GM 是否维持 80%+）；HBM4E 发展进度。<br>
+          <strong>12M：</strong>DRAM 价格周期走势；HBM4 16H（48GB）量产。</p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>情景分析（非预测）：若 DRAM 价格 Q3 再涨 20%（历史价格周期中曾出现），MU FY26 全年 EPS 可能超过 $50。当前市值约 $115B（假设股价 ~$100），给 12x 正常化 PE 意味着 $600B 市值目标。此为激进情景。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① DRAM 价格在 Q3 见顶后快速回落（历史周期平均 4–6 季度）；② 超大规模云 capex 削减（当前无信号，但宏观衰退可触发）；③ Samsung 产能扩张超预期打压价格；④ 美对华出口管制影响 HBM 买家结构。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>① MU Q3 实际 EPS 低于指引 $18.75（即下沿 $19.15−$0.40）且 GM 低于 79%；② DRAM 合同价 Q3 环比转负；③ SK Hynix / Samsung 宣布 2026 年 HBM 大幅扩产。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>当前为确认期（财报前）：建议 probe 仓位（1–2% 组合权重）。财报后若 EPS ≥ $19 且指引强劲，升至 confirmation 仓位（3–5%）。对冲：买 SOX 7 月 OTM put 对冲 6/12 SpaceX 流动性窗口。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 2: GEV / ETN -->
+    <article class="deepdive">
+      <h3>
+        机会 #2 · 燃机 backlog 100GW + 电气化单季 $2.4B：电力基础设施定价未调
+        <span class="ticker">GEV / ETN</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>GE Vernova Q1 2026 燃机 backlog 和 slot 合同合计 100GW（+17GW 单季），电气化数据中心设备订单 $2.4B（超 2025 全年），总 backlog $163B。订单增速 +71% YoY，交货期排到 2030，变压器等待期长达 4 年。这是 AI capex $725B 的"下游刚性配套"——每 GW 数据中心负荷需约 1–1.5GW 电力设施。市场将 GEV/ETN 定价为"工业股"而非"AI 基础设施"，导致估值乘数系统性偏低。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>GEV：燃机发电设备 + 电网电气化（变压器、开关设备）。ETN：配电、高压开关、电力管理。两者均处于 AI 数据中心电力链的必要节点，且验证壁垒高（电气认证周期 2–4 年），新进入者难以快速扩产。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>AI 推理负荷持续（7×24 小时），可再生能源间歇性无法满足 AI 数据中心需求；燃气轮机是过渡期（2025–2035）唯一可快速部署的基荷方案。超大规模云数据中心功率密度从 10kW/rack → 100kW/rack（Blackwell），电力需求密度 10×。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>• GEV Q1 2026 backlog $163B；燃机 100GW；数据中心电气化 $2.4B 单季（<a href="https://mgrid.org/2026/04/22/ge-vernovas-gas-turbine-backlog-hits-100-gw-as-data-centers-drive-4-billion-in-q1-orders/">mgrid.org Apr 2026</a>）<br>
+          • GEV Q1 订单 $18.3B（+71% YoY）（<a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000063/gevpressrelease1q26.htm">GEV 8-K Apr 2026</a>）<br>
+          • ETN 数据中心订单 +240% YoY（第 4 期周报引用，需人工核实最新季度数字）<br>
+          • 变压器等待期 4 年（<a href="https://www.power-eng.com/gas/turbines/data-centers-drive-record-surge-in-ge-vernova-power-equipment-orders-as-turbine-slots-tighten-through-2030/">Power Engineering 2026</a>）</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>GEV 与 ETN 当前估值框架基于工业 EV/EBITDA 倍数（12–16x），而 AI 基础设施纯粹受益标的享受 25–40x。若市场将其重新定价为"AI 电力基础设施"，估值可重估 50–100%。分析师 EPS 修正仍在追 backlog 增长，拖后效应明显。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p><strong>1M：</strong>电力基础设施类股情绪修复（6/12 SpaceX 后轮动）。<br>
+          <strong>3M：</strong>GEV Q2 2026 财报（7 月）；若电气化订单再创单季新高将触发目标价上调。<br>
+          <strong>6M：</strong>Q3 订单确认 backlog 是否继续扩张至 110GW 目标。<br>
+          <strong>12M：</strong>燃机交货高峰（2027–2028）开始贡献大量收入确认。</p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>情景分析：若市场将 GEV 重新定价为"AI 电力 NVIDIA"（EV/EBITDA 升至 25x），当前市值可能翻倍。backlog $163B 已超 GEV 当前市值，提供了估值安全边际。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① AI capex 全面收缩（当前无信号）；② 替代技术（HVDC、储能）提前成熟替代燃机；③ 地缘政治限制 GEV 出口（欧洲、中东）；④ 通胀抬升制造成本挤压 GM。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>Q2 订单低于 $14B（Q1 $18.3B 的 76%）；燃机 slot 预约增速放缓；超大规模云公开下调 2026 capex 指引。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>GEV：confirmation 仓位（3–4% 权重），已充分验证。ETN：probe 仓位（1–2%），等待 Q2 数据中心订单更新。配对对冲：Long GEV / Short 传统电力公用事业（如 NEE），押注 AI 基荷 vs 间歇性可再生能源分化。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 3: VRT -->
+    <article class="deepdive">
+      <h3>
+        机会 #3 · Blackwell 强制液冷 + $15B backlog + 12M 锁定：液冷垄断地位
+        <span class="ticker">VRT</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>NVIDIA Blackwell 系列（GB300 NVL72 等）在高密度配置下必须使用液冷（直接液冷或浸没式），且仅少数获得认证的供应商可以进入超大规模云的合格供应商名单。Vertiv 是其中规模最大、覆盖最全的（UPS + 热管理 + 液冷）。Q4 2025 backlog $15B（+109% YoY），覆盖约 12–18 个月前向收入，FY26 指引上调至营收 $13.5–14B。6/5 随板块跌落但基本面无变化。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>数据中心关键基础设施（UPS、精密冷却、液冷机组、PDU）。直接受益于 GPU 每瓦散热需求上升：Blackwell NVL72 机架 120kW，传统风冷最大支持 30kW/rack，液冷是刚性需求而非选配。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>功率密度"10× 跳升"：从传统服务器 10kW/rack → Blackwell AI rack 100–120kW/rack。物理上风冷无法散热，液冷认证壁垒（ASHRAE、UL 认证、超大规模云内部 spec）为 VRT 建立护城河。2026–2028 年每个新建超大规模云数据中心默认液冷。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>• VRT Q1 FY26 营收 $2.649B；净利润 $390.1M（<a href="https://www.sec.gov/Archives/edgar/data/0001674101/000162828026027297/exhibit991vrt-q220264272026.htm">VRT 8-K Apr 2026</a>）<br>
+          • Q4 2025 backlog $15B（+109% YoY）（<a href="https://seekingalpha.com/article/4890719-vertiv-holdings-the-15-billion-backlog-liquid-cooling-dominance-and-the-ai-infrastructure-trade-wall-street-is-still-underpricing">Seeking Alpha 2026</a>）<br>
+          • FY26 全年指引营收 $13.5–14B；EPS $5.97–6.07<br>
+          • 收购 Strategic Thermal Labs（4 月）+ ThermoKey（3 月）扩展沉浸式冷却技术</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>backlog $15B 已覆盖 >1 年营收，市场对 GM 扩张的预测保守。收购两家液冷专家扩大技术护城河尚未充分定价。VRT 远期 PE 约 20–25x，低于同类 AI 基础设施软件股。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p><strong>1M：</strong>6/12 SpaceX 流动性压力过后，资金轮回 AI 基础设施硬件。<br>
+          <strong>3M：</strong>VRT Q2 2026 财报（7 月）；若 backlog 续增，触发目标价上调。<br>
+          <strong>6M：</strong>Blackwell NVL72 出货高峰带动液冷订单转化为收入确认。<br>
+          <strong>12M：</strong>GB300 / Rubin 平台配套液冷合同开始执行。</p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>情景分析：若 AI 数据中心新建速度维持（超大规模云 capex 未削减），VRT FY27 营收可达 $16–18B，GM 继续扩张至 35%+，EPS 可能达 $8–10。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① AI capex 削减致新建数据中心延缓；② 液冷技术标准碎片化（Schneider / Modine 等抢市场）；③ 供应链通胀（铜、泵、热交换器）；④ 客户集中风险（超大规模云占比高）。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>Q2 backlog 环比下降；FY26 指引被下修；GM 连续两季低于 28%。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>confirmation 仓位（3–4%）。止损：若股价跌破 200DMA 超过 5% 且财报 backlog 转负则减仓 50%。自然对冲：与 GEV 同处电力/基础设施主题，负相关于软件 AI 标的。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 4: MRVL -->
+    <article class="deepdive">
+      <h3>
+        机会 #4 · AVGO 误杀 -16.74% 制造 MRVL 错位：Q2 FY27 指引 $2.7B (+35%) 独立验证
+        <span class="ticker">MRVL</span>
+        <span class="dir long">Long（错位窗口）</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>6/5（周五）AVGO 因 Q3 AI 指引 $16B（低于共识 $17.2B）盘后重挫，带动 MRVL 单日跌 16.74%（至 $263.47）。但 MRVL 自身于 5/22 发布 Q1 FY27 实际营收 $2.418B（+28% YoY）且 Q2 指引 $2.7B（+35%）——这是独立的基本面加速信号，与 AVGO 的定制 ASIC 产品线无直接关联。NVIDIA 于 3 月向 MRVL 战略投资并签署 NVLink Fusion XPU 合作协议，确认其在超大规模云定制芯片生态中的关键地位。错位窗口通常维持 1–2 周。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>定制 ASIC 设计 IP（SerDes、ARM compute、硅光子）+ 数据中心以太网交换 ASIC（Teralynx）。主要客户：Google（TPU 协设计）、Amazon（Trainium 后继）、Microsoft。NVIDIA NVLink Fusion 合作将 MRVL XPU 引入 Grace-based 系统。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>超大规模云客户将 10–30% AI 训练工作负载迁移至定制 ASIC（成本效率），MRVL 是非 NVIDIA 方向的唯一成规模 IP 供应商。AVGO 与 MRVL 定制 ASIC 面向不同客户（AVGO 主供 Google TPUv5/Meta；MRVL 主供 Amazon/MS），并非直接竞争关系。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>• MRVL Q1 FY27 营收 $2.418B（+28%）；Q2 指引 $2.7B（+35%）（<a href="https://www.sec.gov/Archives/edgar/data/0001835632/000183563226000014/q127_8kx522026ex-991.htm">MRVL 8-K May 2026</a>）<br>
+          • FY26 全年营收 $8.195B（+42% YoY）；非 GAAP EPS $2.84（+81%）<br>
+          • NVIDIA $2B 战略投资 + NVLink Fusion XPU 合作（3 月 2026）<br>
+          • MRVL 6/5 当日跌幅 −16.74%，至 $263.47</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>6/5 卖压来自 AVGO 情绪传导，非 MRVL 基本面变化。MRVL 自身 Q2 指引 $2.7B 发布于 5/22，市场尚未充分消化。错位程度：同日 AVGO 自身跌幅约 −8%，MRVL 跌幅 −16.74%——超额卖出约 9 个百分点，无基本面支撑。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p><strong>1M：</strong>SpaceX IPO 流动性压力过后情绪修复（6/12 后）；分析师重申 MRVL 目标价。<br>
+          <strong>3M：</strong>MRVL Q2 FY27 财报（8 月）验证 $2.7B 指引；若 Q3 指引再超预期则进一步上修。<br>
+          <strong>6M：</strong>Amazon Trainium 3 / MRVL XPU 首批量产公告。<br>
+          <strong>12M：</strong>Rubin 平台 MRVL NVLink Fusion 芯片出货。</p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>情景分析：若 MRVL 自研 ASIC 收入在 FY27 达 $6B（FY26 约 $4B），给 30x 非 GAAP PE，目标市值约 $800–900 亿（较当前约 $230B 市值——需核查实际市值，此处仅为情景框架）。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① Q2 实际营收低于 $2.6B（指引低端）；② Google / Amazon 内化更多设计工作，减少对 MRVL IP 依赖；③ 宏观衰退导致企业 AI capex 大幅削减；④ 美对华出口管制扩大影响客户结构。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>Q2 财报营收低于 $2.55B 且指引弱；或 Google / Amazon 公开宣布减少对 MRVL 定制 ASIC 的依赖；或 AVGO 宣布与 MRVL 客户的重叠合作。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>错位窗口：probe 仓位（1–2%），目标财报前持有。止损：若跌破 $235（上周五止损线），立即按既有计划减仓 30%（详见周度复盘行动清单）。配对：Long MRVL / Short AVGO 做相对价值。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 5: CEG -->
+    <article class="deepdive">
+      <h3>
+        机会 #5 · 超大规模云 20 年核电 PPA：9.8GW 管道，CEG 21 座反应堆护城河
+        <span class="ticker">CEG</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>2026 年 5 月，全球主要超大规模云（Meta、MSFT、Amazon、Google）已与核电运营商签署 13 个项目、合计 9.8GW 核电容量的 PPA 协议，且时限多为 15–20 年，采购价格为市场电价 150–200%。CEG 是美国最大核电运营商（21 座反应堆），已与 Meta 签署 1.1GW 20 年合同，与 MSFT 签署 TMI 三里岛重启协议。这是"AI 长期基荷电力"的独特资产，且 20 年合同锁定现金流，DCF 被系统性低估。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>基荷清洁电力供应商。核电 PPA 是 AI 数据中心运营成本中最稳定的分量之一（7×24 可调度）。CEG 拥有运营资产（无建设风险），与 Oklo 等 SMR 初创公司形成鲜明对比。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>AI 训练和推理需要 7×24 小时稳定电力，可再生能源间歇性不满足；监管和 ESG 压力排除大规模新燃气选项；核电是唯一的"稳定 + 零碳"组合，超大规模云 Scope 2 目标推动需求锁定。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>• Meta 与 CEG 签署 1.1GW 20 年 PPA（Clinton Clean Energy Center，IL，2027 起）（<a href="https://smrintel.com/nuclear-data-center-deals/">SMRintel 2026</a>）<br>
+          • MSFT 与 CEG 签署 $16 亿 20 年 TMI 重启协议（<a href="https://www.theaiconsultingnetwork.com/blog/nuclear-power-ai-data-centers-smr-cre-investors-2026">AI Consulting Network 2026</a>）<br>
+          • Meta 同期签署 6.6GW 核电协议（Vistra、TerraPower、Oklo、CEG）（<a href="https://smrintel.com/nuclear-data-center-deals/">SMRintel 2026</a>）<br>
+          • CEG 2025 营收 $25.5B，净利润 $2.32B；21 座核反应堆为美国最大</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>核电 PPA 溢价（市场电价 150–200%）锁定 20 年，但 CEG 估值仍按传统电力公用事业框架（EV/EBITDA 10–14x）定价。若按"AI 长期基础设施合约"框架（15–20x），估值有显著上行空间。TMI 重启预计 2027 年贡献增量现金流，尚未完全纳入共识模型。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p><strong>1M：</strong>市场在 SpaceX IPO 流动性压力后转向防御类 AI 基础设施（核电具备稳定现金流特征）。<br>
+          <strong>3M：</strong>更多超大规模云核电 PPA 公告（OpenAI / Anthropic IPO 后将扩大采购）。<br>
+          <strong>6M：</strong>TMI 重启监管进展更新。<br>
+          <strong>12M：</strong>TMI 并网（预计 2027），CEG 产能增量约 +800MW。</p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>情景分析：若 Amazon / Google 各签署 1GW+ PPA，CEG 长期合约覆盖比例从当前 ~40% 提升至 70%+，按 DCF 折现后股价可能有 30–50% 上行空间（具体取决于折现率假设，此为情景框架）。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① 核监管（NRC）对 TMI 重启的延迟；② AI capex 大规模削减导致 PPA 买家违约（需重新谈判）；③ SMR 技术成熟后 CEG 存量反应堆竞争优势下降；④ 电力批发价格暴跌（如天然气价格大幅下行）。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>NRC 否决 TMI 重启申请；Meta / MSFT 撤销或暂停核电 PPA；核电行业监管政策逆转（极低概率但需关注）。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>probe 仓位（1–2%），等待更多 PPA 公告或 TMI 监管里程碑后升至 confirmation（3%）。自然对冲：与 GEV 同处电力主题，Long CEG 可替代 Short 可再生能源 ETF（如 ICLN）做配对。</p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 5. Shorts / Impaired ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 做空 / 受损资产</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>受损资产</th>
+            <th>受损原因</th>
+            <th>替代路径</th>
+            <th>开始反映时点</th>
+            <th>做空可行性</th>
+            <th>风险</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AVGO（短期相对）</strong></td>
+            <td>Q3 AI 指引 $16B 低于共识 $17.2B；FY27 $100B 未上调；首次 AI 指引 miss</td>
+            <td>市场重新发现 MRVL 定制 ASIC 更清晰；AVGO 存量客户可能分散给 MRVL</td>
+            <td>已开始（6/5 −8%）；延续 2–4 周</td>
+            <td>中等（流动性好，but 短期 bounce 风险高）</td>
+            <td>若 AVGO Q4 FY26 指引超预期则空单快速亏损；高 IV 使 put 较贵</td>
+          </tr>
+          <tr>
+            <td><strong>传统企业 IT 硬件</strong></td>
+            <td>AI 工作负载向 OCI / Azure / AWS 迁移；on-premise 投资回报下降</td>
+            <td>ORCL OCI、MSFT Azure、AWS（已是受益方）</td>
+            <td>已在反映（VMware 被 Broadcom 私有化；HPE 转型中）</td>
+            <td>低（难以找到干净的做空标的）；更适合配对</td>
+            <td>AI 混合云部署需求可能支撑传统硬件部分需求</td>
+          </tr>
+          <tr>
+            <td><strong>NAND Flash（消费级）</strong></td>
+            <td>AI 投资集中在 DRAM/HBM；NAND 价格虽涨 +70% QoQ 但驱动力不同（PC 回暖 vs AI）</td>
+            <td>HBM 价值链更清晰，NAND 受 PC/手机周期影响</td>
+            <td>可能 Q3 见顶（PC 补库完成后）</td>
+            <td>低（难以区分 NAND/DRAM 纯粹做空标的）</td>
+            <td>NAND 价格周期延续时间可能超预期</td>
+          </tr>
+          <tr>
+            <td><strong>高估值 AI 概念股（无收入）</strong></td>
+            <td>SpaceX IPO $75B 流动性抽水 + 联储加息预期重启，资金向实物资产/有盈利标的迁移</td>
+            <td>具体标的基于当前市场无法明确命名（需人工核查）</td>
+            <td>6/12 SpaceX 上市前后</td>
+            <td>低（概念股可能在 IPO 后反弹）</td>
+            <td>SpaceX 本身若破发，则整体情绪修复</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 6. Pairs / Cross-market ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 配对交易 / 跨市场传导</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>结构</th>
+            <th>多</th>
+            <th>空</th>
+            <th>核心逻辑</th>
+            <th>催化剂</th>
+            <th>失效条件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>定制 ASIC 分化</strong></td>
+            <td>MRVL</td>
+            <td>AVGO</td>
+            <td>MRVL Q2 指引 $2.7B 独立加速；AVGO AI 指引首次 miss；两者客户结构不重叠（Amazon/MS vs Google/Meta）</td>
+            <td>MRVL Q2 FY27 财报（8 月）；AVGO Q4 FY26 财报（9 月）</td>
+            <td>AVGO 宣布新定制 ASIC 大单与 MRVL 客户重叠；MRVL Q2 miss</td>
+          </tr>
+          <tr>
+            <td><strong>AI 电力基础设施 vs 间歇性可再生能源</strong></td>
+            <td>GEV + CEG</td>
+            <td>NEE（NextEra）</td>
+            <td>AI 数据中心需要基荷电力，燃机 + 核电比风光更适配；NEE 以可再生能源为主</td>
+            <td>GEV Q2 backlog 更新；更多 AI 核电 PPA 公告</td>
+            <td>监管强制可再生能源采购；AI 数据中心快速部署大规模储能</td>
+          </tr>
+          <tr>
+            <td><strong>内存超级周期 US→KR 跨市场</strong></td>
+            <td>MU</td>
+            <td>（KR ADR 无纯 DRAM 标的；间接：Short 韩元 ETF 对冲）</td>
+            <td>MU 是唯一在美上市的 DRAM 纯粹受益标的，SK Hynix / Samsung 估值低但需 KRW 风险；若 KRW 走弱则 MU 相对 Alpha</td>
+            <td>MU Q3 财报；DRAM 价格 Q3 走势</td>
+            <td>SK Hynix ADR 推出或 Samsung 美股再上市</td>
+          </tr>
+          <tr>
+            <td><strong>液冷 vs 传统冷却</strong></td>
+            <td>VRT</td>
+            <td>传统 HVAC 数据中心服务商（如 Carrier 数据中心业务）</td>
+            <td>Blackwell 强制液冷，VRT 认证壁垒，传统风冷逐步退出 AI 数据中心采购名单</td>
+            <td>VRT Q2 财报；Blackwell 出货加速</td>
+            <td>Blackwell 功率密度被下调；新进入者获得超大规模云认证</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. Watchlist ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 观察名单</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>当前缺什么证据</th>
+            <th>触发买入的信号</th>
+            <th>需要跟踪的数据</th>
+            <th>可能标的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tesla Optimus 量产供应链</strong></td>
+            <td>Fremont 工厂转产进度；BOM 脱中国路径；Gen 3 实际 BOM 成本</td>
+            <td>Tesla 公布 2026 年 Optimus 实际出货量超 1,000 台 + 供应链订单公告</td>
+            <td>谐波减速器采购；精密执行器供应商指定；Fremont 产能消息</td>
+            <td>A 股: 绿的谐波、双环传动（流动性较差，不建议美股账户）；美股无纯粹标的</td>
+          </tr>
+          <tr>
+            <td><strong>ORCL Q4 FY26（本周三 6/10）</strong></td>
+            <td>Q4 云营收是否达 +46–50% 指引；RPO 是否继续超 $553B；FY27 指引</td>
+            <td>OCI Q4 营收超 $5.5B 且 FY27 指引明确；RPO 继续扩大</td>
+            <td>OCI 营收增速；RPO 新增合同；OpenAI $300B 合同执行进度</td>
+            <td>ORCL Long（当前持有，本周核心催化剂）</td>
+          </tr>
+          <tr>
+            <td><strong>Anthropic / OpenAI IPO</strong></td>
+            <td>Anthropic 已秘密提交 S-1；OpenAI 准备提交；定价和时点不明</td>
+            <td>S-1 公开披露；路演启动；定价确定</td>
+            <td>ARR 增速；token 消耗量；GPU 采购合同；与 AWS/Azure/OCI 绑定程度</td>
+            <td>目前不可直接交易；关注 AWS、MSFT Azure、OCI 的间接受益</td>
+          </tr>
+          <tr>
+            <td><strong>NVDA 估值修复</strong></td>
+            <td>6/5 跌至 ~$205；前向 PE 24.5x vs 历史均 55x；SpaceX IPO 前流动性压力</td>
+            <td>SpaceX IPO 平稳落地（6/12）后；NVDA 宣布 Rubin 出货时间表确认</td>
+            <td>Blackwell GB300 出货节奏月度追踪；供应链产能利用率</td>
+            <td>NVDA Long（SpaceX 流动性窗口后确认买点）</td>
+          </tr>
+          <tr>
+            <td><strong>COHR 1.6T 估值</strong></td>
+            <td>YTD 涨幅已大，估值需核查；NVIDIA $2B 投资是否完全计入</td>
+            <td>估值回归合理区间（需人工测算当前 PE / EV/Sales）；或 1.6T 出货数据超预期</td>
+            <td>COHR 季度数据中心营收增速；InP 产能建设进度；1.6T 占比</td>
+            <td>COHR（持有则等下季财报确认；新入场需核查估值）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 8. Data Gaps ====== -->
+  <section>
+    <h2><span class="section-num">08</span> 数据缺口与必须人工核实事项</h2>
+    <ol>
+      <li><strong>ORCL Q4 FY26 财报（6/10 after close）：</strong>OCI 营收是否达 $5B+（+50% YoY）；RPO 是否继续增长；FY27 指引是否明确承诺 $20B+ OCI 营收。这是本周最高密度催化剂。</li>
+      <li><strong>CPI May 2026（6/10 08:30 ET）：</strong>与 ORCL 财报同日。若 Core CPI 超过 3.5%，联储加息预期将进一步上调，10Y 利率可能突破 4.6%，对 AI 高估值股的折现影响需重新评估。</li>
+      <li><strong>SpaceX SPCX 定价 / 上市（6/11–6/12）：</strong>$75B 融资规模，散户可能出售 $50B 其他股票筹资。AI 板块 6/12 当日流动性状况需实时监控。若首日大幅破发（<$110），情绪修复可能比预期更快。</li>
+      <li><strong>SK Hynix / Samsung HBM4 合同价透明度：</strong>HBM4 12H 定价约 $500/stack 为推测数据，实际合同价未公开披露。需追踪 TrendForce / DRAMeXchange 季度价格报告（下次约 7 月初）。</li>
+      <li><strong>MRVL 止损执行状态核实：</strong>根据周度复盘，MRVL 止损线 $235，6/5 跌至 $263 尚在止损上方，但减仓 30% 指令是否已执行需人工确认。</li>
+      <li><strong>ETN（Eaton）数据中心订单最新季度数字：</strong>上期引用 +240% YoY，需核实 Q1 2026 最新数据（Eaton Q1 FY26 财报于 4 月发布）。</li>
+      <li><strong>COHR 当前估值：</strong>COHR YTD 涨幅可能已大（需查询当前 PE / EV/Sales），本期无法从搜索结果直接获取，建议人工核查后再决定是否加仓。</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>算力 / Capex</h4>
+      <ul>
+        <li><a href="https://www.tomshardware.com/tech-industry/big-tech/big-techs-ai-spending-plans-reach-725-billion">Tom's Hardware — Big Tech AI Spending $725B (2026)</a></li>
+        <li><a href="https://www.cnbc.com/2026/02/06/google-microsoft-meta-amazon-ai-cash.html">CNBC — Tech AI spending approaches $700 billion in 2026 (Feb 2026)</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm">NVIDIA 10-Q (Apr 26, 2026) — 供应承诺 $119B</a></li>
+        <li><a href="https://www.kad8.com/ai/nvidia-blackwell-ultra-gb300-shipments-set-to-surge-in-2026/">KAD — NVIDIA GB300 Shipments Surge 2026</a></li>
+        <li><a href="https://markets.financialcontent.com/wral/article/tokenring-2025-12-29-nvidias-blackwell-dynasty-b200-and-gb200-sold-out-through-mid-2026-as-backlog-hits-36-million-units">TokenRing — Blackwell Dynasty B200/GB200 backlog 3.6M units</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>存储 / HBM / DRAM</h4>
+      <ul>
+        <li><a href="https://www.trendforce.com/news/2026/01/06/news-samsung-sk-reportedly-hike-server-dram-prices-60-70-google-microsoft-in-the-queue/">TrendForce — Samsung / SK Server DRAM +60–70% (Jan 2026)</a></li>
+        <li><a href="https://seekingalpha.com/news/4535511-samsung-sk-hynix-increase-hbm3e-prices-by-20-percent-for-2026-orders-report">Seeking Alpha — HBM3E +20% for 2026 orders</a></li>
+        <li><a href="https://investors.micron.com/static-files/e089f8c0-065d-47b8-9d02-bfa863cdb357">Micron FQ2 2026 Earnings Call Prepared Remarks (Investor Relations)</a></li>
+        <li><a href="https://futurumgroup.com/insights/micron-q2-fy-2026-earnings-driven-by-ai-led-memory-demand/">Futurum — Micron Q2 FY2026 Earnings Analysis (Mar 2026)</a></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/samsung-and-sk-hynix-shorten-memory-contracts-as-pricing-power-shifts-back-to-suppliers">Tom's Hardware — Samsung / SK Hynix 40–50% operating margins</a></li>
+        <li><a href="https://tech-insider.org/micron-q2-2026-earnings-ai-memory-market/">Tech Insider — Micron Q2 2026 Record Revenue Analysis</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>网络 / 光模块</h4>
+      <ul>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0000820318/000119312526208972/d57080dex992.htm">Coherent Corp 8-K FY2026 (SEC)</a></li>
+        <li><a href="https://fundaai.substack.com/p/deepcohr-explosion-in-800g16t-demand">FundaAI — COHR 800G/1.6T Demand Deep Dive</a></li>
+        <li><a href="https://tech-insider.org/nvidia-silicon-photonics-lumentum-coherent-ai-data-center-2026/">Tech Insider — NVIDIA $4B Photonics: Lumentum vs Coherent (2026)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>电力 / 数据中心</h4>
+      <ul>
+        <li><a href="https://mgrid.org/2026/04/22/ge-vernovas-gas-turbine-backlog-hits-100-gw-as-data-centers-drive-4-billion-in-q1-orders/">mgrid.org — GE Vernova 100GW backlog, $4B data center orders Q1 (Apr 2026)</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000063/gevpressrelease1q26.htm">GE Vernova Q1 2026 Press Release (SEC 8-K)</a></li>
+        <li><a href="https://www.power-eng.com/gas/turbines/data-centers-drive-record-surge-in-ge-vernova-power-equipment-orders-as-turbine-slots-tighten-through-2030/">Power Engineering — GE Vernova turbine slots tight through 2030</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0001674101/000162828026027297/exhibit991vrt-q220264272026.htm">Vertiv Q1 2026 Earnings Release (SEC 8-K)</a></li>
+        <li><a href="https://seekingalpha.com/article/4890719-vertiv-holdings-the-15-billion-backlog-liquid-cooling-dominance-and-the-ai-infrastructure-trade-wall-street-is-still-underpricing">Seeking Alpha — Vertiv $15B backlog, liquid cooling dominance</a></li>
+        <li><a href="https://smrintel.com/nuclear-data-center-deals/">SMRintel — Every Nuclear Data Center Deal (2026)</a></li>
+        <li><a href="https://www.theaiconsultingnetwork.com/blog/nuclear-power-ai-data-centers-smr-cre-investors-2026">AI Consulting Network — Nuclear Power AI Data Centers (2026)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>软件 / Agent / 应用</h4>
+      <ul>
+        <li><a href="https://completeaitraining.com/news/salesforce-agentforce-hits-800-million-arr-as-enterprise/">Complete AI Training — Salesforce Agentforce $800M ARR</a></li>
+        <li><a href="https://markets.financialcontent.com/stocks/article/marketminute-2026-4-3-microsoft-solidifies-enterprise-ai-dominance-as-agentic-era-triggers-software-re-rating">FinancialContent — Microsoft Copilot $5.4B ARR, 15M seats (Apr 2026)</a></li>
+        <li><a href="https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Fiscal-Year-2026-Third-Quarter-Financial-Results/default.aspx">Oracle Q3 FY2026 Results — RPO $553B, OCI +84%</a></li>
+        <li><a href="https://www.stocktitan.net/news/ORCL/oracle-sets-the-date-for-its-fourth-quarter-fiscal-year-2026-vxb0jud32m8v.html">Stock Titan — Oracle Q4 FY2026 earnings date June 10</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>机器人 / SpaceX IPO / 其他</h4>
+      <ul>
+        <li><a href="https://www.vaasblock.com/news/humanoid-robotics-figure-tesla-optimus-commercial-reality-2026/">VaaSBlock — Humanoid Robotics Figure vs Tesla Optimus (2026)</a></li>
+        <li><a href="https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html">CNBC — SpaceX $135 fixed IPO price, $75B raise (Jun 3, 2026)</a></li>
+        <li><a href="https://fortune.com/2026/06/07/spacex-ipo-selling-price-dislocations-spcx-stock-passive-index-flows-retail-investors/">Fortune — SpaceX IPO $50B retail selling impact on AI stocks (Jun 7, 2026)</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0001835632/000183563226000014/q127_8kx522026ex-991.htm">Marvell Technology Q1 FY27 8-K (May 22, 2026) — $2.418B revenue, Q2 $2.7B guide</a></li>
+        <li><a href="https://tech-insider.org/marvell-technology-stock-surge-custom-ai-chip-2026/">Tech Insider — Marvell Technology Stock Surge, Custom AI Chip 2026</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>估值 / 市场结构</h4>
+      <ul>
+        <li><a href="https://www.financecharts.com/stocks/NVDA/value/pe-ratio">FinanceCharts — NVIDIA PE Ratio Jun 2026 (前向 24.51x，历史均 55x)</a></li>
+        <li><a href="https://stockanalysis.com/stocks/nvda/statistics/">StockAnalysis — NVIDIA Valuation Statistics</a></li>
+        <li><a href="https://fortune.com/2026/06/07/spacex-ipo-selling-price-dislocations-spcx-stock-passive-index-flows-retail-investors/">Fortune — SpaceX IPO 流动性与价格错位分析 (Jun 7, 2026)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"上行空间"为情景分析，不构成对未来回报的精确预测。仓位建议在执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 第 5 期 · 2026-06-08
+</footer>
+
+</body>
+</html>
