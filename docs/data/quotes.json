@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-18T23:00:05.766139+00:00",
+  "fetchedAt": "2026-06-21T23:00:05.869065+00:00",
   "source": "yahoo-finance-chart",
   "quotes": {
     "ORCL": {
@@ -48,7 +48,7 @@
       "currency": "USD",
       "exchange": "NCM",
       "marketState": "",
-      "marketTime": "2026-06-18T20:00:01+00:00"
+      "marketTime": "2026-06-18T20:00:02+00:00"
     }
   }
 }
