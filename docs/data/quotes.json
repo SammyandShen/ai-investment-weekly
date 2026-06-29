@@ -1,54 +1,54 @@
 {
-  "fetchedAt": "2026-06-28T23:00:10.526285+00:00",
+  "fetchedAt": "2026-06-29T23:00:10.926883+00:00",
   "source": "yahoo-finance-chart",
   "quotes": {
     "ORCL": {
-      "price": 148.53,
-      "prevClose": 184.29,
+      "price": 147.76,
+      "prevClose": 175.07,
       "currency": "USD",
       "exchange": "NYQ",
       "marketState": "",
-      "marketTime": "2026-06-26T20:06:26+00:00"
+      "marketTime": "2026-06-29T20:03:22+00:00"
     },
     "NOK": {
-      "price": 13.01,
-      "prevClose": 13.49,
+      "price": 13.03,
+      "prevClose": 14.43,
       "currency": "USD",
       "exchange": "NYQ",
       "marketState": "",
-      "marketTime": "2026-06-26T20:04:29+00:00"
+      "marketTime": "2026-06-29T20:04:20+00:00"
     },
     "MRVL": {
-      "price": 266.77,
-      "prevClose": 310.58,
+      "price": 277.75,
+      "prevClose": 307.86,
       "currency": "USD",
       "exchange": "NMS",
       "marketState": "",
-      "marketTime": "2026-06-26T20:00:02+00:00"
+      "marketTime": "2026-06-29T20:00:00+00:00"
     },
     "LITE": {
-      "price": 816.98,
-      "prevClose": 850.0,
+      "price": 851.4,
+      "prevClose": 893.93,
       "currency": "USD",
       "exchange": "NMS",
       "marketState": "",
-      "marketTime": "2026-06-26T20:00:02+00:00"
+      "marketTime": "2026-06-29T20:00:01+00:00"
     },
     "AAOI": {
-      "price": 135.69,
-      "prevClose": 161.85,
+      "price": 150.1,
+      "prevClose": 171.23,
       "currency": "USD",
       "exchange": "NGM",
       "marketState": "",
-      "marketTime": "2026-06-26T20:00:02+00:00"
+      "marketTime": "2026-06-29T20:00:01+00:00"
     },
     "AEHR": {
-      "price": 91.81,
-      "prevClose": 115.3,
+      "price": 94.77,
+      "prevClose": 113.33,
       "currency": "USD",
       "exchange": "NCM",
       "marketState": "",
-      "marketTime": "2026-06-26T20:00:00+00:00"
+      "marketTime": "2026-06-29T20:00:01+00:00"
     }
   }
 }
