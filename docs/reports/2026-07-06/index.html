@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-07-06 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports" class="active">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">第 9 期</span>
+    <span>2026 年 7 月 6 日</span>
+  </div>
+
+  <h1 class="report-title">数据传输光子瓶颈 Jensen Huang 7/5 首次命名 + MU SCA 把内存变准订阅制 + ETN 200GW DC backlog 铁幕：SOXX −11.6% 两日暴跌后的买方侦察窗口</h1>
+  <p class="report-subtitle">AI 算力链已从 GPU → 内存 → 网络完成三轮瓶颈转移；光子互联正成为新的刚性卡口；内存周期属性因 SCA 结构性弱化；电力基础设施 200GW backlog 五年内无解。SOXX 两日 −11.6% 制造入场窗口，Q2 财报季 7/15 起量，本期聚焦五条可操作转折点。</p>
+
+  <!-- ====== 1. TL;DR ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本期总览 <span class="deck">/ TL;DR</span></h2>
+
+    <div class="tldr">
+      <h4>本周三大转折点</h4>
+      <ol>
+        <li><strong>光子互联卡口</strong> — Jensen Huang 7/5 公开声明"AI 所需光子产能<strong>大幅超过全球现有水平</strong>"，将数据传输瓶颈首次以 CEO 身份命名；LITE 为全球唯一 200G EML 量产商（营收翻倍至 $808M），现价 $728 距 52 周高点 $1,086 折价 33%，NVIDIA $2B 战略投资 + 多年采购协议仍在执行中。</li>
+        <li><strong>内存 SCA 订阅制革命</strong> — MU Q3 FY26 $41.5B（+346% YoY）、GM 84.9%；Q4 指引 $50B/86% GM/EPS ~$31（均为历史新高）；16 份 Strategic Customer Agreements（SCA）锁定 ~$100B 底价收入 + $22B 客户预付款，覆盖 20% DRAM + 30% NAND；SK Hynix 7/2 在 LTA 合同中取消价格上限（TrendForce），内存从周期商品向准订阅制演变，Burry 做空是基于过时周期模型的误判噪声。</li>
+        <li><strong>电力基础设施 200GW 铁幕</strong> — Eaton CTO 公开披露 DC backlog 超过 200GW（截至 2030 年），Q1 电气 backlog +48% YoY 至历史高位；GEV 燃机 backlog 100GW（Q1 2026），全年目标 110GW；以 GB200 为代表的新一代 AI 机柜功耗达 120kW/架（vs 传统 8kW），变压器/开关设备等待期 2–4 年。</li>
+      </ol>
+    </div>
+
+    <h4>最不值得追的拥挤叙事</h4>
+    <ul>
+      <li><strong>NVDA 做空 / 周期顶部</strong> — Burry 做空 MU/NVDA/AMAT 引发 FUD，但 NVDA 22× 前瞻 PE（历史最低，低于可口可乐 26×），Q2 FY27 指引 $91B（+85% YoY）尚未见顶；短期追空风险远大于收益。</li>
+      <li><strong>"定制 ASIC 替代 NVIDIA" 叙事过热</strong> — AVGO Q3 AI 指引 $16B（首次低于共识 $17.2B），MRVL 也从 $330 高点回落至 $245；定制 ASIC 取代叙事在短期内无法形成结构性颠覆，应降低追多估值倍数。</li>
+    </ul>
+
+    <h4>最大单点风险</h4>
+    <p><strong>FOMC 7/29（Warsh 主持）</strong>：6 月 PCE 预测 3.6%（远高于 2% 目标）；Warsh 承诺"毫无歧义"地对抗通胀；点阵图中位值已升至 3.8%，9 名委员预期加息；若 7/29 措辞鹰派或暗示加息，AI 硬件高倍数板块面临再定价风险。NFP 6 月 57K（远低于共识 110K）显示宏观正在降温，经济与通胀"双压"对市场构成两难困境。</p>
+
+    <h4>需要继续等数据的方向</h4>
+    <ul>
+      <li><strong>GEV Q2 2026 财报（7 月下旬）</strong>：需确认燃机 backlog 是否如期向 110GW 推进；若单季新增订单低于 5GW，推迟加仓。</li>
+      <li><strong>MRVL Q2 FY27 收入结构</strong>：定制 ASIC 份额是否从 AVGO 手中进一步夺取 Google TPU 设计权；Q2 指引 $2.7B（+35%）是否兑现；现价 $245 距 $330 高点折价 26%，但需财报确认。</li>
+    </ul>
+  </section>
+
+  <!-- ====== 2. Top Picks ====== -->
+  <section>
+    <h2><span class="section-num">02</span> Top Picks <span class="deck">/ 一页结论</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>主题</th>
+            <th>核心结论</th>
+            <th>标的</th>
+            <th>方向</th>
+            <th>未定价?</th>
+            <th>催化剂（1M/3M/6M）</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>内存 SCA 订阅化</strong></td>
+            <td>Q4 $50B/86% GM，SCA 锁 $100B 底价；Burry 噪音掩盖结构性定价权转变</td>
+            <td>MU</td>
+            <td><span class="dir long">Long</span></td>
+            <td>是 — 22% 折价高点；Goldman $400 vs 街头 $945–$1,625</td>
+            <td>Q4 FY26 财报（8 月）；SK Hynix LTA 提价；HBM4 Q2 出货数据</td>
+            <td class="num"><span class="score high">84</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>光子互联卡口</strong></td>
+            <td>Jensen Huang 7/5：光子产能"大幅低于世界需求"；LITE 唯一 EML 量产商，营收翻倍</td>
+            <td>LITE</td>
+            <td><span class="dir long">Long</span></td>
+            <td>是 — 距高点 33%；市场未定价 NVDA $2B 承诺持续购买</td>
+            <td>NVDA 持续采购（协议生效）；Q4 FY26 财报；1.6T 规模量产</td>
+            <td class="num"><span class="score high">81</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>DC 电力 200GW 铁幕</strong></td>
+            <td>ETN CTO 披露 200GW+ DC backlog；电气 Q1 backlog +48% YoY；GEV 燃机 100GW</td>
+            <td>ETN / GEV</td>
+            <td><span class="dir long">Long</span></td>
+            <td>部分 — ETN 距高点 9%；GEV 近历史高点，但 backlog 增量未充分定价</td>
+            <td>Q2 2026 财报（7 月下旬）；DC backlog 更新；固态变压器首单</td>
+            <td class="num"><span class="score high">78</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>AI Agent 软件估值崩塌</strong></td>
+            <td>CRM Agentforce $1B ARR +205%，29K 交易，股价 YTD −37% 至历史最低 9.2× NTM FCF</td>
+            <td>CRM</td>
+            <td><span class="dir long">Long</span></td>
+            <td>是 — 基本面 +205% vs 估值历史谷底，严重分叉</td>
+            <td>Q2 FY27 财报（8 月）；Agentforce ARR 里程碑；企业 AI agent 合同更新</td>
+            <td class="num"><span class="score mid">75</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>NVDA 22× PE 洼地试探</strong></td>
+            <td>22× 前瞻 PE 历史最低，低于可口可乐；Q2 FY27 指引 $91B（+85% YoY）</td>
+            <td>NVDA</td>
+            <td><span class="dir long">Long（右侧探针）</span></td>
+            <td>是 — 22× 对 +85% YoY 严重低估；跌破 50DMA $210 是入场参考</td>
+            <td>Q2 FY27 财报（8 月）；Vera Rubin 发布；超大规模 Q2 capex 数据</td>
+            <td class="num"><span class="score mid">72</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. Radar ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 雷达表 <span class="deck">/ 全主题扫描</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>新能力 / 新瓶颈</th>
+            <th>谁付钱</th>
+            <th>直接受益</th>
+            <th>受损方</th>
+            <th>最新硬证据</th>
+            <th>未定价证据</th>
+            <th>可交易资产</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>光子互联</strong></td>
+            <td>数据传输速度成 AI 算力新卡口；Jensen Huang 7/5 命名</td>
+            <td>超大规模云厂商（MSFT/Meta/Google/Amazon）</td>
+            <td>LITE（唯一 200G EML 量产商）、COHR</td>
+            <td>铜缆互连厂商</td>
+            <td>NVDA $2B × 2 战略投资 + 采购协议；LITE 营收翻倍至 $808M；光收发模块市场 $16.5B→$26B (+57%)</td>
+            <td>LITE $728 距高点 -33%，COHR $333 距高点 -24%；Jensen 7/5 声明未被市场定价</td>
+            <td>LITE / COHR</td>
+            <td class="num"><span class="score high">81</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI 内存（HBM4）</strong></td>
+            <td>Jevons 悖论：Token 成本 −1000×，消费 +100×，HBM 需求刚性上升</td>
+            <td>NVIDIA → 超大规模云厂商</td>
+            <td>MU、SK Hynix</td>
+            <td>DRAM 通用 PC 需求（被 HBM 占用产能）</td>
+            <td>MU Q3 $41.5B/84.9% GM；Q4 $50B/86% GM 指引；16 SCA / $100B 底价；SK Hynix LTA 取消价格上限（7/2）；HBM4 占 DRAM wafer 23%</td>
+            <td>MU 距高点 -22%；Goldman $400 目标 vs 街头 $1,500+；SCA 结构未被广泛理解</td>
+            <td>MU（美股）、000660.KS（SK Hynix）</td>
+            <td class="num"><span class="score high">84</span></td>
+          </tr>
+          <tr>
+            <td><strong>DC 电力基础设施</strong></td>
+            <td>GB200 机柜 120kW/架（vs 传统 8kW）→ 变压器/开关等待期 2–4 年</td>
+            <td>超大规模云厂商（Q1 2026 合计 capex 超 $725B，>60% 流向电力非芯片）</td>
+            <td>ETN、GEV、VRT</td>
+            <td>旧式低密度数据中心设备商</td>
+            <td>ETN Q1 电气 backlog +48% YoY；ETN CTO：DC backlog 200GW+ 至 2030；GEV 燃机 100GW backlog</td>
+            <td>ETN 距高点 -9%，固态变压器首单尚未公告；GEV Q2 backlog 未更新</td>
+            <td>ETN / GEV / VRT</td>
+            <td class="num"><span class="score high">78</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI Agent 软件</strong></td>
+            <td>企业 AI 代理：85% 客户查询无人工干预即解决；Agent ARR 高速增长</td>
+            <td>大型企业 IT 预算</td>
+            <td>CRM（Agentforce）、NOW</td>
+            <td>传统 RPA / 低端 SaaS 工具</td>
+            <td>CRM Agentforce $1B ARR +205%，29K 笔交易；FY27 管理层指引 $3B+；CRM 9.2× NTM FCF 历史最低</td>
+            <td>CRM 股价 YTD -37%；NOW $106 vs $210 高点；估值与基本面严重分叉</td>
+            <td>CRM / NOW</td>
+            <td class="num"><span class="score mid">75</span></td>
+          </tr>
+          <tr>
+            <td><strong>训练算力（NVDA 主导）</strong></td>
+            <td>Q2 FY27 指引 $91B（+85% YoY）；Blackwell 3.6M 单位 backlog；Vera Rubin 等待</td>
+            <td>超大规模云厂商（$725B 合计 capex）</td>
+            <td>NVDA（捕获每 $1 超大规模算力支出的 $0.57）</td>
+            <td>定制 ASIC（AVGO/MRVL）中期蚕食份额</td>
+            <td>NVDA Q1 FY27 $81.6B (+85% YoY)；22× 前瞻 PE（历史最低）；低于可口可乐估值</td>
+            <td>NVDA 较 52 周高点 -18%；跌破 50DMA $210；市场用周期顶部定价一个结构性增长公司</td>
+            <td>NVDA</td>
+            <td class="num"><span class="score mid">72</span></td>
+          </tr>
+          <tr>
+            <td><strong>推理算力 / 定制 ASIC</strong></td>
+            <td>Token 成本压缩开启新应用；定制 ASIC 推理成本比 GPU 低 50%（OpenAI/AVGO Jalapeño）</td>
+            <td>超大规模云厂商（自研芯片项目）</td>
+            <td>MRVL（赢 Google TPU 部分）、AVGO（但首次指引 miss）</td>
+            <td>NVIDIA GPU 长期份额</td>
+            <td>AVGO Q3 AI 指引 $16B（低于共识 $17.2B，首次 miss）；MRVL Q2 指引 $2.7B (+35%)；OpenAI+AVGO Jalapeño 芯片（3nm，推理成本 -50%）</td>
+            <td>MRVL $245 距 $330 高点 -26%；AVGO $360 距 $495 高点 -27%；推理芯片叙事比算力叙事慢半年</td>
+            <td>MRVL（观察）/ AVGO（谨慎）</td>
+            <td class="num"><span class="score mid">65</span></td>
+          </tr>
+          <tr>
+            <td><strong>机器人 / 人形机器人</strong></td>
+            <td>Figure 03 量产 1 台/小时；Tesla Optimus V3 进入小批量产；实体 AI 从演示到部署</td>
+            <td>工业制造商（BMW 等）、Tesla 自用</td>
+            <td>Figure AI（未上市）；精密致动器供应链（霍尼韦尔等）</td>
+            <td>传统工业机械手臂供应商</td>
+            <td>Figure 02 在 BMW Spartanburg 积累 1,250+ 运营小时、30,000 台汽车产量；Figure 03 生产速度提升 24×；Tesla Optimus $685M 向 Sanhua 采购</td>
+            <td>供应链标的（Sanhua 等）部分已定价；Figure AI 未上市；Tesla $50K–100K 单位制造成本尚未实现规模经济</td>
+            <td>TSLA（有限曝露）、上游精密零件供应商</td>
+            <td class="num"><span class="score mid">58</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI 端侧（AI PC / 手机）</strong></td>
+            <td>QCOM Snapdragon NPU、Intel AI PC；实际 AI 用量数据仍稀缺</td>
+            <td>消费者 / 企业设备更换周期</td>
+            <td>QCOM、INTC（部分）</td>
+            <td>无 NPU 旧款设备</td>
+            <td>QCOM $176 vs $260 高点 -32%；AI PC 渗透率数据缺乏</td>
+            <td>需要 AI PC 换机周期数据（预计 2H 2026 显现）</td>
+            <td>QCOM（观察）</td>
+            <td class="num"><span class="score low">48</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 4. Deep Dives ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 重点机会深挖 <span class="deck">/ Top 3–5</span></h2>
+
+    <!-- Deep Dive 1: MU -->
+    <article class="deepdive">
+      <h3>
+        机会 #1 · MU SCA 革命：$100B 底价锁定把内存变准订阅制
+        <span class="ticker">MU</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>Micron Q3 FY26 营收 $41.5B（+346% YoY）/ GM 84.9%，Q4 指引 $50B / 86% GM / EPS ~$31（均为历史新高）。16 份 Strategic Customer Agreements（SCA）锁定 ~$100B 底价收入 + $22B 客户预付款，覆盖约 20% DRAM + 30% NAND 出货量——首次将内存从纯周期商品转变为准订阅制收入。SK Hynix 7/2 在 LTA 合同中取消价格上限（TrendForce），行业整体价格发现机制正向供应商倾斜。Burry 做空基于过时的无合同周期模型，是噪声而非信号。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>DRAM / HBM4 / NAND 制造商；HBM4 为 NVIDIA Rubin 平台核心内存，Micron 承担约 20–30% HBM4 供货（SK Hynix 约 70%）。Micron 是唯一在美国本土生产 DRAM 的厂商，享受 CHIPS Act 补贴。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>①Jevons 悖论：推理 token 成本 −1000×，消费量 +100×，HBM 需求刚性增长；② HBM4 占 DRAM wafer 产能已达 23%，HBM 定价溢价约 3–5× 标准 DRAM；③ AI 推理占全部 AI 计算约 67%（Deloitte 2026），对内存带宽需求持续提升；④ 合同期延至 3–5 年，创内存行业历史先例。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>
+            • Q3 FY26 实际：营收 <a href="https://seekingalpha.com/article/4919553-micron-at-1750-is-now-my-base-case">$41.5B（+346% YoY）</a>，EPS $25.11（+22% vs 共识）<br>
+            • Q4 FY26 指引：营收 $50B ± $1B，GM ~86%，EPS ~$31<br>
+            • <a href="https://www.trendforce.com/news/2026/03/19/news-micron-ramps-fy26-capex-to-25b-signs-first-5-year-customer-deal/">16 份 SCA：$100B 底价 + $22B 客户预付</a>（TrendForce 3/19/2026）<br>
+            • <a href="https://www.trendforce.com/news/2026/07/02/news-sk-hynix-reportedly-removes-price-cap-in-memory-long-term-agreements-diverging-from-micron/">SK Hynix LTA 取消价格上限</a>（TrendForce 7/2/2026）<br>
+            • HBM4 ≈ $500/stack，$14/GB；HBM4 占 DRAM wafer 23%<br>
+            • Analyst EPS 共识：FY27 年均增速 168%（Motley Fool 7/5）
+          </p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>现价 $975.56；52 周高点 $1,255（折价 22%）；50DMA $852.09（现价 +14%，已重新站上）；Goldman Sachs 目标价 $400 vs 街头共识 $945–$1,625，分歧为历史最大；Burry 7/1 做空 MU/NVDA/AMAT，引发 FUD；SCA 将内存"变订阅制"的结构性意义尚未被多数机构模型捕捉。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>
+            <strong>1M：</strong>SK Hynix Q2 财报（7 月）确认 HBM4 ASP 趋势；Q2 DRAM 合同价继续上调。<br>
+            <strong>3M：</strong>MU Q4 FY26 财报（8 月）营收是否达 $50B+；SCA 新增客户公告。<br>
+            <strong>6M：</strong>NVIDIA Rubin 平台全面量产驱动 HBM4 需求二次加速；MU FY27 Q1 指引。<br>
+            <strong>12M：</strong>DDR6 上市后 HBM5 产品路线发布；Micron 新州 DRAM 工厂产能释放。
+          </p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>若 Q4 实现 $50B / 86% GM（管理层指引范围内），FY27 全年 EPS 超过 $100，市场给予 15–20× → 目标价 $1,500–$2,000（vs 现价 $975，潜在 +54%–105%）。SK Hynix LTA 价格上限取消 → 行业 ASP 再上台阶 → MU 追随提价，GM 进一步扩张至 88%+。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① 超大规模厂商 capex 突然暂停（Burry 押注此情景）；② Samsung 通过技术突破恢复 HBM 市场份额，压低 ASP；③ 中国竞争对手（长鑫等）提前量产 HBM，扰动供需；④ FOMC 7/29 鹰派再定价压缩成长股估值倍数。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>① 任何一份 SCA 客户引用不可抗力条款或正式取消；② Q4 FY26 实际 GM 跌破 80%；③ NVDA Rubin 平台延迟超过两个季度；④ MU 股价跌破 $850（50DMA 下方 −10% 缓冲区）且同期行业需求信号恶化。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>现价 $975 为 <strong>confirmation 阶段</strong>（SCA 数据已公开，Q4 指引明确）；建议 5–7% 仓位，设止损 $850（50DMA 附近）。对冲：持有 MU 同时做空 SOXX ETF 5%，覆盖半导体板块系统性回撤；或买 9 月 put（strike $850，premium 约 3%）。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 2: LITE -->
+    <article class="deepdive">
+      <h3>
+        机会 #2 · LITE 光子互联：Jensen Huang 亲自命名的下一个卡口
+        <span class="ticker">LITE</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>2026 年 7 月 5 日，NVIDIA CEO Jensen Huang 公开声明："AI 所需硅光子技术产能<strong>大幅超过全球现有水平</strong>"，将数据传输速度首次以 CEO 身份命名为 AI 算力新瓶颈。LITE 是全球唯一能在量产规模提供 200G-per-lane EML 激光器的供应商——这是下一代 1.6T 可插拔收发模块的核心零件。NVIDIA 已分别向 LITE 和 COHR 各投资 $2B，并签署多年采购协议。LITE 最近一季营收翻倍至 $808.4M，而股价从 $1,086 高点下跌 33% 至 $728，距 NVIDIA 声明仅 48 小时市场尚未重新定价。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>InP EML 激光器制造商（San Jose InP 晶圆厂）→ 供给 LITE 自有和第三方光收发模块厂商 → 最终装入 AI 数据中心 400G/800G/1.6T 收发模块。LITE 在 200G EML 上无可替代的地位类似于 ASML 在 EUV 光刻机市场的地位：产品唯一性 + 产能壁垒 + 客户战略依存。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>AI 数据中心从 H100（400G 网络）升级到 GB200/Rubin（800G+/1.6T）时，每台服务器所需的光子互联带宽增加 4–16×。TrendForce：AI 光收发模块市场从 $16.5B → $26B（+57% YoY，2026）。McKinsey 预测 800G+ 产量 2026 年缺口 40–60%，1.6T 缺口 30–40% 持续至 2029。EML 芯片 InP 材料为天然供应瓶颈。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>
+            • <a href="https://www.fool.com/investing/2026/07/05/nvidia-ceo-jensen-huang-highlighted-a-new-ai-bottl/">Jensen Huang 7/5："所需光子产能大幅超过世界现有水平"</a>（Motley Fool）<br>
+            • NVIDIA 向 LITE 投资 $2B + 多年采购协议（已确认）<br>
+            • <a href="https://www.trendforce.com/presscenter/news/20260420-13017.html">AI 光收发模块市场 $26B（+57% YoY，2026）</a>（TrendForce 4/20）<br>
+            • LITE 营收翻倍至 $808.4M（最近季度）<br>
+            • <a href="https://www.digitimes.com/news/a20260504VL207/optical-components-rare-earth-siph-supply-chain.html">InP 成为光子供应链核心瓶颈</a>（Digitimes 5/4）<br>
+            • LightCounting 4/2026：需求持续超预期，400G/800G 交期延长
+          </p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>LITE 现价 $728.32，52 周高点 $1,085.68（折价 33%）；50DMA $898（现价低于 50DMA 19%）；Jensen Huang 声明发布于 7/5（距本报告仅 48 小时），股价尚未反应；COHR 同期 $333 距 $440 高点折价 24%，两家公司均处于 NVDA 承诺框架中。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>
+            <strong>1M：</strong>Jensen Huang 声明的市场认知扩散；LITE Q4 FY26 财报营收加速确认。<br>
+            <strong>3M：</strong>NVIDIA 正式披露 Q2 FY27 光子采购量；1.6T 量产订单开始确认。<br>
+            <strong>6M：</strong>InP 晶圆厂扩产新闻（LITE San Jose 晶圆厂）；200G EML 价格同比涨幅双位数（分析师预测）。<br>
+            <strong>12M：</strong>1.6T 全面替代 800G，LITE 作为唯一供应商的定价权进一步体现在 ASP 和 GM 中。
+          </p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>若 Jensen 声明引发市场对 InP 短缺的重新定价 + 1.6T 按时量产，LITE 合理回归区间 $900–$1,100（+24%–51%）。极端情景：NVDA 加码采购协议至 $3B+，LITE 成为"AI 光子领域的 TSMC"，股价挑战 $1,200–$1,500（情景分析，需 2–3 年实现）。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① COHR 硅光子技术路线（SiPh）成熟速度超预期，削弱 InP EML 独占优势；② 中国光模块厂商（华为旗下）获得 200G EML 量产能力（需 18–24 个月）；③ AI capex 整体暂停导致数据中心互联订单延迟；④ 更大单一客户（NVDA）若削减采购量，LITE 营收下滑风险集中。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>① NVIDIA 正式减少或取消 $2B 承诺（需官方公告）；② LITE 连续两季营收 QoQ 下滑；③ SiPh 技术在 100m+ 距离场景获得规模经济，价格低于 InP EML 30%；④ 股价跌破 $620（200DMA $543 + 缓冲区）。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p><strong>探针阶段</strong>（Jensen 声明 48 小时内，尚未充分扩散）：2–3% 仓位，等待突破 50DMA $898 后加仓至 5%。止损设 $650（200DMA 上方保留缓冲）。对冲：做多 LITE 同时做空 COHR 30% 金额（纯光子敞口，隔离 AI capex 系统性风险）；或买 LITE 10 月 call（strike $800）限制下行。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 3: ETN/GEV -->
+    <article class="deepdive">
+      <h3>
+        机会 #3 · ETN + GEV：200GW DC 电力铁幕，五年内无解的卡口
+        <span class="ticker">ETN / GEV</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>Eaton CTO 近期公开披露公司 DC backlog 超过 200GW（截至 2030 年）——这是迄今为止对数据中心电力需求最具体的单一供应商公告。ETN Q1 2026 电气 Americas backlog 同比 +48% 至历史新高；DC 订单单季增速 +240% YoY。GE Vernova 燃机 backlog 100GW（Q1 2026），全年目标 110GW。以 NVIDIA GB200 NVL72 机柜为例，单柜功耗 120kW vs 传统服务器 8kW，叠加超大规模资本开支 $725B（>60% 流向电力而非芯片），电力基础设施已成为 AI 算力链中唯一以 10 年计量的实物产能约束。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>ETN：电力分配 / 变压器 / 开关设备 / UPS，处于电网与数据中心机柜之间的临界层。GEV：燃气轮机（提供 DC 现场发电）+ 风机 + 电网设备。两者形成互补：GEV 解决发电，ETN 解决配电，共同支撑 AI 数据中心的"电力栈"。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>① GB200/Rubin 机柜功耗 120kW/架（传统 8kW，增幅 15×），整个 DC 电力需求呈指数级增长；② 美国变压器等待期已达 2–4 年（GEV/ETN 均确认）；③ 超大规模 $725B capex 中 >60% 将流向电力基础设施，而非芯片；④ Eaton CTO 表示 DC 电力是"自爱迪生时代以来最大的电力变革"。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>
+            • <a href="https://fintool.com/news/eaton-barclays-dc-power-solid-state">ETN CTO 披露 DC backlog 200GW+ 至 2030</a>（Fintool）<br>
+            • <a href="https://news.alphastreet.com/eaton-etn-posts-record-q1-revenue-as-electrical-backlog-surges-48-on-data-center-demand/">ETN Q1 2026 电气 backlog +48% YoY（历史新高）</a>（Alphastreet）<br>
+            • ETN Q2 2026 指引：有机增长 9–11%，segment 利润率 22.6–23%<br>
+            • <a href="https://www.industrialinfo.com/news/article/ge-vernovas-global-natural-gas-turbine-reservations-and-order-backlog-grows-to-100-gw--356705">GEV 燃机 backlog 100GW（Q1 2026，+17GW QoQ）</a>（Industrial Info）<br>
+            • GEV 全年目标 ≥ 110GW；燃机新定价 +10–20pp<br>
+            • 超大规模 Q1 2026 合计 capex：Meta $35B QoQ（+240%）、MSFT $190B 全年、GOOGL $190B、AMZN 已确认
+          </p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>ETN $398.52，52 周高点 $436.74（折价 9%），50DMA $406.97（略低于 50DMA）。GEV $1,113，接近 52 周高点 $1,181.95，但 200GW DC backlog 公告时间太近，分析师模型未更新。ETN 的固态变压器首单预计 2H 2026 公告，将开辟新的利润池（中压 DC 转换，利润率高于部门均值）。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>
+            <strong>1M：</strong>ETN Q2 2026 财报（7 月下旬）——backlog 更新 + 固态变压器首单公告是关键。<br>
+            <strong>3M：</strong>GEV Q2 2026 财报；GEV 燃机 backlog 是否突破 110GW 目标。<br>
+            <strong>6M：</strong>超大规模 2H 2026 capex 落地——采购 ETN/VRT 设备的订单集中交付。<br>
+            <strong>12M：</strong>变压器等待期如有改善，或 Eaton 新工厂投产提前，推动 book-to-bill 进一步超 1.2×。
+          </p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>若 ETN Q2 backlog 更新显示 DC 超过 250GW + 固态变压器首单，分析师上调 EPS 指引 15%+，股价重回 $420–$450（+6%–13%）。GEV 情景：燃机 backlog 超 110GW + 新定价 +20pp → 利润率扩张至 GE 历史高位，目标价 $1,300–$1,400（+17%–26%）。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① 30Y 国债收益率升至 5.5%+，压制资本密集型项目；② 美国 AI 数据中心建设速度因许可证/环保审查放缓；③ 中国竞争对手渗透美国变压器市场（目前几乎零份额，但政治风险）；④ FOMC 鹰派加息导致企业推迟 capex 决策。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>① ETN Q2 book-to-bill < 1.0（意味着新订单不足以维持 backlog）；② GEV Q2 燃机新订单 < 3GW（失去动能）；③ 超大规模云厂商集体下调 2H 2026 capex 指引超过 20%。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>ETN：<strong>确认阶段</strong>（200GW backlog 数据已公开），3–5% 仓位，止损 $370（季度低点）。GEV：<strong>持有 + 逢回调加仓</strong>，现价 $1,113 接近高点，等待 Q2 财报后再评估。对冲：Long ETN + Short INTC（电力基础设施 vs 传统芯片，行业轮动受益 vs 受损方配对）。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 4: CRM -->
+    <article class="deepdive">
+      <h3>
+        机会 #4 · CRM Agentforce：$1B ARR +205% vs 历史最低估值
+        <span class="ticker">CRM</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>Salesforce Agentforce 累计达成 29,000 笔交易，ARR 突破 $1B（+205% YoY）；Q4 FY2026 单季新增 22,000+ 笔 Agentforce 交易，Agentic Work Units +57% QoQ；管理层指引 FY27 Agentforce ARR 超过 $3B（vs 共识 $10–15亿，预期差约 2×）。然而 CRM 股价 YTD −37.4% 至 $166，对应 NTM FCF 仅 9.2×——这是该公司上市以来历史最低估值倍数。基本面的爆炸性增长与市场估值谷底形成罕见的"负相关分叉"。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>企业 AI 代理平台层：Agentforce 充当企业工作流的"AI 智能层"，坐落于 CRM 数据库（Customer 360）之上；85% 客户查询可无人工干预解决，实现对传统 BPO/RPA 的技术替代。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>① AI agents 实现了从"AI 建议"到"AI 执行"的跨越，企业 IT 支出从试点变为生产系统；② Agentforce 触达 124 个国家，跨行业部署；③ 每个 Agentforce 订单 ACV 显著高于传统 CRM seat，提升单客户 ARPU；④ ServiceNow "自主劳动力"框架（5/5 发布）验证了 AI agent 企业化已成趋势。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>
+            • <a href="https://aiautomationglobal.com/blog/salesforce-agentforce-360-enterprise-ai-agents-2026">Agentforce $1B ARR +205%，29,000 笔交易</a>（AI Automation Global）<br>
+            • Q4 FY2026：22,000+ 新增 Agentforce 交易，771M Agentic Work Units（+57% QoQ）<br>
+            • 管理层 FY27 指引：Agentforce ARR >$3B（vs 共识 ~$12.5亿）<br>
+            • CRM 现价 $166.11，52 周区间 $146.32–$276.80<br>
+            • NTM FCF 倍数：9.19×（历史最低，前期高点约 40× NTM FCF）
+          </p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>CRM 年内跌 37.4%，市场用"AI 代理将商品化"逻辑对 CRM 进行惩罚性定价。然而 Agentforce +205% ARR 数据表明代理化带来的是扩张，而非替代。若 FY27 Agentforce ARR 达到管理层 $3B 指引，按历史 SaaS 估值 25× ARR 计算，增量价值约 $75B——而全公司市值现在仅 $136B。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>
+            <strong>1M：</strong>SFDC Q2 FY27 财报预告（有无 pre-announcement）；AI agent 行业数据。<br>
+            <strong>3M：</strong>Q2 FY27 财报（8 月）—— Agentforce ARR 里程碑 + 总订单数更新。<br>
+            <strong>6M：</strong>$3B ARR 目标阶段性验证；企业 AI agent ROI 案例研究扩散。<br>
+            <strong>12M：</strong>FY27 全年 ARR 是否超过管理层 $3B 指引；与 MSFT Copilot、Google Agentspace 竞争格局确认。
+          </p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>若 FY27 Agentforce ARR 达到 $3B+ 并以 20× ARR 定价，叠加核心 CRM 业务，整体股价目标 $230–$280（+38%–68%）。极端情景：AI agent 成为标准 SaaS 功能，CRM 在企业 AI 软件市场中形成类 Salesforce-in-2010 地位，股价重回 $350+（需 3–4 年）。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① MSFT Copilot / OpenAI 直接竞争，导致 Agentforce 续费率下滑；② 宏观放缓削减企业 IT 预算（NFP 57K 警示信号）；③ AI agent 商品化速度超预期，ACV 下滑；④ CRM 整体营收增速放缓至低位。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>① Q2 FY27 Agentforce ARR 增速跌破 +100% YoY；② 总体 CRM 营收 QoQ 下滑（意味着 Agentforce 在啃食核心业务而非带来增量）；③ 客户净收入留存率（NRR）跌破 100%；④ 股价跌破 $140（52 周低点 $146 下方）。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p><strong>探针阶段</strong>（历史最低估值 + 快速增长，但财报确认前不加大赌注）：2–3% 仓位，止损 $140（52 周低点下方）。Q2 财报 Agentforce ARR 确认后，视数据决定是否加仓至 5%。对冲：Long CRM / Short NOW（估值相近，但 CRM Agentforce 数据更清晰，NOW 无具体 ARR 披露）。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Deep Dive 5: NVDA probe -->
+    <article class="deepdive">
+      <h3>
+        机会 #5 · NVDA 22× 前瞻 PE：历史最低估值，右侧探针
+        <span class="ticker">NVDA</span>
+        <span class="dir long">Long（右侧探针）</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>NVIDIA 前瞻 PE 下降至 21.85×（GuruFocus 7/2），为公司上市以来历史最低，低于可口可乐（26×）。与此同时，Q1 FY27 营收 $81.6B（+85% YoY），Q2 FY27 指引 $91.0B（+85% YoY，历史最快产品爬坡），Blackwell backlog 360 万台，Vera Rubin 平台即将发布。市场正在用"AI 周期顶部"定价一个结构性增长公司，这是一个定价错误——但右侧入场（等 50DMA 恢复）比左侧抄底更安全，因为 FOMC 鹰派风险 + Burry 做空仍是短期噪声来源。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>AI 计算垄断者：训练 GPU 市场份额 80%+；捕获每 $1 超大规模 AI 算力支出中的 $0.57；Blackwell → Rubin 产品路线确保 2024–2028 技术领先。CUDA 生态系统是最深的软件护城河。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>① Jevons 悖论：推理 token 成本 −1000× → 消费量 +100× → GPU 总需求不断扩大；② 超大规模 Q1 2026 capex：MSFT $190B / Google $190B / Meta $125–145B / Amazon 已确认；③ 推理占全部 AI 计算约 67%（2026），对 GPU 的持续购买需求强劲；④ Vera Rubin 发布将触发新一轮升级周期。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>
+            • Q1 FY27：营收 <a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000019/q4fy26pr.htm">$81.6B（+85% YoY）</a>，数据中心 +92% YoY<br>
+            • Q2 FY27 指引：$91.0B（+85% YoY），历史最快产品爬坡<br>
+            • <a href="https://www.gurufocus.com/term/forward-pe-ratio/NVDA">前瞻 PE 21.85×</a>（GuruFocus，7/2/2026）<br>
+            • Blackwell backlog：360 万台，售罄至 2026 年中<br>
+            • 累计 Blackwell 预期销售额：$1T（截至 2027）<br>
+            • 股价 $194.83，52 周低点 $157.34，50DMA $209.80（现价跌破 50DMA）
+          </p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>NVDA 22× 前瞻 PE vs 历史均值 50×+；同期 KO 26× 前瞻 PE（KO 增长率 ~3% YoY）；市场正在对 +85% YoY 增长的公司给予低于消费品的估值倍数。Motley Fool 7/4："NVDA 比可口可乐更便宜"。近期 −13% 月度跌幅主要由 Burry 做空 FUD + SOXX 系统性下跌驱动，非基本面恶化。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>
+            <strong>1M：</strong>超大规模 Q2 2026 capex 数据（7 月/8 月财报季）确认或超越 $725B 全年预算。<br>
+            <strong>3M：</strong>NVDA Q2 FY27 财报（8 月）：是否超越 $91B 指引；Rubin 平台出货时间线。<br>
+            <strong>6M：</strong>Vera Rubin（HBM4 配置）量产确认 → 新一轮产品周期催化剂。<br>
+            <strong>12M：</strong>2027 年 Rubin 全年出货 → NVDA 营收有望突破 $450–$500B 年化水平。
+          </p>
+        </div>
+        <div>
+          <h4>上行情景（情景分析）</h4>
+          <p>若 Q2 FY27 财报超越 $91B + 给出 Q3 指引 $95B+，市场重新定价至 30× 前瞻 PE → 目标价 $300–$350（+54%–80%）。若 Vera Rubin 提前量产（情景分析），估值进一步修复至 35× → $400+。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>① 美国对华 AI 芯片出口管制升级（已有 H20 禁令先例）→ 中国需求缺口无法弥补；② 定制 ASIC（MRVL/AVGO）市场份额蚕食速度超预期；③ FOMC 7/29 鹰派 → 高倍数成长股估值压缩；④ Burry 做空时间有限但短期放大波动。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>① Q2 FY27 财报营收低于 $88B（vs $91B 指引）；② 超大规模厂商正式下调 2H 2026 capex 超过 15%；③ 前瞻 PE 跌破 18×（意味着市场在更低估值仍不买入）；④ 美国全面禁止向任何国家出口 H100/Blackwell 级别产品。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p><strong>右侧探针</strong>（等待信号，不左侧抄底）：现价 $194.83 跌破 50DMA $209.80，目前处于技术弱势区。条件性入场：收盘重新站上 $210（50DMA）后建 2–3% 仓位，止损 $175（200DMA $191 下方缓冲）。对冲：买 NVDA 8 月 put（strike $170，限制尾部风险）或持有 QQQ put 代替。</p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 5. Shorts / Impaired ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 做空 / 受损资产</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>受损资产</th>
+            <th>受损原因</th>
+            <th>替代路径</th>
+            <th>开始反映时点</th>
+            <th>做空可行性</th>
+            <th>风险</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AVGO（博通）</strong><br>$360.45 / 52w 高 $495</td>
+            <td>Q3 AI 指引 $16B 首次低于共识 $17.2B，FY27 $100B 目标首次未上调；定制 ASIC 爬坡慢于预期；距高点已跌 27%</td>
+            <td>MRVL（赢得 Google TPU 部分设计权）继续蚕食份额</td>
+            <td>Q3 FY26 指引 miss 时（6/5）已开始；下一催化剂为 Q3 FY26 财报</td>
+            <td>中等（流动性好，options 丰富，借券成本低）</td>
+            <td>若 AI capex 恢复超预期，AVGO 可能反弹；NVIDIA 对 AVGO 的历史依赖难以完全消失</td>
+          </tr>
+          <tr>
+            <td><strong>AMAT（应用材料）</strong><br>$603.04 / 52w 高 $739</td>
+            <td>Burry 7/1 做空 AMAT；WFE 工具与 capex 周期同步，若超大规模 2H 2026 capex 放缓，AMAT 收入受压；距高点跌 18%</td>
+            <td>-（无直接替代，但需求端变化先于设备厂反映）</td>
+            <td>6/5 NFP 超预期 + AVGO miss 已触发第一波下跌；FOMC 7/29 为第二波催化剂</td>
+            <td>中等（需注意若 MU 扩产确认，WFE 工具需求不一定同步下滑）</td>
+            <td>Burry 做空可能是对的，也可能是噪声；CHIPS Act 补贴落地会刺激设备需求</td>
+          </tr>
+          <tr>
+            <td><strong>QCOM（高通）</strong><br>$176.25 / 52w 高 $260</td>
+            <td>AI 手机换机周期不及预期；PC NPU 需求被 Intel 部分分流；端侧 AI 推理叙事比预期慢 2–4 季度</td>
+            <td>端侧 AI 推理向 ARM（$315）和 INTC AI PC 倾斜</td>
+            <td>持续弱势，缺乏近期催化剂</td>
+            <td>低（AI 手机叙事虽慢，但最终实现概率高；做空时间窗口不确定）</td>
+            <td>若 AI 手机换机 2H 2026 加速，QCOM 快速反转</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 6. Pairs / Cross-market ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 配对交易 / 跨市场传导</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>结构</th>
+            <th>多</th>
+            <th>空</th>
+            <th>核心逻辑</th>
+            <th>催化剂</th>
+            <th>失效条件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>内存 vs 定制 ASIC</strong></td>
+            <td>MU（$975，SCA 锁价，Q4 指引强）</td>
+            <td>AVGO（$360，AI 指引首次 miss）</td>
+            <td>MU 有合同保护的定价权，AVGO 定制 ASIC 爬坡慢于预期；两者估值分叉加剧</td>
+            <td>MU Q4 财报（8 月）vs AVGO Q3 财报；SK Hynix LTA 提价确认</td>
+            <td>AVGO Q3 AI 指引重新超越 $17B；MU SCA 客户取消</td>
+          </tr>
+          <tr>
+            <td><strong>DC 电力 vs 传统芯片</strong></td>
+            <td>ETN（$398，200GW DC backlog）</td>
+            <td>INTC（$120，遗留 CPU 周期，AI PC 不及预期）</td>
+            <td>AI capex 向电力/基础设施倾斜，从传统计算预算转移；ETN 受益于 DC 建设，INTC 承压于 x86 遗留架构</td>
+            <td>ETN Q2 财报（7 月）；INTC Q2 财报（7 月）</td>
+            <td>Intel-Apple 芯片合作落地加速；ETN DC backlog 增速放缓</td>
+          </tr>
+          <tr>
+            <td><strong>光子互联跨市场</strong></td>
+            <td>LITE（$728，InP EML 卡口）</td>
+            <td>COHR（$333，多技术路线但无独占优势）</td>
+            <td>InP EML 在 1.6T 场景中有不可替代性；COHR SiPh 路线与 InP 并行，独占优势弱于 LITE；但两者均受益于 AI 光子需求——本配对为"同类中更好标的"交换</td>
+            <td>Jensen Huang 声明扩散；1.6T 首批量产订单</td>
+            <td>SiPh 技术在 1.6T 实现规模经济，取代 InP 路线</td>
+          </tr>
+          <tr>
+            <td><strong>美股 capex → 台 / 韩传导</strong></td>
+            <td>TSM（$434，CoWoS 产能唯一）</td>
+            <td>SOXX ETF（$566，系统性 β 对冲）</td>
+            <td>超大规模 capex $725B 最终流向 TSMC CoWoS 封装产能（NVDA/AMD/定制 ASIC 均需）；TSM 比 SOXX 更"窄"暴露 AI 硬件需求，而 SOXX 包含 INTC/AMAT 等受损方</td>
+            <td>TSM Q2 2026 财报（7/17）；CoWoS 月产能更新</td>
+            <td>美国对台湾芯片出口新限制；TSM 指引低于预期</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. Watchlist ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 观察名单</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>当前缺什么证据</th>
+            <th>触发买入的信号</th>
+            <th>需要跟踪的数据</th>
+            <th>可能标的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>MRVL 定制 ASIC</strong></td>
+            <td>Q2 FY27 实际营收确认（$2.7B 指引是否兑现）；Google TPU 份额从 AVGO 转移的速度</td>
+            <td>Q2 FY27 营收 ≥ $2.7B + 指引 Q3 ≥ $3B；Google 正式披露 MRVL 份额增加</td>
+            <td>MRVL 季度财报（8 月）；AVGO 定制 AI 收入分拆</td>
+            <td>MRVL（现价 $245，距 $330 高点 -26%）</td>
+          </tr>
+          <tr>
+            <td><strong>VRT 冷却系统</strong></td>
+            <td>Q2 2026 backlog 更新；液冷 DLC 订单增速 QoQ 数据</td>
+            <td>Q2 backlog 超过 $16B（Q1 为 $15B）；DLC 订单 YoY > +100%</td>
+            <td>VRT Q2 2026 财报（7 月下旬）；DC 冷却密度升级采购数据</td>
+            <td>VRT（$300，距 $380 高点 -21%）</td>
+          </tr>
+          <tr>
+            <td><strong>TSM CoWoS 扩产</strong></td>
+            <td>Q2 2026 CoWoS 月产能（目前估计 ~50K wafer/月）；Rubin 封装订单时间线</td>
+            <td>TSM 正式披露 CoWoS 扩产 ≥ 2× 至 100K/月；Rubin 封装量产确认</td>
+            <td>TSM Q2 财报（7/17）；CoWoS 产能爬坡新闻</td>
+            <td>TSM（$434，距 $479 高点 -9%）</td>
+          </tr>
+          <tr>
+            <td><strong>ARM 边缘 AI IP</strong></td>
+            <td>AI 端侧推理使用 ARM 架构的设备出货数据；ARM IP 授权 ACV 增速</td>
+            <td>ARM 新 AI 专用 ISA 授权量 > 50 个客户；AI PC 出货量超预期（2H 2026 数据）</td>
+            <td>ARM 季度授权收入；高通/苹果/MediaTek AI chip 出货</td>
+            <td>ARM（$315，距 $452 高点 -30%）</td>
+          </tr>
+          <tr>
+            <td><strong>Figure AI / 人形机器人</strong></td>
+            <td>Figure AI 未上市；Tesla Optimus 单位制造成本是否降至 $30K 以下</td>
+            <td>Figure AI IPO 路演；Tesla Optimus 单位成本确认低于 $50K</td>
+            <td>Figure AI 融资公告；Tesla Optimus 生产数量季度更新</td>
+            <td>TSLA（有限曝露）；Sanhua（中国上市，A 股）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 8. Data Gaps ====== -->
+  <section>
+    <h2><span class="section-num">08</span> 数据缺口与必须人工核实事项</h2>
+    <ol>
+      <li><strong>SK Hynix HBM4 实际 ASP（2026 Q2）</strong>：SK Hynix 将于 7 月下旬发布 Q2 财报，需确认取消 LTA 价格上限后 ASP 是否实际上调；这是内存提价周期是否继续的关键数据。</li>
+      <li><strong>NVDA Vera Rubin 量产时间线</strong>：Vera Rubin（配置 HBM4）确切量产时间目前不明确，官方仅说"2026 年底 / 2027 年初"；若延迟超过两个季度，MU HBM4 出货节奏受影响。</li>
+      <li><strong>ETN Q2 2026 DC 订单具体数字</strong>：ETN CTO 披露的 200GW+ backlog 是截至何时的数据需要核实；Q2 财报（7 月下旬）将提供最新 book-to-bill 和 DC 订单明细。</li>
+      <li><strong>CRM Agentforce Q2 FY27 ARR</strong>：$1B ARR 数字为截至何季度、是 ARR 还是 ACV，以及 FY27 $3B 目标的时间节点，需 Q2 FY27 财报（8 月）确认。</li>
+      <li><strong>GEV Q2 2026 燃机新订单</strong>：Q1 为 21GW 新签，backlog 100GW；Q2 是否如期向 110GW 目标推进，需 Q2 财报（7 月下旬）更新。</li>
+      <li><strong>LITE Q4 FY26 财报</strong>：营收翻倍数据来自最近一季，需确认 Jensen Huang 采购协议是否已在最新季度收入中体现，以及 1.6T 产品收入占比。</li>
+      <li><strong>FOMC 7/29 决议措辞</strong>：Warsh 是否在声明中首次提及加息可能性（而非仅维持鹰派基调），是 AI 硬件高倍数股的关键短期风险开关。</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>算力 / Capex</h4>
+      <ul>
+        <li><a href="https://valueaddvc.com/blog/big-tech-ai-capex-in-2025-microsoft-google-meta-amazon-and-the-spending-race">Big Tech AI Spending 2026: $725B — ValueAdd VC</a></li>
+        <li><a href="https://fortune.com/2026/04/29/microsoft-meta-google-ai-capex-spending-billions/">Microsoft, Meta, Google Q1 2026 Capex Announcements — Fortune (4/29/2026)</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000019/q4fy26pr.htm">NVIDIA Q1 FY27 Form 8-K — SEC.gov</a></li>
+        <li><a href="https://www.gurufocus.com/term/forward-pe-ratio/NVDA">NVIDIA Forward PE Ratio 21.85 — GuruFocus (7/2/2026)</a></li>
+        <li><a href="https://www.fool.com/investing/2026/07/04/nvidia-stock-is-now-cheaper-than-coca-cola-heres-t/">NVDA 比可口可乐更便宜 — Motley Fool (7/4/2026)</a></li>
+        <li><a href="https://markets.financialcontent.com/wral/article/tokenring-2025-12-29-nvidias-blackwell-dynasty-b200-and-gb200-sold-out-through-mid-2026-as-backlog-hits-36-million-units">Blackwell backlog 360 万台 — Financial Content</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>存储 / 内存</h4>
+      <ul>
+        <li><a href="https://seekingalpha.com/article/4919553-micron-at-1750-is-now-my-base-case">MU Q3 FY26 $41.5B / Q4 $50B 指引详解 — Seeking Alpha (7/5/2026)</a></li>
+        <li><a href="https://www.trendforce.com/news/2026/03/19/news-micron-ramps-fy26-capex-to-25b-signs-first-5-year-customer-deal/">Micron FY26 capex $25B，首份 5 年期合同 — TrendForce (3/19/2026)</a></li>
+        <li><a href="https://www.trendforce.com/news/2026/07/02/news-sk-hynix-reportedly-removes-price-cap-in-memory-long-term-agreements-diverging-from-micron/">SK Hynix LTA 取消价格上限 — TrendForce (7/2/2026)</a></li>
+        <li><a href="https://tech-insider.org/memory-chip-shortage-2026-ai-consumer-electronics/">HBM 占 DRAM wafer 23% — Tech Insider 2026</a></li>
+        <li><a href="https://siliconanalysts.com/data/hbm-pricing">HBM4 价格 ~$500/stack，~$14/GB — Silicon Analysts</a></li>
+        <li><a href="https://www.fool.com/investing/2026/07/05/micron-stock-good-news-wall-street-nvidia-jensen/">MU 16 份多年合同，EPS 增速 168% 年均 — Motley Fool (7/5/2026)</a></li>
+        <li><a href="https://www.fool.com/investing/2026/07/04/big-short-investor-michael-burry-is-now-betting-ag/">Burry 做空 MU/NVDA/AMAT (7/1/2026) — Motley Fool</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>网络 / 光模块</h4>
+      <ul>
+        <li><a href="https://www.fool.com/investing/2026/07/05/nvidia-ceo-jensen-huang-highlighted-a-new-ai-bottl/">Jensen Huang 7/5：光子产能大幅低于需求 — Motley Fool (7/5/2026)</a></li>
+        <li><a href="https://tech-insider.org/nvidia-silicon-photonics-lumentum-coherent-ai-data-center-2026/">NVIDIA $4B 光子投资：LITE + COHR 各 $2B — Tech Insider</a></li>
+        <li><a href="https://www.trendforce.com/presscenter/news/20260420-13017.html">AI 光收发模块市场 $26B (+57%)，InP 为主要产能瓶颈 — TrendForce (4/20/2026)</a></li>
+        <li><a href="https://www.digitimes.com/news/a20260504VL207/optical-components-rare-earth-siph-supply-chain.html">InP 成为 1.6T 光子供应链瓶颈 — Digitimes (5/4/2026)</a></li>
+        <li><a href="https://www.globenewswire.com/news-release/2026/06/23/3315806/28124/en/optical-transceiver-market-set-to-double-as-ai-data-centers-drive-unprecedented-demand-for-800g-and-1-6t-modules.html">光收发模块市场翻倍，800G/1.6T 需求驱动 — Globe Newswire (6/23/2026)</a></li>
+        <li><a href="https://www.lightcounting.com/newsletter/en/april-2026-market-forecast-379">需求持续超预期，400G/800G 交期延长 — LightCounting (4/2026)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>电力 / 数据中心</h4>
+      <ul>
+        <li><a href="https://fintool.com/news/eaton-barclays-dc-power-solid-state">ETN CTO: DC backlog 200GW+，DC 电力是"自爱迪生时代最大变革" — Fintool</a></li>
+        <li><a href="https://news.alphastreet.com/eaton-etn-posts-record-q1-revenue-as-electrical-backlog-surges-48-on-data-center-demand/">ETN Q1 2026 电气 backlog +48% YoY — Alphastreet</a></li>
+        <li><a href="https://news.alphastreet.com/eaton-etn-has-a-broader-electrical-backlog-story-than-the-data-center-trade/">ETN Q2 2026 指引：有机增长 9-11%，利润率 22.6-23% — Alphastreet</a></li>
+        <li><a href="https://www.industrialinfo.com/news/article/ge-vernovas-global-natural-gas-turbine-reservations-and-order-backlog-grows-to-100-gw--356705">GEV 燃机 backlog 100GW（Q1 2026）— Industrial Info Resources</a></li>
+        <li><a href="https://www.utilitydive.com/news/ge-vernova-gas-turbine-backlog-hits-100-gw-as-prices-rise/818332/">GEV 燃机 backlog 100GW，定价 +10-20pp — Utility Dive</a></li>
+        <li><a href="https://www.tikr.com/blog/ge-vernova-orders-hit-18-billion-in-one-quarter-and-analysts-are-targeting-1216">GEV 单季订单 $18B（Q1 2026）— TIKR</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000063/gevpressrelease1q26.htm">GEV Q1 FY2026 Press Release — SEC.gov</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>软件 / Agent / 应用</h4>
+      <ul>
+        <li><a href="https://aiautomationglobal.com/blog/salesforce-agentforce-360-enterprise-ai-agents-2026">CRM Agentforce $1B ARR，29K 笔交易，85% 自主解决率 — AI Automation Global</a></li>
+        <li><a href="https://fortune.com/2026/05/05/servicenow-knowledge-2026-autonomous-workforce-microsoft-nvidia-ai-announcements/">ServiceNow 5/5 发布"自主劳动力"框架 — Fortune</a></li>
+        <li><a href="https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-brings-Autonomous-Workforce-to-every-major-business-function/default.aspx">ServiceNow Autonomous Workforce GA — ServiceNow Newsroom</a></li>
+        <li><a href="https://www.arturmarkus.com/the-inference-cost-paradox-why-generative-ai-spending-surged-320-in-2025-despite-per-token-costs-dropping-1000x-and-what-it-means-for-your-ai-budget-in-2026/">Jevons 悖论：Token 成本 -1000×，企业账单 +320% — AI Unfiltered</a></li>
+        <li><a href="https://www.gpunex.com/blog/ai-inference-economics-2026/">推理经济学 2026：AI 计算 67% 为推理 — GPUnex</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>机器人 / 端侧 / 其他</h4>
+      <ul>
+        <li><a href="https://eu.36kr.com/en/p/3510288514980998">Tesla Optimus：Elon Musk 向 Sanhua 下 $685M 订单 — 36Kr</a></li>
+        <li><a href="https://www.vaasblock.com/news/humanoid-robotics-figure-tesla-optimus-commercial-reality-2026/">人形机器人 2026 现状：Figure/Optimus 商业化进展 — VaaSBlock</a></li>
+        <li><a href="https://www.humanoid.press/humanoid-daily/">Figure 03 量产 1 台/小时，BMW 1,250+ 运营小时 — Humanoid Press</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>估值 / 市场结构 / 宏观</h4>
+      <ul>
+        <li><a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm">FOMC 6/17 点阵图：PCE 预测 3.6%，中位利率升至 3.8% — Federal Reserve</a></li>
+        <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm">FOMC 6/17 声明 (Warsh 首次) — Federal Reserve</a></li>
+        <li><a href="https://247wallst.com/investing/2026/07/05/the-ai-boom-runs-on-debt-global-regulators-want-to-shut-off-the-tap/">全球监管机构关注 AI 债务融资风险 — 247 Wall St (7/5/2026)</a></li>
+        <li><a href="https://finance.yahoo.com/sectors/technology/articles/big-tech-ai-capex-tops-212816537.html">Q1 2026 Big Tech capex 超 $650B — Yahoo Finance</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"上行空间"为情景分析，不构成对未来回报的精确预测。仓位建议在执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 第 9 期 · 2026-07-06
+</footer>
+
+</body>
+</html>
