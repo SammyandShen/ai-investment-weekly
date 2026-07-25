@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-07-25 · 周度复盘 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews" class="active">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">周度复盘 · 第 9 期</span>
+    <span>2026 年 7 月 25 日 周六 · 上周交易日：7/20–7/24（无休市）· 注：因 7/11、7/18 两期未发布，本期对比基准为 7/4（第 8 期，40 分）</span>
+  </div>
+
+  <h1 class="report-title">Moody's 点名 ORCL + CoreWeave 为 AI 最弱信用环节，供应链继续爆单，持仓 6 仓无一幸免</h1>
+  <p class="report-subtitle">7/22 GOOGL 上调 2026 资本开支指引至 $195–205 亿美元后股价 −7%，Moody's 7/24 随即警告"前所未有"的 AI 支出威胁 6 家超大规模/新云的信用质量，并明确点名 Oracle（Baa2，负面展望，距垃圾级仅两档）与 CoreWeave（Ba3，垃圾级）为最脆弱环节。同日（7/24）伊朗新最高领袖威胁封锁霍尔木兹海峡推高油价，叠加 AI 支出可持续性质疑，半导体指数单日 −4.3%～−4.4%，光模块/存储二三线股遭遇腰斩式抛售。与此同时 TSMC/SK Hynix/美光/Super Micro 财报和指引全线爆表——供应链真实需求并未走弱，风险正从"需求证伪"转向"特定发行人信用挤压"。持仓 6 仓（ORCL/NOK/MRVL/LITE/AAOI/AEHR）在 <code>data/portfolio.json</code> 中已连续 7 周挂在止损位下方（数据自 6/6 起未更新），本周进一步恶化，ORCL 已跌至 52 周新低。</p>
+
+  <!-- ====== 1. 本周总判断 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本周总判断</h2>
+
+    <div class="tldr">
+      <h4>一句话结论</h4>
+      <p style="font-size:18px;font-weight:600;margin:0;">防守 — 若 6 仓仍未平仓须立即市价清仓；新增仓位一律等待，仅保留对冲思路。</p>
+    </div>
+
+    <h4>市场状态</h4>
+    <p><strong>顶部震荡（指数韧性 + 结构性旋转）</strong> — SPX 周跌 −0.61%（7,457.69→7,411.98）、道指 −0.38%，指数本身仍在历史高位附近；但 Nasdaq Composite −2.13%、半导体指数（SOXX）单日（7/24）−4.40%，VIX 仅 18.58（周跌 −1.01%，波动率未确认恐慌）。宽度与硬件板块的背离，而非全面下跌，是本周的定义特征。（来源：FMP indexes/index-historical-price-eod-light，2026-07-24；FMP company/profile-symbol，2026-07-24）</p>
+
+    <h4>AI 泡沫阶段概率分布</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>阶段</th><th>当前判断</th><th class="num">概率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1996–1998 早期扩散</td><td>已过</td><td class="num">0%</td></tr>
+          <tr><td>1999 叙事和估值同步加速</td><td>仅存于软件/云侧（GOOGL Cloud +82%）</td><td class="num">5%</td></tr>
+          <tr><td>2000Q1 顶部附近</td><td>指数视角部分符合（SPX/道指仍近高位）</td><td class="num">15%</td></tr>
+          <tr><td>2000H2 订单和资本开支恶化</td><td><strong>核心情景</strong> — capex 加速上修、FCF 收缩、硬件股先跌，但供应链订单尚未恶化（TSMC/SK Hynix/美光爆单），与纯 2000H2 存在分歧</td><td class="num">45%</td></tr>
+          <tr><td>2001–2002 信用风险暴露</td><td>概率较 7/4 上升 — Moody's 首次点名具体发行人（ORCL/CoreWeave）信用风险，AI 相关高收益债发行 $319 亿（YTD至7/8）</td><td class="num">30%</td></tr>
+          <tr><td>2003 后幸存者阶段</td><td>TSMC/SK Hynix/美光基本面强劲，未来幸存者候选</td><td class="num">5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 2. 本周真正重要的 5 件事 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 本周真正重要的 5 件事</h2>
+
+    <article class="deepdive">
+      <h3>事件 #1 · Moody's 点名 Oracle + CoreWeave 为 AI 信用最脆弱环节</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>Moody's 7/24 报告称"前所未有"的 AI 支出威胁 MSFT/AMZN/GOOGL/META/ORCL/CoreWeave 六家公司信用质量；六家合计 2026 年资本开支将达 $7,850 亿，2027 年逼近 $1 万亿（约 75% 投向 AI，约 $4,500 亿）；六家直接债务合计约 $4,600 亿，租赁承诺 $1.2 万亿（其中 $8,200 亿尚未开始）。报告明确指出 Oracle（Baa2，负面展望，距垃圾级仅两档）与 CoreWeave（Ba3，垃圾级，靠复杂 GPU 抵押债务模型融资）是压力最集中的两家；MSFT/GOOGL/AMZN/META 资产负债表仍属全球最强之列。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html">CNBC 2026-07-24</a>；<a href="https://www.cryptopolitan.com/moodys-flags-oracle-and-coreweave-as-ais-weakest-credit-link/">Cryptopolitan 2026-07-24</a>；<a href="https://www.bloomberg.com/news/articles/2026-07-16/oracle-risks-falling-behind-in-ai-race-as-spending-binge-bites">Bloomberg 2026-07-16</a></p></div>
+        <div><h4>为什么重要</h4><p>这是本轮周期首次由权威评级机构点名具体发行人（而非泛泛警告行业）。ORCL 是持仓第二大权重仓位（13%），已跌至 52 周新低 $114.99，FY26 capex $556.6 亿超原指引 $500 亿、FCF 缺口 $237 亿、债务突破 $1,000 亿，与 Moody's 警告完全吻合——这不是宏观噪音，是针对我们持仓标的的具体信用证据。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong> ORCL、CoreWeave、二三线新云；<strong>中性偏利多</strong> MSFT/GOOGL/AMZN/META（资产负债表仍强）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 — ORCL 从"止损未执行"升级为"评级下调风险"，不存在任何持有理由；信用市场压力评分上调。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #2 · GOOGL 上调 2026 资本开支至 $195–205 亿，股价 7/23 单日 −7%，债市随即反应</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>Alphabet Q2 2026（7/22 盘后发布）营收约 $1,038–1,196 亿区间（各口径不一，YoY +24%），EPS 大幅超预期；Google Cloud 营收 $248 亿（+82% YoY），运营利润 $88 亿；同时将 2026 全年资本开支指引从 $1,800–1,900 亿上调至 $1,950–2,050 亿。股价 7/23 收盘 −7%。CNBC 7/24 报道：本周收益率走高，部分原因正是 Alphabet 上调 capex 引发其他超大规模跟进的担忧，GOOGL/AMZN/META 信用利差走阔。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.cnbc.com/2026/07/22/google-earnings-q2-goog-live-updates.html">CNBC 2026-07-22</a>；<a href="https://www.cnbc.com/2026/07/24/bond-market-anxiety-ai-capex-spending.html">CNBC 2026-07-24</a></p></div>
+        <div><h4>为什么重要</h4><p>连续第二个季度上调 capex 指引（评分方法论中"资本开支过热"5 分档的顶格条件之一）；"beat 但股价跌"+"债市走阔"组合是 2000H2 的典型信号——市场开始用股价和信用利差惩罚资本开支加速，而非单纯奖励营收增长。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong> 短期股价与信用利差；<strong>利多</strong> 云需求本身（+82% 增速证明真实需求未减）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 — 资本开支过热维度维持 5 分顶格；QQQ put 对冲优先级上调。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #3 · 7/24 半导体/光模块二三线全线重挫，持仓 6 仓单日普遍 −7%～−14%</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>7/24 半导体指数单日 −4.3%～−4.4%（SOXX 收 $527.01）；同日伊朗新最高领袖 Mojtaba Khamenei 威胁封锁霍尔木兹海峡，WTI 一度 +9.4% 至 $95.49、布伦特 +8.9% 至 $100.20（后因巴基斯坦斡旋消息回落至 ~$95）。持仓当日跌幅：AEHR −13.77%（$76.32，此前 7/15 财报后曾冲高至 $110.20）、AAOI −10.60%（$100.15）、LITE −8.47%（$762.99）、MRVL −7.21%（$194.23）、NOK −6.78%（$9.07，财报后两日）、ORCL −4.21%（$114.99，52 周新低）；MU 同日 −6.99%。SOXL（3倍做多semis ETF）单日 −13.14%，SOXS（3倍做空）+12.98%。</p></div>
+        <div><h4>来源 + 日期</h4><p>FMP company/profile-symbol、marketPerformance，2026-07-24；<a href="https://www.investing.com/analysis/semiconductor-selloff-shakes-the-stock-market-200682710">Investing.com</a>；<a href="https://www.fool.com/investing/2026/07/24/sp-500-rises-06-at-midday-on-easing-iran-tension/">Motley Fool 2026-07-24</a></p></div>
+        <div><h4>为什么重要</h4><p>这是宏观地缘（霍尔木兹）与 AI 支出可持续性质疑的叠加冲击，且几乎精确命中持仓的每一个标的。值得注意：AEHR/LITE/AAOI 基本面本周均有正面数据（见事件#4），说明这是估值/情绪去杠杆，而非基本面证伪——符合方法论中"倍数压缩 10–25% 但盈利尚未破位"的 2000H2 特征。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong> 全部持仓；短期</p></div>
+        <div><h4>是否改变交易计划</h4><p>否（原计划已是全面止损/确认出局，本次仅进一步确认紧迫性）</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #4 · 供应链财报全面爆表：TSMC +36%、SK Hynix HBM 缺货至 2030、美光指引超预期 $64 亿</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>TSMC Q2 营收 $402 亿（+36% YoY），净利 +77.4%，HPC/AI 加速器占晶圆收入 66%（环比 +20%），FY26 营收增速指引上调至 >40%，Q3 指引 $446–458 亿，追加 $100 亿亚利桑那投资（累计承诺 $2,650 亿）。SK Hynix HBM 市占率约 58%（三星/美光各约 21%），Nvidia 将约 70% 的 HBM4（Vera Rubin）需求分配给 SK Hynix，DRAM 合约价环比 +58–63%、NAND +70–75%，董事长预计缺货将持续 4–5 年。美光 FY26 Q4 营收指引 $500 亿±$10 亿（vs 共识 $435.8 亿），毛利率约 86%，HBM TAM 2027 年将超 $1,000 亿。Super Micro 新增 Q4 订单超 $600 亿，毛利率指引上调至 15–17%（近翻倍），带动 Dell 订单积压达 $513 亿。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://finance.yahoo.com/markets/stocks/articles/tsmc-q2-2026-earnings-record-112109987.html">Yahoo Finance 2026-07-16/17</a>；<a href="https://247wallst.com/investing/2026/07/21/sk-hynixs-hbm-empire-powers-65-us-revenue-is-this-the-must-own-ai-stock/">247wallst.com 2026-07-21</a>；<a href="https://247wallst.com/investing/2026/07/19/why-micron-belongs-in-your-portfolio-with-strong-q3-earnings-and-rising-guidance/">247wallst.com 2026-07-19</a>；<a href="https://www.benzinga.com/trading-ideas/movers/26/07/60615993/dell-stock-surges-as-super-micro-signals-strong-new-order-growth">Benzinga 2026-07-22</a></p></div>
+        <div><h4>为什么重要</h4><p>这是本周最重要的反证据：如果我们真处于"2000H2 订单和资本开支恶化"，供应链应该出现库存/AR 天数上升、指引下修。实际情况恰恰相反——三家核心供应商全部上调指引且供不应求。真实需求兑现维度评分应下调，风险更集中在"融资结构"而非"终端需求"。</p></div>
+        <div><h4>影响方向</h4><p><strong>利多</strong> 供应链真实需求；<strong>中性</strong> 对持仓二三线光模块股（同板块但被情绪抛售，未反映此利多）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 — 不将本轮下跌解读为需求证伪，情景计划优先级从"清仓离场"调整为"清仓离场 + 观察超跌反弹窗口"。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #5 · 供应商融资网络加密：CoreWeave 落地 $85 亿"首笔投资级 GPU 抵押融资"，Nvidia 入股 Nebius 9.3%</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>CoreWeave 官宣完成 $85 亿"行业首笔投资级评级 GPU 抵押融资"；同时其短期债务 $75 亿+长期债务 $173 亿（截至 7 月中），2026 capex 指引 $300–350 亿 vs 预估经营现金流仅 ~$86.8 亿。Nebius 7 月获 $7.75 亿 GPU 抵押贷款（非稀释性），股价当日 +8%；随后 Nvidia 披露持有 Nebius 9.3% 股权，Nebius 单日 +16%，CoreWeave 联动 +8%。另据 Forbes 7/23 报道，Apollo/Blackstone 正在为 Anthropic 提供约 $360 亿私募信贷（用于租赁 Google 芯片），Broadcom 为优先层级提供残值担保。全美 AI 相关高收益债年内（至 7/8）已发行 $319 亿，全球 AI 债务发行规模预计 2026 年达 $5,700 亿，表外/私募信贷敞口约 $8,000 亿。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-Landmark-8-5-Billion-Financing-Facility-Achieving-First-Investment-Grade-Rated-GPU-backed-Financing/default.aspx">CoreWeave IR 2026-07</a>；<a href="https://247wallst.com/investing/2026/07/21/nebius-explodes-16-higher-on-nvidia-stake-stunner-coreweave-surges-8-oracle-adds-5-as-ai-cloud-plays-pay-off/">247wallst.com 2026-07-21</a>；<a href="https://www.forbes.com/sites/eriksherman/2026/07/23/big-ai-data-center-owners-are-massively-expanding-their-debt/">Forbes 2026-07-23</a>；<a href="https://www.forbes.com/sites/robertszczerba/2026/07/17/bond-investors-push-back-as-ai-debt-heads-toward-570-billion/">Forbes 2026-07-17</a></p></div>
+        <div><h4>为什么重要</h4><p>供应商融资（vendor financing）是 1999–2000 周期的标志性特征（Cisco/Lucent 为客户融资购买自家设备）。GPU 抵押债 + 芯片厂商提供残值担保（Broadcom 为 Anthropic 交易担保）与当年模式高度同构。同时 Nvidia 入股客户（Nebius）进一步模糊供应商与客户的资本关系。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong>（中期融资脆弱性）；<strong>利多</strong>（短期，NBIS/CoreWeave/ORCL 股价当周因此反弹）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 — 融资脆弱性维度维持 5 分顶格，作为核心风险叙事写入情景计划。</p></div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 3. 泡沫评分模型 ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 泡沫评分模型</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th class="num">分（0–5）</th>
+            <th>支撑数据 / 来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>估值泡沫</td><td class="num">4</td><td>SOXX 年内总回报 113%（至 6/30），P/E 76.39×，P/B 13.23×（Burry 引用数据，TheStreet 7/2026）；GOOGL EPS 大幅超预期但股价仍 −7%，显示估值对 capex 极度敏感</td></tr>
+          <tr><td>资本开支过热</td><td class="num">5</td><td>Moody's：六大厂商 2026 合计 capex $7,850 亿→2027 年 ~$1 万亿（CNBC 7/24）；GOOGL 本季度再次上调至 $1,950–2,050 亿（CNBC 7/22）；连续两个季度上修</td></tr>
+          <tr><td>融资脆弱性</td><td class="num">5</td><td>AI 相关高收益债年内发行 $319 亿（Forbes 7/17）；全球 2026 AI 债务发行预计 $5,700 亿；CoreWeave $85 亿 GPU 抵押融资 + Apollo/Blackstone $360 亿私募信贷（Broadcom 提供残值担保）（Forbes 7/23）</td></tr>
+          <tr><td>真实需求兑现</td><td class="num">2</td><td>Google Cloud +82% YoY；TSMC HPC 环比 +20%，FY26 指引上调至 >40%；美光指引 $500 亿超共识 $435.8 亿；需求端本周无证伪证据，反而全面超预期</td></tr>
+          <tr><td>供给过剩风险</td><td class="num">2</td><td>SK Hynix：HBM 缺货预计持续 4–5 年，Nvidia 分配 ~70% HBM4 产能给 SK Hynix（247wallst 7/21）；无 GPU 租赁价格本周下跌的证据</td></tr>
+          <tr><td>龙头盈利质量</td><td class="num">3</td><td>GOOGL EPS 远超预期但伴随 capex 大幅上修+股价跌 7%；TSMC 净利 +77.4% 现金质量扎实；ORCL FY26 FCF −$237 亿，Moody's Baa2 负面展望</td></tr>
+          <tr><td>二三线公司脆弱性</td><td class="num">5</td><td>持仓 AAOI −46.4% vs 成本、AEHR −31.9%、NOK −43.3%、ORCL −45.0%（均触及或逼近 52 周低点）；CoreWeave/Nebius 7/2 单日分别 −14%/−17%（Motley Fool 7/2）</td></tr>
+          <tr><td>信用市场压力</td><td class="num">4</td><td>广谱 HY OAS 仍处历史紧位约 268–285bp（Convex/govspending，7/10–7/22，远低于 350bp 阈值）；但 AI/超大规模专项信用利差本周明确走阔（CNBC 7/24），Moody's 首次点名 ORCL（距垃圾级两档）与 CoreWeave（垃圾级）——压力集中而非广谱</td></tr>
+          <tr><td>市场宽度恶化</td><td class="num">3</td><td>7/21 新 52 周高点 104 只 vs 新低 126 只（弱势占优）；Nasdaq Composite 周跌 −2.13% 显著跑输道指 −0.38%；Morningstar：7 月仅 ~18% 大中盘个股创新高（7 月数据）</td></tr>
+          <tr><td>监管和地缘风险</td><td class="num">4</td><td>伊朗新最高领袖威胁封锁霍尔木兹海峡，WTI 一度 +9.4%（7/24）；FERC 向六大电网运营商发出数据中心并网整改令；德州 PUC 7/10 通过数据中心"故障穿越"强制令；欧盟维持 Google €41 亿反垄断罚款</td></tr>
+          <tr><td>Mega IPO 和私募抽水压力</td><td class="num">4</td><td>Anthropic 6/1 已秘密提交 S-1，目标 10 月纳斯达克上市（估值或达 ~$1 万亿）；OpenAI 6/8 秘密提交 S-1 但 Bloomberg 6/26 报道可能推迟至 2027（Altman 坚持 $1 万亿"底线"估值）</td></tr>
+          <tr style="background:#fafafa;font-weight:700;">
+            <td>总分（满分 55）</td>
+            <td class="num">41</td>
+            <td>vs 7/4（40）→ ↑1（3 周持平略升；内部结构性变化更值得关注——估值/融资/信用维度上升，供给过剩/需求兑现维度下降）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>当前最像互联网泡沫哪一年</h4>
+    <p><strong>2000H2（叠加 2001 早期信用暴露的萌芽）</strong> — 资本开支加速上修、龙头 FCF 收缩、二三线股票估值先崩，与 2000H2 剧本一致；但与纯 2000H2 不同的是，本周供应链订单和终端需求（TSMC/SK Hynix/美光/云收入）全线超预期而非恶化，同时评级机构已经开始点名具体发行人（ORCL/CoreWeave）的信用风险——这更接近 2001 年初"Lucent/Nortel 式融资结构开始被市场定价"的早期阶段，只是尚未扩散到真实违约或广谱信用利差。</p>
+
+    <h4>最关键反证条件</h4>
+    <p>若下周（7/28–8/1）出现：MSFT/META（7/29）、AAPL/AMZN（7/30）财报中任一家下调 FY capex 指引，或 Moody's/S&P 对 ORCL 或 CoreWeave 实际执行评级下调，则确认向"2001–2002 信用风险暴露"阶段加速迁移，评分应上调至 45+；反之若四大厂商同步维持或上调指引且信用利差本周内收窄，则维持当前 41 分不变。</p>
+  </section>
+
+  <!-- ====== 4. 持仓周度处理 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 我的持仓周度处理</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">
+      读取自 <code>data/portfolio.json</code>（<code>$last_updated: 2026-06-06</code>，已连续 7 周未更新）。价格截至 2026-07-24 收盘（FMP）。
+      <strong style="color:#c0392b;">⚠️ 数据陈旧警告：本文件自 6/6 起从未更新，但 6/13、6/20、6/27、7/4 四期复盘均已明确发出"全部 6 仓止损出局"指令。若这些仓位实际已平仓，请立即更新 data/portfolio.json，否则本表将持续把已了结的风险当作在险仓位重复警示。</strong>
+      <a href="../../portfolio.html">→ 编辑持仓</a>
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th>当前状态</th>
+            <th>本周风险变化</th>
+            <th>建议动作</th>
+            <th>触发条件</th>
+            <th>失效条件</th>
+            <th>下周重点观察</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ORCL</strong></td>
+            <td>$114.99 / 成本 $209 / 止损 $188.10<br>vs 成本 −45.0% · vs 止损 −38.9%<br><span style="color:#c0392b;font-weight:600;">52 周新低（$114.785）</span></td>
+            <td>7/24 单日 −4.21%；Moody's 点名信用最弱环节（Baa2 负面展望，距垃圾级两档）；FY26 capex $556.6 亿超指引，FCF −$237 亿，债务破 $1,000 亿</td>
+            <td style="color:#c0392b;font-weight:600;">确认出局（强制，已逾期 7 周）</td>
+            <td>若仍持有，下周一开盘立即市价全出，不设条件</td>
+            <td>无（评级机构已介入，不存在持有理由）</td>
+            <td>Moody's/S&P 是否实际执行评级下调；下季 FY27 capex 指引</td>
+          </tr>
+          <tr>
+            <td><strong>NOK</strong></td>
+            <td>$9.07 / 成本 $16 / 止损 $14.40<br>vs 成本 −43.3% · vs 止损 −37.0%</td>
+            <td>7/23 发布 Q2：净销售 €48.2 亿 +9% YoY，AI&Cloud 净销售同比翻倍至 €4.46 亿，AI&Cloud 订单 €28 亿；7/24 仍随板块 −6.78%（基本面利好未能对冲情绪抛售）</td>
+            <td style="color:#c0392b;font-weight:600;">确认出局（强制，已逾期 7 周）</td>
+            <td>若仍持有，下周一开盘市价全出</td>
+            <td>无</td>
+            <td>Nokia-Nvidia AI 基础设施合作能否转化为下季度指引上修（当前 2026 营业利润指引 €21–26 亿）</td>
+          </tr>
+          <tr>
+            <td><strong>MRVL</strong></td>
+            <td>$194.23 / 成本 $196 / 原始止损 $176.40<br>vs 成本 −0.9% · vs 原始止损 +10.1%<br><span style="color:#e67e22;font-weight:600;">仍高于原始止损，但远低于 6/27 调整止损 $250（已于 7/2 触发）</span></td>
+            <td>7/24 单日 −7.21%；custom ASIC 毛利率因 Broadcom 竞争加剧承压，上季度净利率骤降至 1.4%（vs 前季 9.4%）；Q2（截至 8/1）营收指引 $27 亿±5%</td>
+            <td style="color:#e67e22;font-weight:600;">止损出局（按 6/27 调整止损执行）</td>
+            <td>若仍持有，下周一开盘市价全出（调整止损 $250 已穿透逾 3 周）</td>
+            <td>若单日收盘重回 ≥$255 且 SOXX 同日 +2%+，可小仓位（≤5%）重新评估</td>
+            <td>8/1 后 Q2 财报是否验证营收指引及毛利率企稳；custom ASIC 对 Broadcom 份额争夺进展</td>
+          </tr>
+          <tr>
+            <td><strong>LITE</strong></td>
+            <td>$762.99 / 成本 $883 / 止损 $794.70<br>vs 成本 −13.6% · vs 止损 −4.0%</td>
+            <td>7/24 单日 −8.47%；基本面本身强劲：FY26 Q3 营收 $8.084 亿（+90% YoY 创纪录），OCS 积压订单 >$4 亿，新增数亿美元 CPO 订单（2027H1 交付）——本周下跌与基本面脱钩，纯情绪/板块抛售</td>
+            <td style="color:#c0392b;font-weight:600;">确认止损出局</td>
+            <td>若仍持有，下周一开盘市价全出（$762.99 已跌破 $794.70）</td>
+            <td>无（8/11 FY26 Q4 财报前不建议博弈持有）</td>
+            <td>8/11 FY26 Q4 财报（市场预期 EPS YoY +718.8%）；CPO/OCS 订单能否在财报中兑现为指引上修</td>
+          </tr>
+          <tr>
+            <td><strong>AAOI</strong></td>
+            <td>$100.15 / 成本 $187 / 止损 $168.30<br>vs 成本 −46.4% · vs 止损 −40.5%</td>
+            <td>7/24 单日 −10.60%；7 月内高波动：Texas 扩产利好一度 +6%，随后"AI 光学交易降温"回落 −12%，本周再被 −10.6%；估值仍处四只光模块股中最低（~6× 远期营收 vs LITE ~10×）</td>
+            <td style="color:#c0392b;font-weight:600;">确认出局（强制，已逾期数周）</td>
+            <td>若仍持有，下周一开盘市价全出</td>
+            <td>无</td>
+            <td>Texas 产能爬坡进度；能否在下季财报中兑现营收指引</td>
+          </tr>
+          <tr>
+            <td><strong>AEHR</strong></td>
+            <td>$76.32 / 成本 $112 / 止损 $100.80<br>vs 成本 −31.9% · vs 止损 −24.3%</td>
+            <td>7/14 财报后（FY26 Q4 EPS $0.11 转正超预期，营收 $1,880 万 +33%，FY27 营收指引 $1.3–1.5 亿）股价一度冲高至 $110.20（7/15），7/21 收 $97.73，但 7/24 单日暴跌 −13.77% 回吐大部分涨幅——典型"财报正面但被系统性抛售吞没"</td>
+            <td style="color:#c0392b;font-weight:600;">确认出局（强制，已逾期数周）</td>
+            <td>若仍持有，下周一开盘市价全出</td>
+            <td>无</td>
+            <td>FY27 指引 $1.3–1.5 亿能否在后续季度验证；硅光/AI 光互联订单（FOX-XP）持续性</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 5. 下周三种情景计划 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 下周三种情景计划</h2>
+
+    <article class="deepdive">
+      <h3>情景一 · 继续上涨（概率 20%）</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>7/29 MSFT/META、7/30 AAPL/AMZN 财报同步维持或上调 capex 指引且云/AI 收入加速；7/28–29 FOMC 维持鸽派措辞（当前市场定价 79.5% 概率维持 3.50–3.75%）；SOXX 收复 $560+ 并企稳 2 日；伊朗局势降温、油价回落至 $85 以下。</p></div>
+        <div><h4>应该做什么</h4><p>先完成全部 6 仓止损出局；SOXX 若企稳 $560+ 2 日以上，可小仓位（3–5%）用 TSMC/SK Hynix/美光验证过的真实需求逻辑重新介入供应链龙头（如 AVGO、TSM），不追二三线光模块股。</p></div>
+        <div><h4>不能做什么</h4><p>不能在止损执行前对现有 6 仓抱有幻想；不能因单日反弹 +3–4% 就判定 Moody's 信用警告已解除；不能在 ORCL/CoreWeave 评级不确定期间新建相关仓位。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景二 · 顶部震荡（概率 50%，基础情景）</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>SPX 维持 7,300–7,550 区间；SOXX 在 $500–$560 宽幅震荡；Q2 财报季（7/28–8/1）好坏参半——capex 继续上修但云收入也继续超预期；10Y 维持 4.50%–4.80%；广谱 HY OAS 维持 300bp 以下（无系统性信用事件）。</p></div>
+        <div><h4>应该做什么</h4><p>完成全部止损后保留现金观望；用 QQQ 或 SOXX 的 OTM put（覆盖 7/29 FOMC + 7/29–30 四大财报窗口）做小仓位保险；关注 8/11 LITE 财报是否验证本周下跌与基本面脱钩的判断。</p></div>
+        <div><h4>不能做什么</h4><p>不能频繁进出震荡区间；不能在 Moody's/评级机构对 ORCL、CoreWeave 的后续动作明朗前建立与二者相关的任何新仓位；不能满仓押注任一情景。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景三 · 下跌或泡沫破裂（概率 30%）</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>Moody's 或 S&P 对 ORCL 或 CoreWeave 实际执行评级下调（而非仅警告）；7/29–30 任一大厂下调 FY capex 指引；SOXX 跌破 $500；广谱 HY OAS 突破 350bp 并持续走阔；霍尔木兹局势升级导致油价突破 $100 且持续；10Y 突破 4.85%。</p></div>
+        <div><h4>应该做什么</h4><p>加大 QQQ/SOXX put 仓位；将总权益仓位压至 10% 以下、现金为王；密切跟踪 CoreWeave/Nebius 信用利差和 GPU 抵押贷款的二级市场定价，作为系统性信用事件的早期预警。</p></div>
+        <div><h4>不能做什么</h4><p>不能尝试抄底任何已破位的二三线光模块/存储股；不能持有任何已触发止损的仓位搏财报反转；不能忽视 Moody's 警告去加仓 ORCL 或 CoreWeave 敞口相关标的。</p></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ====== 6. 下周交易行动清单 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 下周交易行动清单 <span class="deck">/ 最多 8 条</span></h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>动作</th>
+            <th>标的</th>
+            <th>原因</th>
+            <th>触发条件</th>
+            <th>止损 / 失效</th>
+            <th>时间周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>确认出局</strong></td>
+            <td>ORCL</td>
+            <td>Moody's 点名信用最弱环节之一，52 周新低，止损逾期 7 周</td>
+            <td>下周一（7/27）开盘，若仍持有立即市价全出，无条件执行</td>
+            <td>N/A（强制止损）</td>
+            <td>7/27 开盘</td>
+          </tr>
+          <tr>
+            <td><strong>确认出局</strong></td>
+            <td>NOK</td>
+            <td>止损 $14.40 已穿透 −37%，AI&Cloud 订单利好未能对冲板块抛压</td>
+            <td>下周一开盘，若仍持有立即市价全出</td>
+            <td>N/A</td>
+            <td>7/27 开盘</td>
+          </tr>
+          <tr>
+            <td><strong>止损出局</strong></td>
+            <td>MRVL</td>
+            <td>6/27 调整止损 $250 已于 7/2 触发且逾期未执行；custom ASIC 毛利率承压（净利率 1.4% vs 9.4%）</td>
+            <td>下周一开盘，若仍持有立即市价全出</td>
+            <td>若收盘重回 ≥$255 且 SOXX 同日 +2%+ 可重新评估</td>
+            <td>7/27 开盘</td>
+          </tr>
+          <tr>
+            <td><strong>确认止损出局</strong></td>
+            <td>LITE</td>
+            <td>止损 $794.70 已跌破；基本面强劲（营收 +90%）但情绪抛售未反映</td>
+            <td>下周一开盘，若仍持有立即市价全出</td>
+            <td>N/A</td>
+            <td>7/27 开盘</td>
+          </tr>
+          <tr>
+            <td><strong>确认出局</strong></td>
+            <td>AAOI</td>
+            <td>止损 $168.30 已逾期，vs 成本 −46.4%</td>
+            <td>下周一开盘，若仍持有立即市价全出</td>
+            <td>N/A</td>
+            <td>7/27 开盘</td>
+          </tr>
+          <tr>
+            <td><strong>确认出局</strong></td>
+            <td>AEHR</td>
+            <td>止损 $100.80 已逾期；财报正面涨幅（至 $110.20）已被 7/24 单日 −13.77% 大幅回吐</td>
+            <td>下周一开盘，若仍持有立即市价全出</td>
+            <td>N/A</td>
+            <td>7/27 开盘</td>
+          </tr>
+          <tr>
+            <td><strong>买入 put（对冲）</strong></td>
+            <td>QQQ 或 SOXX OTM Put，8/1 或 8/8 到期</td>
+            <td>Moody's 信用警告 + GOOGL capex 上修引发的债市反应 + 7/28-29 FOMC + 7/29-30 四大厂财报窗口集中风险</td>
+            <td>QQQ 反弹至 $700+ 或 SOXX 反弹至 $545+ 时买入（溢价较低时机）</td>
+            <td>QQQ 连续 2 日收盘 ≥$715 或财报季全部正面（对冲失效）</td>
+            <td>2 周（覆盖 FOMC + 财报季）</td>
+          </tr>
+          <tr>
+            <td><strong>观察 / 条件性建仓</strong></td>
+            <td>TSM 或 AVGO</td>
+            <td>供应链真实需求本周全线验证（TSMC HPC +20% QoQ、美光指引超预期），是本周唯一被基本面而非情绪定价的板块</td>
+            <td>TSM 或 AVGO 单日收盘企稳且 SOXX 同步止跌 2 日以上，仓位 ≤5%</td>
+            <td>SOXX 跌破 $500（板块级止损）</td>
+            <td>4–6 周（观察 Q3 指引验证）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. 下周必须盯的转折点 ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 下周必须盯的转折点 <span class="deck">/ 最多 10 条</span></h2>
+
+    <ol>
+      <li><strong>Moody's / S&P 对 ORCL、CoreWeave 的后续评级动作</strong> — 从"警告"升级为"实际下调"将是本轮周期首个具体信用事件，直接影响持仓 ORCL</li>
+      <li><strong>7/28–29 FOMC 决议</strong> — 市场定价 79.5% 维持 3.50–3.75%（连续第 5 次维持）、19.4% 定价加息 25bp；鹰派意外将放大本周已现的"利率升+风险资产跌"组合</li>
+      <li><strong>7/29 MSFT、META 财报</strong> — 是否跟随 GOOGL 继续上调 capex 指引；云/AI 收入增速能否维持</li>
+      <li><strong>7/30 AAPL、AMZN 财报</strong> — AWS 能否维持约 28% 增速（Q1 15 个季度最快）；AMZN 2026–2027 累计 capex 指引（此前已上调至 $3,440 亿）是否再修</li>
+      <li><strong>SOXX $500 关键支撑</strong> — 若日收跌破，确认半导体板块进入中期趋势性下跌，触发情景三</li>
+      <li><strong>广谱 HY OAS 350bp 阈值</strong> — 当前 ~268–285bp 历史低位；若因 ORCL/CoreWeave 事件外溢至广谱信用利差走阔突破 350bp，标志信用风险从"个别发行人"扩散为"系统性"</li>
+      <li><strong>霍尔木兹海峡局势 / 油价</strong> — WTI 若持续站上 $100 将同时打击消费与企业 AI 支出预算，是本周新增的宏观尾部风险</li>
+      <li><strong>8/11 LITE FY26 Q4 财报</strong> — 验证本周 −8.47% 单日跌幅是否与基本面（营收 +90%、CPO 订单）脱钩</li>
+      <li><strong>CoreWeave / Nebius 二级市场信用利差</strong> — GPU 抵押债定价是否随 Moody's 警告走阔，是新云信用压力的高频领先指标</li>
+      <li><strong>Anthropic（目标 10 月上市）/ OpenAI（或推迟至 2027）IPO 时间表变化</strong> — 任一提前或推迟都将重新定价 Mega IPO 私募抽水压力维度</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>指数 / 波动率 / 利率信用</h4>
+      <ul>
+        <li>FMP indexes/index-historical-price-eod-light（SPX/IXIC/DJI/RUT/VIX），2026-07-17 至 2026-07-24</li>
+        <li>FMP company/profile-symbol（QQQ/SPY/SMH/SOXX/IWM/SOXL/SOXS），2026-07-24</li>
+        <li>FMP economics/treasury-rates（2Y/10Y/30Y），2026-07-17 至 2026-07-24</li>
+        <li>Convex：<a href="https://convextrade.com/metrics/bamlh0a0hym2">HY Credit Spread (OAS) 269bp，2026-07-10</a></li>
+        <li>govspending：<a href="https://govspending.org/series/BAMLH0A0HYM2/">HY OAS 2.68%</a></li>
+        <li>Investing.com：<a href="https://www.investing.com/analysis/semiconductor-selloff-shakes-the-stock-market-200682710">半导体指数 7/24 单日 −4.3%</a></li>
+        <li>Motley Fool：<a href="https://www.fool.com/investing/2026/07/24/sp-500-rises-06-at-midday-on-easing-iran-tension/">7/24 中段行情</a></li>
+        <li>Morningstar：<a href="https://www.morningstar.com/markets/whatever-happened-broadening-stock-market-rally">市场宽度报告，2026-07</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>AI 资本开支 / 供应链 / 需求</h4>
+      <ul>
+        <li>CNBC：<a href="https://www.cnbc.com/2026/07/22/google-earnings-q2-goog-live-updates.html">Alphabet Q2 财报 + capex 上修，2026-07-22</a></li>
+        <li>CNBC：<a href="https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html">Moody's AI 支出信用警告，2026-07-24</a></li>
+        <li>CNBC：<a href="https://www.cnbc.com/2026/07/24/bond-market-anxiety-ai-capex-spending.html">债市对 capex 上修的反应，2026-07-24</a></li>
+        <li>Cryptopolitan：<a href="https://www.cryptopolitan.com/moodys-flags-oracle-and-coreweave-as-ais-weakest-credit-link/">Moody's 点名 ORCL/CoreWeave，2026-07-24</a></li>
+        <li>Bloomberg：<a href="https://www.bloomberg.com/news/articles/2026-07-16/oracle-risks-falling-behind-in-ai-race-as-spending-binge-bites">Oracle 信用下调风险，2026-07-16</a></li>
+        <li>Yahoo Finance：<a href="https://finance.yahoo.com/markets/stocks/articles/tsmc-q2-2026-earnings-record-112109987.html">TSMC Q2 创纪录财报，2026-07-16/17</a></li>
+        <li>247wallst.com：<a href="https://247wallst.com/investing/2026/07/21/sk-hynixs-hbm-empire-powers-65-us-revenue-is-this-the-must-own-ai-stock/">SK Hynix HBM 供需，2026-07-21</a></li>
+        <li>247wallst.com：<a href="https://247wallst.com/investing/2026/07/19/why-micron-belongs-in-your-portfolio-with-strong-q3-earnings-and-rising-guidance/">美光指引上修，2026-07-19</a></li>
+        <li>Benzinga：<a href="https://www.benzinga.com/trading-ideas/movers/26/07/60615993/dell-stock-surges-as-super-micro-signals-strong-new-order-growth">SMCI/Dell 订单积压，2026-07-22</a></li>
+        <li>Yahoo Finance：<a href="https://www.gurufocus.com/news/8973914/nokia-nok-reports-q2-earnings-with-eps-beat-and-revenue-miss">Nokia Q2 财报，2026-07-23</a>；<a href="https://www.nokia.com/newsroom/nokia-corporation-report-for-q2-and-half-year-2026/">Nokia 官方公告，2026-07-23</a></li>
+        <li>TradingKey：<a href="https://www.tradingkey.com/news/market-movers/262041910-market-movers-mrvl-20260720">MRVL 动态，2026-07-20</a></li>
+        <li>247wallst.com：<a href="https://247wallst.com/investing/2026/07/14/applied-optoelectronics-rallies-6-lumentum-climbs-5-as-texas-expansion-fuels-ai-optics-trade/">AAOI/LITE 德州扩产，2026-07-14</a>；<a href="https://247wallst.com/investing/2026/07/15/applied-optoelectronics-falls-12-coherent-and-lumentum-slide-as-ai-optics-trade-cools/">光学交易降温，2026-07-15</a></li>
+        <li>StockTitan：<a href="https://www.stocktitan.net/news/AEHR/aehr-test-systems-reports-fiscal-2026-fourth-quarter-and-full-year-aytbj239efe5.html">AEHR FY26 Q4 财报，2026-07-14</a></li>
+        <li>CNBC：<a href="https://www.cnbc.com/2026/07/14/nvidia-h200-ai-chips-china.html">Nvidia H200 出口合规收紧，2026-07-14</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>融资 / IPO / 估值 / 空头</h4>
+      <ul>
+        <li>CoreWeave IR：<a href="https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-Landmark-8-5-Billion-Financing-Facility-Achieving-First-Investment-Grade-Rated-GPU-backed-Financing/default.aspx">$85 亿 GPU 抵押融资，2026-07</a></li>
+        <li>247wallst.com：<a href="https://247wallst.com/investing/2026/07/17/nebius-jumps-8-as-775m-debt-deal-eases-the-dilution-fears-that-sank-nbis-stock/">Nebius $7.75 亿贷款，2026-07-17</a>；<a href="https://247wallst.com/investing/2026/07/21/nebius-explodes-16-higher-on-nvidia-stake-stunner-coreweave-surges-8-oracle-adds-5-as-ai-cloud-plays-pay-off/">Nvidia 入股 Nebius，2026-07-21</a></li>
+        <li>Forbes：<a href="https://www.forbes.com/sites/eriksherman/2026/07/23/big-ai-data-center-owners-are-massively-expanding-their-debt/">AI 数据中心债务扩张，2026-07-23</a>；<a href="https://www.forbes.com/sites/robertszczerba/2026/07/17/bond-investors-push-back-as-ai-debt-heads-toward-570-billion/">AI 债务规模，2026-07-17</a></li>
+        <li>TechCrunch：<a href="https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/">OpenAI 秘密提交 IPO，2026-06-08</a></li>
+        <li>Fortune：<a href="https://fortune.com/2026/06/01/anthropic-confidentially-files-ipo-965-billion-valuation/">Anthropic 秘密提交 IPO，2026-06-01</a></li>
+        <li>TheStreet：<a href="https://www.thestreet.com/investing/stocks/mu-michael-burry-doubles-down-on-ai-chip-bubble-with-micron-short">Burry 做空 SOXX/MU/AMD，2026-07</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>监管 / 地缘</h4>
+      <ul>
+        <li>Utility Dive：<a href="https://www.utilitydive.com/news/texas-puc-approves-ride-through-rules-data-centers/825051/">德州数据中心并网规则，2026-07-10</a></li>
+        <li>S&P Global：<a href="https://www.spglobal.com/energy/en/technology-ai-research-insights/blogs/new-data-center-legislation-roundup-july-2026">数据中心立法综述，2026-07</a></li>
+        <li>Motley Fool：<a href="https://www.fool.com/investing/2026/07/24/sp-500-rises-06-at-midday-on-easing-iran-tension/">伊朗局势降温，2026-07-24</a></li>
+        <li>Wilson Sonsini：<a href="https://www.wsgr.com/en/insights/2026-antitrust-year-in-preview-big-tech.html">大型科技反垄断综述，2026</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"概率情景"为情景分析。每个交易建议仅在标注的触发条件下成立；执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。部分数据点来源为聚合站点，已在正文中标注置信度，建议核实后再作为决策依据。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 周度复盘 · 2026-07-25
+</footer>
+
+</body>
+</html>
