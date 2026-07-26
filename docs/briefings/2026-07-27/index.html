@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-07-27 · 盘前简报 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings" class="active">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">盘前简报</span>
+    <span>2026 年 7 月 27 日 周一</span>
+  </div>
+
+  <h1 class="report-title">SOX 单日 −4.25% 未获反弹，NDX 失守 50/200DMA · 今日重点：6 仓强制清仓窗口</h1>
+
+  <!-- ====== 1. 昨夜收盘 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 昨夜收盘</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">上周五（2026-07-24）为最近一个交易日，NYSE 当周（7/20–7/25）无休市（FMP holidays-by-exchange 核实）。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th>vs 50DMA</th>
+            <th>vs 200DMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SPX</td><td class="num">7,411.98</td><td class="num">+0.05%</td><td>跌破（50DMA≈7,472）</td><td>站上（200DMA≈7,006）</td></tr>
+          <tr><td>NDX</td><td class="num">28,128.34</td><td class="num">−1.15%</td><td>跌破（50DMA≈29,373，来源未标注具体日期，置信度中）</td><td>跌破（200DMA≈29,538，同上）</td></tr>
+          <tr><td>SOX（费城半导体指数）</td><td class="num">11,818.89</td><td class="num">−4.25%</td><td>无法验证</td><td>无法验证</td></tr>
+          <tr><td>IWM</td><td class="num">291.20</td><td class="num">−0.31%</td><td>无法验证</td><td>无法验证</td></tr>
+          <tr><td>VIX</td><td class="num">18.58</td><td class="num">−0.64%</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Mag 7 头条：TSLA 收盘 −3.0%、NVDA −1.72% 领跌（均为 2026-07-24 收盘，来源 TheStreet/CNBC）；GOOGL/AMZN/META 信用利差本周走阔但资产负债表未被市场下修。</p>
+  </section>
+
+  <!-- ====== 2. 我的持仓 gap 状态 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 持仓 gap 状态</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">
+      读取自 <code>data/portfolio.json</code>（<code>$last_updated: 2026-06-06</code>）。价格截至 2026-07-24 收盘（FMP，经 2026-07-25 周度复盘核对）。
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th class="num">距止损</th>
+            <th class="num">距目标</th>
+            <th>盘前/备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ORCL</td><td class="num">$114.99</td><td class="num">−4.21%</td><td class="num" style="color:#c0392b;">−38.9%（已破）</td><td class="num">+263.5%</td><td>52 周新低</td></tr>
+          <tr><td>NOK</td><td class="num">$9.07</td><td class="num">−6.78%</td><td class="num" style="color:#c0392b;">−37.0%（已破）</td><td class="num">+252.8%</td><td>–</td></tr>
+          <tr><td>MRVL</td><td class="num">$194.23</td><td class="num">−7.21%</td><td class="num">+10.1%（原止损未破）</td><td class="num">+101.9%</td><td>portfolio.json 止损未更新为 6/27 调整后的 $250（已破）</td></tr>
+          <tr><td>LITE</td><td class="num">$762.99</td><td class="num">−8.47%</td><td class="num" style="color:#c0392b;">−4.0%（已破，&lt;5%）</td><td class="num">+131.5%</td><td>–</td></tr>
+          <tr><td>AAOI</td><td class="num">$100.15</td><td class="num">−10.60%</td><td class="num" style="color:#c0392b;">−40.5%（已破）</td><td class="num">+273.5%</td><td>–</td></tr>
+          <tr><td>AEHR</td><td class="num">$76.32</td><td class="num">−13.77%</td><td class="num" style="color:#c0392b;">−24.3%（已破）</td><td class="num">+193.5%</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. 今日 catalysts ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 今日 catalysts</h2>
+    <ul>
+      <li><strong>耐用品订单（6 月）</strong>（8:30 AM ET）— 预期 +1.6%，前值 −4.5%</li>
+      <li><strong>核心耐用品订单（6 月）</strong>（8:30 AM ET）— 预期 +0.9%，前值 +1.4%</li>
+      <li><strong>非国防资本品订单（除飞机，6 月）</strong>（8:30 AM ET）— 预期 +0.5%，前值 +1.4%</li>
+      <li><strong>Dallas Fed 制造业指数（7 月）</strong>（10:30 AM ET）— 预期 −12.0，前值 −15.1</li>
+      <li><strong>2 年期 / 5 年期国债标售</strong>（1:00 PM ET）</li>
+      <li><strong>盘前财报</strong>：AZN、KOF、BOH 等（非 AI 核心标的）</li>
+      <li><strong>盘后财报</strong>：Cadence Design Systems（CDNS，AI 芯片设计软件，与半导体资本支出主题相关）、WELL、NUE、CLS、CINF</li>
+      <li><strong>本周前瞻</strong>：7/28–29 FOMC 决议（市场定价 79.5% 维持利率不变）；7/29（周三）MSFT/META/QCOM/ARM 财报；7/30（周四）AAPL/AMZN 财报</li>
+    </ul>
+  </section>
+
+  <!-- ====== 4. 今日单条最重要看点 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 今日单条最重要看点</h2>
+    <div class="tldr">
+      <p style="margin:0;font-size:16px;line-height:1.6;">今日宏观日程本身较轻（耐用品订单 + Dallas Fed），真正的转折点在本周三/四（FOMC + MSFT/META/AAPL/AMZN 财报）。今天更重要的是执行层面：周度复盘已连续多期发出 6 仓强制止损/出局指令且逾期未在 <code>data/portfolio.json</code> 中反映，若实际仍持有，本应是开盘执行窗口。观察点：SOX 能否收复 11,900 上方并企稳，若延续 −2% 以上跌幅，则周度复盘中"下跌情景"（概率 30%）的验证条件向前推进。</p>
+    </div>
+  </section>
+
+  <!-- ====== 5. 异动 / 风险信号 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 异动 / 风险信号</h2>
+    <ul>
+      <li>SOX 单日 −4.25%，为本轮周期最大单日跌幅之一，但 VIX 仅 18.58（未确认恐慌）——宽度/波动率背离尚未被期权市场定价，是本周唯一持续存在的结构性信号。</li>
+      <li>广谱信用利差（HY OAS）本简报未更新，无法验证是否较 2026-07-24 的 ~268–285bp 进一步走阔；ORCL/CoreWeave 专项信用事件仍是最高优先级监测项。</li>
+    </ul>
+  </section>
+
+  <!-- ====== 6. 周度立场不变量 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 周度立场不变量</h2>
+    <p>[周度复盘 2026-07-25 的立场：防守 — 若 6 仓仍未平仓须今日开盘立即市价清仓，新增仓位一律等待，仅保留对冲思路] — 今日不偏离。</p>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源</h3>
+    <ul>
+      <li>FMP indexes/index-historical-price-eod-light（^GSPC、^VIX、^IXIC、^RUT），2026-07-24</li>
+      <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-july-24-2026-dow-futures-rebound-as-oil-retreats-after-market-sell-off">TheStreet 收盘综述，2026-07-24</a></li>
+      <li><a href="https://www.investing.com/indices/phlx-semiconductor-historical-data">Investing.com SOX 历史数据，2026-07-24</a></li>
+      <li><a href="https://www.investing.com/etfs/ishares-russell-2000-index-etf">Investing.com IWM 报价，2026-07-24</a></li>
+      <li><a href="https://finance.yahoo.com/quote/%5ENDX/history/">Yahoo Finance NDX 历史数据，2026-07-24</a></li>
+      <li><a href="https://www.investing.com/indices/nq-100-technical">Investing.com NDX 技术分析（50/200DMA），检索于 2026-07-27</a></li>
+      <li><a href="https://x.com/marketsday/status/2080877184630370600">经济日历 2026-07-27（耐用品订单/Dallas Fed）</a></li>
+      <li><a href="https://www.tipranks.com/news/earnings-to-watch-this-week-july-27-31-2026">TipRanks 本周财报前瞻，2026-07-27</a></li>
+      <li>周度复盘 <a href="../../reviews/2026-07-25/index.html">2026-07-25</a></li>
+    </ul>
+  </section>
+
+  <p class="disclaimer">盘前简报仅为事实摘要，不构成新的交易建议。新交易建议见每周六的<a href="../../index.html#reviews">市场周度复盘</a>。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 盘前简报 · 2026-07-27
+</footer>
+
+</body>
+</html>
