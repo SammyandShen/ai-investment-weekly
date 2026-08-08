@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-08-08 · 周度复盘 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews" class="active">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">周度复盘 · 第 11 期</span>
+    <span>2026 年 8 月 8 日 周六</span>
+  </div>
+
+  <h1 class="report-title">非农 -23K 引爆鸽派重估，SPX 纪录收盘 7,757 / 纳指周涨 5.2%；但 CoreWeave CDS 隐含 50% 违约概率暴露 AI 信用裂缝</h1>
+  <p class="report-subtitle">泡沫评分 32/55（↓7 vs 上周 39），指数在鸽派催化下创纪录反弹，TSMC/ASML/AAOI 三条供应链数据同步确认真实需求，但 CoreWeave/Nebius 信用利差持续恶化——broad credit 平静之下的 AI 孤岛式信用裂缝，是本周唯一没有被"好消息"冲淡的风险点。持仓 3/6 仓仍在止损位下方。</p>
+
+  <!-- ====== 1. 本周总判断 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本周总判断</h2>
+
+    <div class="tldr">
+      <h4>一句话结论</h4>
+      <p style="font-size:18px;font-weight:600;margin:0;">震荡交易——尊重个股止损纪律（ORCL/NOK/AAOI 现仓清仓），保留 MRVL/LITE 已修复仓位并上调止损，8/26 NVDA 财报前用 SOXX/QQQ put 对冲 CoreWeave 信用裂缝的尾部风险。</p>
+    </div>
+
+    <h4>市场状态</h4>
+    <p><strong>强趋势</strong> — SPX 8/7 收 7,757.64（+0.62% 单日，创纪录），周涨 3.6%；纳指综合 26,690.62，周涨 5.2%；SMH/SOXX/SOXL 三只半导体 ETF 史上首次同周成为资金流入最大的三只 ETF（来源：Yahoo Finance/CNBC 2026-08-07；Yahoo Finance 半导体 ETF 资金流报道）。但这轮反弹的触发点是就业疲软带来的鸽派重估，而非资本开支/需求端基本面改善——同期 CoreWeave 信用利差持续走阔，是这轮"强趋势"下唯一未被定价的裂缝。</p>
+
+    <h4>AI 泡沫阶段概率分布</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>阶段</th><th>当前判断</th><th class="num">概率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1996–1998 早期扩散</td><td>已跨过</td><td class="num">3%</td></tr>
+          <tr><td>1999 叙事和估值同步加速</td><td>本周指数普涨、SMH/SOXX 史上首次资金流入榜首，符合此阶段特征</td><td class="num">27%</td></tr>
+          <tr><td>2000Q1 顶部附近</td><td>AMD"完美财报仍跌 8%"+ Mag7 集中度 34–40% 是核心证据</td><td class="num">30%</td></tr>
+          <tr><td>2000H2 订单和资本开支恶化</td><td>供应链本身（TSMC/ASML/AAOI）尚未恶化，暂不满足</td><td class="num">20%</td></tr>
+          <tr><td>2001–2002 信用风险暴露</td><td>CoreWeave CDS ~855bp/隐含 50% 违约概率是孤立但真实的先行信号</td><td class="num">15%</td></tr>
+          <tr><td>2003 后幸存者阶段</td><td>不适用</td><td class="num">5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 2. 本周真正重要的 5 件事 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 本周真正重要的 5 件事</h2>
+
+    <article class="deepdive">
+      <h3>事件 #1 · 非农暴雷 -23,000，9 月降息概率跳升至 90.4%</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>7 月非农 -23,000（预期 +80,000），失业率降至 4.1%（因劳动参与率下滑而非就业改善），5–6 月合计下修 -103,000；CME FedWatch 显示 9 月降息 25bp 概率跳升至 90.4%。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.bls.gov/news.release/empsit.nr0.htm">BLS Employment Situation</a>，2026-08-07；<a href="https://www.cnbc.com/2026/08/07/odds-the-fed-hikes-in-september-tumble-following-big-july-jobs-miss.html">CNBC</a>，2026-08-07</p></div>
+        <div><h4>为什么重要</h4><p>"坏消息=好消息"驱动 SPX 单日 +0.62% 创纪录收盘，周涨 3.6%；但就业实际走弱本身是软着陆与衰退早期两种情景的分水岭信号，不是单纯利多。</p></div>
+        <div><h4>影响方向</h4><p><strong>短期利多 / 中期中性偏空</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>否——支持 MRVL/LITE 持有与 AAOI 条件性回补，但不改变对已破位仓位（ORCL/NOK）的止损纪律。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #2 · AMD"完美财报"仍盘后跌 8%——priced for perfection 信号</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>AMD Q2 营收 $11.5B 超预期 $11.3B，数据中心营收 $6.7B（逾 2 倍 YoY），Q3 指引约 $13B±$300M（高于部分共识 $12.5B），盘后仍跌 8%。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results">AMD IR 财报</a>，2026-08-04；<a href="https://finance.yahoo.com/markets/article/this-was-not-an-exceptional-result-why-amd-stock-tanked-5-after-earnings-112124288.html">Yahoo Finance</a>，2026-08-04</p></div>
+        <div><h4>为什么重要</h4><p>龙头"营收利润指引全面超预期仍遭抛售"是 1999H2–2000Q1 典型顶部特征——预期已跑赢基本面，任何非爆炸性数字都会被卖出。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性偏空</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是——支撑对 MRVL 上调止损、维持 SOXX/QQQ 对冲仓位过 8/26 NVDA 财报窗口的决策。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #3 · CoreWeave/Nebius 信用利差持续恶化——AI 基建首个可量化信用裂缝</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>CoreWeave 5 年期 CDS 约 855bp（隐含 5 年违约概率约 50%），CoreWeave/Nebius 股价过去一个月分别下跌 36%/43%；同期广谱高收益债 OAS 仍维持约 284bp（历史最紧十分位）。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://247wallst.com/investing/2026/07/29/nebius-drops-10-coreweave-sinks-9-as-rising-credit-swap-costs-hit-the-ai-cloud-trade/">247wallst.com</a>，2026-07-29；<a href="https://www.fool.com/investing/2026/08/04/better-neocloud-stock-nebius-vs-coreweave/">Motley Fool</a>，2026-08-04</p></div>
+        <div><h4>为什么重要</h4><p>Broad credit 平静但 AI 孤岛信用单独恶化，是方法论中"Stage 7 信用压力阶段"的教科书案例——2000H2→2001 传导链条最早期的信号，且尚未被本周股市普涨定价掉。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空（AI 基建融资链条）</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是——新增 SOXX/QQQ put 对冲行动，CoreWeave/Nebius 排除在任何新增买入名单外。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #4 · TSMC/ASML 双双上调 2026 资本开支与营收指引——真实需求继续兑现</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>TSMC 将 2026 资本开支指引上调 15% 至 $600–640 亿，营收增速展望上修至 40% 以上；ASML 年内第二次上调 FY26 营收指引至 €430–450 亿（原 €360–400 亿），存储业务占比已接近逻辑业务份额。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://stocksdownunder.com/asml-ai-boom-nvidia-micron-tsmc/">StocksDownUnder</a>，本周汇总报道；行业追踪 2026-08 周内</p></div>
+        <div><h4>为什么重要</h4><p>供应链最上游（设备+代工）两大龙头同步上修，说明真实需求兑现情况仍在改善而非恶化，直接压低"泡沫评分"中的需求证伪分项。</p></div>
+        <div><h4>影响方向</h4><p><strong>利多</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>否，但支撑维持 MRVL/LITE 持有仓位的信心。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #5 · AAOI Q2 营收 +86% 创纪录，但股价仍在止损位下方——基本面与技术面背离</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>AAOI Q2 营收 $191.9M（+86% YoY），数据中心收入 +140% 至 $107.7M，重回非 GAAP 盈利，Q3 指引 $255–290M（+130% 中值），订单能见度至 2027 年中，1.6T 放量已获 $200M+ 订单；财报后股价单日 +13.37%，但当日区间 $130.50–149.35，仍低于 $168.3 止损位（此前 ATM 增发持续压制估值）。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://finance.biggo.com/news/US_AAOI_2026-08-06">BigGo Finance</a>，2026-08-06；<a href="https://www.timothysykes.com/news/applied-optoelectronics-inc-aaoi-news-2026_08_07-2/">TimothySykes</a>，2026-08-07</p></div>
+        <div><h4>为什么重要</h4><p>持仓仓位，基本面全面兑现但技术位未修复，是"基本面对、仓位管理必须独立于基本面判断"的典型案例。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性（利多基本面 / 利空技术位，两者相抵）</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是——现有 AAOI 仓位仍按止损纪律清仓，但新增"收复 $168.3 两日收盘确认后条件性重建仓"的规则。</p></div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 3. 泡沫评分模型 ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 泡沫评分模型</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th class="num">分（0–5）</th>
+            <th>支撑数据 / 来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>估值泡沫</td><td class="num">4</td><td>SPX/纳指连创纪录，但驱动是鸽派重估而非估值加速扩张（Yahoo/CNBC 2026-08-07）</td></tr>
+          <tr><td>资本开支过热</td><td class="num">5</td><td>五大云厂 2026 合计资本开支指引 $775–800B（+77% YoY），META 本轮再度上修至 $125–145B，TSMC 同周上修 15%——连续第二年上修（行业汇总，2026-08）</td></tr>
+          <tr><td>融资脆弱性</td><td class="num">4</td><td>CoreWeave 债务 $25.1B、利息支出占营收 25.8%；OpenAI/Anthropic S-1 已提交/机密提交，合计瞄准约 $3.8T 市值（Fool.com 2026-08-04；行业报道）</td></tr>
+          <tr><td>真实需求兑现</td><td class="num">2</td><td>TSMC/ASML 双双上修，AAOI 订单能见度至 2027 中，Anthropic ARR $47B 且 Q2 已实现约 $5.59 亿运营利润——需求未证伪（本周多源）</td></tr>
+          <tr><td>供给过剩风险</td><td class="num">1</td><td>SK Hynix HBM4 资质延迟属供给偏紧非过剩；GPU 租赁价（H100 中位 ~$2–4/hr，B200 $4.5–7/hr）未见趋势性下跌（TrendForce/行业定价追踪）</td></tr>
+          <tr><td>龙头盈利质量</td><td class="num">2</td><td>AMD GAAP 净利润、营收全部超预期，AAOI 重回非 GAAP 盈利，未见做账质量问题；股价反应是估值而非质量问题（AMD IR 2026-08-04）</td></tr>
+          <tr><td>二三线公司脆弱性</td><td class="num">3</td><td>AEHR/AAOI 财报后大涨但仍在成本线下方，ORCL/NOK 持续深度破位，二三线名字分化剧烈（本周多源）</td></tr>
+          <tr><td>信用市场压力</td><td class="num">3</td><td>广谱 HY OAS 仅 ~284bp（历史最紧十分位，按 rubric 应记 0），但 CoreWeave CDS ~855bp / 隐含 50% 违约概率的孤岛式压力持续恶化，属方法论 Stage 7 场景，单独加权上调（247wallst.com 2026-07-29）</td></tr>
+          <tr><td>市场宽度恶化</td><td class="num">3</td><td>Nasdaq100 Bullish % Index 一度跌至 30% 后反弹，52 周新高周二一度冲至标普成分股 13.5%；Mag7 权重仍达 34–40%（StockCharts/行业追踪本周）</td></tr>
+          <tr><td>监管和地缘风险</td><td class="num">2</td><td>H200 对华出口维持 25% 关税+个案审批但实际出货"很少"；FCC 拟对中国产光模块设限对 AAOI 等构成潜在利好而非风险（Congress 证词 2026-07-14；本周报道）</td></tr>
+          <tr><td>Mega IPO 和私募抽水压力</td><td class="num">3</td><td>OpenAI/Anthropic 均已提交 S-1（机密/草案）尚未定价交易，SpaceX 已完成上市——供给压力仍在累积但未到"已定价交易"阶段（行业汇总本周）</td></tr>
+          <tr style="background:#fafafa;font-weight:700;">
+            <td>总分（满分 55）</td>
+            <td class="num">32</td>
+            <td>vs 8/1（39）→ ↓7（就业疲软驱动鸽派重估 + TSMC/ASML/AAOI 三条供应链证据同步确认真实需求，抵消上周资本开支恐慌；但 CoreWeave 信用裂缝未随之改善，是本周分数下修中唯一"没有变好"的分项）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>当前最像互联网泡沫哪一年</h4>
+    <p><strong>1999H2</strong> — 指数普涨创纪录、SMH/SOXX/SOXL 史上首次同周资金流入居前、供应链上游同步上修，表面上是典型的 1999 下半年叙事加速期；但 CoreWeave 式的孤岛信用裂缝已经提前出现，是 2000H2 才该有的信号——这种"普涨行情下埋着早熟的信用裂缝"，正是这份复盘系列里最值得持续跟踪的分歧点。</p>
+
+    <h4>最关键反证条件</h4>
+    <p>如果 CoreWeave/Nebius 5 年期 CDS 单周收窄至 500bp 以下且无新增违约/评级下调消息，说明信用裂缝止住扩散，评分应进一步下调；反之若 CDS 突破 1000bp 或触发评级下调至 CCC 区间，应立即将信用市场压力上调至 5 分、总分上调至 45+ 区间。</p>
+  </section>
+
+  <!-- ====== 4. 持仓周度处理 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 我的持仓周度处理</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">
+      读取自 <code>data/portfolio.json</code>（该文件自 2026-06-06 起未更新，止损/成本价为原始设置）。
+      <a href="../../portfolio.html">→ 编辑持仓</a>
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th>当前状态</th>
+            <th>本周风险变化</th>
+            <th>建议动作</th>
+            <th>触发条件</th>
+            <th>失效条件</th>
+            <th>下周重点观察</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ORCL</td>
+            <td>~$145.16（8/7），vs 成本 $209（−30.6%），vs 止损 $188.1 已破位 6 周</td>
+            <td>无改善，S&amp;P 已降至 BBB-、Moody's 负面展望未解除</td>
+            <td>止损清仓</td>
+            <td>已破位（历史触发点）</td>
+            <td>N/A（离场动作）</td>
+            <td>OCI/RPO 转现金流节奏、信用评级是否进一步下调</td>
+          </tr>
+          <tr>
+            <td>NOK</td>
+            <td>~$9.58（8/6），vs 成本 $16（−40.1%），vs 止损 $14.4 已破位</td>
+            <td>7 月低点 $8.37 反弹至 $9.92 后回落，未收复止损线</td>
+            <td>止损清仓</td>
+            <td>已破位</td>
+            <td>N/A（离场动作）</td>
+            <td>AI 网络订单/升级节奏能否兑现反弹叙事</td>
+          </tr>
+          <tr>
+            <td>MRVL</td>
+            <td>$216.38（8/7），vs 成本 $196（+10.4%），高于止损 $176.4</td>
+            <td>财报后波动加大（单日区间 $201.74–219.46），唯一未破位仓位</td>
+            <td>持有 + 上调止损</td>
+            <td>已持有</td>
+            <td>止损上调至 $200（锁定成本上方 +2%）</td>
+            <td>8/26 NVDA 财报前板块 beta 波动、TPU/ASIC 份额消息</td>
+          </tr>
+          <tr>
+            <td>LITE</td>
+            <td>约 $826（8/6 收盘参考），vs 成本 $883（−6.5%），已收复止损 $794.7（+3.9%）</td>
+            <td>止损线以上企稳，8/11 财报为下一验证点</td>
+            <td>持有</td>
+            <td>已站稳止损线上方</td>
+            <td>收盘价连续 2 日低于 $794.7</td>
+            <td>8/11 财报：1.6T EML 出货指引、InP 短缺缓解节奏</td>
+          </tr>
+          <tr>
+            <td>AAOI</td>
+            <td>约 $139–147（8/7 区间 $130.50–149.35），vs 成本 $187（约 −23%），仍低于止损 $168.3</td>
+            <td>Q2 营收 +86%/Q3 指引 +130% 基本面优异，但 ATM 增发稀释持续压制估值，技术位未修复</td>
+            <td>现仓止损清仓 + 条件性重建仓</td>
+            <td>收盘价连续 2 日站上 $168.3 后可重建小仓位</td>
+            <td>现仓：已破位立即离场；新仓：跌破 $150 放弃</td>
+            <td>FCC 对华光模块拟禁令进展、1.6T 放量节奏</td>
+          </tr>
+          <tr>
+            <td>AEHR</td>
+            <td>约 $96–100（8/4–8/5 数据，8/7 精确收盘价无法核实），vs 成本 $112（约 −11%~−14%），徘徊于止损 $100.8 附近</td>
+            <td>FY27 指引 +160%~200% 强劲，财报后单日一度大涨 26%~31%，但技术位尚未确认站稳止损线</td>
+            <td>条件止损（周一开盘确认）</td>
+            <td>N/A</td>
+            <td>周一开盘价低于 $100.8 则立即清仓；进一步跌破 $95 前低确认破位加速</td>
+            <td>FY27 收入确认节奏、客户集中度</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 5. 下周三种情景计划 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 下周三种情景计划</h2>
+
+    <article class="deepdive">
+      <h3>情景一 · 继续上涨</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>9 月 FOMC 降息 25bp 兑现（当前概率 90.4%）+ 8/26 NVDA 财报毛利率维持 75%+ 且无 AR/库存异常 + SOXX 突破前高</p></div>
+        <div><h4>应该做什么</h4><p>MRVL 持有并按计划上调止损；AAOI 在收复 $168.3 两日确认后小仓位试探性重建；逐步降低 SOXX/QQQ 对冲比例</p></div>
+        <div><h4>不能做什么</h4><p>不能加仓 ORCL/NOK 等已破位、信用承压的名字；不能因指数创纪录而忽视 CoreWeave 信用裂缝继续扩散的风险，裸多不对冲</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景二 · 顶部震荡</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>指数维持区间震荡（SPX 7,500–7,800），NDX Bullish % Index 低位徘徊但不破位，CoreWeave CDS 维持 700–900bp 僵持不进一步恶化</p></div>
+        <div><h4>应该做什么</h4><p>严格按个股止损纪律执行（ORCL/NOK/AAOI 现仓清仓，LITE/MRVL 持有），SOXX/QQQ put 对冲维持小仓位过 8/26 NVDA 财报窗口</p></div>
+        <div><h4>不能做什么</h4><p>不能满仓押注单一方向；不能对已破位仓位"等反弹"而拖延止损执行</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景三 · 下跌或泡沫破裂</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>CoreWeave CDS 突破 1000bp 或出现实质性违约/评级下调至 CCC 区间，或 NVDA 8/26 财报毛利率/应收账款明显恶化，或广谱 HY OAS 单周走阔 50bp 以上</p></div>
+        <div><h4>应该做什么</h4><p>全部持仓（含 MRVL/LITE）执行止损离场，put 对冲变现，转为现金 + 短久期国债</p></div>
+        <div><h4>不能做什么</h4><p>不能"逢低摊薄"买入已破位仓位；不能在信用裂缝扩散阶段裸空博反弹抄底</p></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ====== 6. 下周交易行动清单 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 下周交易行动清单 <span class="deck">/ 最多 8 条</span></h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>动作</th>
+            <th>标的</th>
+            <th>原因</th>
+            <th>触发条件</th>
+            <th>止损 / 失效</th>
+            <th>时间周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>止损清仓</td><td>ORCL</td><td>连续 6 周破位于止损 $188.1 下方（现价 $145.16，−30.6% vs 成本），S&amp;P/Moody's 双重信用警示未解除</td><td>已破位（历史触发点）</td><td>N/A（离场动作）</td><td>立即（周一开盘）</td></tr>
+          <tr><td>止损清仓</td><td>NOK</td><td>破位于止损 $14.4 下方达 −40%（现价 $9.58），反弹未能收复止损线</td><td>已破位</td><td>N/A（离场动作）</td><td>立即（周一开盘）</td></tr>
+          <tr><td>止损清仓</td><td>AAOI（现仓）</td><td>Q2 营收 +86%/Q3 指引 +130% 基本面优异，但股价仍在止损 $168.3 下方（−23% vs 成本），ATM 增发稀释压制估值</td><td>已破位</td><td>N/A（离场动作）</td><td>立即（周一开盘）</td></tr>
+          <tr><td>条件性重建仓</td><td>AAOI（新仓）</td><td>订单能见度至 2027 年中，1.6T 放量 $200M+ 订单，FCC 对华光模块拟禁令为潜在利好催化</td><td>收盘价连续 2 日站上 $168.3</td><td>跌破 $150</td><td>2–4 周</td></tr>
+          <tr><td>条件止损</td><td>AEHR</td><td>现价 $96–100 徘徊于止损 $100.8 附近，FY27 指引 +160%~200% 强劲但技术位未确认站稳</td><td>周一开盘价低于 $100.8</td><td>跌破 $95 前低确认加速破位</td><td>立即–1 周</td></tr>
+          <tr><td>持有</td><td>LITE</td><td>已收复止损线 $794.7 上方（现价约 $826），8/11 财报为下一验证点</td><td>已站稳止损线上方</td><td>收盘价连续 2 日低于 $794.7</td><td>至 8/11 财报</td></tr>
+          <tr><td>持有 + 上调止损</td><td>MRVL</td><td>现价 $216 vs 成本 $196（+10%），唯一未破位仓位，8/26 NVDA 财报前波动率将上升</td><td>已持有</td><td>止损上调至 $200（锁定 +2%）</td><td>至 8/26 NVDA 财报</td></tr>
+          <tr><td>买 put 对冲</td><td>SOXX / QQQ</td><td>Burry 持续加码 NVDA 看跌期权/MU/SOXX 空头，CoreWeave CDS 隐含 50% 五年违约概率，8/26 NVDA 财报为下一尾部风险窗口</td><td>现在建仓（8/26 前）</td><td>SOXX 财报前突破前高且 CoreWeave CDS 收窄至 500bp 下方则放弃对冲</td><td>至 8/26</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. 下周必须盯的转折点 ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 下周必须盯的转折点 <span class="deck">/ 最多 10 条</span></h2>
+
+    <ol>
+      <li>NVDA 8/26 财报（本周之后但需提前布局）— GM/库存/应收账款趋势、Rubin 量产节奏</li>
+      <li>CoreWeave/Nebius 信用利差 — CDS 是否维持 &gt;800bp 僵持或回落至 &lt;500bp</li>
+      <li>LITE 8/11 财报 — 1.6T EML 出货指引、InP 短缺缓解节奏</li>
+      <li>9/16-17 FOMC — 降息 25bp（当前概率 90.4%）能否兑现</li>
+      <li>SK Hynix HBM4 量产资质延迟 — 是否解决或进一步推迟</li>
+      <li>OpenAI / Anthropic 正式提交 S-1 与定价窗口 — 合计瞄准约 $3.8T 市值的供给压力</li>
+      <li>广谱 HY OAS 是否维持 &lt;300bp 或开始走阔（信用压力是否从 AI 孤岛扩散至主流市场）</li>
+      <li>GPU 现货/租赁价格（H100/H200/B200）是否出现趋势性下跌</li>
+      <li>FCC 对华光模块拟禁令进展 — AAOI/COHR 等潜在受益催化</li>
+      <li>Mag7/AI 股对指数贡献度与 NDX Bullish % Index 走势 — 市场宽度能否真正修复</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>指数 / 波动率 / 利率信用</h4>
+      <ul>
+        <li><a href="https://www.cnbc.com/2026/08/06/stock-market-today-live-updates.html">CNBC — Stock market news for Aug. 7, 2026</a></li>
+        <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-august-7-nasdaq-dow-sp-500-july-jobs-report-surprises-100009572.html">Yahoo Finance — 2026-08-07 收盘</a></li>
+        <li><a href="https://finance.yahoo.com/markets/stocks/articles/semiconductor-etfs-smh-soxx-soxl-125721354.html">Yahoo Finance — SMH/SOXX/SOXL 资金流</a></li>
+        <li>FMP treasury-rates API，2026-07-27 至 2026-08-07</li>
+        <li><a href="https://convextrade.com/metrics/bamlh0a0hym2">Convex — HY OAS 284bp（2026-07-30）</a></li>
+        <li><a href="https://www.vantagemarkets.com/market-analysis/us-dollar-index-dxy-forecast-worst-week-august-3-7-2026/">Vantage Markets — DXY 周报</a></li>
+        <li><a href="https://www.bls.gov/news.release/empsit.nr0.htm">BLS — Employment Situation，2026-08-07</a></li>
+        <li><a href="https://www.cnbc.com/2026/08/07/odds-the-fed-hikes-in-september-tumble-following-big-july-jobs-miss.html">CNBC — Fed 降息概率，2026-08-07</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>AI 资本开支 / 供应链 / 需求</h4>
+      <ul>
+        <li><a href="https://www.tomshardware.com/tech-industry/big-tech/big-techs-ai-spending-plans-reach-725-billion">Tom's Hardware — 大厂 2026 资本开支</a></li>
+        <li><a href="https://stocksdownunder.com/asml-ai-boom-nvidia-micron-tsmc/">StocksDownUnder — TSMC/ASML 上修指引</a></li>
+        <li><a href="https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results">AMD IR — Q2 2026 财报</a>，2026-08-04</li>
+        <li><a href="https://finance.biggo.com/news/US_AAOI_2026-08-06">BigGo Finance — AAOI Q2 2026 财报</a>，2026-08-06</li>
+        <li><a href="https://www.timothysykes.com/news/aehr-test-systems-aehr-news-2026_08_03/">TimothySykes — AEHR 财报后走势</a></li>
+        <li><a href="https://sqmagazine.co.uk/chatgpt-claude-gemini-perplexity-statistics/">SQ Magazine — ChatGPT/Claude/Gemini 使用与营收数据</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>融资 / IPO / 估值</h4>
+      <ul>
+        <li><a href="https://finance.yahoo.com/markets/article/spacex-openai-and-anthropic-here-are-the-most-anticipated-ipos-in-2026-114439441.html">Yahoo Finance — SpaceX/OpenAI/Anthropic IPO 追踪</a></li>
+        <li><a href="https://247wallst.com/investing/2026/07/29/nebius-drops-10-coreweave-sinks-9-as-rising-credit-swap-costs-hit-the-ai-cloud-trade/">247wallst.com — CoreWeave/Nebius 信用利差</a>，2026-07-29</li>
+        <li><a href="https://www.fool.com/investing/2026/08/04/better-neocloud-stock-nebius-vs-coreweave/">Motley Fool — CoreWeave vs Nebius</a>，2026-08-04</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>监管 / 地缘</h4>
+      <ul>
+        <li><a href="https://techjournal.org/us-imposes-25-tariff-on-nvidia-h200-ai-chips-bound-for-china">TechJournal — 对华 H200 关税与出口管制</a></li>
+        <li><a href="https://www.timothysykes.com/news/applied-optoelectronics-inc-aaoi-news-2026_08_07-2/">TimothySykes — FCC 对华光模块拟禁令报道</a>，2026-08-07</li>
+        <li><a href="https://www.foreignpolicyjournal.com/2026/08/02/michael-burry-expands-bearish-bets-against-nvidia-nasdaq-nvda-and-micron-nasdaq-mu-while-buying-consumer-and-healthcare-stocks/">Foreign Policy Journal — Michael Burry 加码空头</a>，2026-08-02</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"概率情景"为情景分析。每个交易建议仅在标注的触发条件下成立；执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 周度复盘 · 2026-08-08
+</footer>
+
+</body>
+</html>
