@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-08-15 · 周度复盘 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews" class="active">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">周度复盘 · 第 12 期</span>
+    <span>2026 年 8 月 15 日 周六</span>
+  </div>
+
+  <h1 class="report-title">标普/纳指/罗素三线齐创纪录，VIX 回落至 14.25；但英伟达甩出 $500B 融资平台、博通因 BofA 3,700 亿美元债务警告暴跌 6%——泡沫评分升至 33/55</h1>
+  <p class="report-subtitle">本周三大指数同步刷新纪录，半导体/小盘股领涨且宽度实质改善（Russell 2000 创纪录、SMH/SOXX 单周反弹一度达 7%），VIX 回落至 14.25 的低波动区间；但英伟达联合 Apollo/BlackRock/Blackstone/Brookfield/高盛/KKR 组建规模超 5,000 亿美元的第三方 AI 算力融资平台、博通因 BofA 警示其 XPV 融资工具 2029 年或背负 3,700 亿美元表外债务而单日暴跌 6%、Oracle CDS 升至 18 年新高——供应链财报强劲（SMCI/LITE/AEHR 大涨）掩盖不了融资杠杆结构本周在系统性扩张的事实。持仓中 LITE、AEHR 本周暴力反弹收复并大幅超越成本线，ORCL/NOK/AAOI 仍深陷止损位下方。</p>
+
+  <!-- ====== 1. 本周总判断 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本周总判断</h2>
+
+    <div class="tldr">
+      <h4>一句话结论</h4>
+      <p style="font-size:18px;font-weight:600;margin:0;">震荡交易 —— 强趋势中精选做多供应链兑现方（LITE/AEHR/MRVL），但不因指数创纪录而放松对融资杠杆扩张的警惕，ORCL/NOK/AAOI 止损纪律不变。</p>
+    </div>
+
+    <h4>市场状态</h4>
+    <p><strong>强趋势</strong> — SPX/NDX/Russell 2000 本周同步创纪录且宽度实质改善（Russell 2000 领涨 +1.11%、SMH/SOXX 单周反弹达 7%），非单纯巨头驱动（Mag7 代理 ETF MAGS 年内 -4% 跑输标普 +8%），VIX 回落至 14.25 反映低波动环境（Benzinga 2026-08-14；Yahoo Finance 2026-08-13/14；ts2.tech 2026-08-14）。</p>
+
+    <h4>AI 泡沫阶段概率分布</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>阶段</th><th>当前判断</th><th class="num">概率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1996–1998 早期扩散</td><td>已跨过</td><td class="num">2%</td></tr>
+          <tr><td>1999 叙事和估值同步加速</td><td>指数创纪录、宽度改善、供应链订单（SMCI/LITE/AEHR/Dell/HPE）同步兑现，主线仍在此阶段</td><td class="num">30%</td></tr>
+          <tr><td>2000Q1 顶部附近</td><td>NVDA $500B 表外融资平台 + Broadcom $370B 债务警告 + OpenAI 员工二级市场出售 $70 亿，融资工程化与内部人流动性事件本周同时升级</td><td class="num">32%</td></tr>
+          <tr><td>2000H2 订单和资本开支恶化</td><td>本周供应链订单/积压（SMCI $60B+ 新订单、CoreWeave 积压 +$296 亿至 $1,290 亿、Dell $513 亿）全部走强，与此阶段特征相悖</td><td class="num">14%</td></tr>
+          <tr><td>2001–2002 信用风险暴露</td><td>Oracle CDS 升至 18 年新高（203bp）+ S&amp;P 降至 BBB-，CoreWeave CDS 隐含违约概率仍 ~50% 未改善，信用应力开始从单一名字扩散</td><td class="num">18%</td></tr>
+          <tr><td>2003 后幸存者阶段</td><td>不适用</td><td class="num">4%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 2. 本周真正重要的 5 件事 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 本周真正重要的 5 件事</h2>
+
+    <article class="deepdive">
+      <h3>事件 #1 · 英伟达联合华尔街六大机构组建 $500B 第三方 AI 融资平台</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>NVIDIA 与 Apollo、BlackRock、Blackstone、Brookfield、高盛、KKR 签署 MOU，拟动员超 5,000 亿美元第三方资本为超大规模厂商/AI 实验室建设数据中心并采购 NVIDIA 硬件融资，结构设计为将大部分债务留在英伟达资产负债表之外；目前均为非约束性谅解备忘录，非已承诺资本。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital">NVIDIA Newsroom</a>, 2026-08-10；<a href="https://www.fool.com/investing/2026/08/11/nvidia-just-recruited-wall-street-to-help-fund-usd500-billion-in-ai-infrastructure-here-s-the-catch/">Fool.com</a>, 2026-08-11</p></div>
+        <div><h4>为什么重要</h4><p>方法论中定义的"供应商融资"（stage 2–3 标志性特征）本周在全行业最大供应链公司身上被工程化到前所未有的规模——这是本周对泡沫评分模型"融资脆弱性"维度影响最大的单一事件。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong>（中长期泡沫风险），短期市场解读偏中性/正面（消除近端融资瓶颈担忧）</p></div>
+        <div><h4>是否改变交易计划</h4><p>是 —— 融资脆弱性评分由 4 上调至 5，强化对高杠杆二三线名字维持谨慎的理由。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #2 · 博通因 BofA $370B 债务警告单日暴跌 6%</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>BofA 分析师测算博通与 Blackstone/Apollo 合作的芯片融资工具（XPV 平台）到 2029 年 20GW 规模下或背负 3,700 亿美元优先级债务，其中仅 2027 年新发行就达约 1,500 亿美元；BofA 将博通债券评级下调至 Marketweight；股价 8/14 单日下跌约 6%。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://247wallst.com/investing/2026/08/14/broadcom-sinks-6-as-bofa-flags-370b-in-ai-debt-amd-climbs-4-on-bairds-1250-call/">24/7 Wall St / Benzinga</a>, 2026-08-14</p></div>
+        <div><h4>为什么重要</h4><p>此前信用应力集中在 CoreWeave 等新云厂商（"孤岛式"压力）；本周首次有主流评级机构对一家核心 AI 供应链龙头（而非新兴云厂商）自身的融资结构发出债务可持续性警告——信用市场压力维度的覆盖范围本周实质扩大。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是 —— 持仓无直接博通敞口，但强化对同类 ASIC/供应链名字（如 MRVL）在财报前收紧止损、不追高的纪律。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #3 · CoreWeave 积压涨至 $129B，CDS 隐含违约概率仍 ~50% 未改善</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>CoreWeave 2026 Q2 财报（8/12）显示积压订单六周内增加 $296 亿至 $1,290 亿；但五年期 CDS 仍定价约 50% 违约概率（约 855bp），与上周持平，未见缓解。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.techtimes.com/articles/324054/20260812/coreweave-q2-2026-129b-backlog-grew-296b-six-weeks-despite-50-default-odds.htm">TechTimes</a>, 2026-08-12</p></div>
+        <div><h4>为什么重要</h4><p>基本面（订单/积压）与信用市场定价持续背离，证明"孤岛式信用应力"并非基本面驱动而是结构/杠杆驱动——这类背离历史上是识别周期拐点的领先指标而非滞后指标。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性</strong>（订单利多，信用利空，两者抵消）</p></div>
+        <div><h4>是否改变交易计划</h4><p>否 —— 与上周判断一致，无持仓直接敞口，继续跟踪，未触发新动作。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #4 · OpenAI 完成 $70 亿员工二级出售（估值 $852B）+ 收入年化跑率突破 $400 亿</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>OpenAI 完成 $70 亿现有员工/投资人二级市场要约出售，公司自行回购而非引入新外部投资人，估值定为 $852B（8/10–11 完成）；另据彭博报道，OpenAI 年化收入跑率已突破 $400 亿，较 2025 年底约 $200 亿翻倍，7 月月度收入跑率增速 &gt;20%。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.cnbc.com/2026/08/10/openai-wraps-7-billion-share-sale-ahead-of-potential-ipo-.html">CNBC</a>, 2026-08-10；<a href="https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo">Bloomberg</a>, 2026-08-13/14</p></div>
+        <div><h4>为什么重要</h4><p>收入兑现数据本身强劲（支撑"真实需求兑现"维度维持低分），但内部人/员工在 IPO 前进行大规模流动性变现是方法论中 Stage 3（顶部附近）的标志性信号之一，即便本次是公司回购而非公开市场抛售。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性偏利空</strong>（需求利多，流动性事件框架利空）</p></div>
+        <div><h4>是否改变交易计划</h4><p>否 —— 无直接持仓敞口，关注点转向正式 IPO 定价这一更大触发事件。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #5 · SMCI 财报大超预期 + Dell/HPE 积压订单同步走强</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>Super Micro 2026 财年 Q4（8/11 发布）营收 $111 亿（去年同期 $58 亿），毛利率从 9.5% 回升至 17.5%（超此前 15–17% 指引），FY2027 营收指引 $650–720 亿（市场预期 $544 亿），CEO 披露新订单超 $600 亿、积压创纪录；同期 Dell AI 系统积压达 $513 亿，HPE 累计 AI 积压 $164 亿。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.sec.gov/Archives/edgar/data/0001375365/000137536526000021/exhibit991_20260630.htm">SEC 8-K</a>；<a href="https://247wallst.com/investing/2026/08/12/super-micro-advances-13-dell-gains-5-hpe-rises-3-on-blowout-ai-server-guidance/">Yahoo Finance/24-7 Wall St</a>, 2026-08-11/12</p></div>
+        <div><h4>为什么重要</h4><p>三家独立 AI 服务器厂商的订单簿同步走强，是本周对"供给过剩风险"证伪最有力的硬数据，直接支撑继续持有光模块/测试类供应链敞口（LITE/AEHR）。</p></div>
+        <div><h4>影响方向</h4><p><strong>利多</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>否（direction 已在本周持仓表现中兑现），继续持有 LITE/AEHR 并上移止损。</p></div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 3. 泡沫评分模型 ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 泡沫评分模型</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th class="num">分（0–5）</th>
+            <th>支撑数据 / 来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>估值泡沫</td><td class="num">4</td><td>SPX 7,785 创纪录、NDX +1.09%、Russell 2000 创纪录，但驱动是宽度改善与低波动而非估值加速扩张，VIX 回落至 14.25（Benzinga 2026-08-14；ts2.tech 2026-08-14）</td></tr>
+          <tr><td>资本开支过热</td><td class="num">5</td><td>英伟达联合六大机构组建 $500B 第三方融资平台（NVIDIA Newsroom 2026-08-10），资本开支/融资规模连续第二年上修趋势未变</td></tr>
+          <tr><td>融资脆弱性</td><td class="num">5</td><td>NVDA $500B 表外融资平台 + Broadcom XPV 或达 $370B 债务（BofA 2026-08-14）+ Oracle CDS 203bp 18 年新高/S&amp;P 降至 BBB- + OpenAI $70 亿员工二级出售（CNBC 2026-08-10），融资杠杆结构本周显著扩张升级，本周由 4 上调至 5</td></tr>
+          <tr><td>真实需求兑现</td><td class="num">2</td><td>OpenAI 年化收入跑率突破 $400 亿较 2025 年末翻倍（Bloomberg 2026-08-13），Gemini 月活破 10 亿（2026-08-11），Cisco AI 基础设施订单上调至 $93 亿（2026-08-12），Applied Materials 营收创纪录 +25%（2026-08-13）——需求持续兑现未证伪</td></tr>
+          <tr><td>供给过剩风险</td><td class="num">1</td><td>DRAM/NAND 因内存持续偏紧涨价 30–60%，SK Hynix/三星报告为 15 年最严重短缺，数据中心占全球内存产出约 70%（行业追踪，2026-08）——与过剩相反</td></tr>
+          <tr><td>龙头盈利质量</td><td class="num">2</td><td>SMCI 毛利率从 9.5% 回升至 17.5%（2026-08-11）、Applied Materials/Cisco 均超预期，未见做账质量问题；Cisco 盘后下跌 4–6% 系估值/指引反应而非质量瑕疵（SiliconANGLE 2026-08-12）</td></tr>
+          <tr><td>二三线公司脆弱性</td><td class="num">2</td><td>本周板块普涨：Nebius +47.7% 周、SanDisk +35.4% 周、SMCI +28% 周；持仓中 LITE（+4.04% 周，收复成本线）、AEHR（+30.1% 周，远超成本线）同步爆发，脆弱性本周明显缓解（由 3 下调至 2）</td></tr>
+          <tr><td>信用市场压力</td><td class="num">4</td><td>广谱 HY OAS 约 271–281bp / IG OAS 约 81bp 仍处历史最紧区间（Convex 2026-08-12），但 CoreWeave CDS 隐含 50% 违约概率未改善（TechTimes 2026-08-12）之外，Oracle CDS 本周升至 203bp/18 年新高，信用应力开始从单一名字扩散，由 3 上调至 4</td></tr>
+          <tr><td>市场宽度恶化</td><td class="num">2</td><td>Russell 2000 本周创纪录 +1.11%、SMH/SOXX 单周反弹一度达 7% 并登上资金流入榜首（Yahoo Finance 2026-08-13/14），MAGS（Mag7 代理 ETF）年内 -4% 跑输标普 +8%，本周上涨并非单纯巨头驱动，宽度实质改善，由 3 下调至 2</td></tr>
+          <tr><td>监管和地缘风险</td><td class="num">2</td><td>BIS 审查中国经离岸算力租赁获取英伟达芯片（Bloomberg 2026-08-07 起持续）、EU AI Act 透明度条款 8/2 起强制执行、WoodMac/彭博披露美国 AI 数据中心申请电力约 2/3 为"幻影负荷"（2026-08-12）——无重大升级事件</td></tr>
+          <tr><td>Mega IPO 和私募抽水压力</td><td class="num">4</td><td>OpenAI 完成 $70 亿员工/投资人二级市场出售，估值 $852B（CNBC 2026-08-10）——机密提交 S-1 阶段的实际流动性事件已发生，供给压力从"计划中"进入"已发生"阶段，由 3 上调至 4</td></tr>
+          <tr style="background:#fafafa;font-weight:700;">
+            <td>总分（满分 55）</td>
+            <td class="num">33</td>
+            <td>vs 8/8（32）→ ↑1（融资脆弱性、信用市场压力、Mega IPO 抽水压力三项因 NVDA $500B 融资平台/Broadcom 债务警告/OpenAI 二级出售同步上调，抵消了二三线脆弱性与市场宽度两项因本周供应链财报和小盘股领涨带来的下调）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>当前最像互联网泡沫哪一年</h4>
+    <p><strong>1999H2</strong> — 融资结构工程化规模本周显著扩大（NVDA $500B 平台 + Broadcom XPV $370B 潜在债务），叙事与真实需求仍同步兑现（SMCI/LITE/AEHR/Cisco/Applied Materials 全部超预期），但信用应力已开始从 CoreWeave 单一名字向 Oracle 扩散，尚未进入订单/资本开支实质恶化的 Stage 4。</p>
+
+    <h4>最关键反证条件</h4>
+    <p>若 NVIDIA 8/26 财报显示毛利率环比下滑或应收账款天数走高，或 CoreWeave/Oracle CDS 在两周内继续走阔超 100bp 而无缓解，或 GPU 租赁价格（H100/H200/B200）出现单季度 &gt;15% 的趋势性下跌，将是从"融资脆弱性"向 Stage 4"订单和资本开支恶化"实质转变的确证信号，届时应下调真实需求兑现与供给过剩风险两项评分并上调总分。</p>
+  </section>
+
+  <!-- ====== 4. 持仓周度处理 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 我的持仓周度处理</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">
+      读取自 <code>data/portfolio.json</code>（该文件自 2026-06-06 起未更新，止损/成本价为原始设置）。
+      <a href="../../portfolio.html">→ 编辑持仓</a>
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th>当前状态</th>
+            <th>本周风险变化</th>
+            <th>建议动作</th>
+            <th>触发条件</th>
+            <th>失效条件</th>
+            <th>下周重点观察</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ORCL</td>
+            <td>$150.52（8/14），vs 成本 $209（−28.0%），vs 止损 $188.1 已破位 7 周</td>
+            <td>无改善，Michael Burry 披露空头仓位（8/7），持续爆出以裁员方式为 AI 投资输血（NY Post 8/12）</td>
+            <td>止损清仓</td>
+            <td>已破位（历史触发点）</td>
+            <td>N/A（离场动作）</td>
+            <td>S&amp;P/Moody's 是否进一步下调评级，$638B RPO 中约一半集中于 OpenAI 一家客户的兑现节奏</td>
+          </tr>
+          <tr>
+            <td>NOK</td>
+            <td>$10.56（8/14），vs 成本 $16（−34.0%），vs 止损 $14.4 已破位，本周 +12.8%</td>
+            <td>Ooredoo/Nvidia/Nokia 东南亚 AI 算力平台合作带动反弹，但仍未收复止损线</td>
+            <td>止损清仓</td>
+            <td>已破位</td>
+            <td>N/A（离场动作）</td>
+            <td>AI 数据中心网络订单能否转化为持续性反弹并收复 $14.4</td>
+          </tr>
+          <tr>
+            <td>MRVL</td>
+            <td>$222.02（8/14），vs 成本 $196（+13.3%），高于止损 $176.4，本周 +1.51%</td>
+            <td>Google 据报与 Marvell 就 TPU/LLM 推理芯片设计展开磋商，同时 Google 与 Broadcom 长期协议延至 2031 年，竞争格局仍有不确定性</td>
+            <td>持有 + 上调止损</td>
+            <td>已持有</td>
+            <td>止损上调至 $208（锁定成本上方 +6%）</td>
+            <td>8/27 财报前 Broadcom 融资警告是否溢出至同业 ASIC 估值</td>
+          </tr>
+          <tr>
+            <td>LITE</td>
+            <td>$926.14（8/14），vs 成本 $883（+4.9%，已转正），已远超止损 $794.7，本周 +4.04%</td>
+            <td>Q4 FY26 营收 $10.1 亿 +109% YoY，非 GAAP 毛利率突破 50%，Q1 FY27 指引 $12.25–12.75 亿超预期，EML 30%+ 供需缺口维持至 2027（8/11 财报）</td>
+            <td>持有 + 上调止损</td>
+            <td>已持有</td>
+            <td>止损上调至 $890（本周低点，锁定不亏）</td>
+            <td>1.6T 模块放量节奏、FCC 对华光模块禁令最终落地情况</td>
+          </tr>
+          <tr>
+            <td>AAOI</td>
+            <td>$150.28（8/14），vs 成本 $187（−19.6%），仍低于止损 $168.3，本周 +10.8%</td>
+            <td>FCC 拟对华光模块禁令持续发酵（提案阶段未定稿），$600M ATM 增发仍是压制估值的主因</td>
+            <td>现仓止损清仓 + 条件性重建仓</td>
+            <td>收盘价连续 2 日站上 $168.3 后可重建小仓位</td>
+            <td>现仓：已破位立即离场；新仓：跌破 $150 前低放弃</td>
+            <td>FCC 禁令是否正式落地、ATM 增发节奏是否放缓</td>
+          </tr>
+          <tr>
+            <td>AEHR</td>
+            <td>$134.06（8/14），vs 成本 $112（+19.7%，已转正），已远超止损 $100.8，本周 +30.1%</td>
+            <td>$2,200 万 AI 处理器 WLBI 追加订单（约 8/12–13），FY27 指引 $1.3–1.5 亿（+160–200% YoY），积压覆盖 FY27 最低预测的 77%</td>
+            <td>持有 + 大幅上调止损</td>
+            <td>已持有</td>
+            <td>止损上调至 $115（锁定成本上方盈利）</td>
+            <td>客户集中度（单一客户占比仍达 42.1%）、后续 follow-on 订单能否持续</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 5. 下周三种情景计划 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 下周三种情景计划</h2>
+
+    <article class="deepdive">
+      <h3>情景一 · 继续上涨</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>SPX 连续 3 日收在 7,800 上方，VIX 维持 &lt;15，MRVL/LITE/AEHR 延续本周动能，NVDA 8/26 财报指引不下修</p></div>
+        <div><h4>应该做什么</h4><p>MRVL/LITE/AEHR 保持持有并逐步上移止损锁定盈利；等待 AAOI 收盘价连续 2 日站上 $168.3 后再重建小仓位；密切跟踪但不新增 ORCL/NOK 仓位</p></div>
+        <div><h4>不能做什么</h4><p>不能因为指数创纪录而放松 ORCL/NOK 止损纪律；不能为追涨而加大整体仓位杠杆；不能把 Broadcom 式融资警告蔓延的信号当噪音忽视</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景二 · 顶部震荡</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>SPX 在 7,700–7,850 区间来回，VIX 在 14–18 之间震荡但不创新高，CoreWeave/Oracle CDS 继续走阔但广谱 HY OAS 不破 300bp，个股表现分化加剧</p></div>
+        <div><h4>应该做什么</h4><p>收紧持仓止损、分批落袋 LITE/AEHR 超额涨幅、AAOI 继续观望不追、提高现金比例</p></div>
+        <div><h4>不能做什么</h4><p>不能在窄幅震荡中重仓新开仓；不能把 CoreWeave/Oracle 信用持续恶化当作短期噪音忽略</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景三 · 下跌或泡沫破裂</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>广谱 HY OAS 单周走阔 &gt;50bp，或 CoreWeave/Oracle CDS 进一步恶化并伴随 NVDA/Broadcom 等龙头单日跌幅 &gt;5%，或 VIX 单日跳升至 20 以上</p></div>
+        <div><h4>应该做什么</h4><p>立即执行 ORCL/NOK 止损清仓（若尚未执行）、对 LITE/AEHR/MRVL 收紧止损或买入保护性 put、现金为王</p></div>
+        <div><h4>不能做什么</h4><p>不能对已破位的二三线仓位"逢低补仓"；不能等基本面完全确认再行动——技术止损优先于故事叙事</p></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ====== 6. 下周交易行动清单 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 下周交易行动清单 <span class="deck">/ 最多 8 条</span></h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>动作</th>
+            <th>标的</th>
+            <th>原因</th>
+            <th>触发条件</th>
+            <th>止损 / 失效</th>
+            <th>时间周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>止损清仓</td><td>ORCL</td><td>已破位 7 周未修复，S&amp;P 降至 BBB-、Moody's 负面展望未解除、Burry 披露空头</td><td>已满足，立即执行</td><td>N/A（离场动作）</td><td>即时</td></tr>
+          <tr><td>止损清仓</td><td>NOK</td><td>现价 $10.56 仍低于止损 $14.4，AI 网络叙事反弹未收复失地</td><td>已满足，立即执行</td><td>N/A（离场动作）</td><td>即时</td></tr>
+          <tr><td>持有+上调止损</td><td>MRVL</td><td>现价 $222.02 高于成本 $196，趋势健康，8/27 财报前锁定收益</td><td>已持有</td><td>新止损 $208</td><td>至 8/27 财报</td></tr>
+          <tr><td>持有+上调止损</td><td>LITE</td><td>Q4 营收 +109% YoY、指引超预期，现价已高于成本</td><td>已持有</td><td>新止损 $890（本周低点）</td><td>2–4 周</td></tr>
+          <tr><td>持有+上调止损</td><td>AEHR</td><td>本周 +30.1%，$2,200 万追加订单+FY27 指引 160–200% 增长支撑</td><td>已持有</td><td>新止损 $115（锁定盈利）</td><td>2–4 周</td></tr>
+          <tr><td>现仓清仓+条件重建</td><td>AAOI</td><td>现价 $150.28 仍低于止损 $168.3，$600M ATM 增发持续压制估值</td><td>重建触发：收盘价连续 2 日站上 $168.3</td><td>现仓已破位立即离场；新仓跌破 $150 前低放弃</td><td>现仓即时；新仓 1–4 周观察窗</td></tr>
+          <tr><td>观察不追高</td><td>NVDA</td><td>$500B 融资平台+$500B 订单簿支撑股价，但 8/26 财报为下一关键验证点，当前无仓位</td><td>财报后 GM/AR/库存数据确认需求</td><td>财报指引不及预期或毛利率环比下滑</td><td>至 8/26 财报后</td></tr>
+          <tr><td>观察</td><td>AVGO 信用利差</td><td>BofA 警示 XPV 融资工具 2029 年或达 $370B 债务，若应力扩散至 MRVL 等同业将是系统性信号</td><td>AVGO CDS 或债券利差单周走阔 &gt;50bp</td><td>评级机构维持现有评级不再下修</td><td>持续跟踪，无固定窗口</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. 下周必须盯的转折点 ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 下周必须盯的转折点 <span class="deck">/ 最多 10 条</span></h2>
+
+    <ol>
+      <li>NVDA 2027 财年 Q2 财报（8/26）— 毛利率、应收账款天数、库存、$500B 订单簿兑现节奏</li>
+      <li>Broadcom / CoreWeave / Oracle 信用利差（CDS）— 是否从孤岛式压力扩散为板块性压力</li>
+      <li>GPU 租赁价格（H100 ~$1.49–7.50/hr、H200 ~$3.99/hr、B200 ~$7–10/hr）— 是否出现趋势性下跌</li>
+      <li>AI 云收入下一轮验证 — Azure/AWS/GCP 下季度 AI 收入拆分数据</li>
+      <li>AI 软件付费渗透 — Salesforce（8/26）/Snowflake（8/27）/MongoDB（9/1）财报 AI ARR 贡献</li>
+      <li>OpenAI / Anthropic IPO 进度 — 是否出现正式招股书定价迹象（目前均为机密提交阶段）</li>
+      <li>FERC 电网互联新规合规截止日（8/17）— 是否验证 WoodMac"约 2/3 申请电力为幻影负荷"的判断</li>
+      <li>HY OAS（~271–281bp）/ IG OAS（~81bp）— 是否脱离历史最紧十分位开始走阔</li>
+      <li>Nasdaq 100（30,046 创纪录）/ SOX/SMH 关键技术位 — 能否守住本周反弹力度</li>
+      <li>AAOI/LITE：FCC 对华光模块禁令 — 提案是否正式落地，决定持仓估值弹性</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>指数 / 波动率 / 利率信用</h4>
+      <ul>
+        <li>Benzinga, "Russell 2000 Record Highs...", 2026-08-14</li>
+        <li>Yahoo Finance, "Stock market today", 2026-08-14</li>
+        <li>Yahoo Finance, "Semiconductor ETFs SMH, SOXX, SOXL Top Weekly Fund Flows", 2026-08-13/14</li>
+        <li>TheStreet, "Russell 2000 notches fresh record to cap off week", 2026-08-14</li>
+        <li>ts2.tech, "VIX at 14.6 Prices Sub-1% S&amp;P 500 Moves Before Friday's Open", 2026-08-14</li>
+        <li>Optionsmatrixpro.com, "VIX Closed at 14.90", 2026-08-07</li>
+        <li>TradingEconomics, US 2-Year Treasury Note Yield, 2026-08-14</li>
+        <li>CNBC, "10-year Treasury yield inches higher...", 2026-08-14</li>
+        <li>oneuptrader.com, DXY Technical Analysis, 2026-08-14</li>
+        <li>Convex, HY Credit Spread (OAS) 271bp, 2026-08-12</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>AI 资本开支 / 供应链 / 需求</h4>
+      <ul>
+        <li>NVIDIA Newsroom, $500B AI compute financing platform MOU, 2026-08-10</li>
+        <li>24/7 Wall St / Benzinga, Broadcom -6% on BofA $370B debt warning, 2026-08-14</li>
+        <li>TechTimes, CoreWeave Q2 2026 backlog $129B / CDS 50% default odds, 2026-08-12</li>
+        <li>SEC 8-K / Yahoo Finance, Super Micro Computer Q4 FY2026 results, 2026-08-11/12</li>
+        <li>Investing.com / GuruFocus, Lumentum Q4 FY2026 earnings call transcript, 2026-08-11</li>
+        <li>ts2.tech / Yahoo Finance, Aehr Test Systems FY27 guidance &amp; backlog, 2026-08-12/14</li>
+        <li>Bloomberg, "OpenAI's revenue run rate tops $40 billion", 2026-08-13/14</li>
+        <li>The National Desk, "Google Gemini passes 1 billion monthly users", 2026-08-11</li>
+        <li>Cisco Investor Relations / SiliconANGLE, FQ4 FY2026 earnings, 2026-08-12</li>
+        <li>GlobeNewswire, Applied Materials Q3 2026 results, 2026-08-13</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>融资 / IPO / 估值</h4>
+      <ul>
+        <li>CNBC, "OpenAI wraps $7 billion share sale...at $852B valuation", 2026-08-10</li>
+        <li>TechStartups, OpenAI $7B employee share sale detail, 2026-08-11</li>
+        <li>Motley Fool / Briefs.co, S&amp;P downgrades Oracle to BBB-, 2026-07-19 (ongoing)</li>
+        <li>Finance.biggo.com, Oracle CDS ~203bp 18-year high, referenced 2026-08</li>
+        <li>Nasdaq Newsroom, SpaceX Nasdaq listing (SPCX) history, 2026-06-12</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>监管 / 地缘</h4>
+      <ul>
+        <li>Bloomberg, "US reviews China's offshore access to Nvidia chips", 2026-08-07</li>
+        <li>European Commission, EU AI Act transparency enforcement start, 2026-08-02</li>
+        <li>Bloomberg, "Most electricity sought for AI data centers in US will never materialize" (Wood Mackenzie), 2026-08-12</li>
+        <li>AEI China &amp; Taiwan Update, 2026-08-07</li>
+        <li>BLS, July 2026 CPI release, 2026-08-12</li>
+        <li>BLS, July 2026 PPI release, 2026-08-13</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"概率情景"为情景分析。每个交易建议仅在标注的触发条件下成立；执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 周度复盘 · 2026-08-15
+</footer>
+
+</body>
+</html>
