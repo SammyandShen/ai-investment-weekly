@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-10-28 · 盘前简报 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings" class="active">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">盘前简报</span>
+    <span>2026 年 10 月 28 日 周三</span>
+  </div>
+
+  <h1 class="report-title">SOX 单日 +3.38%、VIX 回落至 17.52；今日 2PM ET FOMC 利率决议 + 收盘后 MSFT/GOOGL 财报</h1>
+
+  <!-- ====== 1. 昨夜收盘 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 昨夜收盘</h2>
+    <p style="font-size:13px;color:var(--ink-muted);">10/27（周二）为正常交易日，非美股假日。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th>vs 50DMA</th>
+            <th>vs 200DMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SPX</td><td class="num">7,722.60</td><td class="num">+0.60%</td><td>高于（50DMA≈7,692.87）</td><td>高于但贴线（200DMA≈7,719.42）</td></tr>
+          <tr><td>NDX</td><td class="num">29,651.44</td><td class="num">+1.29%</td><td>高于（50DMA≈29,473.88，10/24）</td><td>低于（200DMA≈30,173.04，10/24）</td></tr>
+          <tr><td>SOX</td><td class="num">11,457.79</td><td class="num">+3.38%</td><td>低于（SOXX 代理，10/13 数据）</td><td>高于（SOXX 代理，10/13 数据）</td></tr>
+          <tr><td>IWM</td><td class="num">$280.17</td><td class="num">+1.15%</td><td>低于（50DMA≈$287.49）</td><td>高于但贴线（200DMA≈$278.03）</td></tr>
+          <tr><td>VIX</td><td class="num">17.52</td><td class="num">−4.7%（−0.87pt）</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Mag 7 当日由 TSLA 领涨 +5.21%（Barclays 上调至 Buy），NVDA +2.39%（$217.58，传对 Meta 增发注资），MSFT +1.54%；AAPL −1.10%、GOOGL −1.06%、META −1.88%（均收盘于 2026-10-27 16:00 ET），芯片股普涨带动 SOX 创近期最大单日涨幅。</p>
+  </section>
+
+  <!-- ====== 2. 我的持仓 gap 状态 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 持仓 gap 状态</h2>
+    <p style="font-size:13px;color:var(--ink-muted);">读取自 data/portfolio.json（止损/成本价自 2026-06-06 起未更新，距止损/距目标按该原始设置计算，非新交易建议）。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th class="num">收盘（10/27）</th>
+            <th class="num">当日 %</th>
+            <th class="num">距止损</th>
+            <th class="num">距目标</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ORCL</td><td class="num">$130.53</td><td class="num">+3.55%</td><td class="num" style="color:#b00">已破位 −30.6%</td><td class="num">N/A</td><td>破位超 11 周未收复</td></tr>
+          <tr><td>NOK</td><td class="num">$8.89</td><td class="num">+3.16%</td><td class="num" style="color:#b00">已破位 −38.3%</td><td class="num">N/A</td><td>破位区间内反弹</td></tr>
+          <tr><td>MRVL</td><td class="num">$243.57</td><td class="num">+4.20%</td><td class="num">+27.6%</td><td class="num">+60.9%</td><td>无法验证盘前</td></tr>
+          <tr><td>LITE</td><td class="num">$866.18</td><td class="num">+5.88%</td><td class="num" style="color:#b00">+8.3%（接近 5% 警戒线）</td><td class="num">+103.9%</td><td>两个月新高</td></tr>
+          <tr><td>AAOI</td><td class="num">$76.95</td><td class="num">+6.96%</td><td class="num" style="color:#b00">已破位 −54.3%</td><td class="num">N/A</td><td>$600M 增发压制估值未解除</td></tr>
+          <tr><td>AEHR</td><td class="num">$56.60</td><td class="num">+2.33%</td><td class="num" style="color:#b00">已破位 −43.8%</td><td class="num">N/A</td><td>较 8/15 高点 $134 回落 58%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. 今日 catalysts ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 今日 catalysts</h2>
+    <ul>
+      <li><strong>FOMC 利率决议</strong> — 2:00 PM ET 公布，一致预期维持 3.75–4.00% 不变（期货隐含概率≈90%），本次无点阵图/经济预测；Powell 记者会 2:30 PM ET</li>
+      <li><strong>财报（收盘后）</strong> — Microsoft（MSFT，一致预期 EPS $4.72 / Rev $90.61B）、Alphabet（GOOGL，一致预期 EPS $3.02 / Rev $127.69B）</li>
+      <li><strong>宏观数据</strong> — MBA 房贷申请、9 月商品贸易余额、批发/零售库存（上午公布）；9 月 GDP 终值与 PCE 通胀留到明日 10/29</li>
+      <li>更大背景：AMZN 10/29 收盘后发财报，与 MSFT/GOOGL 合计市值约 $9 万亿</li>
+    </ul>
+  </section>
+
+  <!-- ====== 4. 今日单条最重要看点 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 今日单条最重要看点</h2>
+    <div class="tldr">
+      <p style="margin:0;font-size:16px;line-height:1.6;">今日最大看点是 2PM ET 的 FOMC 决议与 Powell 记者会：市场已以 ~90% 概率定价维持利率不变，真正的变量在声明措辞和 Powell 对 12 月降息路径的表态，而非是否按兵不动本身。叠加收盘后 MSFT/GOOGL 财报（尤其 Azure 增速与云资本开支指引），今晚到明早之间指数方向可能同时被利率路径与 AI capex 叙事重新定价。若声明偏鹰、同时云资本开支指引上修，NDX 当前仍低于 200DMA（约 30,173）的技术弱位可能被放大。</p>
+    </div>
+  </section>
+
+  <!-- ====== 5. 异动 / 风险信号 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 异动 / 风险信号</h2>
+    <ul>
+      <li>VIX 单日 −4.7% 回落至 17.52，波动率压力边际缓解，尚未回到两周前 15 区间低点</li>
+      <li>持仓中 LITE 距原始止损仅 8.3%，为六仓中最接近 5% 警戒线的一个，财报季波动下需关注</li>
+      <li>ORCL/NOK/AAOI/AEHR 现价仍深度低于 data/portfolio.json 原始止损位，且该文件及最近一次周度复盘（2026-08-15）均已逾期超 10 周未更新</li>
+    </ul>
+  </section>
+
+  <!-- ====== 6. 周度立场不变量 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 周度立场不变量</h2>
+    <p>[周度复盘 2026-08-15 立场：震荡交易 —— 强趋势中精选做多供应链兑现方（LITE/AEHR/MRVL），不因指数创纪录而放松对融资杠杆扩张的警惕，ORCL/NOK/AAOI 止损纪律不变] — 今日不偏离。注：该立场距今已逾 10 周未更新，建议下一份周度复盘优先重新校准持仓状态与泡沫评分。</p>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源</h3>
+    <ul>
+      <li><a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-oct-27-135043351.html">Yahoo Finance, Stock Market Today Oct 27 2026</a></li>
+      <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-27-2026">TheStreet, Stock Market Today Oct 27 2026</a></li>
+      <li><a href="https://www.ad-hoc-news.de/boerse/news/marktberichte/vix-falls-0-87-points-as-anthropic-lifts-tech-stocks/70423502">Ad-hoc-news, VIX falls to 17.52</a>, 2026-10-27</li>
+      <li>Investing.com — SPX/NDX/SOX/IWM 技术面与 50/200DMA 数据，2026-10-13～10-27</li>
+      <li><a href="https://www.marketbeat.com/instant-alerts/price-oracle-nyse-orcl-shares-up-36-time-to-buy-2026-10-27/">MarketBeat, Oracle shares</a>, 2026-10-27</li>
+      <li><a href="https://www.marketbeat.com/instant-alerts/price-marvell-technology-nasdaq-mrvl-stock-jumps-42-should-you-buy-2026-10-27/">MarketBeat, Marvell shares</a>, 2026-10-27</li>
+      <li><a href="https://www.tradingkey.com/news/market-movers/262243677-market-movers-lite-20261027">TradingKey, Lumentum +5.88%</a>, 2026-10-27</li>
+      <li><a href="https://stockstotrade.com/news/nokia-corporation-sponsored-nok-news-2026_10_27/">StocksToTrade, Nokia rebounds</a>, 2026-10-27</li>
+      <li><a href="https://fedratecalc.com/fomc-meeting-schedule/october-2026/">FedRateCalc, FOMC Oct 28 2026 schedule</a></li>
+      <li><a href="https://sentisense.ai/blog/big-tech-earnings-this-week/">Sentisense, Big Tech Earnings This Week</a></li>
+      <li><a href="https://yardeniquicktakes.com/economic-week-ahead-october-26-30">Yardeni QuickTakes, Economic Week Ahead Oct 26–30</a></li>
+      <li><a href="../../reviews/2026-08-15/index.html">周度复盘 2026-08-15</a></li>
+    </ul>
+  </section>
+
+  <p class="disclaimer">盘前简报仅为事实摘要，不构成新的交易建议。新交易建议见每周六的<a href="../../index.html#reviews">市场周度复盘</a>。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 盘前简报 · 2026-10-28
+</footer>
+
+</body>
+</html>
