@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-10-30 · 盘前简报 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings" class="active">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">盘前简报</span>
+    <span>2026 年 10 月 30 日 周五</span>
+  </div>
+
+  <h1 class="report-title">GOOGL 单日暴跌 12.6% 创纪录、MRVL 因 Lumentum 并购传闻跳水 13.2%，NDX 失守 50 日均线 · 今日看点：ABBV/CVX/XOM 财报 + Chicago PMI</h1>
+
+  <!-- ====== 1. 昨夜收盘 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 昨夜收盘</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th>vs 50DMA</th>
+            <th>vs 200DMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SPX</td><td class="num">7,720.39</td><td class="num">-0.31%</td><td>高于（50DMA ≈7,700）</td><td>贴线略低（200DMA ≈7,727）</td></tr>
+          <tr><td>NDX</td><td class="num">29,402.51</td><td class="num">-1.38%</td><td>低于（50DMA ≈29,443）</td><td>低于（200DMA ≈30,205）</td></tr>
+          <tr><td>SOX</td><td class="num">11,497.71</td><td class="num">-1.59%</td><td>无法验证</td><td>无法验证</td></tr>
+          <tr><td>IWM</td><td class="num">$284.01</td><td class="num">+0.41%（RUT 代理）</td><td>无法验证</td><td>无法验证</td></tr>
+          <tr><td>VIX</td><td class="num">17.20</td><td class="num">+1.71%</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>收盘均为 2026-10-29 16:00 ET。当日最大单只拖累是 GOOGL，收盘跌 12.64%（创单日历史最大跌幅），系三季报一次性权益证券公允价值损失 ~$87 亿所致，核心业务（搜索 +12%、云 +103% 至 $307 亿）未恶化；MSFT 同日财报超预期（Azure +48%）小幅收涨（Benzinga/TheStreet/CNBC, 2026-10-29）。</p>
+  </section>
+
+  <!-- ====== 2. 我的持仓 gap 状态 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 持仓 gap 状态</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">读取自 <code>data/portfolio.json</code>（该文件自 2026-06-06 起未更新，止损/成本/目标为原始设置）。收盘价为 2026-10-29（NOK/AEHR 为可查到的最近收盘，2026-10-28）。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th class="num">距止损</th>
+            <th class="num">距目标</th>
+            <th>盘前/备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ORCL</td><td class="num">$138.25</td><td class="num">-4.35%</td><td class="num">已破位 -26.5%</td><td class="num">+202%</td><td>止损 $188.1 已破位多周</td></tr>
+          <tr><td>NOK</td><td class="num">$9.22</td><td class="num">无法验证</td><td class="num">已破位 -36.0%</td><td class="num">+247%</td><td>止损 $14.4 已破位</td></tr>
+          <tr><td>MRVL</td><td class="num">$218.34</td><td class="num">-13.24%</td><td class="num">+23.8%</td><td class="num">+79.5%</td><td>Lumentum 并购传闻致单日暴跌，无盘前数据</td></tr>
+          <tr><td>LITE</td><td class="num">$919.53</td><td class="num">+0.61%</td><td class="num">+13.6%</td><td class="num">+92.0%</td><td>无异常</td></tr>
+          <tr><td>AAOI</td><td class="num">$79.19</td><td class="num">-3.69%</td><td class="num">已破位 -52.9%</td><td class="num">+372%</td><td>止损 $168.3 已破位多周</td></tr>
+          <tr><td>AEHR</td><td class="num">$64.54</td><td class="num">+0.92%</td><td class="num">已破位 -36.0%</td><td class="num">+247%</td><td>较 8/14 高点 $147.40 已腰斩</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. 今日 catalysts ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 今日 catalysts</h2>
+    <ul>
+      <li><strong>ABBV / CVX / XOM 财报</strong>（before open）— consensus EPS $3.73 / $4.87 / $4.12</li>
+      <li><strong>Chicago PMI（10月）</strong>（约 9:45 ET）— consensus 54.8，前值 58.8</li>
+      <li>FOMC 已于 10/28 结束并维持利率 3.75–4.00%，今日无新议息事件，但处于会后首个交易日，需关注官员表态</li>
+      <li>MRVL/Lumentum 并购传闻后续官方表态或澄清，为今日波动最大看点</li>
+    </ul>
+  </section>
+
+  <!-- ====== 4. 今日单条最重要看点 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 今日单条最重要看点</h2>
+    <div class="tldr">
+      <p style="margin:0;font-size:16px;line-height:1.6;">昨夜大型科技财报分化放大：MSFT 核心业务强劲（Azure +48%）但市场仍整体抛售科技股，AMZN 因资本开支指引（$2,200 亿）与自由现金流转负（-$424 亿）在盘后进一步下挫，GOOGL 的暴跌虽为一次性损益但仍把 NDX 砸穿 50 日均线。今日需要确认的是：这是财报季内的个股驱动调整，还是资本开支/现金流叙事开始系统性压估值的起点。关键位：NDX 能否重新站上 29,443（50DMA）；MRVL 并购传闻今日是否获证实或证伪直接决定持仓波动方向。</p>
+    </div>
+  </section>
+
+  <!-- ====== 5. 异动 / 风险信号 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 异动 / 风险信号</h2>
+    <ul>
+      <li>GOOGL 单日 -12.64%，历史最大单日跌幅（2026-10-29 收盘）</li>
+      <li>MRVL（持仓）单日 -13.24%，系 Lumentum 并购谈判传闻（2026-10-29 收盘）</li>
+      <li>AMZN 常规盘 -4.2%，盘后因资本开支/FCF 担忧进一步跌 6–9%（2026-10-29）</li>
+      <li>亚太连锁反应：Kospi -3.5%、恒生 -3%、日经 -2.7%（2026-10-30 亚洲时段，反映美股 10/29 收盘情绪）</li>
+      <li>AEHR 较 8/14 高点 $147.40 已近腰斩至 $64.54，止损下方跌幅持续扩大</li>
+    </ul>
+  </section>
+
+  <!-- ====== 6. 周度立场不变量 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 周度立场不变量</h2>
+    <p>[周度复盘 2026-08-15 的立场：震荡交易——精选做多供应链兑现方（LITE/AEHR/MRVL），ORCL/NOK/AAOI 止损纪律不变] — 今日不偏离。该立场已逾 10 周未更新，portfolio.json 同步滞后，仅作参照不作新交易依据。</p>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源</h3>
+    <ul>
+      <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-29-2026">TheStreet, Stock Market Today Oct 29 2026</a></li>
+      <li><a href="https://www.gurufocus.com/news/9148508/alphabet-inc-reports-q3-2026-earnings-eps-of-212-and-revenue-of-1276-billion-both-missing-estimates">GuruFocus, Alphabet Q3 2026 earnings</a>, 2026-10-29</li>
+      <li><a href="https://www.cnbc.com/2026/10/28/microsoft-msft-q1-earnings-report-2027.html">CNBC, Microsoft FQ1 2027 earnings</a>, 2026-10-28</li>
+      <li><a href="https://www.cnbc.com/2026/10/29/amazon-amzn-q3-earnings-report-2026.html">CNBC, Amazon Q3 2026 earnings</a>, 2026-10-29</li>
+      <li><a href="https://www.fool.com/investing/2026/10/29/why-marvell-stock-is-down-today/">The Motley Fool, Marvell -13.24% on Lumentum talks</a>, 2026-10-29</li>
+      <li><a href="https://www.commbank.com.au/articles/newsroom/2026/10/tech-selloff-wall-street-worst-day-since-july-oil-climbs.html">CommBank, Asia tech selloff</a>, 2026-10-30</li>
+      <li><a href="https://www.earningswhispers.com/calendar/20261030">EarningsWhispers, 2026-10-30 earnings calendar</a></li>
+      <li>Financial Modeling Prep (FMP) earnings calendar API, 查询于 2026-10-30</li>
+    </ul>
+  </section>
+
+  <p class="disclaimer">盘前简报仅为事实摘要，不构成新的交易建议。新交易建议见每周六的<a href="../../index.html#reviews">市场周度复盘</a>。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 盘前简报 · 2026-10-30
+</footer>
+
+</body>
+</html>
