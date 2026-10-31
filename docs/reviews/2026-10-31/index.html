@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-10-31 · 周度复盘 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews" class="active">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">周度复盘 · 第 13 期</span>
+    <span>2026 年 10 月 31 日 周六</span>
+  </div>
+
+  <h1 class="report-title">顶部震荡升级：Amazon 单季 773 亿美元资本开支冲击叠加 Fed 鹰派暂停，泡沫评分跳升至 36/55（2000Q1 区间）</h1>
+  <p class="report-subtitle">本周四大云厂商财报周遇上 Amazon Q3 资本开支环比暴增 43%（$54.2B→$77.3B）、FCF 转为 -$33.5B 及 Intel 疲弱指引，引爆 Nasdaq/SOX 年内最差单日；Fed 10/28 暂停但两票倾向加息，12 月加息概率报 82.6%；Anthropic 正式提交 S-1，估值一周内从约 2 万亿美元下修至约 1.5 万亿美元。注意：上次复盘为 2026-08-15（10 周前），非上周对比，总分变化方向的参考意义大于绝对数值。持仓层面 6 个仓位中 4 个已跌破 <code>data/portfolio.json</code> 记录的止损价，需要立即处理，不是本周才需要决策的新问题。</p>
+
+  <!-- ====== 1. 本周总判断 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本周总判断</h2>
+
+    <div class="tldr">
+      <h4>一句话结论</h4>
+      <p style="font-size:18px;font-weight:600;margin:0;">震荡交易 — 不追 Friday 恐慌性杀跌，也不逆势加仓未破位核心仓位；先把已破位仓位的止损处理掉。</p>
+    </div>
+
+    <h4>市场状态</h4>
+    <p><strong>顶部震荡</strong> — SPX/Nasdaq 周五(10/30)单日跌幅为 6 月以来最大（SPX -1.82%，Nasdaq Composite -2.86%），SOX 单日 -7.22%、10 月全月 -15.4%（2025年3月以来最差月），但同期 Russell 2000(IWM) 周涨 +1.3%，Nasdaq-100 中站上 200 日均线的个股比例从 9 月末 54% 回升至 10/29 的 63%——是资本开支恐慌驱动的龙头轮动式回调,不是系统性宽度坍塌。来源：CNBC 2026-10-29/30；247WallSt/Yahoo Finance 2026-10-30/31；pro.thestreet.com 2026-10-30；IG.com 2026-10-30。</p>
+
+    <h4>AI 泡沫阶段概率分布</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>阶段</th><th>当前判断</th><th class="num">概率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1996–1998 早期扩散</td><td>已越过此阶段</td><td class="num">2%</td></tr>
+          <tr><td>1999 叙事和估值同步加速</td><td>资本开支仍在加速上修，云需求仍兑现</td><td class="num">28%</td></tr>
+          <tr><td>2000Q1 顶部附近</td><td>Mega IPO 定价中（Anthropic S-1）+ 融资脆弱性信号集中出现</td><td class="num">40%</td></tr>
+          <tr><td>2000H2 订单和资本开支恶化</td><td>尚无巨头下修 capex guidance，仅 Amazon 超预期上行引发恐慌</td><td class="num">20%</td></tr>
+          <tr><td>2001–2002 信用风险暴露</td><td>HY OAS 未破 350bps，但 Fed 转鹰给信用端新压力</td><td class="num">8%</td></tr>
+          <tr><td>2003 后幸存者阶段</td><td>不适用</td><td class="num">2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 2. 本周真正重要的 5 件事 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 本周真正重要的 5 件事</h2>
+
+    <article class="deepdive">
+      <h3>事件 #1 · Amazon Q3 资本开支环比暴增引爆 10/30 科技股抛售</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>Amazon Q3 2026 毛资本开支 $77.3B，环比 Q2 的 $54.2B 大增 43%；经营现金流 $42.4B，自由现金流本季 -$33.5B（过去 12 个月 -$42.4B）；股价当日跌约 7%。同日 Intel 指引疲弱，两者共同触发 SPX -1.82%、Nasdaq -2.86% 的年内最差单日。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://pomegra.io/news/amazon-q3-2026-capex-hits-773b-shares-slide-7">pomegra.io，Amazon Q3 2026 capex hits $77.3B, shares slide 7%</a>，2026-10-30</p></div>
+        <div><h4>为什么重要</h4><p>这是本轮周期里首次出现"资本开支超预期上行反被市场惩罚"——说明市场对"capex 加速但 FCF 持续转负"的容忍度在变薄，而不是单纯看多 capex 数字。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是——对 AI 基础设施 beta 仓位（LITE/AAOI/AEHR）收紧止损，不在本次恐慌中逆势加仓。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #2 · Fed 10/28 暂停但两票倾向加息，12 月加息概率报 82.6%</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>FOMC 以 10-2 票决定维持联邦基金利率在 3.75%-4.00%，两名委员（Cook、Hammack）投票反对，主张加息 25bp；会后 12 月加息概率定价升至 82.6%。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm">Federal Reserve 新闻稿</a>；<a href="https://finance.yahoo.com/economy/policy/live/fed-meeting-live-updates-federal-reserve-october-meeting-kevin-warsh-161129201.html">Yahoo Finance 现场更新</a>，2026-10-28</p></div>
+        <div><h4>为什么重要</h4><p>在 AI 资本开支和 neocloud 债务（CoreWeave 净负债 $22.6B、Nebius $3.5B 新增信贷）同步扩张的阶段，Fed 转鹰直接抬高再融资成本——这是融资脆弱性评分上调的直接依据。</p></div>
+        <div><h4>影响方向</h4><p><strong>利空</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是——提高对信用利差（HY OAS）的监控优先级，减少对高杠杆 neocloud 代理资产的敞口意愿。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #3 · Anthropic 正式提交 S-1，估值一周内从约 2 万亿下修至约 1.5 万亿美元</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>Anthropic 向 SEC 提交 S-1，目标纳斯达克代码 "ANT"，计划 11 月中旬上市；投资者在 10/26 投资者活动披露财务细节后，市场对其估值的讨论从约 2 万亿美元下修至约 1.5 万亿美元（上一轮私募为 5 月 $65B 融资对应 $965B 估值）。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html">CNBC，Anthropic IPO live updates</a>；<a href="https://www.aljazeera.com/economy/2026/10/26/anthropics-ipo-filing-shows-explosive-growth-risks-and-staggering-costs">Al Jazeera</a>，2026-10-26</p></div>
+        <div><h4>为什么重要</h4><p>这是本轮周期第一个"被命名的 AI 实验室"实际定价测试——上市前估值已经被下修，是 Mega IPO 阶段典型的"定价纪律回归"信号，而不是单纯的泡沫顶部信号。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性偏利空</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是——11 月中 ANT 上市前不新建 AI 基础设施多头仓位，等上市首周表现（折价/溢价幅度）作为方向性确认。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #4 · 四大云厂商 Q3/FY26 资本开支与云收入：需求仍在兑现，但 FCF 持续转负</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>Azure +48% YoY（超 ~45% 预期），Capex $39-45.2B 低于 ~$46B 预期（被市场解读为利多）；AWS +39.3% YoY 至 $46B，backlog $578B（同比翻倍）；Alphabet Capex $51.4B，维持 FY26 $195-205B 指引且预告 2027 "显著提升"，但广告收入不及预期、FCF -$9.07B；Meta Capex $34.9B，FY26 指引收窄至 $135-145B 区间上端，资本开支超过经营现金流。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://investinglive.com/stocks/microsoft-q1-beats-as-azure-grows-48-and-capex-lands-6bn-below-forecast/">investinglive.com</a> 2026-10-28；<a href="https://www.cnbc.com/2026/10/29/alphabet-q3-earnings-analyst-reaction.html">CNBC</a> 2026-10-29</p></div>
+        <div><h4>为什么重要</h4><p>云收入增速仍显著跑赢资本开支恐慌叙事，说明"真实需求兑现"维度尚未恶化到 2000H2 的程度；但四家公司自由现金流全线承压，是资本开支过热和融资脆弱性两项评分的直接证据。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性（需求维度利多，资本开支/现金流维度利空）</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>否——维持"尚未进入 Stage 4"的判断，不改变既有情景框架。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>事件 #5 · SOX 10 月跌 15.4%、SMH 六月以来首次跌破 200 日均线，但宽度内部仍在修复</h3>
+      <div class="grid">
+        <div><h4>事实</h4><p>SOX 10/30 收 10,686.40，单日 -7.22%，10 月全月 -15.4%（2025年3月以来最差月）；SMH 10/30 盘中跌约 9%，收跌 8.59% 至 $530.83，为 2025 年 6 月以来首次跌破 200 日均线。同期 Nasdaq-100 中站上 200 日均线个股比例从 9 月末 54% 回升至 10/29 的 63%，Russell 2000 周涨 +1.3%。</p></div>
+        <div><h4>来源 + 日期</h4><p><a href="https://pro.thestreet.com/market-commentary/chip-rout-sends-nasdaq-to-worst-month-since-march-2025">pro.thestreet.com</a>；<a href="https://www.gurufocus.com/news/9159726/">GuruFocus</a>；<a href="https://www.ig.com/en-ch/news-and-trade-ideas/nasdaq-100-market-breadth-positive-divergence-261030">IG.com</a>，2026-10-29/30</p></div>
+        <div><h4>为什么重要</h4><p>AI 芯片 beta 集中承压、而大盘内部宽度在修复——这是"龙头轮动破位、广度未坍塌"的典型晚 Stage2/早 Stage3 组合，不是系统性risk-off。</p></div>
+        <div><h4>影响方向</h4><p><strong>中性（轮动信号）</strong></p></div>
+        <div><h4>是否改变交易计划</h4><p>是——降低单一 AI 芯片/光模块个股集中度，不追逐 SOX 反弹。</p></div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 3. 泡沫评分模型 ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 泡沫评分模型</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th class="num">分（0–5）</th>
+            <th>支撑数据 / 来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>估值泡沫</td><td class="num">4</td><td>SOX 10月 -15.4%、SMH 跌破200日均线后估值有所压缩，但 Mega IPO 定价（Anthropic 即便下修后仍约 $1.5T）隐含远期倍数仍高；具体 forward P/E 本周未找到可靠数字，无法验证精确值。</td></tr>
+          <tr><td>资本开支过热</td><td class="num">5</td><td>Amazon Q3 capex $77.3B 环比 +43%；MSFT 指引 FY27 capex 约 $170B；Alphabet 预告 2027"显著提升"；连续两年上修在途。</td></tr>
+          <tr><td>融资脆弱性</td><td class="num">5</td><td>CoreWeave 净负债 -$22.6B（现金$5.52B vs 债务$35.07B）；Nebius 新增 $3.5B Citi 信贷（SOFR+2.75-3.5%）；NVDA/AMD/AVGO 作为 Meta $22.5B 股权融资的"基石投资者"构成循环融资信号；Fed 转鹰同步抬高再融资成本。</td></tr>
+          <tr><td>真实需求兑现</td><td class="num">2</td><td>Azure +48%、AWS +39.3%（backlog 翻倍至 $578B）、ChatGPT 年化收入"接近 $500亿"——需求仍在兑现，但四家云厂 FCF 普遍转负，轻微上调。</td></tr>
+          <tr><td>供给过剩风险</td><td class="num">1</td><td>GPU 租赁价格同比+24%，Nebius 10/1 上调 H100 按需价至 $4.50/GPU-hr；无租金下跌或产能回售迹象。</td></tr>
+          <tr><td>龙头盈利质量</td><td class="num">3</td><td>MSFT/AMZN GAAP清洁beat；Alphabet 广告收入不及预期+FCF -$9.07B，Meta capex超经营现金流——四家中两家出现瑕疵。</td></tr>
+          <tr><td>二三线公司脆弱性</td><td class="num">3</td><td>AAOI 单日-12.8%、LITE -8.6%、Coherent -13%，CoreWeave/Nebius 随MSFT capex不及预期而跟跌，但尚无实质性违约/破产事件。</td></tr>
+          <tr><td>信用市场压力</td><td class="num">3</td><td>HY OAS 约 314-340bps（去年同期 280-296bps，同比走阔），叠加 Fed 转鹰的再融资成本上升预期，趋势转向不利但绝对水平未破 350bps。</td></tr>
+          <tr><td>市场宽度恶化</td><td class="num">2</td><td>52周新高(213)少于新低(347)，但 Nasdaq-100 站上200日线比例 54%→63%、IWM 周涨+1.3%，内部修复信号强于坍塌信号。</td></tr>
+          <tr><td>监管和地缘风险</td><td class="num">3</td><td>BIS 对华H200/MI325X维持个案审查但中国海关仍在拦截H200进口；Meta 遭英国CMA调查；Amazon FTC庭审延至2027年3月；密歇根州AG挑战DTE 1GW数据中心审批。</td></tr>
+          <tr><td>Mega IPO 和私募抽水压力</td><td class="num">5</td><td>Anthropic 已提交S-1并定档11月中上市（估值一周内从~2T下修至~1.5T）；OpenAI 同步谈判$30B/$1.25-1.4T轮融资；SpaceX已上市且市值达~$2.2T。</td></tr>
+          <tr style="background:#fafafa;font-weight:700;">
+            <td>总分（满分 55）</td>
+            <td class="num">36</td>
+            <td>vs 8/15（33）→ ↑3，但间隔达 10 周，非真正的"上周对比"，仅供方向参考。上调主因：融资脆弱性信号集中（循环融资+Fed转鹰）、Mega IPO从"预期"变为"已提交S-1定价中"、二三线光模块板块单日重挫。下拉因素：真实需求兑现仍健康、无供给过剩迹象。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>当前最像互联网泡沫哪一年</h4>
+    <p><strong>2000Q1</strong> — Mega IPO 实际定价（Anthropic S-1 已提交）+ 资本开支连续两年上修 + 循环融资信号集中出现，同时龙头云需求数据仍健康（区别于 2000H2 的需求恶化），是 2000Q1 顶部区典型组合：供给侧（资本和IPO）领先于需求侧确认拐点。</p>
+
+    <h4>最关键反证条件</h4>
+    <p>若 Anthropic/OpenAI 定价落地后一级市场估值不再进一步下修、GPU 租赁价格继续维持同比正增长、且未来两次 hyperscaler 财报未出现首次资本开支下修，应将"资本开支过热"和"Mega IPO 抽水压力"两项评分各下调 1-2 分，总分可能回落至 30 附近。</p>
+  </section>
+
+  <!-- ====== 4. 持仓周度处理 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 我的持仓周度处理</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">
+      读取自 <code>data/portfolio.json</code>（最近更新 2026-06-06，距今已近 5 个月，止损价可能需要重新核对）。
+      <a href="../../portfolio.html">→ 编辑持仓</a>
+    </p>
+    <p style="font-family:var(--sans);font-size:13px;color:#b23b2e;font-weight:600;">警示：6 个仓位中 ORCL / NOK / AAOI / AEHR 4 个已跌破文件中记录的止损价，且幅度远超止损阈值——这不是本周新出现的问题，而是此前复盘间隔过长导致风控动作滞后，需要立即核实并处理，不能等到"下周"。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th>当前状态</th>
+            <th>本周风险变化</th>
+            <th>建议动作</th>
+            <th>触发条件</th>
+            <th>失效条件</th>
+            <th>下周重点观察</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ORCL</td>
+            <td>~$130.67（10/30收），较成本$209 -37.5%，已低于止损$188.1 约 -30.6%</td>
+            <td>10/28 Investor Day 后冲高至$144.54（新资本开支上限$20B/FY27-30 自我造血利好），10/30 随大盘跌-6.36%回落</td>
+            <td><strong>止损</strong>（已触发，非新决策）</td>
+            <td>已触发——价格已在止损价下方运行</td>
+            <td>若重新站稳$176附近且OCI自筹资金计划未恶化，可作为新仓位于更低成本重新评估，与原仓位区分对待</td>
+            <td>OCI利润率表现，新增债务是否守在$20B上限内</td>
+          </tr>
+          <tr>
+            <td>NOK</td>
+            <td>$8.56（10/30收），较成本$16 -46.5%，已低于止损$14.4 约 -40.6%</td>
+            <td>Q3 beat（净销售€5.15B超预期，+9% YoY）+ 重申全年指引，但仍随板块跌-8.06%</td>
+            <td><strong>止损</strong>（已触发，非新决策）</td>
+            <td>已触发——价格已在止损价下方运行</td>
+            <td>若Starlink地面RAN合约（BofA预估~$6B）落地确认为收入且股价重新站上$10，可作为新仓位重新评估</td>
+            <td>Q4指引(+20-24% QoQ)兑现情况，Starlink RAN合约细节</td>
+          </tr>
+          <tr>
+            <td>MRVL</td>
+            <td>~$196-198（10/30收），接近成本$196，高于止损$176.4约+11%</td>
+            <td>传闻收购Lumentum推动股价波动后，10/30随板块恐慌单日-10%；同时上调FY31营收目标至$70-90B</td>
+            <td>持有，收紧风险观察</td>
+            <td>跌破$187（前波段支撑）减仓三分之一</td>
+            <td>跌破原止损$176.4清仓；若Lumentum交易以大规模增发融资且48小时内跌穿200日均线，视为失效信号</td>
+            <td>Lumentum收购条款（对价结构/是否发股）</td>
+          </tr>
+          <tr>
+            <td>LITE</td>
+            <td>$840.70（10/30收），较成本$883 -4.8%，高于止损$794.7约+5.8%</td>
+            <td>5日累涨+22.2%后10/30单日-8.6%回撤；管理层称产能"售罄至2029"，但可能作为MRVL-Lumentum交易标的带来估值不确定性</td>
+            <td>持有，不追高</td>
+            <td>维持在$794.7-$900区间内持有</td>
+            <td>跌破$794.7止损清仓；若被证实为并购标的且条款对现有股东不利，另行评估对冲</td>
+            <td>MRVL-Lumentum交易新闻进展，StoneX/Evercore目标价调整</td>
+          </tr>
+          <tr>
+            <td>AAOI</td>
+            <td>~$69（10/30收），较成本$187 -63%，已低于止损$168.3 约 -59%</td>
+            <td>10/30单日-12.8%，叠加10/5以$105/股完成的$600M增发——现价远低于增发价，稀释已兑现为实质损失</td>
+            <td><strong>止损</strong>（已触发，非新决策）</td>
+            <td>已触发——价格已在止损价下方运行</td>
+            <td>若反弹站稳$90上方（接近增发价）且光模块订单重新加速，可重新评估</td>
+            <td>下一季度财报，超大规模厂商光模块订单评论</td>
+          </tr>
+          <tr>
+            <td>AEHR</td>
+            <td>~$57（10/29-30区间），较成本$112 -49%，已低于止损$100.8 约 -43%</td>
+            <td>从10/2高点~$107到当前高$50区间大幅回撤；11/2（下周一）公布FY27 Q1财报，带来额外跳空风险</td>
+            <td><strong>止损</strong>（已触发，非新决策；若选择不止损，必须在11/2财报前清仓以避免binary风险）</td>
+            <td>已触发——价格已在止损价下方运行</td>
+            <td>若坚持不止损，最晚11/2财报前必须离场</td>
+            <td>11/2 FY27 Q1财报，$6M Sonoma订单放量情况</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 5. 下周三种情景计划 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 下周三种情景计划</h2>
+
+    <article class="deepdive">
+      <h3>情景一 · 继续上涨</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>SPX/Nasdaq 收复10/30跌幅前高点，SOX/SMH 重新站稳并维持200日均线上方至少3个交易日，HY OAS回落至300bps下方，Anthropic/OpenAI融资或IPO定价顺利无进一步下修。</p></div>
+        <div><h4>应该做什么</h4><p>对已确认反弹且未破位的核心仓位（MRVL、LITE）维持持仓，可在跌破前波段支撑测试后企稳时小幅加仓；继续按计划处理已破位仓位（ORCL/NOK/AAOI/AEHR）清仓腾出现金，为下一轮入场留弹药。</p></div>
+        <div><h4>不能做什么</h4><p>不能在SOX尚未收复200日均线期间加仓二三线光模块/小盘AI股；不能用保证金追涨；不能因为"情绪转多"而放弃对已破位仓位的止损处理。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景二 · 顶部震荡（当前最可能）</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>指数在现有区间内来回（SPX约7400-7700，SOX约10000-11500），VIX维持16-22区间波动，没有进一步资本开支下修也没有突破性利好，Anthropic/OpenAI定价按计划推进但无意外。</p></div>
+        <div><h4>应该做什么</h4><p>严格执行既有止损（ORCL/NOK/AAOI/AEHR立即处理），对MRVL/LITE收紧止损观察窗，提升现金比例，等待11月中Anthropic实际上市表现作为下一步方向性确认。</p></div>
+        <div><h4>不能做什么</h4><p>不能逆势抄底已破位的二三线光模块名字；不能在没有对冲的情况下裸卖空单一个股来押注下跌；不能把"震荡"等同于"什么都不做"。</p></div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>情景三 · 下跌或泡沫破裂</h3>
+      <div class="grid">
+        <div><h4>触发条件</h4><p>HY OAS单周走阔超过50bps且持续4周以上；任一hyperscaler首次下修资本开支guidance；CoreWeave/Nebius类neocloud出现实质性信用事件（违约、被迫大幅折价再融资）；Anthropic/OpenAI定价或上市后较最后一轮私募估值折价超过30%且认购不足。</p></div>
+        <div><h4>应该做什么</h4><p>无条件清仓所有已破位仓位（ORCL/NOK/AAOI/AEHR若此时仍持有，必须立即止损无例外）；对MRVL/LITE买入保护性put或直接止损清仓；提高现金/短久期国债比例。</p></div>
+        <div><h4>不能做什么</h4><p>不能"分批摊低成本"抄底；不能用卖出put/covered call这类期权卖方策略去对冲系统性下跌（权利金收入无法覆盖尾部风险）；不能因为"已经跌了很多"就假设跌不动了。</p></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ====== 6. 下周交易行动清单 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 下周交易行动清单 <span class="deck">/ 最多 8 条</span></h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>动作</th>
+            <th>标的</th>
+            <th>原因</th>
+            <th>触发条件</th>
+            <th>止损 / 失效</th>
+            <th>时间周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>止损</td><td>ORCL</td><td>现价$130.67已低于止损价$188.1约-30.6%，风控动作滞后</td><td>已触发，下周一开盘执行</td><td>不适用（本身即为止损执行）</td><td>立即 / 下周一开盘</td></tr>
+          <tr><td>止损</td><td>NOK</td><td>现价$8.56已低于止损价$14.4约-40.6%，风控动作滞后</td><td>已触发，下周一开盘执行</td><td>不适用</td><td>立即 / 下周一开盘</td></tr>
+          <tr><td>止损</td><td>AAOI</td><td>现价~$69已低于止损价$168.3约-59%，且$600M增发价$105远高于现价</td><td>已触发，下周一开盘执行</td><td>不适用</td><td>立即 / 下周一开盘</td></tr>
+          <tr><td>止损</td><td>AEHR</td><td>现价~$57已低于止损价$100.8约-43%，11/2财报带来额外跳空风险</td><td>已触发；若未执行，最晚须在11/2财报前清仓</td><td>不适用</td><td>立即，最迟11/2收盘前</td></tr>
+          <tr><td>收紧止损</td><td>MRVL</td><td>Lumentum收购传闻+板块资本开支恐慌致单日-10%，泡沫评分升至36/55（2000Q1区间）</td><td>跌破$187（前波段支撑）时减仓三分之一</td><td>跌破原止损$176.4清仓</td><td>1-2周</td></tr>
+          <tr><td>收紧止损</td><td>LITE</td><td>5日+22.2%后单日-8.6%反转，叠加MRVL-Lumentum交易对价不确定性</td><td>跌破$794.7（原止损）或交易条款出现对LITE不利传导</td><td>跌破$794.7清仓</td><td>1-2周</td></tr>
+          <tr><td>对冲</td><td>SOX指数put / SOXS</td><td>SOX月度-15.4%，若用户选择暂不执行上述1-4项止损，需用指数对冲覆盖系统性风险</td><td>若决定暂不执行1-4项止损</td><td>SOX重新站稳并维持200日均线上方3个交易日以上后解除对冲</td><td>2-4周（覆盖至Anthropic IPO窗口）</td></tr>
+          <tr><td>等待</td><td>Anthropic(ANT) IPO 定价后的AI基础设施二级反弹</td><td>Mega IPO评分已达5分（已提交S-1+估值一周内下修），需看定价消化情况再决定是否参与</td><td>Anthropic完成定价且上市首周表现（折价/溢价幅度）明确</td><td>若定价较最后一轮私募估值折价超30%且认购不足，视为利空，不参与</td><td>2-3周（11月中至12月初）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. 下周必须盯的转折点 ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 下周必须盯的转折点 <span class="deck">/ 最多 10 条</span></h2>
+
+    <ol>
+      <li>Anthropic(ANT) IPO定价与上市首周表现 — 预计11月中，看是否较私募估值折价/溢价。</li>
+      <li>OpenAI $30B融资是否按$1.25-1.4T估值完成，以及是否在Anthropic上市前close。</li>
+      <li>下一轮hyperscaler资本开支guidance（AAPL 11/2财报等）— 看是否出现本轮周期首次下修。</li>
+      <li>GPU租赁价格（H100/H200/B200）周度变化 — 看是否从当前同比+24%转为单季下跌&gt;15%。</li>
+      <li>HY OAS走势 — 看是否持续4周以上走阔突破350bps。</li>
+      <li>SOX/SMH是否重新站上200日均线 — SMH已于10/30跌破（2025年6月以来首次）。</li>
+      <li>CoreWeave/Nebius信用状况 — 净负债(-$22.6B)及新增债务额度使用情况，看是否出现展期困难或CDS走阔。</li>
+      <li>MRVL-Lumentum收购条款 — 对价结构、是否发股融资，预计未来1-2周官宣。</li>
+      <li>Fed 12月议息会议前的通胀数据 — 12月加息概率已报82.6%，看CPI/PCE是否强化鹰派预期。</li>
+      <li>AEHR 11/2 FY27 Q1财报 — Sonoma订单($6M)能否兑现放量。</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>指数 / 波动率 / 利率信用</h4>
+      <ul>
+        <li><a href="https://www.cnbc.com/2026/10/29/stock-market-today-live-updates.html">CNBC, Stock market today live updates</a>，2026-10-29/30</li>
+        <li><a href="https://finance.yahoo.com/markets/stocks/articles/p-500-nasdaq-end-third-000539225.html">Yahoo Finance / 247WallSt, S&P 500 Nasdaq end third week decline</a>，2026-10-30/31</li>
+        <li><a href="https://pro.thestreet.com/market-commentary/chip-rout-sends-nasdaq-to-worst-month-since-march-2025">TheStreet Pro, Chip rout sends Nasdaq to worst month since March 2025</a>，2026-10-30</li>
+        <li><a href="https://www.gurufocus.com/news/9159726/vaneck-semiconductor-etf-smh-falls-below-200day-moving-average-amid-market-selloff">GuruFocus, SMH falls below 200-day moving average</a>，2026-10-30</li>
+        <li><a href="https://www.macrotrends.net/2603/vix-volatility-index-historical-chart">Macrotrends, VIX historical chart</a>，2026-10-30</li>
+        <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm">Federal Reserve, FOMC press release</a>，2026-10-28</li>
+        <li><a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2">FRED, ICE BofA US High Yield OAS</a>，2026-10-28</li>
+        <li><a href="https://www.ig.com/en-ch/news-and-trade-ideas/nasdaq-100-market-breadth-positive-divergence-261030">IG.com, Nasdaq-100 market breadth positive divergence</a>，2026-10-30</li>
+        <li><a href="https://www.cnbc.com/2026/10/28/magnificent-seven-stocks-correlation-breakdown.html">CNBC, Magnificent Seven correlation breakdown</a>，2026-10-28</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>AI 资本开支 / 供应链 / 需求</h4>
+      <ul>
+        <li><a href="https://investinglive.com/stocks/microsoft-q1-beats-as-azure-grows-48-and-capex-lands-6bn-below-forecast/">investinglive.com, Microsoft Q1 beats as Azure grows 48%</a>，2026-10-28</li>
+        <li><a href="https://www.cnbc.com/2026/10/29/alphabet-q3-earnings-analyst-reaction.html">CNBC, Alphabet Q3 earnings analyst reaction</a>，2026-10-29</li>
+        <li><a href="https://www.winzheng.com/en/article/meta-q3-2026-capex-exceeds-operating-cash-flow">winzheng.com, Meta Q3 2026 capex exceeds operating cash flow</a>，2026-10</li>
+        <li><a href="https://pomegra.io/news/amazon-q3-2026-capex-hits-773b-shares-slide-7">pomegra.io, Amazon Q3 2026 capex hits $77.3B, shares slide 7%</a>，2026-10-30</li>
+        <li><a href="https://247wallst.com/investing/2026/10/30/oracle-is-down-53-in-a-year-and-trades-at-15-times-earnings-wall-street-still-sees-230/">247WallSt, Oracle is down 53% in a year</a>（Investor Day覆盖），2026-10-28/30</li>
+        <li><a href="https://www.fool.com/investing/2026/10/26/tesla-isnt-a-hyperscaler-why-the-ai-bears-are-misreading-its-5-billion-capex-cut/">Fool.com, Tesla isn't a hyperscaler</a>，2026-10-26</li>
+        <li><a href="https://www.cnbc.com/2026/10/15/tsmc-third-quarter-profit-global-ai-.html">CNBC, TSMC third quarter profit</a>，2026-10-15</li>
+        <li><a href="https://247wallst.com/investing/2026/10/28/nvidia-amd-and-broadcom-may-invest-in-meta-their-own-biggest-customer-what-that-signals/">247WallSt, Nvidia, AMD and Broadcom may invest in Meta</a>，2026-10-28</li>
+        <li><a href="https://www.thundercompute.com/blog/ai-gpu-rental-market-trends">thundercompute.com, AI GPU rental market trends</a>，2026-10</li>
+        <li><a href="https://thecuberesearch.com/298-breaking-analysis-resetting-gpu-depreciation-why-ai-factories-bend-but-dont-break-useful-life-assumptions/">theCUBE Research, Resetting GPU depreciation</a>，2026-10</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>融资 / IPO / 估值</h4>
+      <ul>
+        <li><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html">CNBC, Anthropic IPO live updates: S-1 filing</a>，2026-10-26</li>
+        <li><a href="https://www.aljazeera.com/economy/2026/10/26/anthropics-ipo-filing-shows-explosive-growth-risks-and-staggering-costs">Al Jazeera, Anthropic's IPO filing shows explosive growth, risks</a>，2026-10-26</li>
+        <li><a href="https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/">TechCrunch, OpenAI working on new $30B raise at $1.25T valuation</a>，2026-10-22</li>
+        <li><a href="https://keeptrack.space/deep-dive/who-owns-spacex">keeptrack.space, Who owns SpaceX</a>（市值参考 2026-10-09）</li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>监管 / 地缘</h4>
+      <ul>
+        <li><a href="https://www.bloomberg.com/news/features/2026-10-01/nvidia-faces-questions-over-china-ai-chip-smuggling-cases">Bloomberg, Nvidia faces questions over China AI chip smuggling cases</a>，2026-10-01</li>
+        <li>Axios, Meta cumulative AI litigation penalties as industry warning，2026-10-26（综合报道）</li>
+        <li>密歇根州AG挑战DTE Electric 1GW数据中心审批，2026-10-30（综合报道）</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"概率情景"为情景分析。每个交易建议仅在标注的触发条件下成立；执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 周度复盘 · 2026-10-31
+</footer>
+
+</body>
+</html>
