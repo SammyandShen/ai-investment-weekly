@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-11-02 · 盘前简报 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings" class="active">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">盘前简报</span>
+    <span>2026 年 11 月 2 日 周一</span>
+  </div>
+
+  <h1 class="report-title">SOX 上周跌 15.4% 后收 10,688.80 · VIX 19.4 持稳区间内 · 今日重点：AAPL 盘后资本开支指引 + AEHR 财报（已破止损仓位 binary 风险日）</h1>
+
+  <!-- ====== 1. 昨夜收盘 ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 昨夜收盘</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:var(--ink-muted);">上一交易日为 2026-10-30（周五）收盘；周末美股休市，今日(11/2)非假日，照常开盘。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th class="num">收盘</th>
+            <th class="num">当日 %</th>
+            <th>vs 50DMA</th>
+            <th>vs 200DMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SPX</td><td class="num">7,580.07</td><td class="num">-1.82%</td><td>低于(50DMA 7,697.08)</td><td>高于(200DMA 7,309.76)</td></tr>
+          <tr><td>NDX</td><td class="num">28,384.85</td><td class="num">-3.46%</td><td>无法验证</td><td>低于(200DMA ≈30,116.84)</td></tr>
+          <tr><td>SOX</td><td class="num">10,688.80</td><td class="num">-7.20%</td><td>无法验证</td><td>低于(200DMA ≈10,766)</td></tr>
+          <tr><td>IWM</td><td class="num">279.33</td><td class="num">-1.65%</td><td>无法验证</td><td>无法验证</td></tr>
+          <tr><td>VIX</td><td class="num">19.42</td><td class="num">+12.91%</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Mag 7 中最弱：NVDA -4.22% 收 $204.64（跌破50DMA $221.75，贴近200DMA $204.38）；AAPL -1.23% 收 $344.63、META -1.53% 收 $614.99、AMZN -1.41% 收 $240.35，跌幅均小于芯片股。数据来自 FMP 实时报价，时间戳对应 2026-10-30 收盘。</p>
+  </section>
+
+  <!-- ====== 2. 我的持仓 gap 状态 ====== -->
+  <section>
+    <h2><span class="section-num">02</span> 持仓 gap 状态</h2>
+    <p style="font-family:var(--sans);font-size:13px;color:#b23b2e;font-weight:600;">ORCL / NOK / AAOI / AEHR 4 个仓位已跌破 <code>data/portfolio.json</code> 记录的止损价——此信号上周复盘(10/31)已标注并列为待执行动作，非今日新增。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th class="num">收盘(10/30)</th>
+            <th class="num">当日 %</th>
+            <th class="num">距止损</th>
+            <th class="num">距目标</th>
+            <th>盘前/备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ORCL</td><td class="num">$130.67</td><td class="num">-6.36%</td><td class="num">已破止损约30.5%</td><td>–</td><td>止损已触发待执行</td></tr>
+          <tr><td>NOK</td><td class="num">$8.56</td><td class="num">-8.06%</td><td class="num">已破止损约40.6%</td><td>–</td><td>止损已触发待执行</td></tr>
+          <tr><td>MRVL</td><td class="num">$196.40</td><td class="num">-10.05%</td><td class="num">距止损+10.2%</td><td class="num">距目标+99.6%</td><td>未破位，MRVL-Lumentum收购传闻仍是波动源</td></tr>
+          <tr><td>LITE</td><td class="num">$840.70</td><td class="num">-8.57%</td><td class="num"><strong>距止损+5.5%（接近）</strong></td><td class="num">距目标+111%</td><td>未破位，产能"售罄至2029"但受MRVL-Lumentum交易传闻扰动</td></tr>
+          <tr><td>AAOI</td><td class="num">$69.05</td><td class="num">-12.8%</td><td class="num">已破止损约59.0%</td><td>–</td><td>止损已触发待执行；现价远低于10/5增发价$105</td></tr>
+          <tr><td>AEHR</td><td class="num">$54.89</td><td class="num">无法验证</td><td class="num">已破止损约45.5%</td><td>–</td><td><strong>今日(11/2)盘后财报，binary风险日</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. 今日 catalysts ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 今日 catalysts</h2>
+    <ul>
+      <li><strong>09:45 ET</strong> S&amp;P Global 制造业 PMI 终值（10月）</li>
+      <li><strong>10:00 ET</strong> ISM 制造业 PMI（10月）— 预期 54.7，前值 54.5；同时公布建筑支出（9月）</li>
+      <li><strong>盘后</strong> AAPL FY26 Q4 财报 — consensus EPS $1.99，营收约 $113.3B；关注资本开支/数据中心指引是否为本轮周期首次下修</li>
+      <li><strong>盘后</strong> PLTR Q3 财报 — consensus EPS $0.4084，营收 $2.18B；期权隐含波动 ±13.3%</li>
+      <li><strong>盘后（电话会 17:00 ET）</strong> AEHR FY27 Q1 财报 — consensus EPS $0.11，营收 $27.53M；为持仓标的，已跌破止损</li>
+    </ul>
+  </section>
+
+  <!-- ====== 4. 今日单条最重要看点 ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 今日单条最重要看点</h2>
+    <div class="tldr">
+      <p style="margin:0;font-size:16px;line-height:1.6;">AAPL 盘后财报是上周复盘列出的"下周必须盯的转折点"第3条——资本开支/数据中心指引若出现本轮周期首次下修，将直接把泡沫评分模型中"资本开支过热"项从5分下调，是情景二(顶部震荡)转向情景三(下跌)的关键触发信号之一；若指引维持或上修，则强化当前"龙头需求仍健康"的判断。同日 AEHR 盘后财报对已跌破止损的该仓位是真正的binary事件——上周复盘已明确"最晚须在11/2财报前清仓"的硬性时间线，今天就是这个节点。</p>
+    </div>
+  </section>
+
+  <!-- ====== 5. 异动 / 风险信号 ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 异动 / 风险信号</h2>
+    <ul>
+      <li>无新增异动——VIX 收19.42，仍在周度复盘预判的16-22震荡区间内；ORCL/NOK/AAOI/AEHR 止损破位及 LITE 距止损收窄至5.5%均为上周已标注信号的延续，非今日新增变化。</li>
+    </ul>
+  </section>
+
+  <!-- ====== 6. 周度立场不变量 ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 周度立场不变量</h2>
+    <p>[周度复盘 2026-10-31 的立场：顶部震荡（泡沫评分36/55，对应2000Q1区间）] — 今日不偏离。ORCL/NOK/AAOI/AEHR 止损待立即执行，MRVL/LITE 持有但收紧观察窗，不在本次恐慌中逆势加仓。</p>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源</h3>
+    <ul>
+      <li>FMP 实时报价（SPX、VIX、NOK、NVDA、AMZN、META、AAPL），2026-10-30 收盘</li>
+      <li><a href="https://247wallst.com/investing/2026/10/31/the-nasdaq-100-briefly-fell-into-a-correction-as-the-ai-trade-cracks/">247WallSt, The Nasdaq 100 Briefly Fell Into a Correction</a>，2026-10-31</li>
+      <li><a href="https://www.tradingkey.com/news/market-movers/262262107-market-movers-mrvl-20261030">TradingKey, MRVL Closed Down 10.05% on Oct 30</a>，2026-10-30</li>
+      <li>Yahoo Finance / stockanalysis.com，LITE、ORCL、AAOI、AEHR 10/30 收盘价</li>
+      <li><a href="https://www.cnbc.com/2026/10/30/stock-market-next-week-outlook-for-nov-2-6-2026.html">CNBC, Stock market next week: Outlook for Nov. 2-6, 2026</a>，2026-10-30</li>
+      <li><a href="https://marketchameleon.com/articles/b/2026/10/9/aehr-november-2-2026-q1-fy2027-earnings-call-fiscal-year-shift">MarketChameleon, Aehr Nov 2 2026 Q1 FY2027 earnings call</a>，2026-10</li>
+      <li><a href="https://appleinsider.com/articles/26/11/01/what-to-expect-from-apples-q4-2026-results-on-november-2">AppleInsider, What analysts expect from Apple's Q4 2026 results</a>，2026-11-01</li>
+      <li><a href="https://www.tipranks.com/news/palantir-q3-earnings-are-on-nov-2-options-traders-brace-for-a-13-3-move-in-pltr-stock">TipRanks, Palantir Q3 earnings Nov 2</a>，2026</li>
+      <li>docs/reviews/2026-10-31/index.html（本站周度复盘）</li>
+    </ul>
+  </section>
+
+  <p class="disclaimer">盘前简报仅为事实摘要，不构成新的交易建议。新交易建议见每周六的<a href="../../index.html#reviews">市场周度复盘</a>。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 盘前简报 · 2026-11-02
+</footer>
+
+</body>
+</html>
