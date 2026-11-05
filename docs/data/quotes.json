@@ -1,22 +1,30 @@
 {
-  "fetchedAt": "2026-11-03T23:00:04.622347+00:00",
+  "fetchedAt": "2026-11-05T23:03:26.964187+00:00",
   "source": "yahoo-finance-chart",
   "quotes": {
+    "NOK": {
+      "price": 7.46,
+      "prevClose": 9.31,
+      "currency": "USD",
+      "exchange": "NYQ",
+      "marketState": "",
+      "marketTime": "2026-11-05T21:00:02+00:00"
+    },
     "MRVL": {
-      "price": 171.97,
-      "prevClose": 243.57,
+      "price": 133.55,
+      "prevClose": 218.34,
       "currency": "USD",
       "exchange": "NMS",
       "marketState": "",
-      "marketTime": "2026-11-03T21:00:02+00:00"
+      "marketTime": "2026-11-05T21:00:01+00:00"
     },
     "LITE": {
-      "price": 680.16,
-      "prevClose": 866.18,
+      "price": 509.7,
+      "prevClose": 919.53,
       "currency": "USD",
       "exchange": "NMS",
       "marketState": "",
-      "marketTime": "2026-11-03T21:00:01+00:00"
+      "marketTime": "2026-11-05T21:00:00+00:00"
     }
   }
 }
