@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026年11月9日 · AI Investment Weekly</title>
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><a href="../../index.html">AI Investment Weekly</a></h1>
+    <span class="tagline">买方科技 · 产业链 · 跨市场交易</span>
+  </div>
+  <nav class="nav">
+    <a href="../../index.html">首页</a>
+    <a href="../../index.html#reports" class="active">产业链周报</a>
+    <a href="../../index.html#reviews">市场周度复盘</a>
+    <a href="../../index.html#briefings">盘前简报</a>
+    <a href="../../portfolio.html">持仓与观察</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="report-meta">
+    <span class="issue">第 17 期</span>
+    <span>2026 年 11 月 9 日</span>
+  </div>
+
+  <h1 class="report-title">三星单季营业利润 $80 亿创纪录、HBM4 售罄至 2028 × 中期选举引爆数据中心监管恐慌、Nasdaq 单日 -5.52% 蒸发 $2.5 万亿：存力真实稀缺与政治/信用风险同时冲向两个极端</h1>
+  <p class="report-subtitle">本周内存三强（三星/SK 海力士/美光）用三份实际财报验证"超级周期"仍在加速——却在同一周因美国中期选举触发的数据中心监管恐慌、CXMT 竞争进展和美光台湾厂房劳资暂停，股价单周重挫 18–26%。与此同时 CoreWeave CDS 突破 1200bp、Oracle CDS 创 298bp 纪录，AI 信用利差与股价的背离达到本轮周期新高。</p>
+
+  <!-- ====== 1. TL;DR ====== -->
+  <section>
+    <h2><span class="section-num">01</span> 本期总览 <span class="deck">/ TL;DR</span></h2>
+
+    <div class="tldr">
+      <h4>本周三大转折点</h4>
+      <ol>
+        <li><strong>内存超级周期遭遇本轮最大一次股价错杀</strong> — 三星 Q3 营业利润 ₩107.4T(~$80.4B，+783% YoY)创纪录，HBM4 2027 年产能已按约定价格售罄，需求将维持超供给状态至 2028；但 SK 海力士 -25.8%、三星 -18.7%、美光 -26.1%（Oct 29–Nov 6 一周内），原因与存力基本面无关。</li>
+        <li><strong>数据中心监管风险从传闻变成可量化的定价因子</strong> — 中期选举民主党胜选触发 Nasdaq 单日 -5.52%（$2.5 万亿市值蒸发），9 个州合计 158.6GW（美国管网 41%）已有州长级暂停表态，Susquehanna 估 8%/12GW 项目面临取消风险。</li>
+        <li><strong>AI 信用利差与股权市场背离持续走阔</strong> — Oracle 5 年期 CDS 创 298bp 纪录新高，CoreWeave CDS 一度触及 1289bp（Nvidia 的 8 倍以上），年内 hyperscaler 债券发行 $296B 已超高盛年初预测($250B)18%，OpenAI 本轮仅募到 $11B（目标 $30B），估值 $1.25T 低于目标 $1.4–1.5T。</li>
+      </ol>
+    </div>
+
+    <h4>最不值得追的拥挤叙事</h4>
+    <ul>
+      <li><strong>人形机器人即将规模化放量</strong> — Unitree 发布 H2-X 炫技视频（后空翻、举车）后仅一天，10/22 在杭州现场演示中失败右腿在落地冲击下直接脱落；同期被疯传的"特斯拉向三花智控下单 $6.85 亿致动器"传闻已被三花官方否认。</li>
+      <li><strong>"Capex 超预期 = 股价涨"</strong> — 本周进一步证伪：Meta/Alphabet/Amazon/ServiceNow/Palantir/Coherent 財报全部出现"beat 但股价遭抛售"，仅 Microsoft 因 Azure +48%、现金流仍为正而逃过一劫。</li>
+    </ul>
+
+    <h4>最大单点风险</h4>
+    <p>监管/政治风险与信用紧缩同时发生：若数据中心建设因政治阻力实质性放缓，而内存、燃机、冷却供应商已经按照 capex 持续增长的假设做出了多年期产能承诺与资本支出决策，供给侧可能出现"需求预期走弱先于产能兑现"的罕见错位。高盛已将 AI capex 增速预测由 2026 年 ~100% 下修至 2027 年 ~60%、2028 年 ~14%，与摩根士丹利类似预测方向一致。</p>
+
+    <h4>需要继续等数据的方向</h4>
+    <ul>
+      <li>Siemens Energy FY2026 全年业绩及 FY2027 展望将于 11 月 11 日发布，是验证燃机 backlog 能否延续 GE Vernova 式加速的关键节点。</li>
+      <li>NVIDIA FY2027 Q3 财报（11 月 17 日）将首次给出 Rubin 量产节奏与 HBM4 需求的管理层确认，当前尚无法验证"至少 $1 万亿 backlog"说法的落地节奏。</li>
+      <li>Harmonic Drive Systems Q2 FY2027（11 月 11 日）将是检验人形机器人致动器订单能否从样机级（百台量级）转向量产级的第一个硬数据点。</li>
+      <li>Berkshire Hathaway Q3 2026 13F（11 月 16 日截止）尚未披露，无法验证机构在本轮错杀中的真实加减仓动作。</li>
+    </ul>
+  </section>
+
+  <!-- ====== 2. Top Picks ====== -->
+  <section>
+    <h2><span class="section-num">02</span> Top Picks <span class="deck">/ 一页结论</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>主题</th>
+            <th>核心结论</th>
+            <th>标的</th>
+            <th>方向</th>
+            <th>未定价?</th>
+            <th>催化剂</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>内存超级周期错杀</strong></td>
+            <td>三星/SK 海力士/美光三份实际财报证实超级周期加速（三星营业利润率创纪录、HBM4 售罄至 2028），股价却在一周内跌 18–26%，Samsung Securities 估测跌幅已隐含三星 ~46%、SK 海力士 ~36% 的内存价格下行——明显超跌于基本面。</td>
+            <td>MU / SK 海力士(000660.KS / ADR SKHY) / 三星电子(005930.KS)</td>
+            <td><span class="dir long">Long</span></td>
+            <td>是 — 股价跌幅已反映未发生的降价情景</td>
+            <td>SK 海力士劳资谈判结果；NVDA 11/17 财报对 HBM4 需求的确认；下一轮 TrendForce 合约价数据</td>
+            <td class="num"><span class="score high">92</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>CoreWeave 空 / Oracle 信用对冲</strong>（延续）</td>
+            <td>CoreWeave CDS 一度触及 1289bp、Oracle CDS 创 298bp 纪录，hyperscaler 债券发行年内超预期 18%；OpenAI 本轮仅募到目标三分之一，估值低于预期，循环融资网络的裂缝持续扩大且尚未被股权市场充分计入。</td>
+            <td>CRWV(空) / ORCL CDS 或信用敞口对冲</td>
+            <td><span class="dir short">Short/Pair</span></td>
+            <td>部分 — CDS 已大幅走阔，但评级机构尚未跟进下调</td>
+            <td>11/10 CoreWeave Q3 财报；标普/穆迪评级行动；Oracle 下一轮再融资</td>
+            <td class="num"><span class="score high">84</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>电力 backlog 持续兑现</strong></td>
+            <td>GE Vernova Q3 backlog 升至 $197B（guide 超 $200B）、燃机 backlog 122GW 并guide 年底 ≥130GW，FCF 指引上修至 $16–17B；Siemens Energy 95GW 承诺待 11/11 验证能否同步加速。</td>
+            <td>GEV / Siemens Energy(ENR.DE) probe</td>
+            <td>部分 — backlog 硬数据强，但受 ERCOT 审批暂停拖累转化节奏</td>
+            <td>Siemens Energy FY26 业绩+FY27 展望 11/11</td>
+            <td class="num"><span class="score high">80</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>光学互联"beat 但遭抛售"错杀</strong></td>
+            <td>Coherent 签下 5 年 ~$20B PhotonLink 大单并上调指引，股价当天仍跌 13%；Lumentum Q2 FY27 指引隐含 ~$350M 环比增长，1.6T 出货加速，InP/EML 瓶颈延续至 2027 后——需求端证据与股价反应脱节。</td>
+            <td>LITE / COHR probe</td>
+            <td>是 — 同一周期内"beat+加单+遭抛售"的典型模式</td>
+            <td>Coherent/Lumentum 下季度交付数据；NVIDIA CPO 时间表更新</td>
+            <td class="num"><span class="score mid">76</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 3. Radar ====== -->
+  <section>
+    <h2><span class="section-num">03</span> 雷达表 <span class="deck">/ 全主题扫描</span></h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>新能力 / 新瓶颈</th>
+            <th>谁付钱</th>
+            <th>直接受益</th>
+            <th>受损方</th>
+            <th>最新硬证据</th>
+            <th>未定价证据</th>
+            <th>可交易资产</th>
+            <th class="num">分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>内存 / HBM</td>
+            <td>HBM4 产能已售罄至 2027–2028，瓶颈从"谁有产能"变为"谁先拿到合格供应"</td>
+            <td>云厂（Google/Microsoft/Meta/Amazon）+ NVIDIA/AMD 采购</td>
+            <td>三星、SK 海力士、美光</td>
+            <td>消费级 DRAM/NAND 终端厂商（PC/手机）</td>
+            <td>三星 Q3 营业利润 $80.4B 创纪录；HBM4 占 HBM 收入 60%；美光 2027 HBM 产能"绝大部分"已按更高价签订</td>
+            <td>股价已跌 18–26%，隐含降价情景未兑现</td>
+            <td>MU / SK 海力士 / 三星电子</td>
+            <td class="num"><span class="score high">92</span></td>
+          </tr>
+          <tr>
+            <td>训练算力 / Capex</td>
+            <td>Blackwell Ultra 延续、Rubin 放量，自研 ASIC（TPU v7/Trainium3/MTIA）分流外部需求</td>
+            <td>四大云厂 + OpenAI/Anthropic</td>
+            <td>NVIDIA、Broadcom、AMD</td>
+            <td>依赖单一 GPU 供应商的二线云厂</td>
+            <td>Alphabet guide 2027 capex 将超 $300B；Amazon 2026 capex guide $220B；AMD 数据中心收入 $8.5B(+97% YoY)</td>
+            <td>NVDA 11/17 财报前尚未验证 Rubin 量产节奏</td>
+            <td>NVDA / AMD / AVGO probe</td>
+            <td class="num"><span class="score mid">74</span></td>
+          </tr>
+          <tr>
+            <td>网络 / 光模块</td>
+            <td>1.6T 加速放量，InP/EML 激光芯片仍是硬瓶颈</td>
+            <td>云厂数据中心网络升级预算</td>
+            <td>Lumentum、Coherent</td>
+            <td>缺乏 EML 自产能力的二线光模块厂</td>
+            <td>Coherent $20B PhotonLink 5 年大单；Lumentum Q2 FY27 guide 隐含 ~$350M 环比增长</td>
+            <td>beat+加单仍遭抛售 13%，反应脱节</td>
+            <td>LITE / COHR probe</td>
+            <td class="num"><span class="score mid">76</span></td>
+          </tr>
+          <tr>
+            <td>数据中心电力</td>
+            <td>燃机 backlog 持续刷新纪录，但 ERCOT 审批暂停拖累转化为实际并网</td>
+            <td>云厂 + 公用事业 + 工业客户</td>
+            <td>GE Vernova、Siemens Energy、三菱重工</td>
+            <td>依赖德州电网排队的在建数据中心项目</td>
+            <td>GE Vernova backlog $197B、燃机 122GW guide ≥130GW；三菱重工 backlog 35GW 交付期排至 2031</td>
+            <td>Siemens Energy FY26/FY27 展望 11/11 待验证</td>
+            <td>GEV / Siemens Energy probe</td>
+            <td class="num"><span class="score mid">80</span></td>
+          </tr>
+          <tr>
+            <td>冷却</td>
+            <td>30kW 机柜成标配，液冷产能翻倍</td>
+            <td>云厂数据中心升级预算</td>
+            <td>Vertiv</td>
+            <td>传统风冷专用设备商</td>
+            <td>Vertiv Q3 营收 $4.31B(+61% YoY)，订单同比 >100%，冷水机产能guide 年底翻倍</td>
+            <td>估值已较充分反映，未发现明显错杀</td>
+            <td>VRT watchlist</td>
+            <td class="num"><span class="score mid">68</span></td>
+          </tr>
+          <tr>
+            <td>AI 信用 / 融资</td>
+            <td>循环融资网络裂缝扩大，债券发行量超预期</td>
+            <td>资本市场（债券/股权投资者）</td>
+            <td>做空信用敞口、评级代理观察者</td>
+            <td>CoreWeave、Oracle 及高杠杆 neocloud</td>
+            <td>Oracle CDS 298bp 创纪录；CoreWeave CDS 1289bp 盘中高点；hyperscaler 债券发行 $296B 超预测 18%</td>
+            <td>评级机构尚未跟进下调，股权空头仓位也偏低（ORCL 空头仅 2.64%）</td>
+            <td>CRWV 空 / ORCL CDS</td>
+            <td class="num"><span class="score high">84</span></td>
+          </tr>
+          <tr>
+            <td>数据中心监管 / 政治风险</td>
+            <td>中期选举后多州出现暂停表态，审批流程成为新瓶颈</td>
+            <td>— (政策冲击，非付费方)</td>
+            <td>避开受限州的替代产能(海外/已获批项目)</td>
+            <td>依赖未获批管网排队项目的数据中心开发商</td>
+            <td>9 州 158.6GW 暂停表态（占美国管网 41%）；Susquehanna 估 8%/12GW 项目面临取消风险；ERCOT 审批暂停延至 12/10</td>
+            <td>市场已对此单日定价(Nasdaq -5.52%)，但州级政策落地节奏仍不确定</td>
+            <td>watchlist only</td>
+            <td class="num"><span class="score mid">72</span></td>
+          </tr>
+          <tr>
+            <td>机器人 / 具身智能</td>
+            <td>致动器订单仍停留在样机级，量产证据缺失</td>
+            <td>Tesla/Figure/Unitree 等机器人厂商研发预算</td>
+            <td>谐波减速器/致动器供应商（样机阶段）</td>
+            <td>炒作过度的"人形机器人供应链"概念股</td>
+            <td>Harmonic Drive 订单仍为"数百台"样机规模；Sanhua 否认 $6.85 亿特斯拉订单传闻；Unitree H2-X 现场演示掉腿</td>
+            <td>无 — 证据不足以支持交易</td>
+            <td>无明确交易机会</td>
+            <td class="num"><span class="score low">38</span></td>
+          </tr>
+          <tr>
+            <td>端侧设备</td>
+            <td>DRAM/NAND 涨价挤压 PC/手机出货，而非"换机潮"拉动</td>
+            <td>消费者</td>
+            <td>内存涨价受益方（间接）</td>
+            <td>PC/手机 OEM 毛利率（Dell、HP 等）</td>
+            <td>IDC：全球 PC 出货 Q3 -20.1% YoY；Counterpoint：全球手机出货 Q3 -20% YoY，为 2012 年来最低 Q3 水平</td>
+            <td>"AI 换机潮"叙事与实际出货数据方向相反</td>
+            <td>做空 PC/手机 OEM 毛利率敞口（研究阶段）</td>
+            <td class="num"><span class="score mid">65</span></td>
+          </tr>
+          <tr>
+            <td>AI Agent / 企业软件</td>
+            <td>ARR 增速放缓预期已开始压制估值，即便实际数仍在加速</td>
+            <td>企业 IT 预算</td>
+            <td>Palantir（美国商业收入首次超政府收入）</td>
+            <td>cRPO 指引不及预期的企业软件（ServiceNow）</td>
+            <td>Palantir Q3 营收 $2.31B(+96% YoY)美国商业 +148%；ServiceNow beat 但 Q4 cRPO guide 18.5%(低于一致预期 19.8%)股价跌 18%</td>
+            <td>beat 但 forward guide 减速已开始被定价，不算错杀</td>
+            <td>watchlist only</td>
+            <td class="num"><span class="score mid">60</span></td>
+          </tr>
+          <tr>
+            <td>AI 医疗</td>
+            <td>AI 辅助药物发现进入临床概念验证阶段</td>
+            <td>制药公司里程碑付款</td>
+            <td>Recursion、Schrödinger</td>
+            <td>— 尚未形成明确受损方</td>
+            <td>Schrödinger 上调 FY26 ACV guide 至 $222–232M；Takeda zascitinib 获 FDA 优先审评</td>
+            <td>证据仍偏早期，缺乏大规模商业化数据</td>
+            <td>watchlist only</td>
+            <td class="num"><span class="score mid">55</span></td>
+          </tr>
+          <tr>
+            <td>自动驾驶 / Robotaxi</td>
+            <td>车队规模扩张加速，但单位经济性数据仍不透明</td>
+            <td>消费者出行支出</td>
+            <td>Waymo、Tesla</td>
+            <td>传统出租车/网约车运力</td>
+            <td>Waymo 覆盖 14 城、车队 4000+；Tesla 第 7 城(Fort Worth)上线，覆盖 831 平方英里</td>
+            <td>车队规模数据多来自第三方车牌追踪，非官方确认</td>
+            <td>watchlist only</td>
+            <td class="num"><span class="score mid">58</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 4. Deep Dives ====== -->
+  <section>
+    <h2><span class="section-num">04</span> 重点机会深挖 <span class="deck">/ Top 3–5</span></h2>
+
+    <article class="deepdive">
+      <h3>
+        机会 #1 · 内存超级周期史上最大一次股价错杀
+        <span class="ticker">MU / 000660.KS / 005930.KS</span>
+        <span class="dir long">Long</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>三星、SK 海力士、美光三份实际财报(10月下旬-11月初)同时验证"内存超级周期"仍在加速——三星 Q3 营业利润 ₩107.4T(~$80.4B，+783% YoY)创全球科技公司单季纪录，HBM4 2027 年产能已按约定价格全部售罄，管理层预期供需失衡将持续到 2028；SK 海力士 Q3 营业利润率达 80%；美光完成 2027 年"绝大部分"HBM 位供应协议且价格显著高于同比。但同一周（10/29–11/6）SK 海力士 -25.8%、三星 -18.7%、美光 -26.1%，跌幅明显超过基本面变化。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>HBM/DRAM 寡头（三星、SK 海力士、美光合计近乎垂直整合全球先进内存供应），是 AI 服务器中除 GPU 外单位价值量增长最快的部件。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>HBM4 为 NVIDIA Rubin、AMD MI450 等下一代加速器标配内存；三大厂 2027 年全部 DRAM/HBM 产能已被预订，行业预计供需失衡持续到 2028 年下半年，NAND 到 2026 年 8 月前也将订满。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>三星 Q3 营业利润 ₩107.4T 创纪录、HBM4 占 HBM 收入 60%(<a href="https://www.gurufocus.com/news/9150265/samsung-electronics-co-ltd-wbossun-q3-2026-earnings-call-highlights-record-100-trillion-won-operating-profit-hbm4-sold-out-through-2027" target="_blank">GuruFocus</a>)；SK 海力士 Q3 营收 ₩104.6T(+327.9% YoY)、营业利润率 80%(<a href="https://www.marketbeat.com/earnings/reports/2026-10-28-sk-hynix-inc-stock/" target="_blank">MarketBeat</a>)；美光 Q4 FY26 DRAM 收入 +343% YoY 至 $39.8B，2027 HBM 位供应"绝大部分"已签订更高价格(<a href="https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-FY26-Prepared-Remarks.pdf" target="_blank">Micron 财报备注</a>)；行业 2027 年 DRAM/HBM 产能全部售罄(<a href="https://www.tweaktown.com/news/113004/memory-capacity-for-all-of-2027-has-reportedly-been-booked-and-sold-with-no-more-dram-or-hbm-available/index.html" target="_blank">TweakTown</a>)。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>Samsung Securities 测算本次抛售已隐含三星约 -46%、SK 海力士约 -36% 的内存价格下行情景(<a href="https://finance.yahoo.com/markets/stocks/articles/ai-memory-chip-selloff-looks-140900433.html" target="_blank">Yahoo Finance</a>)，而实际合约价指引仍为上涨（Q4 DRAM 合约价 guide +10–15% QoQ）(<a href="https://www.trendforce.com/presscenter/news/20260709-13140.html" target="_blank">TrendForce</a>)。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>1M：NVIDIA 11/17 财报对 HBM4 需求的管理层确认；SK 海力士劳资谈判结果。3M：下一轮 TrendForce Q1 2027 合约价指引。6M：美光 Taoyuan 厂房劳资暂停的解决进展。12M：2028 年供需平衡验证。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p>情景分析：若中期选举监管恐慌和 CXMT 竞争威胁在未来 1-2 个月内被证明"虚惊一场"（CXMT HBM3E 仍落后一代、量产要到 2027 年），股价有望向基本面（持续上涨的合约价+创纪录利润率）收敛，修复空间对应前述 36–46% 隐含跌幅的逆向修复。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>美光台湾厂房劳资暂停若升级或扩散到其他厂区，可能真实影响 2028 年产能爬坡节奏；CXMT 产能扩张速度若超预期（guide 年底 ~35 万片/月），中长期可能侵蚀定价权。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>若 TrendForce 下一轮合约价指引转为环比下降，或三星/SK 海力士管理层下修 2027/2028 售罄表态，则超级周期叙事需要重新评估。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>confirmation 级别仓位（基本面已有两份实际财报验证，错杀幅度可量化）；右侧（基本面已兑现，等待价格收敛）；可用 CXMT 相关新闻作为止损触发信号。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>
+        机会 #2 · CoreWeave 空 / Oracle 信用敞口对冲（延续并升级）
+        <span class="ticker">CRWV / ORCL</span>
+        <span class="dir short">Short/Pair</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>AI 信用裂缝本周继续扩大而非收敛——CoreWeave 5 年期 CDS 盘中触及 1289bp(相当于 Nvidia 自身 CDS 水平的 8 倍以上)，Oracle CDS 创 298bp 纪录新高；年内 hyperscaler 债券发行已达 $296B，超高盛年初预测($250B)18%；OpenAI 本轮仅募到 $11B（目标 $30B），估值 $1.25T 低于此前寻求的 $1.4–1.5T。信用市场定价的风险远比股权市场/评级机构目前反映的更严重。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>CoreWeave、Oracle 是 AI 算力租赁/云基建循环融资网络的核心节点，其资产负债表健康度直接决定整条 GPU-数据中心-算力租赁链条能否维持当前扩张速度。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因（此处为"风险扩大"原因）</h4>
+          <p>算力租赁模式依赖持续举债扩张产能，而终端需求（OpenAI 等）本身的融资能力又受市场情绪制约，形成双向反馈的脆弱性。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>CoreWeave CDS 盘中 1289bp，次日回落至约 1155bp（仍极高）(<a href="https://fourweekmba.com/ai-coreweave-cds-is-8x-nvidias-139bp-as-credit-prices-ai-risk/" target="_blank">FourWeekMBA</a>)；Oracle CDS 298bp 创纪录，标普 7 月已下调至 BBB-(<a href="https://finance.yahoo.com/markets/stocks/articles/oracles-default-insurance-hits-record-122137367.html" target="_blank">Yahoo Finance</a>)；hyperscaler 债券发行 $296B YTD 超高盛 $250B 预测 18%，2027 年预计达 $440B(<a href="https://fourweekmba.com/ai-weekly-roundup-8-nov-2026-builders-own-power-debt-296b/" target="_blank">FourWeekMBA</a>)；OpenAI 11/6 以 $1.25T 估值募得 $11B，低于 $30B 目标(<a href="https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/" target="_blank">24/7 Wall St.</a>)。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>尽管 CDS 大幅走阔，标普/穆迪对 CoreWeave 的评级行动仍停留在 4 月的确认(未下调)，评级机构滞后于信用市场定价；Oracle 股权空头仓位仅 2.64%，远低于 CDS 隐含的压力水平，说明股权市场尚未跟进(<a href="https://www.benzinga.com/quote/ORCL/short-interest" target="_blank">Benzinga</a>)。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>1M：CoreWeave 11/10 Q3 财报；评级机构后续行动。3M：Oracle 下一轮再融资窗口。6M：OpenAI 剩余 ~$9–20B 融资能否按原估值完成。12M：循环融资网络是否出现实际违约事件。</p>
+        </div>
+        <div>
+          <h4>上行情景（空头角度即"下行兑现"情景）</h4>
+          <p>情景分析：若 CoreWeave Q3 财报揭示利息支出进一步侵蚀经营利润，或穆迪/标普跟进下调评级，CDS 隐含的压力可能转化为股价/债券价格的进一步下跌。</p>
+        </div>
+        <div>
+          <h4>下行风险（做空方视角的反向风险）</h4>
+          <p>若 Nvidia/微软等关联方提供流动性支持（如延长租赁、提供担保），CDS 可能快速收窄，做空仓位面临挤仓风险；CoreWeave 历史上多次在财报后出现大幅波动。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>若 CoreWeave Q3 财报显示利息覆盖率改善且 backlog 转化加速，或 Oracle 再融资后 CDS 回落至 200bp 下方，则该空头/对冲逻辑需要重新评估。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>probe 级别仓位（信用市场信号强但尚未被评级/股权市场确认，存在时点不确定性）；左侧（提前布局信用恶化尚未被股权市场定价的部分）；用 CRWV 11/10 财报作为加减仓触发点。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>
+        机会 #3 · 电力 backlog 持续兑现，但转化节奏受政治风险牵制
+        <span class="ticker">GEV / ENR.DE</span>
+        <span class="dir long">Long probe</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>GE Vernova Q3 backlog 升至 $197B（guide Q4 超 $200B），燃机 backlog 122GW 并 guide 年底 ≥130GW，2026 年 FCF 指引上修至 $16–17B；但同一周 ERCOT 审批暂停延至 12/10、9 个州出现暂停表态，backlog 转化为实际在建/并网项目的节奏存在不确定性，Siemens Energy 11/11 全年业绩是下一个关键验证点。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>燃气轮机三巨头（GE Vernova、Siemens Energy、三菱重工）是数据中心应急/主力电力供应的核心硬件瓶颈环节，交付周期已排至 2031 年。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>电网并网审批周期（动辄数年）远跟不上数据中心建设速度，云厂和工业客户转向自建燃机/储能作为过渡方案；Caterpillar Q3 Power Generation 收入中 99% 来自 Anthropic 单一订单(1.7GW，$3.4B)，显示客户集中度极高。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>GE Vernova backlog $197B(+$20B QoQ)、燃机 122GW、guide ≥130GW 年底(<a href="https://www.turbomachinerymag.com/view/ge-vernova-q3-2026-gas-power-backlog-122-gw-trench-acquisition" target="_blank">Turbomachinery Magazine</a>)；2026 FCF guide 上修至 $16–17B(<a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000162/gev3q2026form8-k10282026.pdf" target="_blank">GE Vernova 8-K</a>)；Siemens Energy 燃机 backlog 69GW+26GW slot reservation，交付周期超 3 年(<a href="https://www.utilitydive.com/news/siemens-gas-turbine-backlog-nears-70-gw-as-company-expands-manufacturing/827390/" target="_blank">Utility Dive</a>)；三菱重工 backlog 35GW，新订单交付期排至 2031(<a href="https://energynewsbeat.co/electrical-generation/mitsubishi-power-deliveries-stretch-to-2031-as-gas-turbine-shortage-hits-data-centers-and-utilities/" target="_blank">Energy News Beat</a>)。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>Susquehanna 测算最坏情形下仅 8%（~12GW）规划产能面临取消，且主要集中于 2028–2030 远期管线，近期(2027年前)已获批项目基本安全(<a href="https://www.investing.com/news/stock-market-news/susquehanna-sees-8-of-ai-data-center-projects-at-risk-93CH-5007177" target="_blank">Investing.com</a>)——市场对监管风险的反应可能已超过实际基本面冲击。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>1M：Siemens Energy FY26 全年业绩+FY27 展望(11/11)。3M：ERCOT 审批暂停结果(12/10 到期)。6M：Trench Group 并购整合进展。12M：GE Vernova 2026 年底 backlog 实际数据对 ≥130GW guide 的验证。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p>情景分析：若 Siemens Energy 11/11 财报延续 GE Vernova 式 backlog/FCF 加速，且 ERCOT 审批在 12/10 后顺利放行，电力硬件厂商有望在 2027 年迎来 backlog 向收入转化的加速期。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>若审批暂停扩散到更多州或周期延长超预期，backlog 转化节奏可能滞后 1-2 年；GE Vernova $9B 收购 Trench Group 带来的整合风险和债务融资成本上升。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>若 Siemens Energy 下修 FY27 展望，或多个州审批暂停延长超过 6 个月，则电力 backlog 兑现逻辑需要重新评估节奏假设。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>probe 级别仓位（backlog 数据强劲但转化节奏存在政策不确定性）；右侧确认为主（已有两个季度连续加速的硬数据）；11/11 Siemens Energy 财报作为加仓触发点。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="deepdive">
+      <h3>
+        机会 #4 · 光学互联"beat 但遭抛售"错杀
+        <span class="ticker">LITE / COHR</span>
+        <span class="dir long">Long probe</span>
+      </h3>
+
+      <p><strong>核心逻辑：</strong>Coherent 签下 5 年 ~$20B PhotonLink 大单（2028 年起放量，相当于其当前营收基数增量 >40%）并上调指引，股价当天仍跌 13%；Lumentum Q1 FY27 营收 $1.26B(+136.5% YoY)beat，Q2 FY27 指引隐含 ~$350M 环比增长，1.6T 出货"从本季度起加速"。两家公司的需求端证据持续强化，但股价反应与 11 月初大盘整体 AI 股抛售情绪绑定，脱离了各自基本面。</p>
+
+      <div class="grid">
+        <div>
+          <h4>产业链位置</h4>
+          <p>Lumentum、Coherent 是 800G/1.6T 光模块及 InP 激光芯片的核心供应商，在 CPO 尚未商业化前(预计 2030 年后)仍是数据中心网络升级不可替代的硬件瓶颈。</p>
+        </div>
+        <div>
+          <h4>需求扩大原因</h4>
+          <p>1.6T 模块出货从 2026 年夏季开始放量，EML 激光芯片供给增长(53%预计增幅)跟不上光模块总需求增速，行业交期普遍超 40 周。</p>
+        </div>
+        <div>
+          <h4>数据证据</h4>
+          <p>Coherent Q1 FY27 营收 $2.37B(+50% YoY)，datacom/网络收入 +79% YoY，PhotonLink 5 年 ~$20B 协议(<a href="https://www.tikr.com/blog/coherent-signed-a-20-billion-deal-the-market-sold-it-off-13-anyway" target="_blank">Tikr</a>)；Lumentum Q1 FY27 营收 $1.26B beat，Q2 FY27 guide $1.575–1.625B(<a href="https://www.marketbeat.com/earnings/reports/2026-11-2-lumentum-holdings-inc-stock/" target="_blank">MarketBeat</a>)；NVIDIA 已锁定 $4B EML 激光产能(<a href="https://www.techtimes.com/articles/317281/20260527/ai-data-center-optical-component-shortage-nvidias-4b-laser-lockup-pushes-rivals-past-2027.htm" target="_blank">TechTimes</a>)。</p>
+        </div>
+        <div>
+          <h4>未定价证据</h4>
+          <p>Coherent 在 beat+加单+上调指引的情况下仍跌 13%，被明确归因于"更广泛的市场抛售和现金流/capex 担忧"，而非公司自身基本面问题(<a href="https://www.tikr.com/blog/coherent-signed-a-20-billion-deal-the-market-sold-it-off-13-anyway" target="_blank">Tikr</a>)——这是典型的情绪错杀而非基本面重估。</p>
+        </div>
+        <div>
+          <h4>催化剂 (1M / 3M / 6M / 12M)</h4>
+          <p>1M：PhotonLink 协议细节（对手方名称）是否披露。3M：Coherent/Lumentum 下季度交付数据验证指引兑现。6M：NVIDIA CPO（Optics-on-Interposer）商业化时间表更新。12M：PhotonLink 2028 年收入确认节奏。</p>
+        </div>
+        <div>
+          <h4>上行情景</h4>
+          <p>情景分析：若大盘 AI 股情绪企稳，Coherent/Lumentum 作为"beat+加单"的个股有望率先修复跌幅，跑赢缺乏新订单支撑的同业。</p>
+        </div>
+        <div>
+          <h4>下行风险</h4>
+          <p>PhotonLink 协议的具体对手方和付款结构尚未披露，存在执行风险；若大盘 AI 股抛售情绪持续或加剧，个股基本面改善可能继续被情绪压制。</p>
+        </div>
+        <div>
+          <h4>失效条件</h4>
+          <p>若后续财报显示 1.6T 出货不及指引，或 PhotonLink 协议细节披露后被发现结构不如预期（如里程碑条件苛刻），则需要重新评估。</p>
+        </div>
+        <div>
+          <h4>仓位 & 对冲</h4>
+          <p>probe 级别仓位（需求证据扎实但情绪面风险尚未消退）；左右侧兼具（基本面右侧确认，情绪面左侧布局）；可用 COHR/LITE 下季度财报作为验证点。</p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ====== 5. Shorts / Impaired ====== -->
+  <section>
+    <h2><span class="section-num">05</span> 做空 / 受损资产</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>受损资产</th>
+            <th>受损原因</th>
+            <th>替代路径</th>
+            <th>开始反映时点</th>
+            <th>做空可行性</th>
+            <th>风险</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CoreWeave（租赁型 neocloud）</td>
+            <td>CDS 1289bp 盘中高点，利息支出已达调整后经营利润数倍，微软主动收缩 neocloud 租赁(Nscale/Oracle 旧约)减少外部租约需求</td>
+            <td>自建产能的 hyperscaler（MSFT/GOOGL/AMZN 自有资产负债表融资）</td>
+            <td>已开始反映（CDS/债券价格），股权空头仓位仍偏低(19.2%float)</td>
+            <td>高 — 期权链流动性充足，空头仓位已有一定基础</td>
+            <td>11/10 财报后可能大幅波动；若关联方(Nvidia/微软)提供流动性支持可能快速挤仓</td>
+          </tr>
+          <tr>
+            <td>Nscale 等租约型 neocloud</td>
+            <td>微软拒绝扩大德州/拒绝续约 Essex 英国项目(电网官方表示 2030 年代前无法供电)，显示大客户正在收缩租赁敞口</td>
+            <td>有长期自有电力保障的数据中心运营商</td>
+            <td>刚开始反映（Nscale IPO 后估值压力）</td>
+            <td>中 — 若已上市，流动性和可做空性待确认</td>
+            <td>IPO 后流通股有限，做空成本可能较高</td>
+          </tr>
+          <tr>
+            <td>人形机器人概念股（含 Unitree 等已上市标的）</td>
+            <td>H2-X 现场演示掉腿暴露动态控制/落地缓冲技术仍不成熟，三花智控否认的 $6.85 亿订单传闻显示供应链叙事中存在大量未经证实的炒作</td>
+            <td>— 概念炒作无直接替代，需等待量产订单真实数据</td>
+            <td>已开始反映（Unitree 相关舆情降温）</td>
+            <td>低 — A股/港股做空工具有限，建议观望而非直接做空</td>
+            <td>板块情绪化波动大，逆向操作时点难把握</td>
+          </tr>
+          <tr>
+            <td>PC/手机 OEM 毛利率（Dell、HP 等）</td>
+            <td>DRAM/NAND 涨价直接挤压终端 OEM 成本结构，Q3 PC/手机出货双双 -20% YoY</td>
+            <td>有定价权转嫁能力的高端品牌（Apple）</td>
+            <td>已开始反映在出货量数据中，毛利率影响尚待下季度财报确认</td>
+            <td>中 — 需等待各家 Q4 财报验证毛利率压力的实际幅度</td>
+            <td>若终端厂商能够顺利提价转嫁成本，该逻辑可能不成立</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 6. Pairs / Cross-market ====== -->
+  <section>
+    <h2><span class="section-num">06</span> 配对交易 / 跨市场传导</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>结构</th>
+            <th>多</th>
+            <th>空</th>
+            <th>核心逻辑</th>
+            <th>催化剂</th>
+            <th>失效条件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>资产负债表质量对冲</td>
+            <td>MSFT</td>
+            <td>CRWV</td>
+            <td>Microsoft 是四大云厂中唯一未在本轮抛售中受创的公司（Azure +48%、现金流仍为正），且正主动收缩 neocloud 租赁敞口；CoreWeave 作为租赁模式代表方承受信用市场最大压力</td>
+            <td>CoreWeave 11/10 财报；Microsoft 下季度 capex 自筹比例变化</td>
+            <td>若 CoreWeave 利息覆盖率明显改善或获得关联方支持，价差可能收窄</td>
+          </tr>
+          <tr>
+            <td>供需两端对冲</td>
+            <td>MU / SK 海力士</td>
+            <td>Dell 或 HP（PC OEM 毛利率敞口）</td>
+            <td>内存涨价对供应端(MU/SK海力士)是利润驱动，对下游 PC/手机 OEM 是成本挤压，二者构成同一涨价事件的两端</td>
+            <td>下季度 PC OEM 毛利率指引；下一轮 TrendForce 合约价数据</td>
+            <td>若 OEM 能够顺利提价转嫁成本，空头端逻辑减弱</td>
+          </tr>
+          <tr>
+            <td>跨市场传导</td>
+            <td>三星电子 / SK 海力士（韩国）+ Siemens Energy / 三菱重工（欧/日）</td>
+            <td>美国本土受监管风险集中的数据中心开发商敞口</td>
+            <td>美国 capex 需求向韩国存力和欧/日电力设备供应链传导的确定性，高于美国本土因政治/审批风险存在不确定性的开发商敞口</td>
+            <td>Siemens Energy 11/11 财报；SK 海力士劳资谈判结果</td>
+            <td>若美国监管风险实质性缓解（如 ERCOT 审批顺利恢复），本土开发商敞口价值修复</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 7. Watchlist ====== -->
+  <section>
+    <h2><span class="section-num">07</span> 观察名单</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>当前缺什么证据</th>
+            <th>触发买入的信号</th>
+            <th>需要跟踪的数据</th>
+            <th>可能标的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>人形机器人致动器放量</td>
+            <td>订单仍停留在样机级（数百台），缺乏量产级订单数据</td>
+            <td>Harmonic Drive 或其他致动器厂商单季订单从百台量级跃升至千台以上</td>
+            <td>Harmonic Drive Q2 FY2027（11/11）订单/guide 数据</td>
+            <td>Harmonic Drive Systems(6324.T)、Tuopu Group</td>
+          </tr>
+          <tr>
+            <td>Rubin/HBM4 需求确认</td>
+            <td>NVIDIA 管理层尚未在最新财报中确认 Rubin 量产节奏与 HBM4 实际拉货情况</td>
+            <td>NVIDIA Q3 FY27 财报(11/17)确认 Rubin 占 Data Center 收入比例持续提升</td>
+            <td>NVIDIA 11/17 财报；Vera Rubin 出货占比指引</td>
+            <td>NVDA</td>
+          </tr>
+          <tr>
+            <td>机构持仓动向</td>
+            <td>Berkshire Q3 2026 13F 尚未披露，无法验证机构在本轮内存/AI 股错杀中的真实加减仓</td>
+            <td>Berkshire 或其他大型机构在 13F 中显示逆势加仓内存/AI 核心资产</td>
+            <td>Berkshire Q3 2026 13F（11/16 截止）</td>
+            <td>观察 BRK.A/B 持仓变化</td>
+          </tr>
+          <tr>
+            <td>数据中心监管风险落地</td>
+            <td>ERCOT 审批暂停尚未得出结论，9 州暂停表态的实际政策落地情况不明</td>
+            <td>ERCOT 审批恢复或多州暂停表态被证明为短期政治姿态而非长期政策</td>
+            <td>ERCOT 审批结果(12/10 到期)；各州后续立法/行政动向</td>
+            <td>GEV、VRT、CRWV 等电力/数据中心敞口</td>
+          </tr>
+          <tr>
+            <td>Agent 软件 ARR 持续性</td>
+            <td>Salesforce Agentforce Q3 FY27 实际数据尚未披露（预计 11 月底/12 月初）</td>
+            <td>Agentforce ARR 增速维持在 200%+ 且未出现 ServiceNow 式的 forward guide 减速</td>
+            <td>Salesforce Q3 FY27 财报</td>
+            <td>CRM</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ====== 8. Data Gaps ====== -->
+  <section>
+    <h2><span class="section-num">08</span> 数据缺口与必须人工核实事项</h2>
+    <ol>
+      <li>SK 海力士 HBM4 良率数据来自 Digitimes(mid-60%, 11/5)，三星良率数据来自 TrendForce(80%, 8/10)——两者口径/统计时点不一致，不可直接横向比较。</li>
+      <li>Coherent $20B PhotonLink 协议的具体对手方尚未披露，截至 11/8 仅有金额、年限和产品品类信息。</li>
+      <li>"HBM4 合约价周环比 +117%"的说法仅来自单一聚合器(siliconanalysts.com newsletter)，未经 TrendForce 直接证实，暂不采信为硬数据。</li>
+      <li>CoreWeave 11/10 财报发布于本报告成文之后，其管理层对利息覆盖率和 backlog 转化的最新表态尚未纳入本期分析。</li>
+      <li>Siemens Energy FY2026 全年业绩及 FY2027 展望将于 11/11 公布，晚于本报告发布时间，下一期需紧密跟进。</li>
+      <li>Oracle 11 月初"再融资 $10B 或 $20B"的具体金额在不同媒体报道中不一致，需以 SEC 8-K/FWP 原始文件为准核实。</li>
+      <li>Berkshire Hathaway Q3 2026 13F 尚未披露(截止 11/16)，本期无法验证机构在本轮内存/AI 股错杀中的真实加减仓动作。</li>
+      <li>"特斯拉向 Tuopu 下单 RMB 40 亿框架协议"的说法仅来自中国机器人行业博客聚合(eastasiabrief、36kr)，未见 Tuopu 官方公告确认，与已被三花智控官方否认的 $6.85 亿订单传闻同属同一信息源集群，需谨慎对待。</li>
+      <li>NVIDIA Q3 FY2027 财报(11/17)尚未发生，本期无法验证"backlog 至少 $1 万亿"说法的最新管理层表态。</li>
+    </ol>
+  </section>
+
+  <!-- ====== Sources ====== -->
+  <section class="sources">
+    <h3>数据源 / Sources</h3>
+
+    <div class="source-group">
+      <h4>算力 / Capex</h4>
+      <ul>
+        <li><a href="https://www.datastudios.org/post/microsoft-q1-fy27-results-azure-48-percent-33-2-billion-capex-45-2-billion" target="_blank">Microsoft Q1 FY27 Results — Azure +48%, Capex $45.2B (datastudios.org)</a></li>
+        <li><a href="https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html" target="_blank">Alphabet Q3 2026 Earnings (CNBC)</a></li>
+        <li><a href="https://coindcx.com/blog/us-stock/amazon-q3-2026-earnings-results" target="_blank">Amazon Q3 2026 Earnings Results (CoinDCX)</a></li>
+        <li><a href="https://fortune.com/2026/10/21/meta-q3-earnings-mark-zuckerberg-capex-muse/" target="_blank">Meta Q3 2026 Earnings (Fortune)</a></li>
+        <li><a href="https://www.techbuzz.ai/articles/nvidia-s-500b-order-book-signals-ai-boom-isn-t-slowing-down" target="_blank">NVIDIA's $500B Order Book (TechBuzz.ai)</a></li>
+        <li><a href="https://www.marketbeat.com/earnings/reports/2026-11-17-nvidia-co-stock/" target="_blank">NVIDIA Q3 FY2027 Earnings Date 11/17 (MarketBeat)</a></li>
+        <li><a href="https://newsroom.amd.com/news/amd-reports-third-quarter-2026-earnings/" target="_blank">AMD Q3 2026 Earnings (AMD Newsroom)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>存储</h4>
+      <ul>
+        <li><a href="https://www.gurufocus.com/news/9150265/samsung-electronics-co-ltd-wbossun-q3-2026-earnings-call-highlights-record-100-trillion-won-operating-profit-hbm4-sold-out-through-2027" target="_blank">Samsung Q3 2026 Earnings — Record Operating Profit, HBM4 Sold Out Through 2027 (GuruFocus)</a></li>
+        <li><a href="https://www.marketbeat.com/earnings/reports/2026-10-28-sk-hynix-inc-stock/" target="_blank">SK Hynix Q3 2026 Earnings (MarketBeat)</a></li>
+        <li><a href="https://www.digitimes.com/news/a20261105PD211/sk-hynix-hbm4-dram-hbm-capacity.html" target="_blank">SK Hynix HBM4 Yield Mid-60% (Digitimes)</a></li>
+        <li><a href="https://www.trendforce.com/news/2026/08/10/news-samsungs-hbm4-yield-reportedly-hits-80-as-race-to-supply-vera-rubin-heats-up-sk-hynix-labor-talks-add-a-twist/" target="_blank">Samsung HBM4 Yield Hits 80% (TrendForce)</a></li>
+        <li><a href="https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-FY26-Prepared-Remarks.pdf" target="_blank">Micron Q4 FY2026 Prepared Remarks</a></li>
+        <li><a href="https://www.tweaktown.com/news/113004/memory-capacity-for-all-of-2027-has-reportedly-been-booked-and-sold-with-no-more-dram-or-hbm-available/index.html" target="_blank">2027 Memory Capacity Fully Booked (TweakTown)</a></li>
+        <li><a href="https://www.taipeitimes.com/News/biz/archives/2026/11/06/2003867231" target="_blank">Micron Halts Taiwan Plant (Taipei Times)</a></li>
+        <li><a href="https://www.gurufocus.com/news/9181377/sk-hynix-stocks-plunge-1044-as-ai-memory-leader-leads-seoul-selloff" target="_blank">Memory Stock Selloff (GuruFocus)</a></li>
+        <li><a href="https://finance.yahoo.com/markets/stocks/articles/ai-memory-chip-selloff-looks-140900433.html" target="_blank">Memory Chip Selloff Looks Overdone (Yahoo Finance)</a></li>
+        <li><a href="https://www.scmp.com/tech/big-tech/article/3370505/chinas-cxmt-unveils-key-progress-chip-structure-pursued-samsung-sk-hynix" target="_blank">CXMT New Cell Architecture Progress (SCMP)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>网络 / 光模块</h4>
+      <ul>
+        <li><a href="https://www.gurufocus.com/news/9162111/lumentum-holdings-reports-q1-fy2027-earnings-eps-of-354-beats-estimates-revenue-of-126-billion-exceeds-expectations" target="_blank">Lumentum Q1 FY2027 Earnings (GuruFocus)</a></li>
+        <li><a href="https://www.tikr.com/blog/coherent-signed-a-20-billion-deal-the-market-sold-it-off-13-anyway" target="_blank">Coherent's $20B PhotonLink Deal, Stock Fell 13% Anyway (Tikr)</a></li>
+        <li><a href="https://futurumgroup.com/insights/coherent-q4-fy-2026-earnings-1-6t-transceivers-ramp-cpo-revenue-approaches/" target="_blank">Coherent Q4 FY2026 Earnings — 1.6T Ramp, CPO Revenue (Futurum)</a></li>
+        <li><a href="https://www.techtimes.com/articles/317281/20260527/ai-data-center-optical-component-shortage-nvidias-4b-laser-lockup-pushes-rivals-past-2027.htm" target="_blank">NVIDIA's $4B EML Laser Lockup (TechTimes)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>电力 / 数据中心</h4>
+      <ul>
+        <li><a href="https://www.turbomachinerymag.com/view/ge-vernova-q3-2026-gas-power-backlog-122-gw-trench-acquisition" target="_blank">GE Vernova Q3 2026 — Gas Power Backlog 122GW (Turbomachinery Magazine)</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/0001996810/000199681026000162/gev3q2026form8-k10282026.pdf" target="_blank">GE Vernova 3Q26 8-K (SEC)</a></li>
+        <li><a href="https://www.utilitydive.com/news/siemens-gas-turbine-backlog-nears-70-gw-as-company-expands-manufacturing/827390/" target="_blank">Siemens Energy Gas Turbine Backlog Nears 70GW (Utility Dive)</a></li>
+        <li><a href="https://energynewsbeat.co/electrical-generation/mitsubishi-power-deliveries-stretch-to-2031-as-gas-turbine-shortage-hits-data-centers-and-utilities/" target="_blank">Mitsubishi Power Deliveries Stretch to 2031 (Energy News Beat)</a></li>
+        <li><a href="https://fourweekmba.com/ai-weekly-roundup-8-nov-2026-builders-own-power-debt-296b/" target="_blank">AI Weekly Roundup — Builders, Power, Debt $296B (FourWeekMBA)</a></li>
+        <li><a href="https://www.troutman.com/insights/texas-hits-pause-on-data-center-grid-connections-amid-growing-oversight-push/" target="_blank">Texas Hits Pause on Data Center Grid Connections (Troutman Pepper Locke)</a></li>
+        <li><a href="https://www.investing.com/news/stock-market-news/susquehanna-sees-8-of-ai-data-center-projects-at-risk-93CH-5007177" target="_blank">Susquehanna: 8% of AI Data Center Projects at Risk (Investing.com)</a></li>
+        <li><a href="https://247wallst.com/investing/2026/11/08/david-sacks-warns-the-ai-data-center-pipeline-could-dry-up-heres-whats-at-stake/" target="_blank">David Sacks Warns AI Data Center Pipeline Could Dry Up (24/7 Wall St.)</a></li>
+        <li><a href="https://www.cnbc.com/2026/11/06/ai-data-center-midterms-selloff.html" target="_blank">AI Stocks Hammered by Midterm Shock (CNBC)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>信用 / 融资</h4>
+      <ul>
+        <li><a href="https://fourweekmba.com/ai-coreweave-cds-is-8x-nvidias-139bp-as-credit-prices-ai-risk/" target="_blank">CoreWeave CDS 8x Nvidia's (FourWeekMBA)</a></li>
+        <li><a href="https://finance.yahoo.com/markets/stocks/articles/oracles-default-insurance-hits-record-122137367.html" target="_blank">Oracle's Default Insurance Hits Record (Yahoo Finance)</a></li>
+        <li><a href="https://247wallst.com/investing/2026/11/07/openai-just-raised-11-billion-at-a-1-25-trillion-valuation-below-the-1-4-trillion-it-first-sought/" target="_blank">OpenAI Raises $11B at $1.25T Valuation, Below Target (24/7 Wall St.)</a></li>
+        <li><a href="https://www.benzinga.com/quote/ORCL/short-interest" target="_blank">Oracle Short Interest (Benzinga)</a></li>
+        <li><a href="https://www.benzinga.com/quote/CRWV/short-interest" target="_blank">CoreWeave Short Interest (Benzinga)</a></li>
+        <li><a href="https://www.bloomberg.com/news/articles/2026-11-02/credit-boss-at-top-canada-pension-warns-of-bubble-like-ai-rush" target="_blank">Credit Boss at Top Canada Pension Warns of "Bubble-like" AI Rush (Bloomberg)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>软件 / Agent / 应用</h4>
+      <ul>
+        <li><a href="https://www.cnbc.com/2026/11/02/palantir-pltr-earnings-q3-2026.html" target="_blank">Palantir Q3 2026 Earnings — US Commercial Tops Government (CNBC)</a></li>
+        <li><a href="https://finance.yahoo.com/markets/stocks/articles/why-servicenow-stock-falling-18-120449323.html" target="_blank">Why ServiceNow Stock Is Falling 18% (Yahoo Finance)</a></li>
+        <li><a href="https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/" target="_blank">Salesforce FY27 Q2 Earnings — Agentforce ARR (Salesforce)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>机器人 / 端侧 / 其他</h4>
+      <ul>
+        <li><a href="https://technode.com/2026/10/26/unitrees-newly-launched-h2-x-robot-loses-a-leg-in-public-demonstration/" target="_blank">Unitree's H2-X Robot Loses a Leg in Public Demonstration (TechNode)</a></li>
+        <li><a href="https://thebambooworks.com/brief-sanhua-denies-massive-tesla-order-rumors-after-stock-surges/" target="_blank">Sanhua Denies Massive Tesla Order Rumors (Bamboo Works)</a></li>
+        <li><a href="https://www.caixinglobal.com/2026-08-18/unitree-to-debut-at-61-billion-yuan-valuation-in-closely-watched-shanghai-ipo-102475173.html" target="_blank">Unitree Debuts at ¥61 Billion Valuation in Shanghai IPO (Caixin Global)</a></li>
+        <li><a href="https://www.engadget.com/2281788/idc-worldwide-pc-shipments-in-q3-fell-20-percent-from-last-year/" target="_blank">IDC: Worldwide PC Shipments Fell 20% YoY in Q3 (Engadget)</a></li>
+        <li><a href="https://www.fonearena.com/blog/494790/global-smartphone-shipments-q3-2026-counterpoint.html" target="_blank">Global Smartphone Shipments Q3 2026 (Counterpoint via Fonearena)</a></li>
+      </ul>
+    </div>
+
+    <div class="source-group">
+      <h4>估值 / 市场结构</h4>
+      <ul>
+        <li><a href="https://explainx.ai/blog/ai-stocks-crash-nov-5-2026-nvidia-micron-amd-coreweave-why-data-center-midterm-fears-bubble-2026" target="_blank">AI Stocks Crash Nov 5, 2026 — Midterm Fears (ExplainX)</a></li>
+        <li><a href="https://beinsure.com/news/stock-market-forecast-goldman-sachs-jpmorgan-morgan-stanley-predict-whats-next-after-tech-selloff/" target="_blank">Goldman/JPMorgan/Morgan Stanley Forecast After Tech Selloff (Beinsure)</a></li>
+        <li><a href="https://247wallst.com/investing/2026/11/05/greg-abels-next-13f-lands-november-16-and-1-question-about-berkshire-hathaways-299-billion-portfolio-looms-larger-than-any-other/" target="_blank">Berkshire's Next 13F Lands Nov 16 (24/7 Wall St.)</a></li>
+        <li><a href="https://gfmag.com/technology/the-circle-game/" target="_blank">AI's Financial Circle Game (Global Finance Magazine)</a></li>
+        <li><a href="https://247wallst.com/investing/2026/11/07/consumers-are-now-worried-about-an-ai-bubble-michigan-survey-says/" target="_blank">Consumers Worried About AI Bubble (24/7 Wall St. / Michigan Survey)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="disclaimer">本报告非投资建议，仅为研究框架与公开数据汇总。所有"上行空间"为情景分析，不构成对未来回报的精确预测。仓位建议在执行前必须结合个人风险承受、税务、流动性、汇率因素独立判断。</p>
+
+</main>
+
+<footer class="site-footer">
+  AI Investment Weekly · 第 17 期 · 2026 年 11 月 9 日
+</footer>
+
+</body>
+</html>
